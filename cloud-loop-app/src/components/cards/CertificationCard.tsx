@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Clock, Star, ExternalLink } from "lucide-react";
 import { ProviderLogo } from "@/components/ui/ProviderLogo";
@@ -23,6 +24,21 @@ interface Cert {
 }
 
 export function CertificationCard({ cert, compact }: { cert: Cert; compact?: boolean }) {
+  const [isApplied, setIsApplied] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsApplied(localStorage.getItem(`applied_${cert.id}`) === "true");
+    }
+  }, [cert.id]);
+
+  const handleApply = (e: React.MouseEvent) => {
+    e.preventDefault();
+    localStorage.setItem(`applied_${cert.id}`, "true");
+    setIsApplied(true);
+    window.open(cert.enrollUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <Link href={`/certifications/${cert.slug}`} className="block h-full">
       <div className="card-base p-5 h-full flex flex-col gap-3">
@@ -70,18 +86,29 @@ export function CertificationCard({ cert, compact }: { cert: Cert; compact?: boo
           </span>
         </div>
 
-        {/* Rating */}
-        {cert.rating && (
-          <div className="flex items-center justify-between pt-2 border-t border-border dark:border-dark-border">
-            <span className="text-xs text-text-secondary flex items-center gap-1">
-              <Star size={11} className="text-amber-400 fill-amber-400" />
-              {cert.rating} · {cert.enrolled ? `${(cert.enrolled / 1000).toFixed(0)}k enrolled` : ""}
+        {/* Rating & Action */}
+        <div className="flex items-center justify-between pt-2 border-t border-border dark:border-dark-border">
+          <span className="text-xs text-text-secondary flex items-center gap-1">
+            <Star size={11} className="text-amber-400 fill-amber-400" />
+            {cert.rating ? `${cert.rating}` : "4.5"}
+          </span>
+          {isApplied ? (
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-2 py-1 rounded-full bg-emerald-100/80 text-emerald-800 border border-emerald-200/50 shadow-[0_0_12px_rgba(16,185,129,0.2)] dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-900/30">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              Enrolled
             </span>
-            <span className="text-xs font-medium text-secondary dark:text-primary flex items-center gap-1">
+          ) : (
+            <button
+              onClick={handleApply}
+              className="text-xs font-semibold text-secondary hover:text-secondary/80 dark:text-primary dark:hover:text-primary/80 flex items-center gap-1 hover:underline transition-colors"
+            >
               Enroll <ExternalLink size={10} />
-            </span>
-          </div>
-        )}
+            </button>
+          )}
+        </div>
       </div>
     </Link>
   );
