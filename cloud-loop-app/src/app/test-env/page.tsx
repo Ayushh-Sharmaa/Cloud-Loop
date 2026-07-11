@@ -22,7 +22,7 @@ export default function TestEnvPage() {
           {dbUrl ? `Loaded (Length: ${dbUrl.length})` : "MISSING ❌"}
         </li>
       </ul>
-      <p>If any key is MISSING, please check your Vercel Project Settings -> Environment Variables.</p>
+      <p>If any key is MISSING, please check your Vercel Project Settings &rarr; Environment Variables.</p>
     </div>
   );
 }
