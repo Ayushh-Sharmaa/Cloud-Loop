@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Moon, Sun, Search, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useUser, useClerk } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -24,8 +23,6 @@ export function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
-  const { isSignedIn, user } = useUser();
-  const { openSignIn, openSignUp } = useClerk();
 
   useEffect(() => {
     setMounted(true);
@@ -102,35 +99,13 @@ export function Navbar() {
               </button>
             )}
 
-            {/* Auth */}
-            {isSignedIn ? (
-              <div className="flex items-center gap-2">
-                <Link
-                  href="/dashboard"
-                  className="hidden sm:block px-4 py-2 rounded-lg text-sm font-medium text-text-secondary dark:text-dark-text-secondary hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
-                >
-                  Dashboard
-                </Link>
-                <div className="w-8 h-8 rounded-full bg-gradient-brand flex items-center justify-center text-white font-bold text-xs">
-                  {user?.firstName?.[0] ?? user?.emailAddresses?.[0]?.emailAddress?.[0] ?? "U"}
-                </div>
-              </div>
-            ) : (
-              <>
-                <button
-                  onClick={() => openSignIn()}
-                  className="hidden sm:block px-4 py-2 rounded-lg text-sm font-medium text-text-secondary dark:text-dark-text-secondary hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
-                >
-                  Log in
-                </button>
-                <button
-                  onClick={() => openSignUp()}
-                  className="btn-gradient px-4 py-2 rounded-pill text-sm font-semibold text-white shadow-sm"
-                >
-                  Get Started
-                </button>
-              </>
-            )}
+            {/* Dashboard Link */}
+            <Link
+              href="/dashboard"
+              className="hidden sm:block px-4 py-2 rounded-lg text-sm font-medium text-text-secondary dark:text-dark-text-secondary hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+            >
+              Dashboard
+            </Link>
 
             {/* Mobile Menu Toggle */}
             <button
@@ -169,22 +144,12 @@ export function Navbar() {
                   </Link>
                 ))}
                 <div className="flex gap-2 pt-2 border-t border-border/50 mt-2">
-                  {!isSignedIn && (
-                    <>
-                      <button
-                        onClick={() => openSignIn()}
-                        className="flex-1 py-2.5 rounded-xl border border-border text-sm font-medium text-text-secondary dark:text-dark-text-secondary dark:border-dark-border"
-                      >
-                        Log in
-                      </button>
-                      <button
-                        onClick={() => openSignUp()}
-                        className="flex-1 py-2.5 rounded-xl btn-gradient text-sm font-semibold text-white"
-                      >
-                        Get Started
-                      </button>
-                    </>
-                  )}
+                  <Link
+                    href="/dashboard"
+                    className="flex-1 py-2.5 text-center rounded-xl btn-gradient text-sm font-semibold text-white"
+                  >
+                    Dashboard
+                  </Link>
                 </div>
               </nav>
             </motion.div>

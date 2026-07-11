@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+"use client";
+
 import Link from "next/link";
-import { Calendar, MapPin, Globe, Users, ArrowRight, ExternalLink } from "lucide-react";
+import { Calendar, MapPin, Globe, Users } from "lucide-react";
+import { StatusSelector } from "@/components/ui/StatusSelector";
 import { formatDate } from "@/lib/utils";
 
 interface Event {
@@ -21,22 +23,6 @@ interface Event {
 }
 
 export function EventCard({ event }: { event: Event }) {
-  const [isApplied, setIsApplied] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setIsApplied(localStorage.getItem(`applied_${event.id}`) === "true");
-    }
-  }, [event.id]);
-
-  const handleApply = (e: React.MouseEvent) => {
-    e.preventDefault();
-    localStorage.setItem(`applied_${event.id}`, "true");
-    setIsApplied(true);
-    // Open default registration link or search details
-    window.open(`/events/${event.slug}`, "_blank");
-  };
-
   return (
     <Link href={`/events/${event.slug}`} className="block h-full">
       <div className="card-base p-5 h-full flex flex-col gap-4">
@@ -83,24 +69,7 @@ export function EventCard({ event }: { event: Event }) {
               </span>
             )}
           </div>
-          <div>
-            {isApplied ? (
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-100/80 text-emerald-800 border border-emerald-200/50 shadow-[0_0_12px_rgba(16,185,129,0.2)] dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-900/30">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                Registered
-              </span>
-            ) : (
-              <button
-                onClick={handleApply}
-                className="text-xs font-semibold text-secondary hover:text-secondary/80 dark:text-primary dark:hover:text-primary/80 flex items-center gap-1 hover:underline transition-colors"
-              >
-                Register <ExternalLink size={11} />
-              </button>
-            )}
-          </div>
+          <StatusSelector id={event.id} />
         </div>
       </div>
     </Link>
