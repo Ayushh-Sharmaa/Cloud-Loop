@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Clock, Users, Bookmark, Zap, ExternalLink } from "lucide-react";
 import { ProviderLogo } from "@/components/ui/ProviderLogo";
 import { StatusSelector } from "@/components/ui/StatusSelector";
+import { useAuth } from "@clerk/nextjs";
 import { cn, getDeadlineLabel, getStatusColor, getDifficultyColor } from "@/lib/utils";
 
 interface Program {
@@ -28,6 +29,7 @@ interface Program {
 }
 
 export function ProgramCard({ program, featured }: { program: Program; featured?: boolean }) {
+  const { isSignedIn } = useAuth();
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   useEffect(() => {
@@ -36,11 +38,23 @@ export function ProgramCard({ program, featured }: { program: Program; featured?
     }
   }, [program.id]);
 
-  const handleBookmark = (e: React.MouseEvent) => {
+  const handleBookmark = async (e: React.MouseEvent) => {
     e.preventDefault();
     const next = !isBookmarked;
     localStorage.setItem(`bookmarked_${program.id}`, next ? "true" : "false");
     setIsBookmarked(next);
+
+    if (isSignedIn) {
+      try {
+        await fetch("/api/opportunities/status", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ opportunityId: program.id, bookmarked: next }),
+        });
+      } catch (err) {
+        console.error("Failed to sync bookmark to Supabase:", err);
+      }
+    }
   };
 
   return (

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MapPin, Bookmark, Zap } from "lucide-react";
 import { ProviderLogo } from "@/components/ui/ProviderLogo";
 import { StatusSelector } from "@/components/ui/StatusSelector";
+import { useAuth } from "@clerk/nextjs";
 import { cn, getDeadlineLabel } from "@/lib/utils";
 
 interface Job {
@@ -27,6 +28,7 @@ interface Job {
 }
 
 export function JobCard({ job }: { job: Job }) {
+  const { isSignedIn } = useAuth();
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   useEffect(() => {
@@ -35,11 +37,23 @@ export function JobCard({ job }: { job: Job }) {
     }
   }, [job.id]);
 
-  const handleBookmark = (e: React.MouseEvent) => {
+  const handleBookmark = async (e: React.MouseEvent) => {
     e.preventDefault();
     const next = !isBookmarked;
     localStorage.setItem(`bookmarked_${job.id}`, next ? "true" : "false");
     setIsBookmarked(next);
+
+    if (isSignedIn) {
+      try {
+        await fetch("/api/opportunities/status", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ opportunityId: job.id, bookmarked: next }),
+        });
+      } catch (err) {
+        console.error("Failed to sync bookmark to Supabase:", err);
+      }
+    }
   };
 
   return (

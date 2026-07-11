@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
+import { useAuth } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
 
 interface StatusSelectorProps {
@@ -38,19 +39,75 @@ const statusConfig = {
   },
 };
 
+// Global cache for statuses fetched from Supabase to prevent redundant requests
+let globalStatusesCache: Record<string, { status: StatusType; bookmarked: boolean }> | null = null;
+let globalStatusesPromise: Promise<any> | null = null;
+let globalListeners: Set<() => void> = new Set();
+
+function subscribeToStatuses(listener: () => void) {
+  globalListeners.add(listener);
+  return () => {
+    globalListeners.delete(listener);
+  };
+}
+
+function notifyListeners() {
+  globalListeners.forEach((l) => l());
+}
+
 export function StatusSelector({ id, className }: StatusSelectorProps) {
+  const { isSignedIn } = useAuth();
   const [status, setStatus] = useState<StatusType>("None");
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem(`status_${id}`) as StatusType;
-      if (saved && statusConfig[saved]) {
-        setStatus(saved);
+  const syncState = () => {
+    if (isSignedIn && globalStatusesCache) {
+      const cached = globalStatusesCache[id];
+      if (cached) {
+        setStatus(cached.status);
+        return;
       }
     }
-  }, [id]);
+    // Fallback to localStorage
+    const saved = localStorage.getItem(`status_${id}`) as StatusType;
+    if (saved && statusConfig[saved]) {
+      setStatus(saved);
+    } else {
+      setStatus("None");
+    }
+  };
+
+  useEffect(() => {
+    syncState();
+    return subscribeToStatuses(syncState);
+  }, [id, isSignedIn]);
+
+  useEffect(() => {
+    if (isSignedIn && !globalStatusesCache && !globalStatusesPromise) {
+      globalStatusesPromise = fetch("/api/opportunities/status")
+        .then((r) => r.json())
+        .then((json) => {
+          const cache: any = {};
+          json.data?.forEach((item: any) => {
+            cache[item.opportunity_id] = {
+              status: item.status,
+              bookmarked: item.bookmarked,
+            };
+            localStorage.setItem(`status_${item.opportunity_id}`, item.status);
+            localStorage.setItem(`applied_${item.opportunity_id}`, item.status === "Applied" ? "true" : "false");
+            localStorage.setItem(`bookmarked_${item.opportunity_id}`, item.bookmarked ? "true" : "false");
+          });
+          globalStatusesCache = cache;
+          notifyListeners();
+          return cache;
+        })
+        .catch((err) => {
+          console.error("Failed to fetch Supabase statuses:", err);
+          globalStatusesPromise = null;
+        });
+    }
+  }, [isSignedIn]);
 
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
@@ -62,16 +119,37 @@ export function StatusSelector({ id, className }: StatusSelectorProps) {
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, []);
 
-  const selectStatus = (newStatus: StatusType, e: React.MouseEvent) => {
+  const selectStatus = async (newStatus: StatusType, e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    
     setStatus(newStatus);
-    localStorage.setItem(`status_${id}`, newStatus);
-    // Maintain backward compatibility with old applied state
-    localStorage.setItem(`applied_${id}`, newStatus === "Applied" ? "true" : "false");
     setIsOpen(false);
     
-    // Dispatch a custom event to notify other components (e.g. Dashboard)
+    // Save to localStorage immediately (fallback)
+    localStorage.setItem(`status_${id}`, newStatus);
+    localStorage.setItem(`applied_${id}`, newStatus === "Applied" ? "true" : "false");
+    
+    if (isSignedIn) {
+      if (!globalStatusesCache) globalStatusesCache = {};
+      if (!globalStatusesCache[id]) {
+        globalStatusesCache[id] = { status: newStatus, bookmarked: false };
+      } else {
+        globalStatusesCache[id].status = newStatus;
+      }
+      notifyListeners();
+
+      try {
+        await fetch("/api/opportunities/status", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ opportunityId: id, status: newStatus }),
+        });
+      } catch (err) {
+        console.error("Failed to sync status to Supabase:", err);
+      }
+    }
+    
     window.dispatchEvent(new Event("status-changed"));
   };
 

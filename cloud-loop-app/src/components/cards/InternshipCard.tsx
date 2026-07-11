@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MapPin, Clock, Bookmark, Zap, Banknote } from "lucide-react";
 import { ProviderLogo } from "@/components/ui/ProviderLogo";
 import { StatusSelector } from "@/components/ui/StatusSelector";
+import { useAuth } from "@clerk/nextjs";
 import { cn, getDeadlineLabel } from "@/lib/utils";
 
 interface Internship {
@@ -31,6 +32,7 @@ const locationColors = {
 };
 
 export function InternshipCard({ internship }: { internship: Internship }) {
+  const { isSignedIn } = useAuth();
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   useEffect(() => {
@@ -39,10 +41,23 @@ export function InternshipCard({ internship }: { internship: Internship }) {
     }
   }, [internship.id]);
 
-  const handleBookmark = (e: React.MouseEvent) => {
+  const handleBookmark = async (e: React.MouseEvent) => {
     e.preventDefault();
     const next = !isBookmarked;
     localStorage.setItem(`bookmarked_${internship.id}`, next ? "true" : "false");
+    setIsBookmarked(next);
+
+    if (isSignedIn) {
+      try {
+        await fetch("/api/opportunities/status", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ opportunityId: internship.id, bookmarked: next }),
+        });
+      } catch (err) {
+        console.error("Failed to sync bookmark to Supabase:", err);
+      }
+    }
     setIsBookmarked(next);
   };
 

@@ -120,7 +120,24 @@ export default function DashboardPage() {
   };
 
   useEffect(() => {
-    loadData();
+    if (isLoaded && isSignedIn) {
+      fetch("/api/opportunities/status")
+        .then((r) => r.json())
+        .then((json) => {
+          json.data?.forEach((item: any) => {
+            localStorage.setItem(`status_${item.opportunity_id}`, item.status);
+            localStorage.setItem(`applied_${item.opportunity_id}`, item.status === "Applied" ? "true" : "false");
+            localStorage.setItem(`bookmarked_${item.opportunity_id}`, item.bookmarked ? "true" : "false");
+          });
+          loadData();
+        })
+        .catch((err) => {
+          console.error("Failed to sync dashboard with Supabase:", err);
+          loadData();
+        });
+    } else {
+      loadData();
+    }
 
     // Listen for storage or status-changed events to keep dashboard synced
     window.addEventListener("status-changed", loadData);
@@ -129,7 +146,7 @@ export default function DashboardPage() {
       window.removeEventListener("status-changed", loadData);
       window.removeEventListener("storage", loadData);
     };
-  }, []);
+  }, [isLoaded, isSignedIn]);
 
   if (!isLoaded || !isSignedIn) {
     return (
