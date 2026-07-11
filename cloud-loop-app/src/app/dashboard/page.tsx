@@ -5,6 +5,7 @@ import { Bookmark, Send, Clock, Award, Bell } from "lucide-react";
 import { programs, events, internships, jobs, certifications } from "@/lib/data";
 import { formatDate, cn } from "@/lib/utils";
 import Link from "next/link";
+import { useUser } from "@clerk/nextjs";
 
 interface DashboardItem {
   id: string;
@@ -18,10 +19,17 @@ interface DashboardItem {
 }
 
 export default function DashboardPage() {
+  const { isSignedIn, isLoaded } = useUser();
   const [savedOpps, setSavedOpps] = useState<DashboardItem[]>([]);
   const [trackedOpps, setTrackedOpps] = useState<DashboardItem[]>([]);
   const [deadlines, setDeadlines] = useState<DashboardItem[]>([]);
   const [stats, setStats] = useState({ saved: 0, applied: 0, review: 0, untracked: 0 });
+
+  useEffect(() => {
+    if (isLoaded && !isSignedIn) {
+      window.location.href = "/sign-in";
+    }
+  }, [isLoaded, isSignedIn]);
 
   const loadData = () => {
     if (typeof window === "undefined") return;
@@ -122,6 +130,14 @@ export default function DashboardPage() {
       window.removeEventListener("storage", loadData);
     };
   }, []);
+
+  if (!isLoaded || !isSignedIn) {
+    return (
+      <div className="min-h-screen bg-background dark:bg-dark-background flex items-center justify-center pt-24">
+        <div className="animate-pulse text-text-secondary">Verifying credentials...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background dark:bg-dark-background pt-24 pb-16">
