@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Moon, Sun, Search, Menu, X } from "lucide-react";
@@ -53,8 +54,15 @@ export function Navbar() {
         <div className="container-narrow flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <CloudLoopLogo />
-            <span className="font-bold text-lg tracking-tight text-text-primary dark:text-dark-text-primary" style={{color: 'inherit'}}>
+            <Image
+              src="/logo.png"
+              alt="Cloud Loop"
+              width={36}
+              height={36}
+              className="rounded-xl object-cover"
+              priority
+            />
+            <span className="font-bold text-lg tracking-tight text-text-primary dark:text-dark-text-primary">
               Cloud Loop
             </span>
           </Link>
@@ -68,8 +76,8 @@ export function Navbar() {
                 className={cn(
                   "px-3.5 py-2 rounded-lg text-sm font-medium transition-colors duration-150",
                   pathname.startsWith(link.href)
-                    ? "text-secondary dark:text-primary bg-secondary/8 dark:bg-primary/10"
-                    : "text-text-secondary dark:text-dark-text-secondary hover:text-text-primary dark:hover:text-dark-text-primary hover:bg-black/5 dark:hover:bg-white/5"
+                    ? "text-secondary dark:text-primary bg-secondary/10 dark:bg-primary/10"
+                    : "text-text-secondary dark:text-dark-text-secondary hover:text-text-primary dark:hover:text-dark-text-primary hover:bg-black/5 dark:hover:bg-white/8"
                 )}
               >
                 {link.label}
@@ -82,7 +90,7 @@ export function Navbar() {
             {/* Search */}
             <button
               aria-label="Search"
-              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border dark:border-dark-border bg-white/60 dark:bg-dark-card text-text-secondary dark:text-dark-text-secondary text-sm hover:border-primary/40 transition-colors"
+              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border dark:border-dark-border bg-white/80 dark:bg-dark-card text-text-secondary dark:text-dark-text-secondary text-sm hover:border-primary/50 transition-colors"
             >
               <Search size={14} />
               <span className="hidden md:inline">Search...</span>
@@ -161,19 +169,19 @@ export function Navbar() {
                     className={cn(
                       "px-4 py-3 rounded-xl text-sm font-medium transition-colors",
                       pathname.startsWith(link.href)
-                        ? "text-secondary bg-secondary/8 dark:text-primary dark:bg-primary/10"
-                        : "text-text-secondary dark:text-dark-text-secondary hover:bg-black/5 dark:hover:bg-white/5"
+                        ? "text-secondary bg-secondary/10 dark:text-primary dark:bg-primary/10"
+                        : "text-text-secondary dark:text-dark-text-secondary hover:bg-black/5 dark:hover:bg-white/8"
                     )}
                   >
                     {link.label}
                   </Link>
                 ))}
-                <div className="flex gap-2 pt-2 border-t border-border/50 mt-2">
+                <div className="flex gap-2 pt-2 border-t border-border/50 dark:border-dark-border/50 mt-2">
                   {!isSignedIn ? (
                     <>
                       <button
                         onClick={() => openSignIn()}
-                        className="flex-1 py-2.5 rounded-xl border border-border text-sm font-medium text-text-secondary dark:text-dark-text-secondary dark:border-dark-border"
+                        className="flex-1 py-2.5 rounded-xl border border-border dark:border-dark-border text-sm font-medium text-text-primary dark:text-dark-text-primary"
                       >
                         Log in
                       </button>
@@ -199,31 +207,5 @@ export function Navbar() {
         </AnimatePresence>
       </header>
     </>
-  );
-}
-
-function CloudLoopLogo() {
-  return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Cloud Loop logo">
-      <defs>
-        <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#4FD9FF" />
-          <stop offset="100%" stopColor="#7A5CFF" />
-        </linearGradient>
-      </defs>
-      <rect width="32" height="32" rx="8" fill="url(#logoGrad)" />
-      <path
-        d="M22.5 18.5a4 4 0 0 0-3.5-5.9 6 6 0 1 0-8 8.4H22a2.5 2.5 0 0 0 .5-2.5z"
-        fill="white"
-        opacity="0.9"
-      />
-      <path
-        d="M16 17l2-2m0 0l2 2m-2-2v4"
-        stroke="url(#logoGrad)"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }

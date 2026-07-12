@@ -119,11 +119,12 @@ export default function HomePage() {
             transition={{ duration: 0.55, delay: 0.4 }}
             className="relative max-w-2xl mx-auto"
           >
-            <div className="flex items-center gap-3 px-5 py-4 rounded-2xl bg-white dark:bg-dark-card border border-border dark:border-dark-border shadow-card">
+            <div className="flex items-center gap-3 px-5 py-4 rounded-2xl bg-white dark:bg-dark-card border border-border dark:border-dark-border shadow-card search-container">
               <Search size={20} className="text-text-secondary dark:text-dark-text-secondary shrink-0" />
               <input
                 type="text"
                 placeholder="Search programs, internships, jobs, certifications..."
+                style={{}}
                 className="flex-1 bg-transparent text-text-primary dark:text-dark-text-primary placeholder:text-text-secondary dark:placeholder:text-dark-text-secondary text-sm focus:outline-none"
                 aria-label="Search opportunities"
               />

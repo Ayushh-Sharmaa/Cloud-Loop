@@ -11,27 +11,39 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* ══════════════════════════════
+     LIGHT MODE  
+  ══════════════════════════════ */
   body {
-    background-color: #ffffff;
+    background-color: #F8FAFC;
     color: #0F172A;
     font-family: var(--font-inter), system-ui, sans-serif;
     line-height: 1.6;
     transition: background-color 0.25s ease, color 0.25s ease;
   }
 
-  /* ── Dark mode body ── */
+  /* ══════════════════════════════
+     DARK MODE — Cloud Loop theme
+     Deep purple-navy inspired by the
+     logo's starry background
+  ══════════════════════════════ */
   .dark body {
-    background-color: #0B1126;
-    color: #E2E8F0;
+    /* Rich deep purple-navy, matches logo background */
+    background-color: #0D0E1A;
+    color: #F0F4FF;
   }
 
-  /* ── All headings follow the body foreground ── */
   h1, h2, h3, h4, h5, h6 {
     color: inherit;
   }
 
+  /* Ensure text inherits in dark mode everywhere */
+  .dark p, .dark span, .dark div, .dark li, .dark td, .dark th, .dark label {
+    color: inherit;
+  }
+
   ::selection {
-    background-color: rgba(79, 217, 255, 0.25);
+    background-color: rgba(79, 217, 255, 0.3);
     color: inherit;
   }
 
@@ -45,24 +57,29 @@
   ::-webkit-scrollbar { width: 6px; height: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb {
-    background: rgba(100, 116, 139, 0.4);
+    background: rgba(79, 217, 255, 0.25);
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(100, 116, 139, 0.7);
+    background: rgba(79, 217, 255, 0.5);
   }
 }
 
 @layer utilities {
-  /* ─── Gradient text ─── */
+
+  /* ═══════════════════════════
+     GRADIENT TEXT
+  ═══════════════════════════ */
   .text-gradient {
-    background: linear-gradient(135deg, #4FD9FF 0%, #7A5CFF 50%, #A855F7 100%);
+    background: linear-gradient(135deg, #4FD9FF 0%, #7A5CFF 50%, #C084FC 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* ─── Primary CTA button ─── */
+  /* ═══════════════════════════
+     BUTTONS
+  ═══════════════════════════ */
   .btn-gradient {
     background: linear-gradient(135deg, #4FD9FF 0%, #7A5CFF 100%);
     color: #fff;
@@ -71,45 +88,67 @@
   .btn-gradient:hover {
     opacity: 0.9;
     transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(122, 92, 255, 0.35);
+    box-shadow: 0 8px 25px rgba(122, 92, 255, 0.45);
   }
 
-  /* ─── Glass navbar — light ─── */
+  /* ═══════════════════════════
+     GLASS — Navbar
+  ═══════════════════════════ */
   .glass {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: rgba(248, 250, 252, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
-  /* ─── Glass navbar — dark ─── */
   .dark .glass {
-    background: rgba(11, 17, 38, 0.92);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    /* Deep navy glass matching logo palette */
+    background: rgba(13, 14, 26, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
 
-  /* ─── Card ─── */
+  /* ═══════════════════════════
+     CARDS — light & dark
+  ═══════════════════════════ */
   .card-base {
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     border: 1px solid #E2E8F0;
     border-radius: 16px;
     color: #0F172A;
     transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
   }
+  /* Dark: deep purple card matching logo cloud */
   .dark .card-base {
-    background-color: #162143;
-    border-color: #263460;
-    color: #E2E8F0;
+    background-color: #13152A;   /* deep navy-purple */
+    border-color: #252848;       /* slightly lighter purple border */
+    color: #F0F4FF;              /* near-white, very visible */
   }
   .card-base:hover {
     transform: translateY(-2px);
-    border-color: rgba(79, 217, 255, 0.35);
+    border-color: rgba(79, 217, 255, 0.4);
     box-shadow: 0 8px 30px -4px rgba(0,0,0,0.10);
   }
   .dark .card-base:hover {
-    box-shadow: 0 8px 30px -4px rgba(0,0,0,0.5), 0 0 0 1px rgba(79,217,255,0.15);
+    border-color: rgba(79, 217, 255, 0.5);
+    box-shadow:
+      0 8px 30px -4px rgba(0,0,0,0.6),
+      0 0 0 1px rgba(79, 217, 255, 0.2),
+      0 0 20px rgba(79, 217, 255, 0.08);
   }
 
-  /* ─── Spacing helpers ─── */
+  /* ═══════════════════════════
+     SECTION BACKGROUNDS
+  ═══════════════════════════ */
+  /* Light alternating */
+  .section-even  { background-color: #F8FAFC; }
+  .section-odd   { background-color: #FFFFFF; }
+
+  /* Dark alternating — both are deep purples from logo theme */
+  .dark .section-even { background-color: #0D0E1A; }  /* main bg */
+  .dark .section-odd  { background-color: #111327; }  /* slightly lighter */
+
+  /* ═══════════════════════════
+     SPACING / LAYOUT
+  ═══════════════════════════ */
   .section-padding {
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -122,22 +161,43 @@
     padding-right: 1.5rem;
   }
 
-  /* ─── Gradient helpers ─── */
+  /* ═══════════════════════════
+     GRADIENT BACKGROUNDS
+  ═══════════════════════════ */
   .bg-gradient-hero {
     background:
-      radial-gradient(ellipse at top left,  rgba(79,217,255,0.14) 0%, transparent 60%),
-      radial-gradient(ellipse at bottom right, rgba(122,92,255,0.14) 0%, transparent 60%);
+      radial-gradient(ellipse at top left,  rgba(79,217,255,0.15) 0%, transparent 55%),
+      radial-gradient(ellipse at bottom right, rgba(122,92,255,0.15) 0%, transparent 55%);
+  }
+  /* Dark hero gets a richer star-like glow from logo */
+  .dark .bg-gradient-hero {
+    background:
+      radial-gradient(ellipse at top left,  rgba(79,217,255,0.20) 0%, transparent 50%),
+      radial-gradient(ellipse at center,    rgba(122,92,255,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(192,132,252,0.15) 0%, transparent 50%);
   }
   .bg-gradient-brand {
-    background: linear-gradient(135deg, #4FD9FF 0%, #7A5CFF 50%, #A855F7 100%);
+    background: linear-gradient(135deg, #4FD9FF 0%, #7A5CFF 50%, #C084FC 100%);
   }
   .bg-gradient-card {
     background: linear-gradient(135deg, rgba(79,217,255,0.06) 0%, rgba(122,92,255,0.06) 100%);
   }
 
+  /* ═══════════════════════════
+     MISC
+  ═══════════════════════════ */
   .rounded-pill { border-radius: 9999px; }
 
-  /* ─── Skeleton loader ─── */
+  .glow-ring {
+    box-shadow: 0 0 0 1px rgba(79,217,255,0.35), 0 0 20px rgba(79,217,255,0.15);
+  }
+  .dark .glow-ring {
+    box-shadow: 0 0 0 1px rgba(79,217,255,0.5), 0 0 25px rgba(79,217,255,0.2);
+  }
+
+  /* ═══════════════════════════
+     SKELETON LOADER
+  ═══════════════════════════ */
   .skeleton {
     background: linear-gradient(90deg, #F1F5F9 25%, rgba(148,163,184,0.15) 50%, #F1F5F9 75%);
     background-size: 200% 100%;
@@ -145,7 +205,7 @@
     border-radius: 8px;
   }
   .dark .skeleton {
-    background: linear-gradient(90deg, #162143 25%, rgba(38,52,96,0.4) 50%, #162143 75%);
+    background: linear-gradient(90deg, #13152A 25%, rgba(79,217,255,0.06) 50%, #13152A 75%);
     background-size: 200% 100%;
   }
   @keyframes skeleton-wave {
@@ -153,20 +213,40 @@
     100% { background-position: -200% 0; }
   }
 
-  /* ─── Glow ─── */
-  .glow-ring {
-    box-shadow: 0 0 0 1px rgba(79,217,255,0.3), 0 0 16px rgba(79,217,255,0.12);
-  }
-
-  /* ─── Dark mode inputs ─── */
+  /* ═══════════════════════════
+     DARK MODE — INPUTS
+  ═══════════════════════════ */
   .dark input,
   .dark textarea,
   .dark select {
-    color: #E2E8F0;
-    background-color: #162143;
+    color: #F0F4FF !important;
+    background-color: #13152A !important;
+    border-color: #252848 !important;
   }
   .dark input::placeholder,
   .dark textarea::placeholder {
-    color: #94A3B8;
+    color: #7B83B8 !important;
   }
+
+  /* ═══════════════════════════
+     DARK MODE — SEARCH BOX on Hero
+  ═══════════════════════════ */
+  .dark .search-container {
+    background-color: #13152A;
+    border-color: #252848;
+  }
+  .dark .search-container input {
+    color: #F0F4FF !important;
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  /* ═══════════════════════════
+     DARK — BADGE TAGS
+     (gray-100/gray-800 overrides)
+  ═══════════════════════════ */
+  .dark .bg-gray-100 { background-color: #1E2140 !important; }
+  .dark .bg-gray-800 { background-color: #1E2140 !important; }
+  .dark .text-gray-600 { color: #A5B0D9 !important; }
+  .dark .text-gray-400 { color: #A5B0D9 !important; }
 }

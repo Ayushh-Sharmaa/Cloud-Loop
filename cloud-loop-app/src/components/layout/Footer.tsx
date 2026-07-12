@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 
 const footerLinks = {
@@ -40,8 +41,8 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <CloudLoopLogoSmall />
-              <span className="font-bold text-lg tracking-tight">Cloud Loop</span>
+              <Image src="/logo.png" alt="Cloud Loop" width={32} height={32} className="rounded-lg object-cover" />
+              <span className="font-bold text-lg tracking-tight text-text-primary dark:text-dark-text-primary">Cloud Loop</span>
             </Link>
             <p className="text-sm text-text-secondary dark:text-dark-text-secondary leading-relaxed mb-6 max-w-xs">
               The single place students go to discover every opportunity — programs, events, internships, jobs, and certifications.

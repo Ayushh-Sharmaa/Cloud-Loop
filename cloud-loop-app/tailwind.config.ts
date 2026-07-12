@@ -52,20 +52,21 @@ const config: Config = {
         },
 
         /* ── Light mode surfaces ── */
-        background:          "#FFFFFF",
-        "background-alt":    "#F8FAFC",
+        background:          "#F8FAFC",
+        "background-alt":    "#FFFFFF",
         "card-surface":       "#FFFFFF",
         border:               "#E2E8F0",
         "text-primary":       "#0F172A",
         "text-secondary":     "#64748B",
 
-        /* ── Dark mode surfaces ── */
-        "dark-background":     "#0B1126",
-        "dark-background-alt": "#111936",
-        "dark-card":           "#162143",
-        "dark-border":         "#263460",
-        "dark-text-primary":   "#E2E8F0",
-        "dark-text-secondary": "#94A3B8",
+        /* ── Dark mode — Cloud Loop logo palette ── */
+        /* Deep purple-navy starry theme from the logo background */
+        "dark-background":     "#0D0E1A",   /* deepest navy-purple */
+        "dark-background-alt": "#111327",   /* slightly lighter purple */
+        "dark-card":           "#13152A",   /* card surface — visible purple */
+        "dark-border":         "#252848",   /* border — muted purple */
+        "dark-text-primary":   "#F0F4FF",   /* near-white — very visible */
+        "dark-text-secondary": "#A5B0D9",   /* muted lavender — readable */
       },
 
       fontFamily: {
