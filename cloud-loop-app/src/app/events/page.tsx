@@ -63,13 +63,13 @@ export default function EventsPage() {
 function FilterGroup({ label, options, value, onChange }: { label: string; options: string[]; value: string; onChange: (v: string) => void }) {
   return (
     <div className="flex items-center gap-1.5 flex-wrap">
-      <span className="text-xs text-text-secondary font-medium">{label}:</span>
+      <span className="text-xs text-text-secondary dark:text-dark-text-secondary font-medium">{label}:</span>
       {options.map((opt) => (
         <button key={opt} onClick={() => onChange(opt)}
-          className={cn("text-xs px-3 py-1.5 rounded-full border transition-colors",
+          className={cn("text-xs px-3 py-1.5 rounded-full border transition-colors cursor-pointer",
             value === opt
-              ? "bg-secondary text-white border-secondary dark:bg-primary dark:border-primary"
-              : "border-border dark:border-dark-border text-text-secondary hover:border-secondary/40")}>
+              ? "bg-secondary text-white border-secondary dark:bg-primary dark:border-primary dark:text-dark-background font-semibold"
+              : "border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary hover:border-secondary/40 dark:hover:border-primary/40")}>
           {opt}
         </button>
       ))}

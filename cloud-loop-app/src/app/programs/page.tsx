@@ -131,9 +131,9 @@ function FilterGroup({ label, options, value, onChange }: {
           key={opt}
           onClick={() => onChange(opt)}
           className={cn(
-            "text-xs px-3 py-1.5 rounded-full border transition-colors",
+            "text-xs px-3 py-1.5 rounded-full border transition-colors cursor-pointer",
             value === opt
-              ? "bg-secondary text-white border-secondary dark:bg-primary dark:border-primary"
+              ? "bg-secondary text-white border-secondary dark:bg-primary dark:border-primary dark:text-dark-background font-semibold"
               : "border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary hover:border-secondary/40 dark:hover:border-primary/40"
           )}
         >

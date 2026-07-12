@@ -1,5 +1,81 @@
 @import "tailwindcss";
 
+@theme {
+  /* Brand palette */
+  --color-primary-50: #f0fbff;
+  --color-primary-100: #d9f5ff;
+  --color-primary-200: #b3ecff;
+  --color-primary-300: #7de0ff;
+  --color-primary-400: #4fd9ff;
+  --color-primary-500: #1ac8f7;
+  --color-primary-600: #03a8d6;
+  --color-primary-700: #0486ae;
+  --color-primary-800: #0a6e8e;
+  --color-primary-900: #0e5a75;
+  --color-primary: #4fd9ff;
+
+  --color-secondary-50: #f4f2ff;
+  --color-secondary-100: #ebe7ff;
+  --color-secondary-200: #d9d2ff;
+  --color-secondary-300: #bdb0ff;
+  --color-secondary-400: #9d85ff;
+  --color-secondary-500: #7a5cff;
+  --color-secondary-600: #6638f7;
+  --color-secondary-700: #5724e3;
+  --color-secondary-800: #481ebf;
+  --color-secondary-900: #3c1b9c;
+  --color-secondary: #7a5cff;
+
+  --color-accent-50: #faf5ff;
+  --color-accent-100: #f3e8ff;
+  --color-accent-200: #e9d5ff;
+  --color-accent-300: #d8b4fe;
+  --color-accent-400: #c084fc;
+  --color-accent-500: #a855f7;
+  --color-accent-600: #9333ea;
+  --color-accent-700: #7e22ce;
+  --color-accent-800: #6b21a8;
+  --color-accent-900: #581c87;
+  --color-accent: #a855f7;
+
+  /* Surfaces - Light Mode */
+  --color-background: #F8FAFC;
+  --color-background-alt: #FFFFFF;
+  --color-card-surface: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #64748B;
+
+  /* Surfaces - Dark Mode (Cloud Loop purple-navy theme) */
+  --color-dark-background: #0A0B16;
+  --color-dark-background-alt: #101124;
+  --color-dark-card: #151733;
+  --color-dark-border: #24274c;
+  --color-dark-text-primary: #F8FAFC;
+  --color-dark-text-secondary: #A5B0D9;
+
+  /* Font */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  /* Border radius */
+  --radius-card: 16px;
+  --radius-card-lg: 20px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px 0 rgba(0,0,0,0.04), 0 1px 2px -1px rgba(0,0,0,0.04);
+  --shadow-card-hover: 0 8px 30px -4px rgba(0,0,0,0.10), 0 4px 12px -4px rgba(0,0,0,0.06);
+  --shadow-glow-primary: 0 0 30px rgba(79,217,255,0.25);
+  --shadow-glow-secondary: 0 0 30px rgba(122,92,255,0.25);
+  --shadow-glass: 0 8px 32px 0 rgba(0,0,0,0.08);
+
+  /* Background Gradients */
+  --background-image-gradient-brand: linear-gradient(135deg, #4FD9FF 0%, #7A5CFF 50%, #C084FC 100%);
+  --background-image-gradient-hero: radial-gradient(ellipse at top left, rgba(79,217,255,0.14) 0%, transparent 60%), radial-gradient(ellipse at bottom right, rgba(122,92,255,0.14) 0%, transparent 60%);
+  --background-image-gradient-card: linear-gradient(135deg, rgba(79,217,255,0.06) 0%, rgba(122,92,255,0.06) 100%);
+  --background-image-gradient-btn: linear-gradient(135deg, #4FD9FF 0%, #7A5CFF 100%);
+}
+
 @layer base {
   *, *::before, *::after {
     box-sizing: border-box;
@@ -11,26 +87,17 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* ══════════════════════════════
-     LIGHT MODE  
-  ══════════════════════════════ */
   body {
-    background-color: #F8FAFC;
-    color: #0F172A;
-    font-family: var(--font-inter), system-ui, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
     line-height: 1.6;
     transition: background-color 0.25s ease, color 0.25s ease;
   }
 
-  /* ══════════════════════════════
-     DARK MODE — Cloud Loop theme
-     Deep purple-navy inspired by the
-     logo's starry background
-  ══════════════════════════════ */
   .dark body {
-    /* Rich deep purple-navy, matches logo background */
-    background-color: #0D0E1A;
-    color: #F0F4FF;
+    background-color: var(--color-dark-background);
+    color: var(--color-dark-text-primary);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -71,7 +138,7 @@
      GRADIENT TEXT
   ═══════════════════════════ */
   .text-gradient {
-    background: linear-gradient(135deg, #4FD9FF 0%, #7A5CFF 50%, #C084FC 100%);
+    background: var(--background-image-gradient-brand);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -81,7 +148,7 @@
      BUTTONS
   ═══════════════════════════ */
   .btn-gradient {
-    background: linear-gradient(135deg, #4FD9FF 0%, #7A5CFF 100%);
+    background: var(--background-image-gradient-btn);
     color: #fff;
     transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
   }
@@ -101,7 +168,7 @@
   }
   .dark .glass {
     /* Deep navy glass matching logo palette */
-    background: rgba(13, 14, 26, 0.92);
+    background: rgba(10, 11, 22, 0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
   }
@@ -110,17 +177,17 @@
      CARDS — light & dark
   ═══════════════════════════ */
   .card-base {
-    background-color: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    background-color: var(--color-background-alt);
+    border: 1px solid var(--color-border);
     border-radius: 16px;
-    color: #0F172A;
+    color: var(--color-text-primary);
     transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
   }
   /* Dark: deep purple card matching logo cloud */
   .dark .card-base {
-    background-color: #13152A;   /* deep navy-purple */
-    border-color: #252848;       /* slightly lighter purple border */
-    color: #F0F4FF;              /* near-white, very visible */
+    background-color: var(--color-dark-card);   /* deep navy-purple */
+    border-color: var(--color-dark-border);       /* slightly lighter purple border */
+    color: var(--color-dark-text-primary);              /* near-white, very visible */
   }
   .card-base:hover {
     transform: translateY(-2px);
@@ -139,12 +206,12 @@
      SECTION BACKGROUNDS
   ═══════════════════════════ */
   /* Light alternating */
-  .section-even  { background-color: #F8FAFC; }
-  .section-odd   { background-color: #FFFFFF; }
+  .section-even  { background-color: var(--color-background); }
+  .section-odd   { background-color: var(--color-background-alt); }
 
   /* Dark alternating — both are deep purples from logo theme */
-  .dark .section-even { background-color: #0D0E1A; }  /* main bg */
-  .dark .section-odd  { background-color: #111327; }  /* slightly lighter */
+  .dark .section-even { background-color: var(--color-dark-background); }  /* main bg */
+  .dark .section-odd  { background-color: var(--color-dark-background-alt); }  /* slightly lighter */
 
   /* ═══════════════════════════
      SPACING / LAYOUT
@@ -165,9 +232,7 @@
      GRADIENT BACKGROUNDS
   ═══════════════════════════ */
   .bg-gradient-hero {
-    background:
-      radial-gradient(ellipse at top left,  rgba(79,217,255,0.15) 0%, transparent 55%),
-      radial-gradient(ellipse at bottom right, rgba(122,92,255,0.15) 0%, transparent 55%);
+    background: var(--background-image-gradient-hero);
   }
   /* Dark hero gets a richer star-like glow from logo */
   .dark .bg-gradient-hero {
@@ -177,10 +242,10 @@
       radial-gradient(ellipse at bottom right, rgba(192,132,252,0.15) 0%, transparent 50%);
   }
   .bg-gradient-brand {
-    background: linear-gradient(135deg, #4FD9FF 0%, #7A5CFF 50%, #C084FC 100%);
+    background: var(--background-image-gradient-brand);
   }
   .bg-gradient-card {
-    background: linear-gradient(135deg, rgba(79,217,255,0.06) 0%, rgba(122,92,255,0.06) 100%);
+    background: var(--background-image-gradient-card);
   }
 
   /* ═══════════════════════════
@@ -219,24 +284,24 @@
   .dark input,
   .dark textarea,
   .dark select {
-    color: #F0F4FF !important;
-    background-color: #13152A !important;
-    border-color: #252848 !important;
+    color: var(--color-dark-text-primary) !important;
+    background-color: var(--color-dark-card) !important;
+    border-color: var(--color-dark-border) !important;
   }
   .dark input::placeholder,
   .dark textarea::placeholder {
-    color: #7B83B8 !important;
+    color: var(--color-dark-text-secondary) !important;
   }
 
   /* ═══════════════════════════
      DARK MODE — SEARCH BOX on Hero
   ═══════════════════════════ */
   .dark .search-container {
-    background-color: #13152A;
-    border-color: #252848;
+    background-color: var(--color-dark-card);
+    border-color: var(--color-dark-border);
   }
   .dark .search-container input {
-    color: #F0F4FF !important;
+    color: var(--color-dark-text-primary) !important;
     background-color: transparent !important;
     border: none !important;
   }
@@ -245,8 +310,8 @@
      DARK — BADGE TAGS
      (gray-100/gray-800 overrides)
   ═══════════════════════════ */
-  .dark .bg-gray-100 { background-color: #1E2140 !important; }
-  .dark .bg-gray-800 { background-color: #1E2140 !important; }
-  .dark .text-gray-600 { color: #A5B0D9 !important; }
-  .dark .text-gray-400 { color: #A5B0D9 !important; }
+  .dark .bg-gray-100 { background-color: var(--color-dark-border) !important; }
+  .dark .bg-gray-800 { background-color: var(--color-dark-border) !important; }
+  .dark .text-gray-600 { color: var(--color-dark-text-secondary) !important; }
+  .dark .text-gray-400 { color: var(--color-dark-text-secondary) !important; }
 }

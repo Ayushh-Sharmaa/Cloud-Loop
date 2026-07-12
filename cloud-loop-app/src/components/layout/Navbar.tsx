@@ -22,7 +22,7 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const { isSignedIn, user } = useUser();
@@ -55,7 +55,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
             <Image
-              src="/logo.png"
+              src="/logo-v2.png"
               alt="Cloud Loop"
               width={36}
               height={36}
@@ -102,11 +102,11 @@ export function Navbar() {
             {/* Theme Toggle */}
             {mounted && (
               <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
                 aria-label="Toggle theme"
-                className="p-2 rounded-lg text-text-secondary dark:text-dark-text-secondary hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+                className="p-2 rounded-lg text-text-secondary dark:text-dark-text-secondary hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer"
               >
-                {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+                {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
               </button>
             )}
 

@@ -41,7 +41,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <Image src="/logo.png" alt="Cloud Loop" width={32} height={32} className="rounded-lg object-cover" />
+              <Image src="/logo-v2.png" alt="Cloud Loop" width={32} height={32} className="rounded-lg object-cover" />
               <span className="font-bold text-lg tracking-tight text-text-primary dark:text-dark-text-primary">Cloud Loop</span>
             </Link>
             <p className="text-sm text-text-secondary dark:text-dark-text-secondary leading-relaxed mb-6 max-w-xs">
