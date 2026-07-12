@@ -46,7 +46,7 @@ export function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           scrolled || !isHome
-            ? "glass border-b border-border/50 shadow-sm"
+            ? "glass border-b border-border dark:border-dark-border shadow-sm"
             : "bg-transparent"
         )}
       >
@@ -54,7 +54,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
             <CloudLoopLogo />
-            <span className="font-bold text-lg tracking-tight text-text-primary dark:text-dark-text-primary">
+            <span className="font-bold text-lg tracking-tight text-text-primary dark:text-dark-text-primary" style={{color: 'inherit'}}>
               Cloud Loop
             </span>
           </Link>
@@ -82,7 +82,7 @@ export function Navbar() {
             {/* Search */}
             <button
               aria-label="Search"
-              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border dark:border-dark-border bg-white/60 dark:bg-white/5 text-text-secondary dark:text-dark-text-secondary text-sm hover:border-primary/40 transition-colors"
+              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border dark:border-dark-border bg-white/60 dark:bg-dark-card text-text-secondary dark:text-dark-text-secondary text-sm hover:border-primary/40 transition-colors"
             >
               <Search size={14} />
               <span className="hidden md:inline">Search...</span>
@@ -151,7 +151,7 @@ export function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className="lg:hidden border-t border-border/50 dark:border-dark-border glass"
+              className="lg:hidden border-t border-border dark:border-dark-border bg-white dark:bg-dark-background"
             >
               <nav className="container-narrow py-4 flex flex-col gap-1">
                 {navLinks.map((link) => (

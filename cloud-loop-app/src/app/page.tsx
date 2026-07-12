@@ -12,11 +12,10 @@ import { CertificationCard } from "@/components/cards/CertificationCard";
 import { internships, jobs, certifications, successStories, faqs } from "@/lib/data";
 import {
   Award, Calendar, Briefcase, Building2, BadgeCheck,
-  GraduationCap, FlaskConical, Users, ChevronDown, Star, Quote
+  GraduationCap, FlaskConical, Users, ChevronDown, Quote
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { HumanTouchBadge } from "@/components/ui/HumanTouch";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>> = {
   Award, Calendar, Briefcase, Building2, BadgeCheck,
@@ -39,24 +38,20 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
+
       {/* ── Hero ── */}
-      <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-4 pt-24 pb-16 overflow-hidden">
-        {/* Animated gradient bg */}
+      <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-4 pt-24 pb-16 overflow-hidden bg-background dark:bg-dark-background">
+        {/* Soft gradient blobs */}
         <div className="absolute inset-0 bg-gradient-hero pointer-events-none" />
         <motion.div
-          className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/10 blur-3xl"
-          animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.6, 0.4] }}
+          className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/10 blur-3xl pointer-events-none"
+          animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-secondary/10 blur-3xl"
-          animate={{ scale: [1.15, 1, 1.15], opacity: [0.4, 0.6, 0.4] }}
+          className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-secondary/10 blur-3xl pointer-events-none"
+          animate={{ scale: [1.15, 1, 1.15], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        />
-        <motion.div
-          className="absolute top-16 right-16 w-64 h-64 rounded-full bg-accent/8 blur-2xl"
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
 
         <div className="relative z-10 max-w-4xl mx-auto">
@@ -65,13 +60,10 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="flex flex-col sm:flex-row items-center gap-3 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-8 glow-ring"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/8 text-primary text-sm font-medium glow-ring">
-              <Sparkles size={14} />
-              <span>2,400+ opportunities updated daily</span>
-            </div>
-            <HumanTouchBadge />
+            <Sparkles size={14} />
+            <span>2,400+ opportunities updated daily</span>
           </motion.div>
 
           {/* Headline */}
@@ -79,7 +71,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.1 }}
-            className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.08] mb-6"
+            className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.08] mb-6 text-text-primary dark:text-dark-text-primary"
           >
             Discover Every{" "}
             <span className="text-gradient">Student Opportunity.</span>
@@ -149,7 +141,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Featured Opportunities ── */}
-      <section className="section-padding bg-background/80 dark:bg-transparent backdrop-blur-sm">
+      <section className="section-padding bg-background-alt dark:bg-dark-background-alt">
         <div className="container-narrow">
           <SectionHeader
             label="Featured"
@@ -168,7 +160,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Trending Programs ── */}
-      <section className="section-padding bg-white/80 dark:bg-slate-900/60 backdrop-blur-sm">
+      <section className="section-padding bg-background dark:bg-dark-background">
         <div className="container-narrow">
           <SectionHeader
             label="Trending"
@@ -187,7 +179,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Upcoming Events ── */}
-      <section className="section-padding bg-background/80 dark:bg-transparent backdrop-blur-sm">
+      <section className="section-padding bg-background-alt dark:bg-dark-background-alt">
         <div className="container-narrow">
           <SectionHeader
             label="Events"
@@ -206,7 +198,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Latest Internships ── */}
-      <section className="section-padding bg-white/80 dark:bg-slate-900/60 backdrop-blur-sm">
+      <section className="section-padding bg-background dark:bg-dark-background">
         <div className="container-narrow">
           <SectionHeader
             label="Internships"
@@ -225,7 +217,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Latest Jobs ── */}
-      <section className="section-padding bg-background/80 dark:bg-transparent backdrop-blur-sm">
+      <section className="section-padding bg-background-alt dark:bg-dark-background-alt">
         <div className="container-narrow">
           <SectionHeader
             label="Jobs"
@@ -244,7 +236,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Certifications ── */}
-      <section className="section-padding bg-white/80 dark:bg-slate-900/60 backdrop-blur-sm">
+      <section className="section-padding bg-background dark:bg-dark-background">
         <div className="container-narrow">
           <SectionHeader
             label="Certifications"
@@ -263,7 +255,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Categories ── */}
-      <section className="section-padding bg-background/80 dark:bg-transparent backdrop-blur-sm">
+      <section className="section-padding bg-background-alt dark:bg-dark-background-alt">
         <div className="container-narrow">
           <SectionHeader
             label="Browse"
@@ -281,7 +273,7 @@ export default function HomePage() {
                   >
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: `${cat.color}18` }}
+                      style={{ backgroundColor: `${cat.color}22` }}
                     >
                       <Icon size={20} style={{ color: cat.color }} />
                     </div>
@@ -298,7 +290,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Success Stories ── */}
-      <section className="section-padding bg-white/80 dark:bg-slate-900/60 backdrop-blur-sm">
+      <section className="section-padding bg-background dark:bg-dark-background">
         <div className="container-narrow">
           <SectionHeader
             label="Stories"
@@ -311,7 +303,7 @@ export default function HomePage() {
                 <div className="card-base p-6 h-full flex flex-col gap-4">
                   <Quote size={24} className="text-primary/40" />
                   <p className="text-sm text-text-secondary dark:text-dark-text-secondary leading-relaxed flex-1">
-                    "{story.quote}"
+                    &quot;{story.quote}&quot;
                   </p>
                   <div className="flex items-center gap-3 pt-2 border-t border-border dark:border-dark-border">
                     <div className="w-10 h-10 rounded-full bg-gradient-brand flex items-center justify-center text-white font-bold text-sm shrink-0">
@@ -331,15 +323,15 @@ export default function HomePage() {
       </section>
 
       {/* ── Newsletter CTA ── */}
-      <section className="section-padding">
+      <section className="section-padding bg-background-alt dark:bg-dark-background-alt">
         <div className="container-narrow">
           <div className="rounded-2xl bg-gradient-brand p-px">
-            <div className="rounded-2xl bg-[#0d1b3e] dark:bg-[#080f20] p-10 md:p-16 text-center">
+            <div className="rounded-2xl bg-[#0d1b3e] dark:bg-[#060d22] p-10 md:p-16 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Get the weekly digest
               </h2>
               <p className="text-white/70 max-w-md mx-auto mb-8 text-base">
-                Every Friday — the top 10 opportunities you shouldn't miss. No spam, unsubscribe any time.
+                Every Friday — the top 10 opportunities you shouldn&apos;t miss. No spam, unsubscribe any time.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
                 <input
@@ -358,7 +350,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="section-padding bg-white/80 dark:bg-slate-900/60 backdrop-blur-sm" id="faq">
+      <section className="section-padding bg-background dark:bg-dark-background" id="faq">
         <div className="container-narrow max-w-2xl">
           <SectionHeader
             label="FAQ"
@@ -385,7 +377,7 @@ export default function HomePage() {
                   <ChevronDown
                     size={16}
                     className={cn(
-                      "shrink-0 text-text-secondary transition-transform duration-200",
+                      "shrink-0 text-text-secondary dark:text-dark-text-secondary transition-transform duration-200",
                       openFaq === i && "rotate-180"
                     )}
                   />
