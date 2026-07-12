@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { HumanTouchBadge } from "@/components/ui/HumanTouch";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>> = {
   Award, Calendar, Briefcase, Building2, BadgeCheck,
@@ -64,10 +65,13 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/8 text-primary text-sm font-medium mb-8"
+            className="flex flex-col sm:flex-row items-center gap-3 mb-8"
           >
-            <Sparkles size={14} />
-            <span>2,400+ opportunities updated daily</span>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/8 text-primary text-sm font-medium glow-ring">
+              <Sparkles size={14} />
+              <span>2,400+ opportunities updated daily</span>
+            </div>
+            <HumanTouchBadge />
           </motion.div>
 
           {/* Headline */}
@@ -145,7 +149,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Featured Opportunities ── */}
-      <section className="section-padding bg-background dark:bg-dark-background">
+      <section className="section-padding bg-background/80 dark:bg-transparent backdrop-blur-sm">
         <div className="container-narrow">
           <SectionHeader
             label="Featured"
@@ -164,7 +168,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Trending Programs ── */}
-      <section className="section-padding bg-white dark:bg-dark-card">
+      <section className="section-padding bg-white/80 dark:bg-slate-900/60 backdrop-blur-sm">
         <div className="container-narrow">
           <SectionHeader
             label="Trending"
@@ -183,7 +187,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Upcoming Events ── */}
-      <section className="section-padding bg-background dark:bg-dark-background">
+      <section className="section-padding bg-background/80 dark:bg-transparent backdrop-blur-sm">
         <div className="container-narrow">
           <SectionHeader
             label="Events"
@@ -202,7 +206,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Latest Internships ── */}
-      <section className="section-padding bg-white dark:bg-dark-card">
+      <section className="section-padding bg-white/80 dark:bg-slate-900/60 backdrop-blur-sm">
         <div className="container-narrow">
           <SectionHeader
             label="Internships"
@@ -221,7 +225,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Latest Jobs ── */}
-      <section className="section-padding bg-background dark:bg-dark-background">
+      <section className="section-padding bg-background/80 dark:bg-transparent backdrop-blur-sm">
         <div className="container-narrow">
           <SectionHeader
             label="Jobs"
@@ -240,7 +244,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Certifications ── */}
-      <section className="section-padding bg-white dark:bg-dark-card">
+      <section className="section-padding bg-white/80 dark:bg-slate-900/60 backdrop-blur-sm">
         <div className="container-narrow">
           <SectionHeader
             label="Certifications"
@@ -259,7 +263,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Categories ── */}
-      <section className="section-padding bg-background dark:bg-dark-background">
+      <section className="section-padding bg-background/80 dark:bg-transparent backdrop-blur-sm">
         <div className="container-narrow">
           <SectionHeader
             label="Browse"
@@ -294,7 +298,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Success Stories ── */}
-      <section className="section-padding bg-white dark:bg-dark-card">
+      <section className="section-padding bg-white/80 dark:bg-slate-900/60 backdrop-blur-sm">
         <div className="container-narrow">
           <SectionHeader
             label="Stories"
@@ -354,7 +358,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="section-padding bg-white dark:bg-dark-card" id="faq">
+      <section className="section-padding bg-white/80 dark:bg-slate-900/60 backdrop-blur-sm" id="faq">
         <div className="container-narrow max-w-2xl">
           <SectionHeader
             label="FAQ"

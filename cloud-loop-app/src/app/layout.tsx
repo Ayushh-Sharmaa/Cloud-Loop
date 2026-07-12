@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ParticleBackground } from "@/components/ui/ParticleBackground";
+import { CursorDot } from "@/components/ui/CursorDot";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -60,12 +62,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased noise-overlay`}>
         <ClerkProvider>
           <ThemeProvider>
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
+            {/* Animated particle canvas — behind everything */}
+            <ParticleBackground />
+            {/* Custom cursor dot */}
+            <CursorDot />
+            {/* Page content sits above the canvas */}
+            <div className="relative z-10">
+              <Navbar />
+              <main>{children}</main>
+              <Footer />
+            </div>
           </ThemeProvider>
         </ClerkProvider>
       </body>

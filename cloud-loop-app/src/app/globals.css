@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap");
 
 @layer base {
   :root {
@@ -16,13 +17,13 @@
   }
 
   .dark {
-    --background: 11 16 32;    /* #0B1020 */
-    --foreground: 249 250 251;
-    --card: 17 24 39;          /* #111827 */
-    --card-foreground: 249 250 251;
-    --border: 31 41 55;        /* #1F2937 */
-    --muted: 31 41 55;
-    --muted-foreground: 156 163 175;
+    --background: 9 14 28;     /* #090E1C — deeper dark */
+    --foreground: 241 245 249; /* #F1F5F9 — bright white text */
+    --card: 15 23 42;          /* #0F172A */
+    --card-foreground: 241 245 249;
+    --border: 30 41 59;        /* #1E293B */
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184; /* #94A3B8 */
   }
 
   * {
@@ -41,6 +42,23 @@
     color: rgb(var(--foreground));
     font-family: var(--font-inter), system-ui, sans-serif;
     line-height: 1.6;
+    /* Ensure text is always visible */
+  }
+
+  /* ── Enforce dark mode text visibility ── */
+  .dark body,
+  .dark p,
+  .dark span,
+  .dark div,
+  .dark li,
+  .dark label,
+  .dark td,
+  .dark th {
+    color: inherit;
+  }
+
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: rgb(241 245 249);
   }
 
   ::selection {
@@ -91,32 +109,56 @@
     box-shadow: 0 8px 25px rgba(122, 92, 255, 0.35);
   }
 
+  /* ── Glass — light mode ── */
   .glass {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.6);
   }
 
+  /* ── Glass — dark mode: deep semi-transparent navy ── */
   .dark .glass {
-    background: rgba(11, 16, 32, 0.8);
-    border-color: rgba(31, 41, 55, 0.8);
+    background: rgba(9, 14, 28, 0.85);
+    border-color: rgba(79, 217, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
 
+  /* ── Card base — light ── */
   .card-base {
     background: rgb(var(--card));
     border: 1px solid rgb(var(--border));
     border-radius: 16px;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    color: rgb(var(--card-foreground));
   }
 
   .card-base:hover {
     box-shadow: 0 8px 30px -4px rgba(0,0,0,0.10), 0 4px 12px -4px rgba(0,0,0,0.06);
     transform: translateY(-2px);
+    border-color: rgba(79, 217, 255, 0.25);
+  }
+
+  /* ── Card base — dark ── */
+  .dark .card-base {
+    background: rgb(15 23 42); /* #0F172A */
+    border-color: rgb(30 41 59);
+    color: rgb(241 245 249);
   }
 
   .dark .card-base:hover {
-    box-shadow: 0 8px 30px -4px rgba(0,0,0,0.35), 0 4px 12px -4px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 30px -4px rgba(0,0,0,0.5), 0 4px 12px -4px rgba(0,0,0,0.3), 0 0 0 1px rgba(79, 217, 255, 0.15);
+    border-color: rgba(79, 217, 255, 0.25);
+  }
+
+  /* ── Section backgrounds in dark mode ── */
+  .dark .bg-white {
+    background-color: rgb(15 23 42) !important; /* cards section */
+  }
+
+  .dark .bg-background {
+    background-color: rgb(9 14 28) !important;
   }
 
   .section-padding {
@@ -132,7 +174,30 @@
     padding-right: 1.5rem;
   }
 
-  /* Loading skeleton */
+  /* ── Text color fixes for dark mode ── */
+  .dark .text-text-primary,
+  .dark .dark\:text-dark-text-primary {
+    color: rgb(241 245 249) !important;
+  }
+
+  .dark .text-text-secondary,
+  .dark .dark\:text-dark-text-secondary {
+    color: rgb(148 163 184) !important;
+  }
+
+  /* ── Input dark mode ── */
+  .dark input,
+  .dark textarea {
+    color: rgb(241 245 249);
+    background-color: rgb(15 23 42);
+  }
+
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    color: rgb(100 116 139);
+  }
+
+  /* ── Loading skeleton ── */
   .skeleton {
     background: linear-gradient(90deg, rgb(var(--muted)) 25%, rgba(156,163,175,0.15) 50%, rgb(var(--muted)) 75%);
     background-size: 200% 100%;
@@ -143,5 +208,59 @@
   @keyframes skeleton-wave {
     0% { background-position: 200% 0; }
     100% { background-position: -200% 0; }
+  }
+
+  /* ── Particle canvas layer ── */
+  .particles-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ── Cursor dot ── */
+  .cursor-dot {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4FD9FF, #7A5CFF);
+    transform: translate(-50%, -50%);
+    transition: transform 0.08s ease, opacity 0.2s ease;
+    mix-blend-mode: screen;
+  }
+
+  .dark .cursor-dot {
+    mix-blend-mode: screen;
+    opacity: 0.9;
+  }
+
+  /* ── Noise texture overlay for premium feel ── */
+  .noise-overlay::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 128px;
+  }
+
+  /* ── Handwriting font utility ── */
+  .font-handwriting {
+    font-family: 'Caveat', 'Segoe Script', cursive;
+  }
+
+  /* ── Glow ring for hero badge ── */
+  .glow-ring {
+    box-shadow: 0 0 0 1px rgba(79,217,255,0.3), 0 0 16px rgba(79,217,255,0.15);
+  }
+
+  .dark .glow-ring {
+    box-shadow: 0 0 0 1px rgba(79,217,255,0.4), 0 0 20px rgba(79,217,255,0.2);
   }
 }
