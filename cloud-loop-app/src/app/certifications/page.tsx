@@ -7,9 +7,9 @@ import { certifications } from "@/lib/data";
 import { CertificationCard } from "@/components/cards/CertificationCard";
 import { cn } from "@/lib/utils";
 
-const providers = ["All", "Google Cloud", "Amazon Web Services", "Microsoft", "Meta (via Coursera)", "IBM (via Coursera)", "DeepLearning.AI (via Coursera)", "Cisco", "Google (via Coursera)"];
-const difficulties = ["All", "Beginner", "Associate", "Intermediate", "Professional"];
-const costs = ["All", "Free", "Paid"];
+const providers = ["All", "GeeksforGeeks"];
+const difficulties = ["All", "Beginner", "Intermediate", "Advanced"];
+const costs = ["All", "Free"];
 
 export default function CertificationsPage() {
   const [search, setSearch] = useState("");

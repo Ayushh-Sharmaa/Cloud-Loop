@@ -7,7 +7,8 @@ import { formatDate, getStatusColor, getDifficultyColor, cn } from "@/lib/utils"
 import {
   ExternalLink, Clock, Users, Calendar, CheckCircle2,
   Gift, Globe, Copy, Check, X,
-  BookOpen, Zap, AlertCircle, ChevronRight
+  BookOpen, Zap, AlertCircle, ChevronRight,
+  Smartphone, Tablet, Headphones, FileText, Shield, Sparkles, ArrowLeft, Star
 } from "lucide-react";
 import { ProgramCard } from "@/components/cards/ProgramCard";
 import { ProviderLogo } from "@/components/ui/ProviderLogo";
@@ -41,46 +42,37 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
       >
         <div className="flex items-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-3 rounded-xl shadow-xl text-sm font-medium">
           <Check size={15} className="text-emerald-400 dark:text-emerald-600" />
-          Facilitator Code Copied.
+          Facilitator Code Copied Successfully.
         </div>
       </div>
 
-      {/* Ambassador Modal */}
+      {/* Ambassador Modal as Full-Screen Message */}
       {ambassadorModal && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-          onClick={(e) => { if (e.target === e.currentTarget) setAmbassadorModal(false); }}
-        >
-          <div className="bg-white dark:bg-dark-card rounded-2xl shadow-2xl w-full max-w-md p-8 relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-background dark:bg-dark-background p-4">
+          <div className="w-full max-w-lg p-8 text-center space-y-6">
+            <div className="w-20 h-20 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mx-auto shadow-md">
+              <AlertCircle size={36} className="text-amber-600 dark:text-amber-400 animate-bounce" />
+            </div>
+            <div className="space-y-3">
+              <h2 className="text-2xl font-black text-text-primary dark:text-dark-text-primary">
+                Applications are currently closed.
+              </h2>
+              <p className="text-text-secondary dark:text-dark-text-secondary text-sm leading-relaxed max-w-md mx-auto">
+                We are not accepting Ambassador Applications at the moment.
+              </p>
+              <p className="text-text-primary dark:text-dark-text-primary font-bold text-sm leading-relaxed max-w-md mx-auto">
+                Applications will reopen during the Second Week of August.
+              </p>
+              <p className="text-xs text-text-secondary dark:text-dark-text-secondary max-w-sm mx-auto">
+                Stay connected with our official WhatsApp and Telegram communities for announcements.
+              </p>
+            </div>
             <button
               onClick={() => setAmbassadorModal(false)}
-              className="absolute top-4 right-4 p-2 rounded-lg text-text-secondary hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-text-primary dark:text-dark-text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors font-bold text-sm"
             >
-              <X size={18} />
+              <ArrowLeft size={16} /> Back
             </button>
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mx-auto mb-4">
-                <AlertCircle size={28} className="text-amber-600 dark:text-amber-400" />
-              </div>
-              <h2 className="text-xl font-bold text-text-primary dark:text-dark-text-primary mb-3">
-                Ambassador Applications
-              </h2>
-              <p className="text-text-secondary dark:text-dark-text-secondary text-sm leading-relaxed mb-2">
-                Applications are not accepting responses at the moment.
-              </p>
-              <p className="text-text-secondary dark:text-dark-text-secondary text-sm leading-relaxed mb-6">
-                <span className="font-semibold text-amber-600 dark:text-amber-400">Ambassador Applications will open during the Second Week of August.</span>
-              </p>
-              <p className="text-xs text-text-secondary dark:text-dark-text-secondary mb-6">
-                Please stay connected through our community channels for announcements.
-              </p>
-              <button
-                onClick={() => setAmbassadorModal(false)}
-                className="px-6 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-text-primary dark:text-dark-text-primary font-semibold text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-              >
-                Close
-              </button>
-            </div>
           </div>
         </div>
       )}
@@ -126,8 +118,7 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl font-black text-white leading-tight mb-1">
-                GOOGLE CLOUD ARCADE
-                <span className="block text-yellow-400 font-mono">Facilitator Program</span>
+                Google Cloud Arcade Facilitator Program
               </h1>
               <p className="text-white/60 text-sm mt-1">by Google</p>
             </div>
@@ -136,7 +127,7 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
           <div className="flex flex-wrap gap-5 text-sm text-white/70 mb-8">
             <span className="flex items-center gap-2">
               <Calendar size={14} className="text-yellow-400" />
-              13 July 2026, 5:00 PM IST – 14 September 2026, 11:59 PM IST
+              13 July 2026 at 5:00 PM IST – 14 September 2026 at 11:59 PM IST
             </span>
             <span className="flex items-center gap-2">
               <Globe size={14} className="text-blue-400" />
@@ -149,13 +140,13 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
           <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl px-5 py-3 mb-6 inline-flex items-center gap-3">
             <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <p className="text-emerald-300 text-sm font-medium">
-              Enrolments are now <span className="font-bold text-emerald-200">OPEN</span>
+              Enrolments are now <span className="font-bold text-emerald-200">OPEN!</span>
             </p>
           </div>
 
           <div className="flex flex-wrap gap-3">
             <a
-              href={program.registrationForm ?? "https://forms.gle/Z2TX54F8bQ4ooV5c9"}
+              href="https://forms.gle/Z2TX54F8bQ4ooV5c9"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-400 hover:to-indigo-500 shadow-lg shadow-blue-500/30 transition-all duration-200 hover:scale-105"
@@ -180,43 +171,46 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
       <div className="container-narrow py-12 space-y-6">
 
         {/* ── FACILITATOR CODE ── */}
-        <ArcadeSection icon={<Copy size={18} />} title="Facilitator Code" accent="blue">
-          <p className="text-sm text-text-secondary dark:text-dark-text-secondary mb-4">
-            Use this code when enrolling to be tracked under our facilitators.
-          </p>
-          <div
-            onClick={handleCopy}
-            className="group relative cursor-pointer bg-gray-950 dark:bg-black border border-blue-500/30 hover:border-blue-400/60 rounded-xl p-5 flex items-center justify-between transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/10"
-          >
-            <div className="flex items-center gap-3">
-              <span className="text-blue-400 text-xs font-semibold tracking-widest uppercase">code</span>
-              <code className="font-mono text-xl font-bold text-white tracking-wider select-all">
+        <div
+          onClick={handleCopy}
+          className="group cursor-pointer rounded-2xl border border-blue-500/30 hover:border-blue-400/60 bg-white dark:bg-dark-card overflow-hidden transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/5"
+        >
+          <div className="flex items-center gap-3 px-6 py-4 border-b border-blue-200 dark:border-blue-500/30 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">
+            <span className="p-1.5 rounded-lg border border-blue-200 dark:border-blue-500/30"><Copy size={18} /></span>
+            <h2 className="font-bold text-base">Facilitator Code</h2>
+          </div>
+          <div className="px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <p className="text-sm text-text-secondary dark:text-dark-text-secondary">
+                Click anywhere on this card to automatically copy the code.
+              </p>
+              <code className="block font-mono text-2xl font-black text-text-primary dark:text-dark-text-primary tracking-widest mt-1">
                 GCAF26-IN-MGG-3E2
               </code>
             </div>
             <button
               onClick={(e) => { e.stopPropagation(); handleCopy(); }}
               className={cn(
-                "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200",
+                "inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200",
                 copied
                   ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
-                  : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white border border-white/10"
+                  : "bg-primary text-white border border-primary"
               )}
             >
               {copied ? <Check size={12} /> : <Copy size={12} />}
-              {copied ? "Copied!" : "Copy"}
+              {copied ? "Copied Successfully!" : "Copy Code"}
             </button>
           </div>
-        </ArcadeSection>
+        </div>
 
         {/* ── ABOUT THE PROGRAM ── */}
         <ArcadeSection icon={<BookOpen size={18} />} title="About the Program" accent="purple">
           <div className="space-y-4 text-sm text-text-secondary dark:text-dark-text-secondary leading-relaxed">
             <p>
-              The <span className="font-semibold text-text-primary dark:text-dark-text-primary">Google Cloud Arcade Facilitator Program</span> is Google&apos;s official learning initiative designed for students interested in Cloud Computing, Artificial Intelligence, and Google Cloud technologies.
+              The Google Cloud Arcade Facilitator Program is Google&apos;s official learning initiative designed for students who want to learn Google Cloud, Artificial Intelligence, Machine Learning, Data Analytics, Generative AI, and modern cloud technologies through hands-on learning.
             </p>
             <p>
-              Participants receive free learning resources, Google Cloud credits, Arcade Games, Skill Badges, milestone rewards, and an opportunity to become part of a growing cloud community.
+              Participants complete Arcade Games, Skill Badges, Labs, and Quests while earning Arcade Points and milestone rewards. The program also provides free Google Cloud credits and access to an active learning community for guidance and support.
             </p>
             <div className="flex items-center gap-2 mt-2 px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-400 font-medium">
               <CheckCircle2 size={16} className="shrink-0" />
@@ -228,9 +222,9 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
         {/* ── AFTER REGISTRATION ── */}
         <ArcadeSection icon={<CheckCircle2 size={18} />} title="After Registration" accent="emerald">
           <p className="text-sm text-text-secondary dark:text-dark-text-secondary mb-4">
-            Within <span className="font-semibold text-text-primary dark:text-dark-text-primary">24–48 hours</span> you&apos;ll receive an email titled:
+            Within <span className="font-semibold text-text-primary dark:text-dark-text-primary">24–48 hours</span>, you&apos;ll receive an email titled:
           </p>
-          <div className="bg-gray-950 dark:bg-black border border-emerald-500/30 rounded-xl p-4 mb-6 font-mono text-sm text-emerald-400 leading-relaxed">
+          <div className="bg-gray-950 dark:bg-black border border-emerald-500/30 rounded-xl p-4 mb-6 font-mono text-sm text-emerald-400 leading-relaxed font-bold">
             Congratulations, you&apos;re now enrolled in the Google Cloud Arcade Facilitator Program 2026
           </div>
           <ul className="space-y-3 mb-6">
@@ -251,14 +245,14 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 shadow-md shadow-emerald-500/20 transition-all duration-200 hover:scale-105"
           >
-            750 Credits Guide <ExternalLink size={13} />
+            Claim 750 Credits Guide <ExternalLink size={13} />
           </a>
         </ArcadeSection>
 
         {/* ── NOW YOU'RE READY ── */}
-        <ArcadeSection icon={<Zap size={18} />} title="Now You're Ready" accent="yellow">
+        <ArcadeSection icon={<Zap size={18} />} title="You're All Set!" accent="yellow">
           <p className="text-sm text-text-secondary dark:text-dark-text-secondary mb-5">
-            Once you&apos;ve claimed your credits, start your Google Cloud Arcade journey.
+            After successfully claiming your Google Cloud Credits, start playing Google Cloud Arcade Games and complete Skill Badges to earn Arcade Points and milestone rewards.
           </p>
           <a
             href="https://go.cloudskillsboost.google/arcade"
@@ -266,46 +260,35 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-gray-900 bg-gradient-to-r from-yellow-400 to-amber-400 hover:from-yellow-300 hover:to-amber-300 shadow-lg shadow-yellow-500/20 transition-all duration-200 hover:scale-105"
           >
-            🚀 Launch Arcade <ExternalLink size={13} />
+            🚀 Start Google Cloud Arcade <ExternalLink size={13} />
           </a>
         </ArcadeSection>
 
         {/* ── DAILY LAB LIMIT ── */}
         <ArcadeSection icon={<AlertCircle size={18} />} title="Daily Lab Limit" accent="orange">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-500/30 rounded-xl p-4 text-center">
-              <div className="text-3xl font-black text-orange-600 dark:text-orange-400 mb-1">15</div>
-              <div className="text-xs text-text-secondary dark:text-dark-text-secondary font-medium">labs every 24 hours</div>
+            <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-500/30 rounded-xl p-4 text-center hover:scale-[1.02] transition-transform duration-200">
+              <div className="text-3xl font-black text-orange-600 dark:text-orange-400 mb-1">15 Labs</div>
+              <div className="text-xs text-text-secondary dark:text-dark-text-secondary font-semibold">Maximum every 24 hours</div>
             </div>
-            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-500/30 rounded-xl p-4 text-center">
-              <div className="text-3xl font-black text-blue-600 dark:text-blue-400 mb-1">2h</div>
-              <div className="text-xs text-text-secondary dark:text-dark-text-secondary font-medium">per quota restore</div>
+            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-500/30 rounded-xl p-4 text-center hover:scale-[1.02] transition-transform duration-200">
+              <div className="text-3xl font-black text-blue-600 dark:text-blue-400 mb-1">2 Hours</div>
+              <div className="text-xs text-text-secondary dark:text-dark-text-secondary font-semibold">One lab quota restores</div>
             </div>
-            <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-500/30 rounded-xl p-4 text-center">
-              <div className="text-2xl mb-1">🏅</div>
-              <div className="text-xs text-text-secondary dark:text-dark-text-secondary font-medium">Continue Skill Badges at limit</div>
+            <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-500/30 rounded-xl p-4 text-center hover:scale-[1.02] transition-transform duration-200">
+              <div className="text-3xl font-black text-purple-600 dark:text-purple-400 mb-1">24 Hours</div>
+              <div className="text-xs text-text-secondary dark:text-dark-text-secondary font-semibold">Full window refresh cycle</div>
             </div>
           </div>
-          <p className="text-xs text-text-secondary dark:text-dark-text-secondary mt-4 flex items-start gap-2">
-            <AlertCircle size={13} className="text-orange-500 shrink-0 mt-0.5" />
-            After reaching your daily limit, continue completing Skill Badges — they don&apos;t consume lab quota the same way.
+          <p className="text-sm text-text-secondary dark:text-dark-text-secondary mt-5 leading-relaxed">
+            Maximum <span className="font-semibold text-text-primary dark:text-dark-text-primary">15 labs</span> every <span className="font-semibold text-text-primary dark:text-dark-text-primary">24 hours</span>. Every <span className="font-semibold text-text-primary dark:text-dark-text-primary">2 hours</span>, one lab quota is automatically restored. Once your daily lab limit is exhausted, continue completing Skill Badges until your lab quota resets.
           </p>
         </ArcadeSection>
 
         {/* ── SKILL BADGES ── */}
         <ArcadeSection icon={<Gift size={18} />} title="Skill Badges" accent="indigo">
-          <div className="flex flex-wrap gap-4 items-center mb-5">
-            <div className="px-4 py-3 rounded-xl bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-500/30 text-center">
-              <div className="text-2xl font-black text-indigo-600 dark:text-indigo-400">~104</div>
-              <div className="text-xs text-text-secondary dark:text-dark-text-secondary">Skill Badges</div>
-            </div>
-            <div className="px-4 py-3 rounded-xl bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-500/30 text-center">
-              <div className="text-2xl font-black text-purple-600 dark:text-purple-400">~52</div>
-              <div className="text-xs text-text-secondary dark:text-dark-text-secondary">Arcade Points</div>
-            </div>
-          </div>
           <p className="text-sm text-text-secondary dark:text-dark-text-secondary mb-5">
-            There are approximately <span className="font-semibold text-text-primary dark:text-dark-text-primary">104 Skill Badges</span> worth around <span className="font-semibold text-text-primary dark:text-dark-text-primary">52 Arcade Points</span>.
+            There are approximately <span className="font-bold text-text-primary dark:text-dark-text-primary">104 Skill Badges</span> worth around <span className="font-bold text-text-primary dark:text-dark-text-primary">52 Arcade Points</span>.
           </p>
           <a
             href="https://tinyurl.com/Arcade-Skill-Badges"
@@ -320,33 +303,33 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
         {/* ── COMMUNITY ── */}
         <ArcadeSection icon={<Users size={18} />} title="Need Help?" accent="teal">
           <p className="text-sm text-text-secondary dark:text-dark-text-secondary mb-5">
-            Join our communities for announcements, discussions, guidance, doubt solving, and program updates.
+            Join our official communities for announcements, guidance, doubt solving, discussions, updates, and support throughout the program.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               {
-                name: "WhatsApp Channel",
+                name: "Cloud Loop WhatsApp Channel",
                 href: "https://www.whatsapp.com/channel/0029VbAiEFzAe5VikdanX42e",
                 icon: "💬",
                 color: "bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-500/30 hover:border-green-400/60",
                 textColor: "text-green-700 dark:text-green-400",
-                desc: "Announcements & Updates"
+                desc: "Official Channel updates"
               },
               {
-                name: "Telegram Updates",
+                name: "Cloud Loop Telegram Channel",
                 href: "https://t.me/cloudloopupdates",
                 icon: "📢",
                 color: "bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-500/30 hover:border-blue-400/60",
                 textColor: "text-blue-700 dark:text-blue-400",
-                desc: "Program Announcements"
+                desc: "Announcements & Alerts"
               },
               {
-                name: "Telegram Discussion",
+                name: "Telegram Discussion Group",
                 href: "https://t.me/cloudloopp",
                 icon: "🗣️",
                 color: "bg-sky-50 dark:bg-sky-900/20 border-sky-200 dark:border-sky-500/30 hover:border-sky-400/60",
                 textColor: "text-sky-700 dark:text-sky-400",
-                desc: "Discussion Group"
+                desc: "Guidance & Doubt Solving"
               },
               {
                 name: "WhatsApp Community",
@@ -354,7 +337,7 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
                 icon: "🤝",
                 color: "bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-500/30 hover:border-emerald-400/60",
                 textColor: "text-emerald-700 dark:text-emerald-400",
-                desc: "Community & Discussions"
+                desc: "Peer Support community"
               },
             ].map((community) => (
               <a
@@ -369,7 +352,7 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
               >
                 <div className="text-2xl shrink-0">{community.icon}</div>
                 <div className="flex-1 min-w-0">
-                  <p className={cn("font-semibold text-sm", community.textColor)}>{community.name}</p>
+                  <p className={cn("font-bold text-sm", community.textColor)}>{community.name}</p>
                   <p className="text-xs text-text-secondary dark:text-dark-text-secondary">{community.desc}</p>
                 </div>
                 <ExternalLink size={14} className="shrink-0 text-text-secondary group-hover:text-text-primary dark:group-hover:text-dark-text-primary transition-colors" />
@@ -382,15 +365,24 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
         <ArcadeSection icon={<Users size={18} />} title="Program Facilitators" accent="purple">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {[
-              { name: "Ayush Sharma", linkedin: "https://www.linkedin.com/in/ayushh-sharmaa/", initial: "A" },
+              { name: "Ayush Sharma", linkedin: "https://www.linkedin.com/in/ayushh-sharmaa/", image: "/ayush-sharma.png" },
               { name: "Hitansh Sharma", linkedin: "https://www.linkedin.com/in/hitansh-sharma/", initial: "H" },
             ].map((facilitator) => (
               <div
                 key={facilitator.name}
                 className="flex flex-col items-center gap-4 p-6 rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card hover:border-purple-300 dark:hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-200"
               >
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-3xl font-black shadow-lg">
-                  {facilitator.initial}
+                <div className="w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-3xl font-black shadow-lg relative">
+                  {facilitator.image ? (
+                    <Image
+                      src={facilitator.image}
+                      alt={facilitator.name}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    facilitator.initial
+                  )}
                 </div>
                 <div className="text-center">
                   <p className="font-bold text-text-primary dark:text-dark-text-primary text-base">{facilitator.name}</p>
@@ -628,6 +620,163 @@ function InfoRow({ label, value }: { label: string; value: string }) {
   );
 }
 
+function NaukriAmbassadorPage({ program }: { program: typeof programs[0] }) {
+  return (
+    <div className="min-h-screen bg-background dark:bg-dark-background">
+      {/* Hero */}
+      <div className="bg-gradient-to-br from-orange-950 via-slate-950 to-indigo-950 border-b border-white/10 pt-24 pb-14 px-4 relative overflow-hidden">
+        <div className="container-narrow">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-8">
+            <div className="shrink-0">
+              <Image
+                src="/naukri-logo.png"
+                alt="Naukri Campus Logo"
+                width={100}
+                height={100}
+                className="rounded-2xl ring-4 ring-white/20 shadow-2xl bg-white p-2"
+              />
+            </div>
+            <div>
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 uppercase tracking-wide">
+                  OPEN
+                </span>
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-500/20 text-orange-300 border border-orange-500/30">
+                  Beginner
+                </span>
+                <span className="text-xs px-2.5 py-1 rounded-full bg-white/10 text-white/70 border border-white/10">
+                  Campus Ambassador
+                </span>
+              </div>
+              <h1 className="text-3xl md:text-4xl font-black text-white leading-tight mb-1">
+                Naukri Campus
+                <span className="block text-orange-400 font-mono">Ambassador Program</span>
+              </h1>
+              <p className="text-white/60 text-sm mt-1">by Naukri Campus</p>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-6 text-sm text-white/70 mb-8">
+            <span className="flex items-center gap-2">
+              <Globe size={14} className="text-orange-400" />
+              <a href="https://www.naukri.com/campus/ambassador-program" target="_blank" rel="noopener noreferrer" className="hover:text-white underline underline-offset-2 transition-colors">
+                Official Program Website
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="container-narrow py-12 space-y-8">
+        {/* Description */}
+        <div className="rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card p-6">
+          <h2 className="text-lg font-bold text-text-primary dark:text-dark-text-primary mb-4">About the Program</h2>
+          <p className="text-sm text-text-secondary dark:text-dark-text-secondary leading-relaxed">
+            The Naukri Campus Ambassador Program is designed for students who want to build leadership, marketing, communication, and community-building skills while earning exclusive rewards, certificates, merchandise, vouchers, and recognition from Naukri Campus.
+          </p>
+        </div>
+
+        {/* How to Join */}
+        <div className="rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card p-6">
+          <h2 className="text-lg font-bold text-text-primary dark:text-dark-text-primary mb-6">How to Join</h2>
+          <div className="space-y-6">
+            <div className="p-5 rounded-xl border border-border dark:border-dark-border bg-gray-50 dark:bg-dark-background">
+              <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-primary/10 text-primary uppercase tracking-wide mb-3 inline-block">
+                Step 1
+              </span>
+              <p className="text-sm text-text-primary dark:text-dark-text-primary font-semibold mb-4">
+                Sign up for the Naukri Campus Contest using the referral link.
+              </p>
+              <a
+                href="https://www.naukri.com/campus/contests/digiquezt-sharp-1-seo-and-sem-basics-contest-event-36479?action=enrol&referral=e36479-rUAOZYY-psap&uapp=801&utm_source=share_desktop&utm_medium=referral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-primary hover:bg-primary/90 shadow-md transition-all duration-200"
+              >
+                Register Now <ExternalLink size={13} />
+              </a>
+            </div>
+
+            <div className="p-5 rounded-xl border border-border dark:border-dark-border bg-gray-50 dark:bg-dark-background">
+              <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-primary/10 text-primary uppercase tracking-wide mb-3 inline-block">
+                Step 2
+              </span>
+              <p className="text-sm text-text-primary dark:text-dark-text-primary font-semibold mb-4">
+                After registering, apply for the Naukri Campus Ambassador Program.
+              </p>
+              <a
+                href="https://www.naukri.com/campus/ambassador-program"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-secondary dark:bg-primary dark:text-dark-background hover:bg-secondary/90 shadow-md transition-all duration-200"
+              >
+                Apply Now <ExternalLink size={13} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Why Join? */}
+        <div className="rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card p-6">
+          <h2 className="text-lg font-bold text-text-primary dark:text-dark-text-primary mb-6">Why Join?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              "Build your professional network",
+              "Gain leadership experience",
+              "Improve communication and marketing skills",
+              "Receive certificates and recognition",
+              "Earn exclusive merchandise and vouchers",
+              "Become part of the Naukri Campus student community"
+            ].map((highlight, index) => (
+              <div key={index} className="flex items-start gap-3 text-sm text-text-secondary dark:text-dark-text-secondary">
+                <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
+                <span>{highlight}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Rewards & Benefits */}
+        <div className="rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card p-6">
+          <h2 className="text-lg font-bold text-text-primary dark:text-dark-text-primary mb-6">Rewards & Benefits</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {[
+              { name: "iPhone", icon: <Smartphone className="text-blue-500" /> },
+              { name: "iPad", icon: <Tablet className="text-indigo-500" /> },
+              { name: "AirPods", icon: <Headphones className="text-purple-500" /> },
+              { name: "SAP Summer Squad Welcome Certificate", icon: <FileText className="text-teal-500" /> },
+              { name: "SAP Summer Squad 50 Points Certificate", icon: <FileText className="text-emerald-500" /> },
+              { name: "SAP Summer Squad 250 Points Certificate", icon: <FileText className="text-green-500" /> },
+              { name: "Ambassador Certificate", icon: <Star className="text-amber-500" /> },
+              { name: "Letter of Recommendation", icon: <FileText className="text-rose-500" /> },
+              { name: "Amazon Voucher – ₹1,000", icon: <Gift className="text-orange-500" /> },
+              { name: "Amazon Voucher – ₹1,500", icon: <Gift className="text-orange-600" /> },
+              { name: "Amazon Voucher – ₹4,000", icon: <Gift className="text-red-500" /> },
+              { name: "Amazon Voucher – Up to ₹25,000", icon: <Gift className="text-red-600" /> },
+              { name: "NC Branded T-Shirt", icon: <ShoppingBag className="text-pink-500" /> },
+              { name: "NC Branded Bag", icon: <ShoppingBag className="text-sky-500" /> },
+              { name: "NC Merch Kit (Neck Pillow, Water Bottle)", icon: <Gift className="text-cyan-500" /> },
+              { name: "Wireless Headphones", icon: <Headphones className="text-violet-500" /> }
+            ].map((reward, index) => (
+              <div 
+                key={index}
+                className="p-4 rounded-xl border border-border dark:border-dark-border bg-gray-50 dark:bg-dark-background flex flex-col items-center text-center gap-3 hover:scale-105 transition-transform duration-200"
+              >
+                <div className="w-10 h-10 rounded-full bg-white dark:bg-dark-card flex items-center justify-center shadow-sm">
+                  {reward.icon}
+                </div>
+                <span className="text-xs font-bold text-text-primary dark:text-dark-text-primary leading-tight">
+                  {reward.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─────────────────────────────────────────
 // Route Entry Point
 // ─────────────────────────────────────────
@@ -643,6 +792,10 @@ export default function ProgramDetailPage({ params }: { params: Promise<{ slug: 
 
   if (slug === "google-cloud-arcade") {
     return <ArcadeFacilitatorPage program={program as typeof program & { registrationForm?: string; facilitatorCode?: string }} />;
+  }
+
+  if (slug === "naukri-campus-ambassador-program") {
+    return <NaukriAmbassadorPage program={program} />;
   }
 
   return <GenericProgramPage program={program} related={related} />;
