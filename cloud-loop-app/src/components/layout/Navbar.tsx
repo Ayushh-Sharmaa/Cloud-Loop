@@ -55,11 +55,11 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
             <Image
-              src="/logo-v2.png"
+              src="/arcade-logo.png"
               alt="Cloud Loop"
               width={36}
               height={36}
-              className="rounded-xl object-cover"
+              className="rounded-full object-cover"
               priority
             />
             <span className="font-bold text-lg tracking-tight text-text-primary dark:text-dark-text-primary">
