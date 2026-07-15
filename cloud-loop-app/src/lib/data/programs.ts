@@ -102,4 +102,24 @@ export const programs = [
     featured: false,
     applicants: 8500,
   },
+  {
+    id: "naukri-campus-ambassador",
+    slug: "naukri-campus-ambassador-program",
+    name: "Naukri Campus Ambassador Program",
+    provider: "Naukri Campus",
+    providerLogo: "https://www.google.com/s2/favicons?domain=naukri.com&sz=128",
+    category: "Campus Ambassador",
+    status: "open" as const,
+    difficulty: "Beginner" as const,
+    duration: "Ongoing",
+    deadline: "2026-12-31",
+    eligibility: "Students wanting to build leadership, marketing, and communication skills",
+    keyBenefit: "Exclusive rewards, certificates, merchandise, vouchers, and recognition",
+    description:
+      "The Naukri Campus Ambassador Program is designed for students who want to build leadership, marketing, communication, and community-building skills while earning exclusive rewards, certificates, merchandise, vouchers, and recognition from Naukri Campus.",
+    tags: ["Leadership", "Ambassador", "Marketing", "Community", "Vouchers"],
+    website: "https://www.naukri.com/campus/ambassador-program",
+    featured: true,
+    applicants: 15000,
+  }
 ];
