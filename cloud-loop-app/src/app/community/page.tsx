@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Community",
-  description: "Join the Cloud Loop community — Discord, WhatsApp, Telegram, LinkedIn, GitHub and more.",
+  description: "Join the Cloud Loop community — WhatsApp, Telegram, and LinkedIn.",
 };
 
 const platforms = [

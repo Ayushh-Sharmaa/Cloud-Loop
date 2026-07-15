@@ -3,8 +3,7 @@
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
-import { certifications } from "@/lib/data";
-import { CertificationCard } from "@/components/cards/CertificationCard";
+import { certifications, CertificationCard } from "@/features/certifications";
 import { cn } from "@/lib/utils";
 
 const providers = ["All", "GeeksforGeeks"];

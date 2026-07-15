@@ -1,7 +1,7 @@
-// Re-export all split data files from the data directory to maintain compatibility
-export { programs } from "./data/programs";
-export { events } from "./data/events";
-export { internships } from "./data/internships";
-export { jobs } from "./data/jobs";
-export { certifications } from "./data/certifications";
-export { successStories, categories, faqs } from "./data/others";
+// Re-export all split data files from features to maintain compatibility
+export { programs } from "@/features/programs";
+export { events } from "@/features/events";
+export { internships } from "@/features/internships";
+export { jobs } from "@/features/jobs";
+export { certifications } from "@/features/certifications";
+export { successStories, categories, faqs } from "@/features/community";

@@ -3,8 +3,7 @@
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Search, SlidersHorizontal, X } from "lucide-react";
-import { programs } from "@/lib/data";
-import { ProgramCard } from "@/components/cards/ProgramCard";
+import { programs, ProgramCard } from "@/features/programs";
 import { cn } from "@/lib/utils";
 
 const categories = ["All", "Cloud", "Ambassador", "Open Source", "AI/ML", "Technology", "Networking", "Community"];

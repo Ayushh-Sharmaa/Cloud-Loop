@@ -3,8 +3,7 @@
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
-import { internships } from "@/lib/data";
-import { InternshipCard } from "@/components/cards/InternshipCard";
+import { internships, InternshipCard } from "@/features/internships";
 import { cn } from "@/lib/utils";
 
 const locationTypes = ["All", "Remote", "Hybrid", "Onsite"];

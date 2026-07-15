@@ -3,13 +3,12 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Search, Sparkles, Zap, Globe } from "lucide-react";
-import { programs, events, categories } from "@/lib/data";
-import { ProgramCard } from "@/components/cards/ProgramCard";
-import { EventCard } from "@/components/cards/EventCard";
-import { InternshipCard } from "@/components/cards/InternshipCard";
-import { JobCard } from "@/components/cards/JobCard";
-import { CertificationCard } from "@/components/cards/CertificationCard";
-import { internships, jobs, certifications, successStories, faqs } from "@/lib/data";
+import { programs, ProgramCard } from "@/features/programs";
+import { events, EventCard } from "@/features/events";
+import { internships, InternshipCard } from "@/features/internships";
+import { jobs, JobCard } from "@/features/jobs";
+import { certifications, CertificationCard } from "@/features/certifications";
+import { successStories, categories, faqs } from "@/features/community";
 import {
   Award, Calendar, Briefcase, Building2, BadgeCheck,
   GraduationCap, FlaskConical, Users, ChevronDown, Quote
@@ -86,7 +85,7 @@ export default function HomePage() {
             transition={{ duration: 0.55, delay: 0.2 }}
             className="text-lg sm:text-xl text-text-secondary dark:text-dark-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Google Cloud Arcade, GSoC, MLSA, AWS Educate, campus hackathons,
+            Google Cloud Arcade Facilitator Program, MLSA, campus hackathons,
             paid internships, fresher jobs, and industry certifications — all in one place.
           </motion.p>
 

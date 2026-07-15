@@ -2,15 +2,14 @@
 
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { programs } from "@/lib/data";
+import { programs, ProgramCard } from "@/features/programs";
 import { formatDate, getStatusColor, getDifficultyColor, cn } from "@/lib/utils";
 import {
   ExternalLink, Clock, Users, Calendar, CheckCircle2,
   Gift, Globe, Copy, Check, X,
   BookOpen, Zap, AlertCircle, ChevronRight,
-  Smartphone, Tablet, Headphones, FileText, Shield, Sparkles, ArrowLeft, Star
+  Smartphone, Tablet, Headphones, FileText, Shield, Sparkles, ArrowLeft, Star, ShoppingBag
 } from "lucide-react";
-import { ProgramCard } from "@/components/cards/ProgramCard";
 import { ProviderLogo } from "@/components/ui/ProviderLogo";
 import { useState, use } from "react";
 

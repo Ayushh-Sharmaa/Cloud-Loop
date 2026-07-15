@@ -1,7 +1,6 @@
 import { Certification } from "../../types/Certification";
 
 export const modernDataEngCertification: Certification = {
-  id: "gfg-snowflake-devs", // Wait, in the source it was "gfg-modern-data-eng"
   id: "gfg-modern-data-eng",
   slug: "introduction-to-modern-data-engineering-with-snowflake",
   name: "Introduction to Modern Data Engineering with Snowflake",

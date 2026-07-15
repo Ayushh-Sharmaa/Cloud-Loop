@@ -3,8 +3,7 @@
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
-import { jobs } from "@/lib/data";
-import { JobCard } from "@/components/cards/JobCard";
+import { jobs, JobCard } from "@/features/jobs";
 import { cn } from "@/lib/utils";
 
 const categories = ["All", "Software", "AI/ML", "Cloud", "Frontend", "Backend", "Data", "DevOps"];

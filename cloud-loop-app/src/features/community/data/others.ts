@@ -26,8 +26,8 @@ export const successStories = [
     university: "BITS Pilani, 2023",
     avatar: "/testimonials/karthik.jpg",
     quote:
-      "I used Cloud Loop to plan my entire open source journey — GSoC, GSSoC, GitHub Campus Expert. Cloud Loop showed me what programs were available and when to apply. Best discovery resource for CS students in India.",
-    program: "GSSoC → GitHub Campus Expert → GSoC → Red Hat FTE",
+      "I used Cloud Loop to plan my entire open source journey — GSSoC, GitHub Campus Expert. Cloud Loop showed me what programs were available and when to apply. Best discovery resource for CS students in India.",
+    program: "GSSoC → GitHub Campus Expert → Red Hat FTE",
   },
 ];
 
@@ -61,6 +61,6 @@ export const faqs = [
   },
   {
     q: "Which companies and programs are covered?",
-    a: "We cover programs from Google, Microsoft, Amazon, Meta, GitHub, NVIDIA, IBM, Oracle, Cisco, Intel, and hundreds of other companies — plus campus hackathons, government programs, and open source initiatives.",
+    a: "We cover programs from Google, Microsoft, Amazon, Meta, GitHub, Red Bull, Adobe, Perplexity, Canva, HackerRank, Supabase, and hundreds of other companies — plus campus hackathons, government programs, and open source initiatives.",
   },
 ];

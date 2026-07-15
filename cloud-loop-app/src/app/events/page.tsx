@@ -3,8 +3,7 @@
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
-import { events } from "@/lib/data";
-import { EventCard } from "@/components/cards/EventCard";
+import { events, EventCard } from "@/features/events";
 import { cn } from "@/lib/utils";
 
 const types = ["All", "Hackathon", "Competition", "Bootcamp", "Workshop", "Conference"];
