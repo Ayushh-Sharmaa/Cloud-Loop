@@ -247,7 +247,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {certifications.slice(0, 4).map((cert, i) => (
               <motion.div key={cert.id} variants={fadeUp} initial="hidden" whileInView="visible" custom={i} viewport={{ once: true }}>
-                <CertificationCard cert={cert} compact />
+                <CertificationCard cert={cert} />
               </motion.div>
             ))}
           </div>

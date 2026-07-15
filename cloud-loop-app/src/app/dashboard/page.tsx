@@ -2,7 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { Bookmark, Send, Clock, Award, Bell } from "lucide-react";
-import { programs, events, internships, jobs, certifications } from "@/lib/data";
+import { programs } from "@/features/programs";
+import { events } from "@/features/events";
+import { internships } from "@/features/internships";
+import { jobs } from "@/features/jobs";
+import { certifications } from "@/features/certifications";
 import { formatDate, cn } from "@/lib/utils";
 import Link from "next/link";
 import { useUser } from "@clerk/nextjs";

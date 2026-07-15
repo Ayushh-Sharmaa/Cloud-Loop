@@ -1,5 +1,9 @@
 import { MetadataRoute } from "next";
-import { programs, events, internships, jobs, certifications } from "@/lib/data";
+import { programs } from "@/features/programs";
+import { events } from "@/features/events";
+import { internships } from "@/features/internships";
+import { jobs } from "@/features/jobs";
+import { certifications } from "@/features/certifications";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://cloudloop.dev";
