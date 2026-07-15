@@ -39,7 +39,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <Image src="/arcade-logo.png" alt="Cloud Loop" width={32} height={32} className="rounded-full object-cover" />
+              <Image src="/cloud-loop-logo.jpg" alt="Cloud Loop" width={32} height={32} className="rounded-full object-cover" />
               <span className="font-bold text-lg tracking-tight text-text-primary dark:text-dark-text-primary">Cloud Loop</span>
             </Link>
             <p className="text-sm text-text-secondary dark:text-dark-text-secondary leading-relaxed mb-6 max-w-xs">

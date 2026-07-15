@@ -55,7 +55,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
             <Image
-              src="/arcade-logo.png"
+              src="/cloud-loop-logo.jpg"
               alt="Cloud Loop"
               width={36}
               height={36}
