@@ -107,7 +107,7 @@ export const programs = [
     slug: "naukri-campus-ambassador-program",
     name: "Naukri Campus Ambassador Program",
     provider: "Naukri Campus",
-    providerLogo: "https://www.google.com/s2/favicons?domain=naukri.com&sz=128",
+    providerLogo: "/naukri-logo.png",
     category: "Campus Ambassador",
     status: "open" as const,
     difficulty: "Beginner" as const,
