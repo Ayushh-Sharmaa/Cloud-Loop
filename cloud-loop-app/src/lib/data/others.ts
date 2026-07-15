@@ -32,7 +32,7 @@ export const successStories = [
 ];
 
 export const categories = [
-  { id: "programs", name: "Programs", icon: "Award", count: 6, description: "Ambassador & learning programs", color: "#4FD9FF" },
+  { id: "programs", name: "Programs", icon: "Award", count: 16, description: "Ambassador & learning programs", color: "#4FD9FF" },
   { id: "events", name: "Events", icon: "Calendar", count: 6, description: "Hackathons, workshops & conferences", color: "#7A5CFF" },
   { id: "internships", name: "Internships", icon: "Briefcase", count: 8, description: "Paid & unpaid internship roles", color: "#A855F7" },
   { id: "jobs", name: "Jobs", icon: "Building2", count: 18, description: "Full-time campus & fresher jobs", color: "#4FD9FF" },
