@@ -20,7 +20,6 @@ import { useState, use } from "react";
 function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { registrationForm?: string; facilitatorCode?: string } }) {
   const [copied, setCopied] = useState(false);
   const [showToast, setShowToast] = useState(false);
-  const [ambassadorModal, setAmbassadorModal] = useState(false);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(program.facilitatorCode ?? "GCAF26-IN-MGG-3E2");
@@ -45,36 +44,7 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
         </div>
       </div>
 
-      {/* Ambassador Modal as Full-Screen Message */}
-      {ambassadorModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-background dark:bg-dark-background p-4">
-          <div className="w-full max-w-lg p-8 text-center space-y-6">
-            <div className="w-20 h-20 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mx-auto shadow-md">
-              <AlertCircle size={36} className="text-amber-600 dark:text-amber-400 animate-bounce" />
-            </div>
-            <div className="space-y-3">
-              <h2 className="text-2xl font-black text-text-primary dark:text-dark-text-primary">
-                Applications are currently closed.
-              </h2>
-              <p className="text-text-secondary dark:text-dark-text-secondary text-sm leading-relaxed max-w-md mx-auto">
-                We are not accepting Ambassador Applications at the moment.
-              </p>
-              <p className="text-text-primary dark:text-dark-text-primary font-bold text-sm leading-relaxed max-w-md mx-auto">
-                Applications will reopen during the Second Week of August.
-              </p>
-              <p className="text-xs text-text-secondary dark:text-dark-text-secondary max-w-sm mx-auto">
-                Stay connected with our official WhatsApp and Telegram communities for announcements.
-              </p>
-            </div>
-            <button
-              onClick={() => setAmbassadorModal(false)}
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-text-primary dark:text-dark-text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors font-bold text-sm"
-            >
-              <ArrowLeft size={16} /> Back
-            </button>
-          </div>
-        </div>
-      )}
+
 
       {/* ── HERO ── */}
       <div className="bg-gradient-to-br from-blue-950 via-indigo-950 to-purple-950 border-b border-white/10 pt-24 pb-14 px-4 relative overflow-hidden">
@@ -152,12 +122,7 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
             >
               Enroll Now <ExternalLink size={14} />
             </a>
-            <button
-              onClick={() => setAmbassadorModal(true)}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition-all duration-200"
-            >
-              Apply as Ambassador <ChevronRight size={14} />
-            </button>
+
           </div>
 
           <p className="text-white/40 text-xs mt-3">
