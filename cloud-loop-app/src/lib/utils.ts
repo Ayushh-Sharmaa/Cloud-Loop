@@ -30,7 +30,7 @@ export function getDaysLeft(dateStr: string): number | null {
 export function getDeadlineLabel(dateStr: string): string {
   const days = getDaysLeft(dateStr);
   if (days === null) return "Always open";
-  if (days < 0) return "Closed";
+  if (days < 0) return "Open";
   if (days === 0) return "Closes today";
   if (days === 1) return "1 day left";
   if (days <= 7) return `${days} days left`;
