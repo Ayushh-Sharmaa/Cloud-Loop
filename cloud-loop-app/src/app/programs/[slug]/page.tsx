@@ -1138,6 +1138,190 @@ function AWSSBCLPage({ program }: { program: typeof programs[0] }) {
 }
 
 // ─────────────────────────────────────────
+// AWS Student Builder Group Leaders Custom Page
+// ─────────────────────────────────────────
+
+function AWSSBGLPage({ program }: { program: typeof programs[0] }) {
+  return (
+    <div className="min-h-screen bg-background dark:bg-dark-background">
+      {/* Hero */}
+      <div className="bg-gradient-to-br from-blue-950 via-slate-950 to-orange-950 border-b border-white/10 pt-24 pb-14 px-4 relative overflow-hidden">
+        <div className="container-narrow">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-8">
+            <div className="shrink-0 bg-white p-2 rounded-2xl ring-4 ring-white/20 shadow-2xl">
+              <Image
+                src={program.providerLogo || ""}
+                alt="AWS Logo"
+                width={100}
+                height={100}
+                className="object-contain w-[100px] h-[100px]"
+              />
+            </div>
+            <div>
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 uppercase tracking-wide">
+                  OPEN
+                </span>
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                  Beginner
+                </span>
+                <span className="text-xs px-2.5 py-1 rounded-full bg-white/10 text-white/70 border border-white/10">
+                  Ambassador
+                </span>
+              </div>
+              <h1 className="text-3xl md:text-4xl font-black text-white leading-tight mb-1">
+                AWS Student Builder
+                <span className="block text-blue-400 font-mono">Group Leaders (SBGL)</span>
+              </h1>
+              <p className="text-white/60 text-sm mt-1">by Amazon Web Services</p>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-6 text-sm text-white/70 mb-8">
+            <span className="flex items-center gap-2">
+              <Clock size={14} className="text-blue-400" />
+              Flexible / Ongoing Commitment
+            </span>
+            <span className="flex items-center gap-2">
+              <Globe size={14} className="text-blue-400" />
+              Active in: USA, India, Brazil, and worldwide
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="container-narrow py-12 space-y-8">
+        {/* Description */}
+        <div className="rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card p-6 md:p-8 space-y-4">
+          <h2 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">
+            Overview
+          </h2>
+          <p className="text-sm text-text-secondary dark:text-dark-text-secondary leading-relaxed">
+            AWS Student Builder Group Leaders (SBGL) are student leaders who establish, run, and grow official AWS Student Builder Groups on their university campuses. Leaders help fellow students learn cloud technologies, build projects, and prepare for careers in tech.
+          </p>
+          <p className="text-sm text-text-secondary dark:text-dark-text-secondary leading-relaxed">
+            By leading a campus group, you represent AWS Developer Experience on your campus, coordinate with cloud advocates, and gain official support to run workshops, hackathons, and study sessions.
+          </p>
+        </div>
+
+        {/* What will you do */}
+        <div className="rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card p-6 md:p-8 space-y-4">
+          <h2 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">
+            What will you do as a Group Leader?
+          </h2>
+          <ul className="space-y-3">
+            {[
+              "Launch and manage an official AWS Student Builder Group on your campus.",
+              "Coordinate study jams, cloud certification prep groups, and hands-on lab sessions.",
+              "Build a community of students who are passionate about learning cloud computing and AWS.",
+              "Host speaker events, mini hackathons, and networking sessions for builders."
+            ].map((task, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm text-text-secondary dark:text-dark-text-secondary">
+                <CheckCircle2 size={16} className="text-blue-500 shrink-0 mt-0.5" />
+                {task}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Benefits */}
+        <div className="rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card p-6 md:p-8 space-y-4">
+          <h2 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">
+            What’s in it for you?
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { title: "🗣️ Leadership Experience", desc: "Build real community management, speaking, and leadership credentials." },
+              { title: "☁️ AWS Credits & Support", desc: "Get AWS credits and official learning materials to support your group events." },
+              { title: "🎁 Exclusive Swag", desc: "Receive official AWS student group merchandise and leader welcome kits." },
+              { title: "💼 Professional Networking", desc: "Connect directly with AWS developer advocates, recruiters, and tech mentors." }
+            ].map((benefit, i) => (
+              <div key={i} className="p-4 rounded-xl border border-border dark:border-dark-border bg-gray-50 dark:bg-dark-background">
+                <h3 className="font-bold text-sm text-text-primary dark:text-dark-text-primary flex items-center gap-2">
+                  <Gift size={16} className="text-blue-500" />
+                  {benefit.title}
+                </h3>
+                <p className="text-xs text-text-secondary dark:text-dark-text-secondary mt-1 leading-relaxed">
+                  {benefit.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Qualifications */}
+        <div className="rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card p-6 md:p-8 space-y-4">
+          <h2 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">
+            Who should apply?
+          </h2>
+          <ul className="space-y-3">
+            {[
+              "Enrolled university students who are passionate about cloud computing and open learning.",
+              "Self-motivated students with strong communication and organizational skills.",
+              "Students who enjoy building and nurturing technology communities on campus."
+            ].map((qual, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm text-text-secondary dark:text-dark-text-secondary">
+                <CheckCircle2 size={16} className="text-blue-500 shrink-0 mt-0.5" />
+                {qual}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Application Section */}
+        <div className="rounded-2xl border border-blue-500/30 hover:border-blue-500/50 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 p-6 md:p-8 space-y-6">
+          <div>
+            <h2 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">
+              Apply to lead on your campus
+            </h2>
+            <p className="text-sm text-text-secondary dark:text-dark-text-secondary mt-1">
+              Applications are reviewed on a rolling basis. Set up your group and start connecting builders today!
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-5 rounded-xl border border-border dark:border-dark-border bg-white dark:bg-dark-card space-y-3">
+              <h3 className="font-bold text-sm text-text-primary dark:text-dark-text-primary">
+                📝 Path A: Referral Application (Recommended)
+              </h3>
+              <p className="text-xs text-text-secondary dark:text-dark-text-secondary leading-relaxed">
+                If you have a referral code or want to apply via the official Cloud Loop facilitator referral program, fill out this direct application form.
+              </p>
+              <a
+                href="https://forms.gle/39m9vHB8LHLtceoR9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-400 hover:to-indigo-500 shadow-md shadow-blue-500/20 transition-all duration-200 hover:scale-105"
+              >
+                Apply via Referral <ExternalLink size={13} />
+              </a>
+            </div>
+            <div className="p-5 rounded-xl border border-border dark:border-dark-border bg-white dark:bg-dark-card space-y-3">
+              <h3 className="font-bold text-sm text-text-primary dark:text-dark-text-primary">
+                🌐 Path B: Non-Referral Application
+              </h3>
+              <p className="text-xs text-text-secondary dark:text-dark-text-secondary leading-relaxed">
+                If you wish to apply directly through the official website without a facilitator referral, please apply through the official AWS portal only.
+              </p>
+              <a
+                href="https://aws.amazon.com/developer/community/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold border border-border dark:border-dark-border text-text-primary dark:text-dark-text-primary hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-200"
+              >
+                AWS Student Groups Portal <ExternalLink size={13} />
+              </a>
+            </div>
+          </div>
+          <div className="pt-4 border-t border-border dark:border-dark-border text-xs text-text-secondary dark:text-dark-text-secondary flex flex-wrap gap-4 justify-between items-center">
+            <span>📧 Questions? Email the team at: <a href="mailto:StudentBuilders@amazon.com" className="font-bold hover:underline">StudentBuilders@amazon.com</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────
 // Route Entry Point
 // ─────────────────────────────────────────
 
@@ -1160,6 +1344,10 @@ export default function ProgramDetailPage({ params }: { params: Promise<{ slug: 
 
   if (slug === "aws-student-builder-campus-leaders") {
     return <AWSSBCLPage program={program} />;
+  }
+
+  if (slug === "aws-student-builder-group-leaders") {
+    return <AWSSBGLPage program={program} />;
   }
 
   return <GenericProgramPage program={program} related={related} />;

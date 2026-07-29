@@ -15,6 +15,7 @@ import { kiroCampusAmbassadorProgram } from "./list/kiro-campus-ambassador-progr
 import { hackerRankCampusCrewProgram } from "./list/hackerrank-campus-crew";
 import { canvaCampusAmbassadorProgram } from "./list/canva-campus-ambassador";
 import { awsStudentBuilderCampusLeadersProgram } from "./list/aws-student-builder-campus-leaders";
+import { awsStudentBuilderGroupLeadersProgram } from "./list/aws-student-builder-group-leaders";
 
 export const programs = [
   googleCloudArcadeProgram,
@@ -34,4 +35,5 @@ export const programs = [
   hackerRankCampusCrewProgram,
   canvaCampusAmbassadorProgram,
   awsStudentBuilderCampusLeadersProgram,
+  awsStudentBuilderGroupLeadersProgram,
 ];
