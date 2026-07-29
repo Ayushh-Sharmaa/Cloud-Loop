@@ -1,19 +1,13 @@
-import { adsparkxInternship } from "./list/adsparkx";
-import { emoEnergyInternship } from "./list/emo-energy";
-import { finacplusInternship } from "./list/finacplus";
-import { geHealthcareDataAnalystInternship } from "./list/ge-healthcare-data-analyst";
-import { geHealthcareInternship } from "./list/ge-healthcare";
-import { icertisInternship } from "./list/icertis";
-import { riverheadInternship } from "./list/riverhead";
-import { stripeInternship } from "./list/stripe";
+import { statestreetApprenticeInternship } from "./list/statestreet-apprentice";
+import { googleApprenticeInternship } from "./list/google-apprentice";
+import { gehealthcareInternship } from "./list/gehealthcare-intern";
+import { salesforceInternship } from "./list/salesforce-intern";
+import { paathzInternship } from "./list/paathz-intern";
 
 export const internships = [
-  adsparkxInternship,
-  emoEnergyInternship,
-  finacplusInternship,
-  geHealthcareDataAnalystInternship,
-  geHealthcareInternship,
-  icertisInternship,
-  riverheadInternship,
-  stripeInternship,
+  statestreetApprenticeInternship,
+  googleApprenticeInternship,
+  gehealthcareInternship,
+  salesforceInternship,
+  paathzInternship,
 ];

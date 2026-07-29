@@ -1,39 +1,37 @@
-import { adobeJob } from "./list/adobe";
-import { americanExpressJob } from "./list/american-express";
-import { apnaJob } from "./list/apna";
-import { cloudflareJob } from "./list/cloudflare";
-import { cognizantJob } from "./list/cognizant";
-import { congaJob } from "./list/conga";
-import { digantaraJob } from "./list/digantara";
-import { elevenlabsJob } from "./list/elevenlabs";
-import { eurofinsJob } from "./list/eurofins";
-import { forbesAdvisorJob } from "./list/forbes-advisor";
-import { johnsonControlsJob } from "./list/johnson-controls";
-import { netomiJob } from "./list/netomi";
-import { oracleJob } from "./list/oracle";
-import { sifiveJob } from "./list/sifive";
-import { unreconciledJob } from "./list/unreconciled";
-import { vymoJob } from "./list/vymo";
-import { wellsFargoJob } from "./list/wells-fargo";
-import { zerodhaJob } from "./list/zerodha";
+import { payuBAJob } from "./list/payu-ba";
+import { ripplingSDEJob } from "./list/rippling-sde";
+import { amazonSDEJob } from "./list/amazon-sde";
+import { provueBackendJob } from "./list/provue-backend";
+import { cencoraSDEJob } from "./list/cencora-sde";
+import { medianetAndroidJob } from "./list/medianet-android";
+import { confidentialWebJob } from "./list/confidential-web";
+import { millerknollAssociateJob } from "./list/millerknoll-associate";
+import { dataeminenceUIJob } from "./list/dataeminence-ui";
+import { quickreplyForwardJob } from "./list/quickreply-forward";
+import { deloitteGraduateJob } from "./list/deloitte-graduate";
+import { rockwellQAJob } from "./list/rockwell-qa";
+import { hevoSDEJob } from "./list/hevo-sde";
+import { adobeMTSJob } from "./list/adobe-mts";
+import { clinisysAssociateJob } from "./list/clinisys-associate";
+import { nikeSEJob } from "./list/nike-se";
+import { gokwikSDEJob } from "./list/gokwik-sde";
 
 export const jobs = [
-  adobeJob,
-  americanExpressJob,
-  apnaJob,
-  cloudflareJob,
-  cognizantJob,
-  congaJob,
-  digantaraJob,
-  elevenlabsJob,
-  eurofinsJob,
-  forbesAdvisorJob,
-  johnsonControlsJob,
-  netomiJob,
-  oracleJob,
-  sifiveJob,
-  unreconciledJob,
-  vymoJob,
-  wellsFargoJob,
-  zerodhaJob,
+  payuBAJob,
+  ripplingSDEJob,
+  amazonSDEJob,
+  provueBackendJob,
+  cencoraSDEJob,
+  medianetAndroidJob,
+  confidentialWebJob,
+  millerknollAssociateJob,
+  dataeminenceUIJob,
+  quickreplyForwardJob,
+  deloitteGraduateJob,
+  rockwellQAJob,
+  hevoSDEJob,
+  adobeMTSJob,
+  clinisysAssociateJob,
+  nikeSEJob,
+  gokwikSDEJob,
 ];

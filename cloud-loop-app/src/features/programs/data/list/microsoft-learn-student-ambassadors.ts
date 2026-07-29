@@ -10,7 +10,7 @@ export const microsoftLearnStudentAmbassadorsProgram: Program = {
   status: "open",
   difficulty: "Intermediate",
   duration: "Ongoing",
-  deadline: "2024-10-15",
+  deadline: "2026-10-15",
   eligibility: "Currently enrolled students at accredited universities",
   keyBenefit: "Azure credits, LinkedIn Premium, free certifications, mentorship",
   description:

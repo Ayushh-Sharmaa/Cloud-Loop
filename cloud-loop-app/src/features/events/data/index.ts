@@ -1,15 +1,15 @@
-import { smartIndiaHackathon2024Event } from "./list/smart-india-hackathon-2024";
-import { googleHashcode2024Event } from "./list/google-hashcode-2024";
-import { microsoftImagineCup2024Event } from "./list/microsoft-imagine-cup-2024";
-import { mlhHackathonSeasonEvent } from "./list/mlh-hackathon-season";
-import { awsBuildersFairEvent } from "./list/aws-builders-fair";
-import { web3BuildersBootcampEvent } from "./list/web3-builders-bootcamp";
+import { smartIndiaHackathon2026Event } from "./list/smart-india-hackathon-2026";
+import { googleHashcode2026Event } from "./list/google-hashcode-2026";
+import { microsoftImagineCup2026Event } from "./list/microsoft-imagine-cup-2026";
+import { mlhHackathonSeason2026Event } from "./list/mlh-hackathon-season-2026";
+import { awsReinvent2026Event } from "./list/aws-reinvent-student-program-2026";
+import { web3BuildersBootcamp2026Event } from "./list/web3-builders-bootcamp-2026";
 
 export const events = [
-  smartIndiaHackathon2024Event,
-  googleHashcode2024Event,
-  microsoftImagineCup2024Event,
-  mlhHackathonSeasonEvent,
-  awsBuildersFairEvent,
-  web3BuildersBootcampEvent,
+  smartIndiaHackathon2026Event,
+  googleHashcode2026Event,
+  microsoftImagineCup2026Event,
+  mlhHackathonSeason2026Event,
+  awsReinvent2026Event,
+  web3BuildersBootcamp2026Event,
 ];

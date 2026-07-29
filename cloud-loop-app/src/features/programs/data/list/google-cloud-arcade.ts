@@ -7,7 +7,7 @@ export const googleCloudArcadeProgram: Program = {
   provider: "Google",
   providerLogo: "/arcade-logo.png",
   category: "Cloud",
-  status: "open",
+  status: "closed",
   difficulty: "Beginner",
   duration: "13 July 2026 – 14 September 2026",
   deadline: "2026-09-14",

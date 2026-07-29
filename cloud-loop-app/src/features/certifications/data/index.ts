@@ -1,17 +1,17 @@
-import { snowflakeDevsCertification } from "./list/snowflake-devs";
-import { modernDataEngCertification } from "./list/modern-data-eng";
-import { generativeAiCertification } from "./list/generative-ai";
-import { talkToDataCertification } from "./list/talk-to-data";
-import { advDataEngCertification } from "./list/adv-data-eng";
-import { aiAgentsCertification } from "./list/ai-agents";
-import { apacheIcebergCertification } from "./list/apache-iceberg";
+import { mongodbOverviewCertification } from "./list/mongodb-overview";
+import { relationalDocumentModelCertification } from "./list/relational-document-model";
+import { schemaDesignPatternsCertification } from "./list/schema-design-patterns";
+import { crudOperationsMongodbCertification } from "./list/crud-operations-mongodb";
+import { indexingDesignFundamentalsCertification } from "./list/indexing-design-fundamentals";
+import { vectorSearchFundamentalsCertification } from "./list/vector-search-fundamentals";
+import { ragMongodbCertification } from "./list/rag-mongodb";
 
 export const certifications = [
-  snowflakeDevsCertification,
-  modernDataEngCertification,
-  generativeAiCertification,
-  talkToDataCertification,
-  advDataEngCertification,
-  aiAgentsCertification,
-  apacheIcebergCertification,
+  mongodbOverviewCertification,
+  relationalDocumentModelCertification,
+  schemaDesignPatternsCertification,
+  crudOperationsMongodbCertification,
+  indexingDesignFundamentalsCertification,
+  vectorSearchFundamentalsCertification,
+  ragMongodbCertification,
 ];

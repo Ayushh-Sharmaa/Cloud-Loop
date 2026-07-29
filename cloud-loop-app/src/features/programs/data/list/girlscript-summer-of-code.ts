@@ -9,8 +9,8 @@ export const girlScriptSummerOfCodeProgram: Program = {
   category: "Open Source",
   status: "open",
   difficulty: "Beginner",
-  duration: "3 months",
-  deadline: "2025-11-30",
+  duration: "May – July 2026",
+  deadline: "2026-03-24",
   eligibility: "All students, especially beginners in open source",
   keyBenefit: "Swag, certificates, top performer recognition, job referrals",
   description:

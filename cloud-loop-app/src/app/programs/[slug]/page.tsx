@@ -76,8 +76,8 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
             </div>
             <div>
               <div className="flex flex-wrap items-center gap-2 mb-3">
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 uppercase tracking-wide">
-                  OPEN
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-red-500/20 text-red-300 border border-red-500/30 uppercase tracking-wide">
+                  CLOSED
                 </span>
                 <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30">
                   Beginner
@@ -106,27 +106,32 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
             </span>
           </div>
 
-          <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl px-5 py-3 mb-6 inline-flex items-center gap-3">
-            <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <p className="text-emerald-300 text-sm font-medium">
-              Enrolments are now <span className="font-bold text-emerald-200">OPEN!</span>
+          <div className="bg-red-500/10 border border-red-500/30 rounded-xl px-5 py-3 mb-6 inline-flex items-center gap-3">
+            <div className="w-2 h-2 rounded-full bg-red-400" />
+            <p className="text-red-300 text-sm font-medium">
+              Registrations are now <span className="font-bold text-red-200">CLOSED!</span>
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 items-center">
+            <button
+              disabled
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-white bg-gray-500/50 cursor-not-allowed opacity-75"
+            >
+              Registration Closed <X size={14} />
+            </button>
             <a
-              href="https://forms.gle/Z2TX54F8bQ4ooV5c9"
+              href="https://tinyurl.com/Arcade-Progress-Report"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-400 hover:to-indigo-500 shadow-lg shadow-blue-500/30 transition-all duration-200 hover:scale-105"
             >
-              Enroll Now <ExternalLink size={14} />
+              View Progress Report <ExternalLink size={14} />
             </a>
-
           </div>
 
           <p className="text-white/40 text-xs mt-3">
-            Registration closes once all seats are filled or on 20 July 2026 at 11:59 PM IST, whichever comes first.
+            Registrations closed on 20 July 2026. The Progress Report is updated daily by 6:00 PM IST.
           </p>
         </div>
       </div>
@@ -166,6 +171,150 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
             </button>
           </div>
         </div>
+
+        {/* ── WELCOME TO CLOUD LOOP ── */}
+        <div className="rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card p-6 md:p-8 space-y-6">
+          <div>
+            <h2 className="text-xl md:text-2xl font-black text-text-primary dark:text-dark-text-primary flex items-center gap-2">
+              Welcome to Cloud Loop! ☁️
+            </h2>
+            <p className="text-sm text-text-secondary dark:text-dark-text-secondary mt-2 leading-relaxed">
+              Cloud Loop is your one-stop community for everything related to Google Cloud Arcade.
+              Whether you're a beginner or an experienced learner, you'll find all the resources, updates, and guidance needed to complete your Arcade journey successfully.
+            </p>
+          </div>
+          <div className="border-t border-border dark:border-dark-border pt-6">
+            <h3 className="font-bold text-sm text-text-primary dark:text-dark-text-primary mb-3">
+              📌 What You'll Find Here
+            </h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-text-secondary dark:text-dark-text-secondary">
+              {[
+                { label: "📢 Official Arcade announcements" },
+                { label: "🎮 Monthly Games updates" },
+                { label: "🏅 Skill Badges" },
+                { label: "📚 Guides & Resources" },
+                { label: "📊 Progress Reports" },
+                { label: "💡 Tips & Best Practices" },
+                { label: "⏰ Important reminders & deadlines" },
+              ].map((item, index) => (
+                <li key={index} className="flex items-center gap-2">
+                  <span className="text-xs">•</span>
+                  {item.label}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* ── PROGRESS REPORT ── */}
+        <ArcadeSection icon={<FileText size={18} />} title="Progress Report" accent="blue">
+          <div className="space-y-4">
+            <p className="text-sm text-text-secondary dark:text-dark-text-secondary leading-relaxed">
+              Check your Google Cloud Arcade game progress and skill badge milestones. The Progress Report is updated daily by 6:00 PM IST.
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="https://tinyurl.com/Arcade-Progress-Report"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-400 hover:to-indigo-500 shadow-md shadow-blue-500/20 transition-all duration-200 hover:scale-105"
+              >
+                Open Progress Report <ExternalLink size={13} />
+              </a>
+              <span className="text-xs px-2.5 py-1.5 rounded-lg bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 font-semibold animate-pulse">
+                Updated daily by 6:00 PM IST
+              </span>
+            </div>
+          </div>
+        </ArcadeSection>
+
+        {/* ── IMPORTANT RESOURCES ── */}
+        <ArcadeSection icon={<Globe size={18} />} title="Important Resources" accent="purple">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              {
+                name: "📝 Subscription Form (Mandatory)",
+                href: "https://forms.gle/2h6xCvY3sW29pw4p7",
+                desc: "Fill this mandatory form to link your progress"
+              },
+              {
+                name: "☁️ Arcade Website",
+                href: "https://go.cloudskillsboost.google/arcade",
+                desc: "Official Google Cloud Arcade portal"
+              },
+              {
+                name: "🎮 Monthly Games",
+                href: "https://tinyurl.com/Arcade-Monthly-Games",
+                desc: "Access monthly games and trivia quests"
+              },
+              {
+                name: "🏅 Skill Badges",
+                href: "https://tinyurl.com/Arcade-Skill-Badges",
+                desc: "Complete skill badges to earn points"
+              },
+              {
+                name: "💳 Credits Guide",
+                href: "https://tinyurl.com/759-Credits",
+                desc: "Step-by-step guide to claim free credits"
+              },
+              {
+                name: "📚 Master Sheet",
+                href: "https://tinyurl.com/Arcade-Master-Sheet",
+                desc: "All labs and badge solutions list"
+              },
+              {
+                name: "📖 Kick-off Deck Guide",
+                href: "https://tinyurl.com/Arcade-Guide-2026-C1",
+                desc: "Official kick-off deck and guidelines"
+              },
+              {
+                name: "📘 Ultimate Guide (A–Z)",
+                href: "https://tinyurl.com/Ultimate-Guide-Arcade",
+                desc: "Comprehensive A to Z guide for Arcade"
+              },
+              {
+                name: "🗺️ Monthly Roadmap",
+                href: "https://tinyurl.com/Arcade-Roadmap",
+                desc: "Monthly milestone tracker and updates"
+              },
+              {
+                name: "🏆 Prize Counter Guide",
+                href: "https://tinyurl.com/Arcade-Prize-Counter-Guide",
+                desc: "Check rewards and swag redemption details"
+              },
+              {
+                name: "📧 Arcade Support",
+                href: "mailto:arcade-facilitator@google.com",
+                desc: "Contact official support team"
+              },
+              {
+                name: "🌐 Cloud Loop Platform",
+                href: "https://cloud-loop.vercel.app/",
+                desc: "This platform homepage link"
+              }
+            ].map((resource) => (
+              <a
+                key={resource.name}
+                href={resource.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-xl border border-border dark:border-dark-border bg-gray-50 dark:bg-dark-card hover:border-purple-300 dark:hover:border-purple-500/50 hover:shadow-md transition-all duration-200 group flex flex-col justify-between"
+              >
+                <div>
+                  <h3 className="font-bold text-sm text-text-primary dark:text-dark-text-primary group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                    {resource.name}
+                  </h3>
+                  <p className="text-xs text-text-secondary dark:text-dark-text-secondary mt-1">
+                    {resource.desc}
+                  </p>
+                </div>
+                <div className="flex justify-end mt-3">
+                  <ExternalLink size={12} className="text-text-secondary group-hover:text-text-primary dark:group-hover:text-dark-text-primary transition-colors" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </ArcadeSection>
 
         {/* ── ABOUT THE PROGRAM ── */}
         <ArcadeSection icon={<BookOpen size={18} />} title="About the Program" accent="purple">
@@ -297,7 +446,7 @@ function ArcadeFacilitatorPage({ program }: { program: typeof programs[0] & { re
               },
               {
                 name: "WhatsApp Community",
-                href: "https://chat.whatsapp.com/JlAx2MYkAfZLBoy4Jx9J7X",
+                href: "https://chat.whatsapp.com/BvkoxWY8KZd1m3xTpdp2WX",
                 icon: "🤝",
                 color: "bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-500/30 hover:border-emerald-400/60",
                 textColor: "text-emerald-700 dark:text-emerald-400",
@@ -430,13 +579,48 @@ function GenericProgramPage({ program, related }: {
     "Active student enrollment at an accredited institution",
   ];
 
-  const timeline = [
+  let timeline: { label: string; date: string; done: boolean; description?: string }[] = [
     { label: "Applications Open", date: "Ongoing", done: true },
     { label: "Application Deadline", date: formatDate(program.deadline), done: false },
     { label: "Selection Announcement", date: "4–6 weeks after deadline", done: false },
     { label: "Program Start", date: "Rolling basis", done: false },
     { label: "Completion & Certificate", date: `After ${program.duration}`, done: false },
   ];
+
+  if (program.slug === "girlscript-summer-of-code") {
+    timeline = [
+      {
+        label: "Launch Event + Applications Open",
+        date: "24th March 2026",
+        description: "GSSoC 2026 kicks off live! Attend the launch event for a walkthrough of the program, track guide, and the Cloudinary bonus session.",
+        done: true
+      },
+      {
+        label: "Selections",
+        date: "End of March / Early April 2026",
+        description: "Applications are reviewed and participants are selected. Contributors, mentors, project admins, and ambassadors are confirmed for the program.",
+        done: true
+      },
+      {
+        label: "Onboarding and Kick-off",
+        date: "April 2026",
+        description: "Selected participants are onboarded. Projects go live, contributors pick their issues, mentors are assigned, and the building begins.",
+        done: true
+      },
+      {
+        label: "Contribution Period",
+        date: "May to June 2026",
+        description: "The main program period. Contributors work on projects, submit PRs, build agents, earn points, and climb the leaderboard.",
+        done: true
+      },
+      {
+        label: "Final Evaluations and Results",
+        date: "June to July 2026",
+        description: "All contributions are evaluated, leaderboards are finalized, and top contributors across both tracks are recognized and rewarded.",
+        done: false
+      }
+    ];
+  }
 
   return (
     <div className="min-h-screen bg-background dark:bg-dark-background pt-20">
@@ -504,15 +688,20 @@ function GenericProgramPage({ program, related }: {
               </ul>
             </GenericSection>
             <GenericSection title="Timeline">
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {timeline.map((item, i) => (
                   <div key={i} className="flex items-start gap-4">
-                    <div className={cn("w-3 h-3 rounded-full mt-1.5 shrink-0 border-2",
+                    <div className={cn("w-3.5 h-3.5 rounded-full mt-1 shrink-0 border-2",
                       item.done ? "bg-emerald-500 border-emerald-500" : "bg-transparent border-border dark:border-dark-border"
                     )} />
-                    <div>
-                      <p className="text-sm font-medium text-text-primary dark:text-dark-text-primary">{item.label}</p>
-                      <p className="text-xs text-text-secondary dark:text-dark-text-secondary">{item.date}</p>
+                    <div className="space-y-0.5">
+                      <p className="text-sm font-bold text-text-primary dark:text-dark-text-primary">{item.label}</p>
+                      <p className="text-xs text-secondary dark:text-primary font-semibold">{item.date}</p>
+                      {item.description && (
+                        <p className="text-xs text-text-secondary dark:text-dark-text-secondary mt-1.5 leading-relaxed max-w-2xl">
+                          {item.description}
+                        </p>
+                      )}
                     </div>
                   </div>
                 ))}
