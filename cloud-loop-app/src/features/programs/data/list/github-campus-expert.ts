@@ -10,7 +10,7 @@ export const githubCampusExpertProgram: Program = {
   status: "open",
   difficulty: "Intermediate",
   duration: "Ongoing",
-  deadline: "2025-09-15",
+  deadline: "2026-09-15",
   eligibility: "Students who are GitHub users and want to lead communities",
   keyBenefit: "Training, swag, GitHub Pro, speaking opportunities, conference travel",
   description:

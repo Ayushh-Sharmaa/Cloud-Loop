@@ -931,6 +931,213 @@ function NaukriAmbassadorPage({ program }: { program: typeof programs[0] }) {
 }
 
 // ─────────────────────────────────────────
+// AWS Student Builder Campus Leaders Custom Page
+// ─────────────────────────────────────────
+
+function AWSSBCLPage({ program }: { program: typeof programs[0] }) {
+  return (
+    <div className="min-h-screen bg-background dark:bg-dark-background">
+      {/* Hero */}
+      <div className="bg-gradient-to-br from-orange-950 via-slate-950 to-indigo-950 border-b border-white/10 pt-24 pb-14 px-4 relative overflow-hidden">
+        <div className="container-narrow">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-8">
+            <div className="shrink-0 bg-white p-2 rounded-2xl ring-4 ring-white/20 shadow-2xl">
+              <Image
+                src={program.providerLogo || ""}
+                alt="AWS Logo"
+                width={100}
+                height={100}
+                className="object-contain w-[100px] h-[100px]"
+              />
+            </div>
+            <div>
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 uppercase tracking-wide">
+                  OPEN
+                </span>
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-500/20 text-orange-300 border border-orange-500/30">
+                  Beginner
+                </span>
+                <span className="text-xs px-2.5 py-1 rounded-full bg-white/10 text-white/70 border border-white/10">
+                  Ambassador
+                </span>
+              </div>
+              <h1 className="text-3xl md:text-4xl font-black text-white leading-tight mb-1">
+                AWS Student Builder
+                <span className="block text-orange-400 font-mono">Campus Leaders (SBCL)</span>
+              </h1>
+              <p className="text-white/60 text-sm mt-1">by Amazon Web Services</p>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-6 text-sm text-white/70 mb-8">
+            <span className="flex items-center gap-2">
+              <Clock size={14} className="text-orange-400" />
+              12 Weeks (8–10 hours per week)
+            </span>
+            <span className="flex items-center gap-2">
+              <Globe size={14} className="text-orange-400" />
+              Active in: USA, India, Brazil
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="container-narrow py-12 space-y-8">
+        {/* Description */}
+        <div className="rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card p-6 md:p-8 space-y-4">
+          <h2 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">
+            Overview
+          </h2>
+          <p className="text-sm text-text-secondary dark:text-dark-text-secondary leading-relaxed">
+            AWS Student Builder Campus Leaders (SBCL) are paid, part-time student ambassadors who bring AWS Builder Center to life on their campuses. You'll drive awareness of cloud tools and resources, host events, create content, and inspire your peers to start building.
+          </p>
+          <p className="text-sm text-text-secondary dark:text-dark-text-secondary leading-relaxed">
+            This program is run by Amazon Web Services in partnership with official recruitment and management partners including NEXT GEN TEAM, Plus 1 Communications, and Effect Sports.
+          </p>
+        </div>
+
+        {/* What will you do */}
+        <div className="rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card p-6 md:p-8 space-y-4">
+          <h2 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">
+            What will you do as a Campus Leader?
+          </h2>
+          <ul className="space-y-3">
+            {[
+              "Share the value of AWS Builder Center to your peers and show them how to get started.",
+              "Develop and share content that highlights AWS Builder Center tools and education.",
+              "Host events on-campus that get people talking, like mini demos, tabling, class announcements, and anything that works for your campus."
+            ].map((task, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm text-text-secondary dark:text-dark-text-secondary">
+                <CheckCircle2 size={16} className="text-orange-500 shrink-0 mt-0.5" />
+                {task}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Benefits */}
+        <div className="rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card p-6 md:p-8 space-y-4">
+          <h2 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">
+            What’s in it for you?
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { title: "💵 You Get Paid", desc: "A paycheck for doing cool things and representing AWS on campus." },
+              { title: "💻 Hands-on Experience", desc: "Gain practical experience with AWS cloud tools and technologies." },
+              { title: "📈 Career Progression", desc: "Opportunity to reapply for future terms or lead AWS Student Builder Groups." },
+              { title: "🎓 Ongoing Coaching", desc: "Receive professional development coaching and group training sessions." }
+            ].map((benefit, i) => (
+              <div key={i} className="p-4 rounded-xl border border-border dark:border-dark-border bg-gray-50 dark:bg-dark-background">
+                <h3 className="font-bold text-sm text-text-primary dark:text-dark-text-primary flex items-center gap-2">
+                  <Gift size={16} className="text-orange-500" />
+                  {benefit.title}
+                </h3>
+                <p className="text-xs text-text-secondary dark:text-dark-text-secondary mt-1 leading-relaxed">
+                  {benefit.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Qualifications */}
+        <div className="rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card p-6 md:p-8 space-y-4">
+          <h2 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">
+            How can you qualify?
+          </h2>
+          <ul className="space-y-3">
+            {[
+              "You are a current college or university student (ages 18+) with at least one year remaining in your program.",
+              "You're the person your friends come to when they want to know what's happening on campus -- you're proactive and comfortable talking to different people.",
+              "You are involved in campus life, student organizations, or builder communities."
+            ].map((qual, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm text-text-secondary dark:text-dark-text-secondary">
+                <CheckCircle2 size={16} className="text-orange-500 shrink-0 mt-0.5" />
+                {qual}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Recruitment */}
+        <div className="rounded-2xl border border-border dark:border-dark-border bg-white dark:bg-dark-card p-6 md:p-8 space-y-4">
+          <h2 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">
+            How does recruitment work?
+          </h2>
+          <div className="space-y-4 text-sm text-text-secondary dark:text-dark-text-secondary">
+            <p>If you've been contacted about the SBCL program, here's what to expect:</p>
+            <div className="space-y-3 pl-2 border-l-2 border-orange-500/30">
+              <div>
+                <p className="font-bold text-text-primary dark:text-dark-text-primary">1. Initial outreach</p>
+                <p className="text-xs mt-0.5">You'll receive an email or message introducing the program and inviting you to learn more. (Note: Outreach may come from the NEXT GEN TEAM, Plus 1 Communications, or Effect Sports recruitment team on behalf of AWS).</p>
+              </div>
+              <div>
+                <p className="font-bold text-text-primary dark:text-dark-text-primary">2. Program onboarding conversation</p>
+                <p className="text-xs mt-0.5">A short video call where the recruitment team walks you through the program, answers questions, and gets to know you (a two-way conversation, not a formal interview).</p>
+              </div>
+              <div>
+                <p className="font-bold text-text-primary dark:text-dark-text-primary">3. Offer and onboarding</p>
+                <p className="text-xs mt-0.5">Selected students receive a formal offer and join a structured onboarding session before the program kicks off.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Application Section */}
+        <div className="rounded-2xl border border-orange-500/30 hover:border-orange-500/50 bg-gradient-to-br from-orange-500/5 to-indigo-500/5 p-6 md:p-8 space-y-6">
+          <div>
+            <h2 className="text-xl font-bold text-text-primary dark:text-dark-text-primary">
+              Sound like your thing?
+            </h2>
+            <p className="text-sm text-text-secondary dark:text-dark-text-secondary mt-1">
+              Applications are rolling, and spots are limited per campus. Supported countries: USA 🇺🇸, India 🇮🇳, and Brazil 🇧🇷.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-5 rounded-xl border border-border dark:border-dark-border bg-white dark:bg-dark-card space-y-3">
+              <h3 className="font-bold text-sm text-text-primary dark:text-dark-text-primary">
+                📝 Path A: Referral Application (Recommended)
+              </h3>
+              <p className="text-xs text-text-secondary dark:text-dark-text-secondary leading-relaxed">
+                If you have a referral code or want to apply via the official Cloud Loop facilitator referral program, fill out this direct application form.
+              </p>
+              <a
+                href="https://forms.gle/2WbSMSpwX9nKUpoz6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-400 hover:to-amber-500 shadow-md shadow-orange-500/20 transition-all duration-200 hover:scale-105"
+              >
+                Apply via Referral <ExternalLink size={13} />
+              </a>
+            </div>
+            <div className="p-5 rounded-xl border border-border dark:border-dark-border bg-white dark:bg-dark-card space-y-3">
+              <h3 className="font-bold text-sm text-text-primary dark:text-dark-text-primary">
+                🌐 Path B: Non-Referral Application
+              </h3>
+              <p className="text-xs text-text-secondary dark:text-dark-text-secondary leading-relaxed">
+                If you wish to apply directly through the official website without a facilitator referral, please apply through the official AWS portal only.
+              </p>
+              <a
+                href="https://aws.amazon.com/developer/community/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold border border-border dark:border-dark-border text-text-primary dark:text-dark-text-primary hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-200"
+              >
+                AWS Student Groups Portal <ExternalLink size={13} />
+              </a>
+            </div>
+          </div>
+          <div className="pt-4 border-t border-border dark:border-dark-border text-xs text-text-secondary dark:text-dark-text-secondary flex flex-wrap gap-4 justify-between items-center">
+            <span>📧 Questions? Email the team at: <a href="mailto:StudentBuilders@amazon.com" className="font-bold hover:underline">StudentBuilders@amazon.com</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────
 // Route Entry Point
 // ─────────────────────────────────────────
 
@@ -949,6 +1156,10 @@ export default function ProgramDetailPage({ params }: { params: Promise<{ slug: 
 
   if (slug === "naukri-campus-ambassador-program") {
     return <NaukriAmbassadorPage program={program} />;
+  }
+
+  if (slug === "aws-student-builder-campus-leaders") {
+    return <AWSSBCLPage program={program} />;
   }
 
   return <GenericProgramPage program={program} related={related} />;

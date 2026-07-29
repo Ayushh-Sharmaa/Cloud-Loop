@@ -14,6 +14,7 @@ import { supabaseSupaSquadProgram } from "./list/supabase-supasquad-program";
 import { kiroCampusAmbassadorProgram } from "./list/kiro-campus-ambassador-program";
 import { hackerRankCampusCrewProgram } from "./list/hackerrank-campus-crew";
 import { canvaCampusAmbassadorProgram } from "./list/canva-campus-ambassador";
+import { awsStudentBuilderCampusLeadersProgram } from "./list/aws-student-builder-campus-leaders";
 
 export const programs = [
   googleCloudArcadeProgram,
@@ -32,4 +33,5 @@ export const programs = [
   kiroCampusAmbassadorProgram,
   hackerRankCampusCrewProgram,
   canvaCampusAmbassadorProgram,
+  awsStudentBuilderCampusLeadersProgram,
 ];
