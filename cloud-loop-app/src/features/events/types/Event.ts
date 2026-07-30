@@ -15,4 +15,5 @@ export interface Event {
   prize?: string;
   tags: string[];
   registered?: number;
+  applyUrl?: string;
 }

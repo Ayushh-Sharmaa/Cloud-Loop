@@ -82,7 +82,7 @@ export default function EventDetailPage({ params }: { params: Promise<{ slug: st
             )}
           </div>
           <div className="flex flex-wrap gap-3 items-center">
-            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"
+            <a href={event.applyUrl || "https://www.google.com"} target="_blank" rel="noopener noreferrer"
               className="btn-gradient px-6 py-3 rounded-pill text-sm font-semibold text-white inline-flex items-center gap-2 shadow-lg hover:scale-[1.02] transition-transform">
               Register Now <ExternalLink size={15} />
             </a>

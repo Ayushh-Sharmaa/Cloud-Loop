@@ -4,8 +4,10 @@ import { microsoftImagineCup2026Event } from "./list/microsoft-imagine-cup-2026"
 import { mlhHackathonSeason2026Event } from "./list/mlh-hackathon-season-2026";
 import { awsReinvent2026Event } from "./list/aws-reinvent-student-program-2026";
 import { web3BuildersBootcamp2026Event } from "./list/web3-builders-bootcamp-2026";
+import { hackerHouseGoa2026Event } from "./list/hacker-house-goa-2026";
 
 export const events = [
+  hackerHouseGoa2026Event,
   smartIndiaHackathon2026Event,
   googleHashcode2026Event,
   microsoftImagineCup2026Event,

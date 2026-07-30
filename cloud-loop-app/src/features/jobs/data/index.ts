@@ -15,8 +15,20 @@ import { adobeMTSJob } from "./list/adobe-mts";
 import { clinisysAssociateJob } from "./list/clinisys-associate";
 import { nikeSEJob } from "./list/nike-se";
 import { gokwikSDEJob } from "./list/gokwik-sde";
+import { ciscoTDEJob } from "./list/cisco-tde";
+import { ericssonPacketCoreJob } from "./list/ericsson-packet-core";
+import { siemensTraineeJob } from "./list/siemens-trainee";
+import { guidehouseSEJob } from "./list/guidehouse-se";
+import { browserstackSDEJob } from "./list/browserstack-sde";
+import { eclerxAnalystJob } from "./list/eclerx-analyst";
 
 export const jobs = [
+  ciscoTDEJob,
+  ericssonPacketCoreJob,
+  siemensTraineeJob,
+  guidehouseSEJob,
+  browserstackSDEJob,
+  eclerxAnalystJob,
   payuBAJob,
   ripplingSDEJob,
   amazonSDEJob,
