@@ -8,7 +8,81 @@ import { ragMongodbCertification } from "./list/rag-mongodb";
 
 import { Certification } from "../types/Certification";
 
-// ── GeeksforGeeks Free Verified Certifications (on top) ──
+// ── MongoDB Free Verified Certifications (on top) ──
+const mongodbCerts: Certification[] = [
+  {
+    ...mongodbOverviewCertification,
+    provider: "MongoDB",
+    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
+    providerLink: "https://learn.mongodb.com/",
+    enrollUrl: "https://learn.mongodb.com/learning-paths/introduction-to-mongodb",
+    cost: "Free",
+    badge: "Verified Badge",
+    thumbnail: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&auto=format&fit=crop&q=60"
+  },
+  {
+    ...relationalDocumentModelCertification,
+    provider: "MongoDB",
+    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
+    providerLink: "https://learn.mongodb.com/",
+    enrollUrl: "https://learn.mongodb.com/courses/m100-relational-to-document-model",
+    cost: "Free",
+    badge: "Verified Badge",
+    thumbnail: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=400&auto=format&fit=crop&q=60"
+  },
+  {
+    ...schemaDesignPatternsCertification,
+    provider: "MongoDB",
+    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
+    providerLink: "https://learn.mongodb.com/",
+    enrollUrl: "https://learn.mongodb.com/learning-paths/mongodb-data-modeling",
+    cost: "Free",
+    badge: "Verified Badge",
+    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&auto=format&fit=crop&q=60"
+  },
+  {
+    ...crudOperationsMongodbCertification,
+    provider: "MongoDB",
+    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
+    providerLink: "https://learn.mongodb.com/",
+    enrollUrl: "https://learn.mongodb.com/courses/mongodb-crud-operations",
+    cost: "Free",
+    badge: "Verified Badge",
+    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&auto=format&fit=crop&q=60"
+  },
+  {
+    ...indexingDesignFundamentalsCertification,
+    provider: "MongoDB",
+    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
+    providerLink: "https://learn.mongodb.com/",
+    enrollUrl: "https://learn.mongodb.com/courses/mongodb-indexing-and-performance",
+    cost: "Free",
+    badge: "Verified Badge",
+    thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&auto=format&fit=crop&q=60"
+  },
+  {
+    ...vectorSearchFundamentalsCertification,
+    provider: "MongoDB",
+    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
+    providerLink: "https://learn.mongodb.com/",
+    enrollUrl: "https://learn.mongodb.com/courses/mongodb-vector-search",
+    cost: "Free",
+    badge: "Verified Badge",
+    thumbnail: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=400&auto=format&fit=crop&q=60"
+  },
+  {
+    ...ragMongodbCertification,
+    provider: "MongoDB",
+    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
+    providerLink: "https://learn.mongodb.com/",
+    enrollUrl: "https://learn.mongodb.com/courses/rag-with-mongodb",
+    cost: "Free",
+    badge: "Verified Badge",
+    thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&auto=format&fit=crop&q=60"
+  }
+];
+
+// ── GeeksforGeeks Free Verified Certifications ──
 const gfgCerts: Certification[] = [
   {
     id: "gfg-fork-java",
@@ -219,86 +293,12 @@ const metaCerts: Certification[] = [
   }
 ];
 
-// ── MongoDB Free Verified Certifications ──
-const mongodbCerts: Certification[] = [
-  {
-    ...mongodbOverviewCertification,
-    provider: "MongoDB",
-    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
-    providerLink: "https://learn.mongodb.com/",
-    enrollUrl: "https://learn.mongodb.com/learning-paths/introduction-to-mongodb",
-    cost: "Free",
-    badge: "Verified Badge",
-    thumbnail: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&auto=format&fit=crop&q=60"
-  },
-  {
-    ...relationalDocumentModelCertification,
-    provider: "MongoDB",
-    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
-    providerLink: "https://learn.mongodb.com/",
-    enrollUrl: "https://learn.mongodb.com/courses/m100-relational-to-document-model",
-    cost: "Free",
-    badge: "Verified Badge",
-    thumbnail: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=400&auto=format&fit=crop&q=60"
-  },
-  {
-    ...schemaDesignPatternsCertification,
-    provider: "MongoDB",
-    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
-    providerLink: "https://learn.mongodb.com/",
-    enrollUrl: "https://learn.mongodb.com/learning-paths/mongodb-data-modeling",
-    cost: "Free",
-    badge: "Verified Badge",
-    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&auto=format&fit=crop&q=60"
-  },
-  {
-    ...crudOperationsMongodbCertification,
-    provider: "MongoDB",
-    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
-    providerLink: "https://learn.mongodb.com/",
-    enrollUrl: "https://learn.mongodb.com/courses/mongodb-crud-operations",
-    cost: "Free",
-    badge: "Verified Badge",
-    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&auto=format&fit=crop&q=60"
-  },
-  {
-    ...indexingDesignFundamentalsCertification,
-    provider: "MongoDB",
-    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
-    providerLink: "https://learn.mongodb.com/",
-    enrollUrl: "https://learn.mongodb.com/courses/mongodb-indexing-and-performance",
-    cost: "Free",
-    badge: "Verified Badge",
-    thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&auto=format&fit=crop&q=60"
-  },
-  {
-    ...vectorSearchFundamentalsCertification,
-    provider: "MongoDB",
-    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
-    providerLink: "https://learn.mongodb.com/",
-    enrollUrl: "https://learn.mongodb.com/courses/mongodb-vector-search",
-    cost: "Free",
-    badge: "Verified Badge",
-    thumbnail: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=400&auto=format&fit=crop&q=60"
-  },
-  {
-    ...ragMongodbCertification,
-    provider: "MongoDB",
-    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
-    providerLink: "https://learn.mongodb.com/",
-    enrollUrl: "https://learn.mongodb.com/courses/rag-with-mongodb",
-    cost: "Free",
-    badge: "Verified Badge",
-    thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&auto=format&fit=crop&q=60"
-  }
-];
-
 export const certifications: Certification[] = [
+  ...mongodbCerts,
   ...gfgCerts,
   ...googleCerts,
   ...microsoftCerts,
   ...awsCerts,
   ...ibmCerts,
-  ...metaCerts,
-  ...mongodbCerts
+  ...metaCerts
 ];

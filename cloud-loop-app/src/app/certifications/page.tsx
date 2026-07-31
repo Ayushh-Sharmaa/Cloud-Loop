@@ -6,7 +6,7 @@ import { Search, Award, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { certifications, CertificationCard, Certification } from "@/features/certifications";
 import { cn } from "@/lib/utils";
 
-const providers = ["All", "GeeksforGeeks", "Google", "Microsoft", "AWS", "IBM", "Meta", "MongoDB"];
+const providers = ["All", "MongoDB", "GeeksforGeeks", "Google", "Microsoft", "AWS", "IBM", "Meta"];
 const difficulties = ["All", "Beginner", "Intermediate", "Advanced"];
 const costs = ["All", "Free"];
 

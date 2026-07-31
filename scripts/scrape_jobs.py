@@ -60,6 +60,16 @@ def check_url_status(url):
         # We return True so that in sandboxed offline environments we don't delete everything.
         return True
 
+# ── deterministic color choice for logo avatars ──
+def get_company_color(name):
+    colors = [
+        "2563EB", "3B82F6", "059669", "10B981", "DC2626", 
+        "EF4444", "D97706", "F59E0B", "7C3AED", "8B5CF6", 
+        "DB2777", "EC4899", "0891B2", "06B6D4", "4F46E5"
+    ]
+    h = sum(ord(c) for c in name)
+    return colors[h % len(colors)]
+
 # ── Generator for 1,000+ Unique Companies ──
 def generate_thousand_companies():
     prefixes = [
@@ -111,7 +121,7 @@ def generate_fallback_opportunities():
         "Wipro": "https://www.google.com/s2/favicons?domain=wipro.com&sz=64",
         "Accenture": "https://www.google.com/s2/favicons?domain=accenture.com&sz=64",
         "JP Morgan": "https://www.google.com/s2/favicons?domain=jpmorganchase.com&sz=64",
-        "Zoho": "https://www.google.com/s2/favicons?domain=zoho.com&sz=64",
+        "Zoho": "https://www.zoho.com/careers/",
         "LinkedIn": "https://www.google.com/s2/favicons?domain=linkedin.com&sz=64",
         "Adobe": "https://www.google.com/s2/favicons?domain=adobe.com&sz=64",
         "Oracle": "https://www.google.com/s2/favicons?domain=oracle.com&sz=64",
@@ -211,11 +221,10 @@ def generate_fallback_opportunities():
         # Fresh posted dates: last 7 days only
         posted_date = (datetime.now() - timedelta(days=random.randint(0, 6))).strftime("%Y-%m-%d")
         
-        # Logo url (uses core logos, or generates a favicon link based on the company name)
+        # Logo url (uses core logos, or generates a custom colored initial badge logo)
         logo_url = core_logos.get(company)
         if not logo_url:
-            domain_name = company.lower().replace(' ', '') + ".com"
-            logo_url = f"https://www.google.com/s2/favicons?domain={domain_name}&sz=64"
+            logo_url = f"https://ui-avatars.com/api/?name={urllib.parse.quote(company)}&background={get_company_color(company)}&color=fff&size=128&bold=true"
             
         # Select career search link based on company
         apply_url = career_urls.get(company)
@@ -266,8 +275,7 @@ def generate_fallback_opportunities():
         
         logo_url = core_logos.get(company)
         if not logo_url:
-            domain_name = company.lower().replace(' ', '') + ".com"
-            logo_url = f"https://www.google.com/s2/favicons?domain={domain_name}&sz=64"
+            logo_url = f"https://ui-avatars.com/api/?name={urllib.parse.quote(company)}&background={get_company_color(company)}&color=fff&size=128&bold=true"
             
         apply_url = career_urls.get(company)
         if not apply_url:

@@ -19,14 +19,16 @@ d:\Github\Cloud-Loop\
         │   ├── api/scrape/
         │   │   └── route.ts  # Self-healing Next.js background trigger API
         │   ├── jobs/
-        │   │   └── page.tsx  # Public Jobs Board UI (loads scraped data)
+        │   │   └── page.tsx  # Public Jobs Board UI (loads scraped data with pagination)
+        │   ├── internships/
+        │   │   └── page.tsx  # Internships Board UI (loads scraped data with pagination)
         │   └── certifications/
-        │       └── page.tsx  # Grouped Certifications UI
+        │       └── page.tsx  # Grouped Certifications UI (MongoDB on top)
         └── features/
             ├── events/data/
             │   └── index.ts  # Static + scraped events index
             ├── certifications/data/
-            │   └── index.ts  # Free verified certifications index (GfG on top)
+            │   └── index.ts  # Free verified certifications index (MongoDB on top)
             └── programs/data/
                 └── index.ts  # Student Programs index (Arcade on top, sorted)
 ```
@@ -61,7 +63,7 @@ npm run dev
 ## 💻 Complete Codebase of MVP Files
 
 ### 1. Core Scraper Script: `scripts/scrape_jobs.py`
-Includes: 1,000+ unique LinkedIn companies generation, events scraping, 7-day posted dates filtering, future deadlines, and active URL validation.
+Includes: 1,010 unique companies generation, initials-based UI-Avatars logo fallback, events scraping, 7-day posted dates filtering, future deadlines, active URL validation, and GeeksforGeeks careers sync.
 ```python
 import json
 import os
@@ -110,6 +112,16 @@ def check_url_status(url):
     except Exception:
         return True
 
+# ── deterministic color choice for logo avatars ──
+def get_company_color(name):
+    colors = [
+        "2563EB", "3B82F6", "059669", "10B981", "DC2626", 
+        "EF4444", "D97706", "F59E0B", "7C3AED", "8B5CF6", 
+        "DB2777", "EC4899", "0891B2", "06B6D4", "4F46E5"
+    ]
+    h = sum(ord(c) for c in name)
+    return colors[h % len(colors)]
+
 # ── Generator for 1,000+ Unique Companies ──
 def generate_thousand_companies():
     prefixes = [
@@ -134,7 +146,8 @@ def generate_thousand_companies():
     company_names = set([
         "Google", "Microsoft", "Amazon", "TCS", "Wipro", 
         "Accenture", "JP Morgan", "Zoho", "LinkedIn", "Adobe", 
-        "Oracle", "Cisco", "Infosys", "Cognizant", "Swiggy", "Zomato"
+        "Oracle", "Cisco", "Infosys", "Cognizant", "Swiggy", "Zomato",
+        "GeeksforGeeks"
     ])
     while len(company_names) < 1010:
         p = random.choice(prefixes)
@@ -154,7 +167,7 @@ def generate_fallback_opportunities():
         "Wipro": "https://www.google.com/s2/favicons?domain=wipro.com&sz=64",
         "Accenture": "https://www.google.com/s2/favicons?domain=accenture.com&sz=64",
         "JP Morgan": "https://www.google.com/s2/favicons?domain=jpmorganchase.com&sz=64",
-        "Zoho": "https://www.google.com/s2/favicons?domain=zoho.com&sz=64",
+        "Zoho": "https://www.zoho.com/careers/",
         "LinkedIn": "https://www.google.com/s2/favicons?domain=linkedin.com&sz=64",
         "Adobe": "https://www.google.com/s2/favicons?domain=adobe.com&sz=64",
         "Oracle": "https://www.google.com/s2/favicons?domain=oracle.com&sz=64",
@@ -162,7 +175,8 @@ def generate_fallback_opportunities():
         "Infosys": "https://www.google.com/s2/favicons?domain=infosys.com&sz=64",
         "Cognizant": "https://www.google.com/s2/favicons?domain=cognizant.com&sz=64",
         "Swiggy": "https://www.google.com/s2/favicons?domain=swiggy.com&sz=64",
-        "Zomato": "https://www.zomato.com/careers"
+        "Zomato": "https://www.zomato.com/careers",
+        "GeeksforGeeks": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64"
     }
     career_urls = {
         "Google": "https://www.google.com/about/careers/applications/jobs/results/?q=software%20engineer",
@@ -180,7 +194,8 @@ def generate_fallback_opportunities():
         "Infosys": "https://www.infosys.com/careers.html",
         "Cognizant": "https://careers.cognizant.com/global/en",
         "Swiggy": "https://careers.swiggy.com/",
-        "Zomato": "https://www.zomato.com/careers"
+        "Zomato": "https://www.zomato.com/careers",
+        "GeeksforGeeks": "https://www.geeksforgeeks.org/jobs?tab_type=all_jobs"
     }
     locations = [
         ("Bengaluru, India", "onsite"), ("Hyderabad, India", "hybrid"),
@@ -231,7 +246,7 @@ def generate_fallback_opportunities():
         slug = f"{company.lower().replace(' ', '-')}-{role.lower().replace(' ', '-').replace(',', '')}-{i+1}"
         posted_date = (datetime.now() - timedelta(days=random.randint(0, 6))).strftime("%Y-%m-%d")
         
-        logo_url = core_logos.get(company) or f"https://www.google.com/s2/favicons?domain={company.lower().replace(' ', '') + '.com'}&sz=64"
+        logo_url = core_logos.get(company) or f"https://ui-avatars.com/api/?name={urllib.parse.quote(company)}&background={get_company_color(company)}&color=fff&size=128&bold=true"
         apply_url = career_urls.get(company) or f"https://www.linkedin.com/jobs/search/?keywords={urllib.parse.quote(role)}%20{urllib.parse.quote(company)}"
             
         jobs.append({
@@ -258,7 +273,7 @@ def generate_fallback_opportunities():
         slug = f"{company.lower().replace(' ', '-')}-{role.lower().replace(' ', '-').replace(',', '')}-{i+1}"
         posted_date = (datetime.now() - timedelta(days=random.randint(0, 6))).strftime("%Y-%m-%d")
         
-        logo_url = core_logos.get(company) or f"https://www.google.com/s2/favicons?domain={company.lower().replace(' ', '') + '.com'}&sz=64"
+        logo_url = core_logos.get(company) or f"https://ui-avatars.com/api/?name={urllib.parse.quote(company)}&background={get_company_color(company)}&color=fff&size=128&bold=true"
         apply_url = career_urls.get(company) or f"https://www.linkedin.com/jobs/search/?keywords={urllib.parse.quote(role)}%20{urllib.parse.quote(company)}"
             
         internships.append({
@@ -279,11 +294,11 @@ def generate_fallback_events():
         "Google Cloud": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
         "Microsoft Imagine": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
         "AWS Student": "https://www.google.com/s2/favicons?domain=amazon.com&sz=64",
-        "Zoho Devs": "https://www.google.com/s2/favicons?domain=zoho.com&sz=64",
-        "Unstop": "https://www.google.com/s2/favicons?domain=unstop.com&sz=64",
-        "Hack2skill": "https://www.google.com/s2/favicons?domain=hack2skill.com&sz=64",
-        "MLH": "https://www.google.com/s2/favicons?domain=mlh.io&sz=64",
-        "GeeksforGeeks": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64"
+        "Zoho Devs": "https://www.zoho.com/developer/",
+        "Unstop": "https://unstop.com/",
+        "Hack2skill": "https://hack2skill.com/",
+        "MLH": "https://mlh.io/seasons/2026/events",
+        "GeeksforGeeks": "https://practice.geeksforgeeks.org/events"
     }
     event_urls = {
         "Google Cloud": "https://cloud.google.com/events",
@@ -408,7 +423,7 @@ async function runLocalStatsTouch(reason: string) {
     stats.success = true;
     stats.watchdogReset = true;
     stats.watchdogReason = reason;
-    await fs.writeFile(STATS_PATH, JSON.stringify(stats, null, 2), "utf-8");
+    await fs.writeFile(stats_PATH, JSON.stringify(stats, null, 2), "utf-8");
   } catch (e) {
     console.error("Watchdog failed to write local stats fallback:", e);
   }
@@ -515,7 +530,7 @@ export async function POST(): Promise<Response> {
 ---
 
 ### 3. Public Jobs Board Page: `cloud-loop-app/src/app/jobs/page.tsx`
-Client-side component loading the fresh opportunities automatically on boot, filtering by role, location type, and Easy Apply.
+Client-side component loading the fresh opportunities automatically on boot, filtering by role, location type, and Easy Apply, with 30 items per page pagination.
 ```tsx
 "use client";
 
@@ -527,12 +542,14 @@ import { cn } from "@/lib/utils";
 
 const categories = ["All", "Software", "AI/ML", "Cloud", "Frontend", "Backend", "Data", "DevOps"];
 const locationTypes = ["All", "Remote", "Hybrid", "Onsite"];
+const ITEMS_PER_PAGE = 30;
 
 export default function JobsPage() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [locType, setLocType] = useState("All");
   const [easyApply, setEasyApply] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
   const [jobList, setJobList] = useState<Job[]>(jobs);
 
   useEffect(() => {
@@ -552,6 +569,10 @@ export default function JobsPage() {
       .catch((err) => console.log("Scraped data fetch skipped or not initialized:", err));
   }, []);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [search, category, locType, easyApply]);
+
   const filtered = useMemo(() => {
     return jobList.filter((j) => {
       const matchSearch =
@@ -565,6 +586,15 @@ export default function JobsPage() {
     });
   }, [jobList, search, category, locType, easyApply]);
 
+  const paginatedJobs = useMemo(() => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filtered.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  }, [filtered, currentPage]);
+
+  const totalPages = useMemo(() => {
+    return Math.ceil(filtered.length / ITEMS_PER_PAGE);
+  }, [filtered]);
+
   return (
     <div className="min-h-screen bg-background dark:bg-dark-background pt-24 pb-16">
       <div className="container-narrow">
@@ -573,7 +603,7 @@ export default function JobsPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-text-primary dark:text-dark-text-primary mb-3">
             Fresher & Entry-Level Jobs
           </h1>
-          <p className="text-text-secondary dark:text-dark-text-secondary">
+          <p className="text-text-secondary dark:text-dark-text-secondary max-w-xl">
             Full-time roles at top companies across software, AI/ML, cloud, data, and more. Freshers welcome.
           </p>
         </div>
@@ -602,15 +632,69 @@ export default function JobsPage() {
           </div>
         </div>
 
-        <p className="text-sm text-text-secondary mb-6">{filtered.length} job{filtered.length !== 1 ? "s" : ""} found</p>
+        <div className="flex justify-between items-center mb-6">
+          <p className="text-sm text-text-secondary">
+            Showing {filtered.length > 0 ? (currentPage - 1) * ITEMS_PER_PAGE + 1 : 0}-
+            {Math.min(currentPage * ITEMS_PER_PAGE, filtered.length)} of {filtered.length} jobs found
+          </p>
+          {totalPages > 1 && (
+            <p className="text-xs text-text-secondary font-medium">Page {currentPage} of {totalPages}</p>
+          )}
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {filtered.map((job, i) => (
-            <motion.div key={job.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: Math.min(i * 0.02, 0.4) }}>
+          {paginatedJobs.map((job, i) => (
+            <motion.div key={job.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25, delay: Math.min(i * 0.015, 0.2) }}>
               <JobCard job={job} />
             </motion.div>
           ))}
         </div>
+
+        {totalPages > 1 && (
+          <div className="mt-12 flex items-center justify-center gap-2">
+            <button 
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+              className={cn("px-4 py-2 text-xs font-semibold rounded-lg border transition-all cursor-pointer bg-white dark:bg-dark-card",
+                currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-secondary/15 hover:text-secondary dark:hover:text-primary"
+              )}
+            >
+              ← Previous
+            </button>
+            <div className="flex items-center gap-1">
+              {Array.from({ length: Math.min(5, totalPages) }, (_, index) => {
+                let pageNum = index + 1;
+                if (currentPage > 3 && totalPages > 5) {
+                  pageNum = currentPage - 3 + index;
+                  if (pageNum + (4 - index) > totalPages) pageNum = totalPages - 4 + index;
+                }
+                if (pageNum <= 0 || pageNum > totalPages) return null;
+                return (
+                  <button
+                    key={pageNum}
+                    onClick={() => setCurrentPage(pageNum)}
+                    className={cn("w-8 h-8 flex items-center justify-center text-xs font-bold rounded-lg border transition-all cursor-pointer",
+                      currentPage === pageNum
+                        ? "bg-secondary text-white border-secondary dark:bg-primary dark:text-dark-background dark:border-primary"
+                        : "border-border dark:border-dark-border text-text-secondary bg-white dark:bg-dark-card hover:bg-secondary/10"
+                    )}
+                  >
+                    {pageNum}
+                  </button>
+                );
+              })}
+            </div>
+            <button 
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className={cn("px-4 py-2 text-xs font-semibold rounded-lg border transition-all cursor-pointer bg-white dark:bg-dark-card",
+                currentPage === totalPages ? "opacity-50 cursor-not-allowed" : "hover:bg-secondary/15 hover:text-secondary dark:hover:text-primary"
+              )}
+            >
+              Next →
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -640,8 +724,193 @@ function FilterGroup({ label, options, value, onChange }: { label: string; optio
 
 ---
 
-### 4. Grouped Certifications Page: `cloud-loop-app/src/app/certifications/page.tsx`
-Displays courses grouped by Company/Provider first, showing verified free credentials (e.g. GeeksforGeeks, Google, Microsoft, AWS, IBM, Meta, MongoDB).
+### 4. Internships Board Page: `cloud-loop-app/src/app/internships/page.tsx`
+Client-side component loading the fresh opportunities automatically on boot, filtering by role, location type, and stipend, with 30 items per page pagination.
+```tsx
+"use client";
+
+import { useState, useMemo, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Search } from "lucide-react";
+import { internships, InternshipCard, Internship } from "@/features/internships";
+import { cn } from "@/lib/utils";
+
+const locationTypes = ["All", "Remote", "Hybrid", "Onsite"];
+const payTypes = ["All", "Paid", "Unpaid"];
+const ITEMS_PER_PAGE = 30;
+
+export default function InternshipsPage() {
+  const [search, setSearch] = useState("");
+  const [locType, setLocType] = useState("All");
+  const [payType, setPayType] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [internList, setInternList] = useState<Internship[]>(internships);
+
+  useEffect(() => {
+    fetch("/api/scrape")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load");
+        return res.json();
+      })
+      .then((data) => {
+        if (data.scrapedInternships && data.scrapedInternships.length > 0) {
+          setInternList((prev) => [
+            ...prev.filter((i) => !i.id.startsWith("scraped-")),
+            ...data.scrapedInternships,
+          ]);
+        }
+      })
+      .catch((err) => console.log("Scraped data fetch skipped or not initialized:", err));
+  }, []);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [search, locType, payType]);
+
+  const filtered = useMemo(() => {
+    return internList.filter((i) => {
+      const matchSearch =
+        search === "" ||
+        i.role.toLowerCase().includes(search.toLowerCase()) ||
+        i.company.toLowerCase().includes(search.toLowerCase());
+      const matchLoc = locType === "All" || i.locationType === locType.toLowerCase();
+      const matchPay = payType === "All" || (payType === "Paid" ? i.isPaid : !i.isPaid);
+      return matchSearch && matchLoc && matchPay;
+    });
+  }, [internList, search, locType, payType]);
+
+  const paginatedInternships = useMemo(() => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filtered.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  }, [filtered, currentPage]);
+
+  const totalPages = useMemo(() => {
+    return Math.ceil(filtered.length / ITEMS_PER_PAGE);
+  }, [filtered]);
+
+  return (
+    <div className="min-h-screen bg-background dark:bg-dark-background pt-24 pb-16">
+      <div className="container-narrow">
+        <div className="mb-10">
+          <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-2 block">Internships</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-text-primary dark:text-dark-text-primary mb-3">
+            Internship Openings
+          </h1>
+          <p className="text-text-secondary dark:text-dark-text-secondary max-w-xl">
+            Paid and unpaid internships at top companies — Google, Amazon, Microsoft, ISRO, CERN and more.
+          </p>
+        </div>
+
+        <div className="mb-8 flex flex-col gap-4">
+          <div className="relative">
+            <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary" />
+            <input 
+              value={search} 
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search roles, companies..."
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-border dark:border-dark-border bg-white dark:bg-dark-card text-text-primary dark:text-dark-text-primary placeholder:text-text-secondary text-sm focus:outline-none focus:ring-2 focus:ring-primary/30" 
+            />
+          </div>
+          <div className="flex flex-wrap gap-4">
+            <FilterGroup label="Location" options={locationTypes} value={locType} onChange={setLocType} />
+            <FilterGroup label="Type" options={payTypes} value={payType} onChange={setPayType} />
+          </div>
+        </div>
+
+        <div className="flex justify-between items-center mb-6">
+          <p className="text-sm text-text-secondary">
+            Showing {filtered.length > 0 ? (currentPage - 1) * ITEMS_PER_PAGE + 1 : 0}-
+            {Math.min(currentPage * ITEMS_PER_PAGE, filtered.length)} of {filtered.length} internships found
+          </p>
+          {totalPages > 1 && (
+            <p className="text-xs text-text-secondary font-medium">Page {currentPage} of {totalPages}</p>
+          )}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {paginatedInternships.map((internship, i) => (
+            <motion.div key={internship.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25, delay: Math.min(i * 0.015, 0.2) }}>
+              <InternalCard internship={internship} />
+            </motion.div>
+          ))}
+        </div>
+
+        {totalPages > 1 && (
+          <div className="mt-12 flex items-center justify-center gap-2">
+            <button 
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+              className={cn("px-4 py-2 text-xs font-semibold rounded-lg border transition-all cursor-pointer bg-white dark:bg-dark-card",
+                currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-secondary/15 hover:text-secondary dark:hover:text-primary"
+              )}
+            >
+              ← Previous
+            </button>
+            <div className="flex items-center gap-1">
+              {Array.from({ length: Math.min(5, totalPages) }, (_, index) => {
+                let pageNum = index + 1;
+                if (currentPage > 3 && totalPages > 5) {
+                  pageNum = currentPage - 3 + index;
+                  if (pageNum + (4 - index) > totalPages) pageNum = totalPages - 4 + index;
+                }
+                if (pageNum <= 0 || pageNum > totalPages) return null;
+                return (
+                  <button
+                    key={pageNum}
+                    onClick={() => setCurrentPage(pageNum)}
+                    className={cn("w-8 h-8 flex items-center justify-center text-xs font-bold rounded-lg border transition-all cursor-pointer",
+                      currentPage === pageNum
+                        ? "bg-secondary text-white border-secondary dark:bg-primary dark:text-dark-background dark:border-primary"
+                        : "border-border dark:border-dark-border text-text-secondary bg-white dark:bg-dark-card hover:bg-secondary/10"
+                    )}
+                  >
+                    {pageNum}
+                  </button>
+                );
+              })}
+            </div>
+            <button 
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className={cn("px-4 py-2 text-xs font-semibold rounded-lg border transition-all cursor-pointer bg-white dark:bg-dark-card",
+                currentPage === totalPages ? "opacity-50 cursor-not-allowed" : "hover:bg-secondary/15 hover:text-secondary dark:hover:text-primary"
+              )}
+            >
+              Next →
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function FilterGroup({ label, options, value, onChange }: { label: string; options: string[]; value: string; onChange: (v: string) => void }) {
+  return (
+    <div className="flex items-center gap-1.5 flex-wrap">
+      <span className="text-xs text-text-secondary dark:text-dark-text-secondary font-medium">{label}:</span>
+      {options.map((opt) => (
+        <button 
+          key={opt} 
+          onClick={() => onChange(opt)}
+          className={cn("text-xs px-3 py-1.5 rounded-full border transition-colors cursor-pointer",
+            value === opt 
+              ? "bg-secondary text-white border-secondary dark:bg-primary dark:border-primary dark:text-dark-background font-semibold" 
+              : "border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary hover:border-secondary/40"
+          )}
+        >
+          {opt}
+        </button>
+      ))}
+    </div>
+  );
+}
+```
+
+---
+
+### 5. Grouped Certifications Page: `cloud-loop-app/src/app/certifications/page.tsx`
+Displays courses grouped by Company/Provider first, showing verified free credentials (e.g. MongoDB, GeeksforGeeks, Google, Microsoft, AWS, IBM, Meta).
 ```tsx
 "use client";
 
@@ -651,7 +920,7 @@ import { Search, ShieldCheck } from "lucide-react";
 import { certifications, CertificationCard, Certification } from "@/features/certifications";
 import { cn } from "@/lib/utils";
 
-const providers = ["All", "GeeksforGeeks", "Google", "Microsoft", "AWS", "IBM", "Meta", "MongoDB"];
+const providers = ["All", "MongoDB", "GeeksforGeeks", "Google", "Microsoft", "AWS", "IBM", "Meta"];
 const difficulties = ["All", "Beginner", "Intermediate", "Advanced"];
 const costs = ["All", "Free"];
 
@@ -693,7 +962,7 @@ export default function CertificationsPage() {
               Free Verified Certifications
             </h1>
             <p className="text-text-secondary dark:text-dark-text-secondary">
-              Learn for free and earn verified credentials from GeeksforGeeks, Google, Microsoft, AWS, IBM, Meta, and MongoDB.
+              Learn for free and earn verified credentials from MongoDB, GeeksforGeeks, Google, Microsoft, AWS, IBM, and Meta.
             </p>
           </div>
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 text-xs font-bold shadow-sm">
@@ -777,7 +1046,7 @@ function FilterGroup({ label, options, value, onChange }: { label: string; optio
 
 ---
 
-### 5. Sorted Student Programs Index: `cloud-loop-app/src/features/programs/data/index.ts`
+### 6. Sorted Student Programs Index: `cloud-loop-app/src/features/programs/data/index.ts`
 Loads static ambassador and campus programs, keeping the Google Cloud Arcade program on top and sorting the rest by nearest deadline.
 ```typescript
 import { googleCloudArcadeProgram } from "./list/google-cloud-arcade";
