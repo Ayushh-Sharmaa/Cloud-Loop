@@ -8,12 +8,16 @@ import { cn } from "@/lib/utils";
 
 const categories = ["All", "Software", "AI/ML", "Cloud", "Frontend", "Backend", "Data", "DevOps"];
 const locationTypes = ["All", "Remote", "Hybrid", "Onsite"];
+const ITEMS_PER_PAGE = 30;
 
 export default function JobsPage() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [locType, setLocType] = useState("All");
   const [easyApply, setEasyApply] = useState(false);
+
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
 
   // Dynamic state for jobs loaded from client side
   const [jobList, setJobList] = useState<Job[]>(jobs);
@@ -36,6 +40,11 @@ export default function JobsPage() {
       .catch((err) => console.log("Scraped data fetch skipped or not initialized:", err));
   }, []);
 
+  // Reset pagination to page 1 whenever filters or search query changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [search, category, locType, easyApply]);
+
   const filtered = useMemo(() => {
     return jobList.filter((j) => {
       const matchSearch =
@@ -48,6 +57,16 @@ export default function JobsPage() {
       return matchSearch && matchCat && matchLoc && matchEasy;
     });
   }, [jobList, search, category, locType, easyApply]);
+
+  // Paginated subset of filtered items
+  const paginatedJobs = useMemo(() => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filtered.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  }, [filtered, currentPage]);
+
+  const totalPages = useMemo(() => {
+    return Math.ceil(filtered.length / ITEMS_PER_PAGE);
+  }, [filtered]);
 
   return (
     <div className="min-h-screen bg-background dark:bg-dark-background pt-24 pb-16">
@@ -86,20 +105,98 @@ export default function JobsPage() {
           </div>
         </div>
 
-        <p className="text-sm text-text-secondary mb-6">{filtered.length} job{filtered.length !== 1 ? "s" : ""} found</p>
+        <div className="flex justify-between items-center mb-6">
+          <p className="text-sm text-text-secondary">
+            Showing {filtered.length > 0 ? (currentPage - 1) * ITEMS_PER_PAGE + 1 : 0}-
+            {Math.min(currentPage * ITEMS_PER_PAGE, filtered.length)} of {filtered.length} job{filtered.length !== 1 ? "s" : ""} found
+          </p>
+          {totalPages > 1 && (
+            <p className="text-xs text-text-secondary font-medium">
+              Page {currentPage} of {totalPages}
+            </p>
+          )}
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {filtered.map((job, i) => (
+          {paginatedJobs.map((job, i) => (
             <motion.div 
               key={job.id} 
               initial={{ opacity: 0, y: 16 }} 
               animate={{ opacity: 1, y: 0 }} 
-              transition={{ duration: 0.3, delay: Math.min(i * 0.03, 0.4) }}
+              transition={{ duration: 0.25, delay: Math.min(i * 0.015, 0.2) }}
             >
               <JobCard job={job} />
             </motion.div>
           ))}
         </div>
+
+        {/* Premium Pagination Bar */}
+        {totalPages > 1 && (
+          <div className="mt-12 flex items-center justify-center gap-2">
+            <button 
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+              className={cn("px-4 py-2 text-xs font-semibold rounded-lg border transition-all cursor-pointer select-none",
+                currentPage === 1 
+                  ? "opacity-50 cursor-not-allowed border-border dark:border-dark-border text-text-secondary"
+                  : "border-border dark:border-dark-border hover:bg-secondary/15 hover:text-secondary dark:hover:text-primary dark:hover:border-primary text-text-primary dark:text-dark-text-primary bg-white dark:bg-dark-card"
+              )}
+            >
+              ← Previous
+            </button>
+
+            <div className="flex items-center gap-1">
+              {Array.from({ length: Math.min(5, totalPages) }, (_, index) => {
+                let pageNum = index + 1;
+                // Center the active page button
+                if (currentPage > 3 && totalPages > 5) {
+                  pageNum = currentPage - 3 + index;
+                  if (pageNum + (4 - index) > totalPages) {
+                    pageNum = totalPages - 4 + index;
+                  }
+                }
+                if (pageNum <= 0 || pageNum > totalPages) return null;
+                
+                return (
+                  <button
+                    key={pageNum}
+                    onClick={() => setCurrentPage(pageNum)}
+                    className={cn("w-8 h-8 flex items-center justify-center text-xs font-bold rounded-lg border transition-all cursor-pointer",
+                      currentPage === pageNum
+                        ? "bg-secondary text-white border-secondary dark:bg-primary dark:text-dark-background dark:border-primary"
+                        : "border-border dark:border-dark-border text-text-secondary dark:text-dark-text-secondary hover:bg-secondary/10 bg-white dark:bg-dark-card"
+                    )}
+                  >
+                    {pageNum}
+                  </button>
+                );
+              })}
+              {totalPages > 5 && currentPage + 2 < totalPages && (
+                <span className="text-text-secondary text-xs px-1 select-none">...</span>
+              )}
+              {totalPages > 5 && currentPage + 2 < totalPages && (
+                <button
+                  onClick={() => setCurrentPage(totalPages)}
+                  className="w-8 h-8 flex items-center justify-center text-xs font-bold rounded-lg border border-border dark:border-dark-border text-text-secondary bg-white dark:bg-dark-card hover:bg-secondary/10 cursor-pointer"
+                >
+                  {totalPages}
+                </button>
+              )}
+            </div>
+
+            <button 
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className={cn("px-4 py-2 text-xs font-semibold rounded-lg border transition-all cursor-pointer select-none",
+                currentPage === totalPages 
+                  ? "opacity-50 cursor-not-allowed border-border dark:border-dark-border text-text-secondary"
+                  : "border-border dark:border-dark-border hover:bg-secondary/15 hover:text-secondary dark:hover:text-primary dark:hover:border-primary text-text-primary dark:text-dark-text-primary bg-white dark:bg-dark-card"
+              )}
+            >
+              Next →
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

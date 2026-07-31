@@ -85,7 +85,8 @@ def generate_thousand_companies():
     company_names = set([
         "Google", "Microsoft", "Amazon", "TCS", "Wipro", 
         "Accenture", "JP Morgan", "Zoho", "LinkedIn", "Adobe", 
-        "Oracle", "Cisco", "Infosys", "Cognizant", "Swiggy", "Zomato"
+        "Oracle", "Cisco", "Infosys", "Cognizant", "Swiggy", "Zomato",
+        "GeeksforGeeks"
     ])
     
     while len(company_names) < 1010:
@@ -118,7 +119,8 @@ def generate_fallback_opportunities():
         "Infosys": "https://www.google.com/s2/favicons?domain=infosys.com&sz=64",
         "Cognizant": "https://www.google.com/s2/favicons?domain=cognizant.com&sz=64",
         "Swiggy": "https://www.google.com/s2/favicons?domain=swiggy.com&sz=64",
-        "Zomato": "https://www.google.com/s2/favicons?domain=zomato.com&sz=64"
+        "Zomato": "https://www.zomato.com/careers",
+        "GeeksforGeeks": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64"
     }
 
     # Guaranteed active search URLs to prevent 404s
@@ -138,7 +140,8 @@ def generate_fallback_opportunities():
         "Infosys": "https://www.infosys.com/careers.html",
         "Cognizant": "https://careers.cognizant.com/global/en",
         "Swiggy": "https://careers.swiggy.com/",
-        "Zomato": "https://www.zomato.com/careers"
+        "Zomato": "https://www.zomato.com/careers",
+        "GeeksforGeeks": "https://www.geeksforgeeks.org/jobs?tab_type=all_jobs"
     }
     
     locations = [
@@ -468,6 +471,11 @@ def main():
                 "jobs": sum(1 for j in active_jobs if j['company'] == 'JP Morgan'),
                 "internships": sum(1 for i in active_interns if i['company'] == 'JP Morgan'),
                 "total": sum(1 for x in active_jobs + active_interns if x['company'] == 'JP Morgan')
+            },
+            "geeksforgeeks": {
+                "jobs": sum(1 for j in active_jobs if j['company'] == 'GeeksforGeeks'),
+                "internships": sum(1 for i in active_interns if i['company'] == 'GeeksforGeeks'),
+                "total": sum(1 for x in active_jobs + active_interns if x['company'] == 'GeeksforGeeks')
             }
         }
     }

@@ -1,5 +1,5 @@
 {
-  "lastScraped": "2026-07-31T21:35:57.623046Z",
+  "lastScraped": "2026-07-31T22:03:53.806140Z",
   "success": true,
   "totalScraped": 2550,
   "uniqueCompaniesCount": 1010,
@@ -33,9 +33,9 @@
       "total": 2
     },
     "wipro": {
-      "jobs": 1,
+      "jobs": 2,
       "internships": 1,
-      "total": 2
+      "total": 3
     },
     "accenture": {
       "jobs": 1,
@@ -46,6 +46,11 @@
       "jobs": 1,
       "internships": 1,
       "total": 2
+    },
+    "geeksforgeeks": {
+      "jobs": 2,
+      "internships": 1,
+      "total": 3
     }
   }
 }
