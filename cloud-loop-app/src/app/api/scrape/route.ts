@@ -35,7 +35,7 @@ async function readScrapedData() {
   return { scrapedJobs, scrapedInternships };
 }
 
-export async function GET() {
+export async function GET(): Promise<Response> {
   try {
     const fileExists = await fs.access(STATS_PATH).then(() => true).catch(() => false);
     if (!fileExists) {
@@ -59,7 +59,7 @@ export async function GET() {
   }
 }
 
-export async function POST() {
+export async function POST(): Promise<Response> {
   try {
     console.log("Starting job scraping via API POST request...");
     
@@ -71,7 +71,7 @@ export async function POST() {
     }
 
     // Run the Python script
-    return new Promise((resolve) => {
+    return new Promise<Response>((resolve) => {
       exec(`python "${SCRAPER_SCRIPT_PATH}"`, async (error, stdout, stderr) => {
         if (error) {
           console.error(`Exec error running scraper: ${error}`);
@@ -111,7 +111,7 @@ export async function POST() {
 }
 
 // Graceful fallback helper when python execution or stats reading fails
-async function runProgrammaticFallback(reason: string) {
+async function runProgrammaticFallback(reason: string): Promise<Response> {
   console.log(`Running programmatic scraper fallback. Reason: ${reason}`);
   try {
     let stats: any = {};
