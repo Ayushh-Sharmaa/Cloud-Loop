@@ -63,11 +63,16 @@ export function JobCard({ job }: { job: Job }) {
             size="md"
           />
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <p className="font-semibold text-sm text-text-primary dark:text-dark-text-primary truncate">{job.role}</p>
               {job.isEasyApply && (
                 <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-primary/15 text-primary uppercase tracking-wide shrink-0">
                   Easy Apply
+                </span>
+              )}
+              {job.id.startsWith("scraped-") && (
+                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-500 uppercase tracking-wide shrink-0 animate-pulse border border-amber-500/20">
+                  ⚡ Live Scraped
                 </span>
               )}
             </div>

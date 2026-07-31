@@ -22,7 +22,10 @@ import { guidehouseSEJob } from "./list/guidehouse-se";
 import { browserstackSDEJob } from "./list/browserstack-sde";
 import { eclerxAnalystJob } from "./list/eclerx-analyst";
 
-export const jobs = [
+import scrapedJobs from "./scraped-jobs.json";
+import { Job } from "../types/Job";
+
+const staticJobs: Job[] = [
   ciscoTDEJob,
   ericssonPacketCoreJob,
   siemensTraineeJob,
@@ -47,3 +50,9 @@ export const jobs = [
   nikeSEJob,
   gokwikSDEJob,
 ];
+
+export const jobs: Job[] = [
+  ...staticJobs,
+  ...(scrapedJobs as Job[]),
+];
+

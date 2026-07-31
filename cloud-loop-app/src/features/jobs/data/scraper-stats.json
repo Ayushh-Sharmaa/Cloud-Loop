@@ -1,0 +1,25 @@
+{
+  "lastScraped": "2026-07-31T20:54:55.812137Z",
+  "success": true,
+  "totalScraped": 250,
+  "targetDailyOpportunities": 2400,
+  "dailyCoverageTarget": 240,
+  "coveragePercentage": 10.42,
+  "sourceStats": {
+    "google": {
+      "jobs": 50,
+      "internships": 34,
+      "total": 84
+    },
+    "microsoft": {
+      "jobs": 50,
+      "internships": 33,
+      "total": 83
+    },
+    "geeksforgeeks": {
+      "jobs": 50,
+      "internships": 33,
+      "total": 83
+    }
+  }
+}

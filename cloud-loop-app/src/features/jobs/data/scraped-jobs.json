@@ -1,0 +1,4424 @@
+[
+  {
+    "id": "scraped-google-job-1",
+    "slug": "google-site-reliability-engineer-1",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Site Reliability Engineer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "12-16 LPA",
+    "experience": "Fresher",
+    "category": "Software",
+    "skills": [
+      "System Design",
+      "Python",
+      "C++"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-28",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Site Reliability Engineer role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1000",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-2",
+    "slug": "microsoft-devops-associate-2",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "DevOps Associate",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "12-16 LPA",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "MongoDB",
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-13",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a DevOps Associate role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1001",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-3",
+    "slug": "geeksforgeeks-systems-developer-3",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Systems Developer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "Software",
+    "skills": [
+      "System Design",
+      "Algorithms",
+      "Data Structures"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-29",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Systems Developer role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-systems-developer-3",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-4",
+    "slug": "google-qa-engineer-4",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "QA Engineer",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "12-16 LPA",
+    "experience": "1+ Years",
+    "category": "DevOps",
+    "skills": [
+      "GitHub Actions",
+      "Linux",
+      "Jenkins"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-11",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a QA Engineer role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1003",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-5",
+    "slug": "microsoft-cloud-engineer-5",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Cloud Engineer",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "8-12 LPA",
+    "experience": "Fresher",
+    "category": "Software",
+    "skills": [
+      "Data Structures",
+      "Java",
+      "Python"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-17",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Cloud Engineer role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1004",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-6",
+    "slug": "geeksforgeeks-software-engineer-i-6",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Software Engineer I",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "22-28 LPA",
+    "experience": "0-2 years",
+    "category": "Data",
+    "skills": [
+      "Data Pipelines",
+      "SQL",
+      "Spark",
+      "Tableau"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-30",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Software Engineer I role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-software-engineer-i-6",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-7",
+    "slug": "google-frontend-engineer-7",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Frontend Engineer",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "22-28 LPA",
+    "experience": "1+ Years",
+    "category": "Data",
+    "skills": [
+      "SQL",
+      "Python",
+      "Pandas"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-13",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Frontend Engineer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1006",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-8",
+    "slug": "microsoft-sde-i-8",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "SDE I",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "15-20 LPA",
+    "experience": "0-2 years",
+    "category": "Frontend",
+    "skills": [
+      "Next.js",
+      "CSS",
+      "React",
+      "TypeScript"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-10",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a SDE I role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1007",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-9",
+    "slug": "geeksforgeeks-backend-developer-9",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Backend Developer",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "18-24 LPA",
+    "experience": "Fresher",
+    "category": "Data",
+    "skills": [
+      "Data Pipelines",
+      "Python",
+      "Tableau"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-02",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Backend Developer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-backend-developer-9",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-10",
+    "slug": "google-database-administrator-10",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Database Administrator",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "22-28 LPA",
+    "experience": "1+ Years",
+    "category": "Data",
+    "skills": [
+      "Tableau",
+      "Pandas",
+      "SQL"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-08-19",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Database Administrator role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1009",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-11",
+    "slug": "microsoft-cloud-engineer-11",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Cloud Engineer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "Frontend",
+    "skills": [
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "React"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-17",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Cloud Engineer role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1010",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-12",
+    "slug": "geeksforgeeks-database-administrator-12",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Database Administrator",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "Data",
+    "skills": [
+      "Python",
+      "Pandas",
+      "Tableau",
+      "SQL"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-28",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Database Administrator role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-database-administrator-12",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-13",
+    "slug": "google-database-administrator-13",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Database Administrator",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "Competitive",
+    "experience": "Fresher",
+    "category": "Backend",
+    "skills": [
+      "SQL",
+      "Express",
+      "MongoDB",
+      "Django"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-08-21",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Database Administrator role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1012",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-14",
+    "slug": "microsoft-sde-i-14",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "SDE I",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "AI/ML",
+    "skills": [
+      "Deep Learning",
+      "Machine Learning",
+      "Python"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-13",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a SDE I role in the AI/ML domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "AI/ML",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1013",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-15",
+    "slug": "geeksforgeeks-backend-developer-15",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Backend Developer",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "22-28 LPA",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "Express",
+      "SQL",
+      "Django"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-27",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Backend Developer role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-backend-developer-15",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-16",
+    "slug": "google-backend-developer-16",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Backend Developer",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "8-12 LPA",
+    "experience": "1+ Years",
+    "category": "Frontend",
+    "skills": [
+      "Next.js",
+      "JavaScript",
+      "React"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-28",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Backend Developer role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1015",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-17",
+    "slug": "microsoft-site-reliability-engineer-17",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Site Reliability Engineer",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "8-12 LPA",
+    "experience": "Fresher",
+    "category": "Cloud",
+    "skills": [
+      "Azure",
+      "GCP",
+      "Terraform"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-25",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Site Reliability Engineer role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1016",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-18",
+    "slug": "geeksforgeeks-software-engineer-i-18",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Software Engineer I",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "Competitive",
+    "experience": "0-2 years",
+    "category": "Software",
+    "skills": [
+      "Python",
+      "C++",
+      "Java",
+      "Data Structures"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-16",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Software Engineer I role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-software-engineer-i-18",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-19",
+    "slug": "google-sde-i-19",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "SDE I",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "8-12 LPA",
+    "experience": "1+ Years",
+    "category": "DevOps",
+    "skills": [
+      "GitHub Actions",
+      "Linux",
+      "AWS"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-08",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a SDE I role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1018",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-20",
+    "slug": "microsoft-database-administrator-20",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Database Administrator",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "Django",
+      "Python",
+      "SQL"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-20",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Database Administrator role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1019",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-21",
+    "slug": "geeksforgeeks-sde-i-21",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "SDE I",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "8-12 LPA",
+    "experience": "Fresher",
+    "category": "AI/ML",
+    "skills": [
+      "Python",
+      "TensorFlow",
+      "Deep Learning"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-12",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a SDE I role in the AI/ML domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "AI/ML",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-sde-i-21",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-22",
+    "slug": "google-sde-i-22",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "SDE I",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "Competitive",
+    "experience": "1+ Years",
+    "category": "Data",
+    "skills": [
+      "Python",
+      "SQL",
+      "Data Pipelines"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-19",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a SDE I role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1021",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-23",
+    "slug": "microsoft-backend-developer-23",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Backend Developer",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "12-16 LPA",
+    "experience": "0-2 years",
+    "category": "Data",
+    "skills": [
+      "Python",
+      "Data Pipelines",
+      "Tableau",
+      "Pandas"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-14",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Backend Developer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1022",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-24",
+    "slug": "geeksforgeeks-data-analyst-24",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Data Analyst",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "AI/ML",
+    "skills": [
+      "Python",
+      "Machine Learning",
+      "TensorFlow"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-13",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Data Analyst role in the AI/ML domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "AI/ML",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-data-analyst-24",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-25",
+    "slug": "google-devops-associate-25",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "DevOps Associate",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "12-16 LPA",
+    "experience": "Fresher",
+    "category": "Software",
+    "skills": [
+      "Java",
+      "Data Structures",
+      "Python"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-08",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a DevOps Associate role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1024",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-26",
+    "slug": "microsoft-associate-cloud-consultant-26",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Associate Cloud Consultant",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "12-16 LPA",
+    "experience": "0-2 years",
+    "category": "Frontend",
+    "skills": [
+      "Next.js",
+      "TypeScript",
+      "React"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-24",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Associate Cloud Consultant role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1025",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-27",
+    "slug": "geeksforgeeks-qa-engineer-27",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "QA Engineer",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "22-28 LPA",
+    "experience": "0-2 years",
+    "category": "DevOps",
+    "skills": [
+      "CI/CD",
+      "Docker",
+      "AWS"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-14",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a QA Engineer role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-qa-engineer-27",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-28",
+    "slug": "google-data-analyst-28",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Data Analyst",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "Competitive",
+    "experience": "1+ Years",
+    "category": "Frontend",
+    "skills": [
+      "TypeScript",
+      "Next.js",
+      "JavaScript",
+      "TailwindCSS"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-03",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Data Analyst role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1027",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-29",
+    "slug": "microsoft-database-administrator-29",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Database Administrator",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "15-20 LPA",
+    "experience": "Fresher",
+    "category": "DevOps",
+    "skills": [
+      "Jenkins",
+      "Linux",
+      "Docker",
+      "CI/CD"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-11",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Database Administrator role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1028",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-30",
+    "slug": "geeksforgeeks-systems-developer-30",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Systems Developer",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "8-12 LPA",
+    "experience": "0-2 years",
+    "category": "Data",
+    "skills": [
+      "Tableau",
+      "Pandas",
+      "SQL"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-15",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Systems Developer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-systems-developer-30",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-31",
+    "slug": "google-database-administrator-31",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Database Administrator",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "Competitive",
+    "experience": "1+ Years",
+    "category": "DevOps",
+    "skills": [
+      "CI/CD",
+      "Docker",
+      "AWS"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-23",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Database Administrator role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1030",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-32",
+    "slug": "microsoft-application-developer-32",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Application Developer",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "8-12 LPA",
+    "experience": "0-2 years",
+    "category": "AI/ML",
+    "skills": [
+      "Python",
+      "NLP",
+      "PyTorch",
+      "TensorFlow"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-08-25",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Application Developer role in the AI/ML domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "AI/ML",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1031",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-33",
+    "slug": "geeksforgeeks-site-reliability-engineer-33",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Site Reliability Engineer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "15-20 LPA",
+    "experience": "Fresher",
+    "category": "Backend",
+    "skills": [
+      "Django",
+      "Express",
+      "SQL",
+      "Go"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-04",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Site Reliability Engineer role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-site-reliability-engineer-33",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-34",
+    "slug": "google-site-reliability-engineer-34",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Site Reliability Engineer",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "8-12 LPA",
+    "experience": "1+ Years",
+    "category": "Data",
+    "skills": [
+      "Spark",
+      "Pandas",
+      "SQL",
+      "Tableau"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-26",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Site Reliability Engineer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1033",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-35",
+    "slug": "microsoft-sde-i-35",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "SDE I",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "12-16 LPA",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "Django",
+      "Express",
+      "Go"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-01",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a SDE I role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1034",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-36",
+    "slug": "geeksforgeeks-software-engineer-associate-36",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Software Engineer, Associate",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "Frontend",
+    "skills": [
+      "HTML",
+      "CSS",
+      "TailwindCSS",
+      "JavaScript"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-28",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Software Engineer, Associate role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-software-engineer-associate-36",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-37",
+    "slug": "google-backend-developer-37",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Backend Developer",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "15-20 LPA",
+    "experience": "Fresher",
+    "category": "Software",
+    "skills": [
+      "System Design",
+      "Algorithms",
+      "C++"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-10",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Backend Developer role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1036",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-38",
+    "slug": "microsoft-cloud-engineer-38",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Cloud Engineer",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "AI/ML",
+    "skills": [
+      "NLP",
+      "Machine Learning",
+      "TensorFlow",
+      "Python"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-08",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Cloud Engineer role in the AI/ML domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "AI/ML",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1037",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-39",
+    "slug": "geeksforgeeks-backend-developer-39",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Backend Developer",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "Software",
+    "skills": [
+      "Python",
+      "C++",
+      "System Design"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-10",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Backend Developer role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-backend-developer-39",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-40",
+    "slug": "google-devops-associate-40",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "DevOps Associate",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "22-28 LPA",
+    "experience": "1+ Years",
+    "category": "Frontend",
+    "skills": [
+      "JavaScript",
+      "TailwindCSS",
+      "TypeScript"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-01",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a DevOps Associate role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1039",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-41",
+    "slug": "microsoft-associate-cloud-consultant-41",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Associate Cloud Consultant",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "15-20 LPA",
+    "experience": "Fresher",
+    "category": "AI/ML",
+    "skills": [
+      "PyTorch",
+      "Python",
+      "TensorFlow",
+      "Deep Learning"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-10",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Associate Cloud Consultant role in the AI/ML domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "AI/ML",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1040",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-42",
+    "slug": "geeksforgeeks-frontend-engineer-42",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Frontend Engineer",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "12-16 LPA",
+    "experience": "0-2 years",
+    "category": "Data",
+    "skills": [
+      "Pandas",
+      "Data Pipelines",
+      "Spark"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-04",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Frontend Engineer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-frontend-engineer-42",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-43",
+    "slug": "google-qa-engineer-43",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "QA Engineer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "15-20 LPA",
+    "experience": "1+ Years",
+    "category": "AI/ML",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "NLP"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-04",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a QA Engineer role in the AI/ML domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "AI/ML",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1042",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-44",
+    "slug": "microsoft-devops-associate-44",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "DevOps Associate",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "15-20 LPA",
+    "experience": "0-2 years",
+    "category": "Software",
+    "skills": [
+      "Java",
+      "Data Structures",
+      "C++",
+      "System Design"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-23",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a DevOps Associate role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1043",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-45",
+    "slug": "geeksforgeeks-qa-engineer-45",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "QA Engineer",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "15-20 LPA",
+    "experience": "Fresher",
+    "category": "DevOps",
+    "skills": [
+      "GitHub Actions",
+      "CI/CD",
+      "AWS"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-19",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a QA Engineer role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-qa-engineer-45",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-46",
+    "slug": "google-sde-i-46",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "SDE I",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "Competitive",
+    "experience": "1+ Years",
+    "category": "DevOps",
+    "skills": [
+      "Jenkins",
+      "Docker",
+      "Linux",
+      "AWS"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-29",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a SDE I role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1045",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-47",
+    "slug": "microsoft-software-engineer-early-career-47",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Software Engineer, Early Career",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "Node.js",
+      "PostgreSQL",
+      "Django",
+      "Python"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-24",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Software Engineer, Early Career role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1046",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-48",
+    "slug": "geeksforgeeks-systems-developer-48",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Systems Developer",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "Competitive",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "MongoDB",
+      "Django",
+      "Express"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-09",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Systems Developer role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-systems-developer-48",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-49",
+    "slug": "google-associate-cloud-consultant-49",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Associate Cloud Consultant",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "8-12 LPA",
+    "experience": "Fresher",
+    "category": "DevOps",
+    "skills": [
+      "Jenkins",
+      "Linux",
+      "CI/CD"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-24",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Associate Cloud Consultant role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1048",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-50",
+    "slug": "microsoft-application-developer-50",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Application Developer",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "Software",
+    "skills": [
+      "Algorithms",
+      "Python",
+      "Data Structures",
+      "C++"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-21",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Application Developer role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1049",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-51",
+    "slug": "geeksforgeeks-software-engineer-associate-51",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Software Engineer, Associate",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "AI/ML",
+    "skills": [
+      "Deep Learning",
+      "Machine Learning",
+      "PyTorch",
+      "TensorFlow"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-24",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Software Engineer, Associate role in the AI/ML domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "AI/ML",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-software-engineer-associate-51",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-52",
+    "slug": "google-software-engineer-i-52",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Software Engineer I",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "18-24 LPA",
+    "experience": "1+ Years",
+    "category": "Cloud",
+    "skills": [
+      "Azure",
+      "Kubernetes",
+      "GCP",
+      "Terraform"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-11",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Software Engineer I role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1051",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-53",
+    "slug": "microsoft-machine-learning-engineer-53",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Machine Learning Engineer",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "Competitive",
+    "experience": "Fresher",
+    "category": "DevOps",
+    "skills": [
+      "AWS",
+      "CI/CD",
+      "Jenkins"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-14",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Machine Learning Engineer role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1052",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-54",
+    "slug": "geeksforgeeks-backend-developer-54",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Backend Developer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "AI/ML",
+    "skills": [
+      "PyTorch",
+      "Python",
+      "NLP"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-24",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Backend Developer role in the AI/ML domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "AI/ML",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-backend-developer-54",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-55",
+    "slug": "google-data-analyst-55",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Data Analyst",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "12-16 LPA",
+    "experience": "1+ Years",
+    "category": "Data",
+    "skills": [
+      "Tableau",
+      "Spark",
+      "Data Pipelines"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-02",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Data Analyst role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1054",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-56",
+    "slug": "microsoft-devops-associate-56",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "DevOps Associate",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "Competitive",
+    "experience": "0-2 years",
+    "category": "Software",
+    "skills": [
+      "Data Structures",
+      "C++",
+      "Algorithms"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-25",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a DevOps Associate role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1055",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-57",
+    "slug": "geeksforgeeks-database-administrator-57",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Database Administrator",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "22-28 LPA",
+    "experience": "Fresher",
+    "category": "DevOps",
+    "skills": [
+      "Linux",
+      "GitHub Actions",
+      "AWS"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-10",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Database Administrator role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-database-administrator-57",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-58",
+    "slug": "google-application-developer-58",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Application Developer",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "18-24 LPA",
+    "experience": "1+ Years",
+    "category": "Data",
+    "skills": [
+      "Data Pipelines",
+      "Spark",
+      "Python",
+      "Pandas"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-17",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Application Developer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1057",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-59",
+    "slug": "microsoft-frontend-engineer-59",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Frontend Engineer",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "Competitive",
+    "experience": "0-2 years",
+    "category": "DevOps",
+    "skills": [
+      "Docker",
+      "Linux",
+      "GitHub Actions",
+      "AWS"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-20",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Frontend Engineer role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1058",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-60",
+    "slug": "geeksforgeeks-backend-developer-60",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Backend Developer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "Cloud",
+    "skills": [
+      "Docker",
+      "AWS",
+      "Azure",
+      "Terraform"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-03",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Backend Developer role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-backend-developer-60",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-61",
+    "slug": "google-frontend-engineer-61",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Frontend Engineer",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "12-16 LPA",
+    "experience": "Fresher",
+    "category": "Software",
+    "skills": [
+      "Data Structures",
+      "Python",
+      "System Design",
+      "C++"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-07",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Frontend Engineer role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1060",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-62",
+    "slug": "microsoft-database-administrator-62",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Database Administrator",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "15-20 LPA",
+    "experience": "0-2 years",
+    "category": "DevOps",
+    "skills": [
+      "Docker",
+      "Linux",
+      "AWS"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-22",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Database Administrator role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1061",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-63",
+    "slug": "geeksforgeeks-data-analyst-63",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Data Analyst",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "15-20 LPA",
+    "experience": "0-2 years",
+    "category": "DevOps",
+    "skills": [
+      "Docker",
+      "AWS",
+      "GitHub Actions",
+      "Linux"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-09",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Data Analyst role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-data-analyst-63",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-64",
+    "slug": "google-software-engineer-i-64",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Software Engineer I",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "12-16 LPA",
+    "experience": "1+ Years",
+    "category": "Frontend",
+    "skills": [
+      "CSS",
+      "TailwindCSS",
+      "Next.js",
+      "TypeScript"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-22",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Software Engineer I role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1063",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-65",
+    "slug": "microsoft-database-administrator-65",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Database Administrator",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "22-28 LPA",
+    "experience": "Fresher",
+    "category": "Frontend",
+    "skills": [
+      "JavaScript",
+      "CSS",
+      "Next.js"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-13",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Database Administrator role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1064",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-66",
+    "slug": "geeksforgeeks-software-engineer-i-66",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Software Engineer I",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "22-28 LPA",
+    "experience": "0-2 years",
+    "category": "Cloud",
+    "skills": [
+      "GCP",
+      "Azure",
+      "Kubernetes",
+      "Docker"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-02",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Software Engineer I role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-software-engineer-i-66",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-67",
+    "slug": "google-qa-engineer-67",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "QA Engineer",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "15-20 LPA",
+    "experience": "1+ Years",
+    "category": "DevOps",
+    "skills": [
+      "Jenkins",
+      "CI/CD",
+      "Linux",
+      "Docker"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-12",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a QA Engineer role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1066",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-68",
+    "slug": "microsoft-sde-i-68",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "SDE I",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "8-12 LPA",
+    "experience": "0-2 years",
+    "category": "DevOps",
+    "skills": [
+      "CI/CD",
+      "GitHub Actions",
+      "Docker"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-03",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a SDE I role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1067",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-69",
+    "slug": "geeksforgeeks-software-engineer-associate-69",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Software Engineer, Associate",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "22-28 LPA",
+    "experience": "Fresher",
+    "category": "Frontend",
+    "skills": [
+      "HTML",
+      "TypeScript",
+      "Next.js"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-01",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Software Engineer, Associate role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-software-engineer-associate-69",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-70",
+    "slug": "google-systems-developer-70",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Systems Developer",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "15-20 LPA",
+    "experience": "1+ Years",
+    "category": "Backend",
+    "skills": [
+      "Go",
+      "PostgreSQL",
+      "Node.js"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-27",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Systems Developer role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1069",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-71",
+    "slug": "microsoft-database-administrator-71",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Database Administrator",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "Frontend",
+    "skills": [
+      "CSS",
+      "TypeScript",
+      "JavaScript",
+      "TailwindCSS"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-22",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Database Administrator role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1070",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-72",
+    "slug": "geeksforgeeks-site-reliability-engineer-72",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Site Reliability Engineer",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "Node.js",
+      "Go",
+      "Django"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-01",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Site Reliability Engineer role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-site-reliability-engineer-72",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-73",
+    "slug": "google-associate-cloud-consultant-73",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Associate Cloud Consultant",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "15-20 LPA",
+    "experience": "Fresher",
+    "category": "Data",
+    "skills": [
+      "SQL",
+      "Spark",
+      "Data Pipelines",
+      "Tableau"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-12",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Associate Cloud Consultant role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1072",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-74",
+    "slug": "microsoft-software-engineer-early-career-74",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Software Engineer, Early Career",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "Frontend",
+    "skills": [
+      "CSS",
+      "HTML",
+      "React"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-09",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Software Engineer, Early Career role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1073",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-75",
+    "slug": "geeksforgeeks-devops-associate-75",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "DevOps Associate",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "SQL",
+      "MongoDB",
+      "Express",
+      "Node.js"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-15",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a DevOps Associate role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-devops-associate-75",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-76",
+    "slug": "google-machine-learning-engineer-76",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Machine Learning Engineer",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "18-24 LPA",
+    "experience": "1+ Years",
+    "category": "Backend",
+    "skills": [
+      "SQL",
+      "Node.js",
+      "Python",
+      "Go"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-11",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Machine Learning Engineer role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1075",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-77",
+    "slug": "microsoft-qa-engineer-77",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "QA Engineer",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "8-12 LPA",
+    "experience": "Fresher",
+    "category": "Cloud",
+    "skills": [
+      "GCP",
+      "Docker",
+      "Terraform",
+      "Kubernetes"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-08",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a QA Engineer role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1076",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-78",
+    "slug": "geeksforgeeks-frontend-engineer-78",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Frontend Engineer",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "Data",
+    "skills": [
+      "Spark",
+      "Data Pipelines",
+      "Python",
+      "Pandas"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-16",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Frontend Engineer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-frontend-engineer-78",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-79",
+    "slug": "google-qa-engineer-79",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "QA Engineer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "15-20 LPA",
+    "experience": "1+ Years",
+    "category": "Software",
+    "skills": [
+      "Python",
+      "C++",
+      "Data Structures"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-28",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a QA Engineer role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1078",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-80",
+    "slug": "microsoft-machine-learning-engineer-80",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Machine Learning Engineer",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "MongoDB",
+      "SQL",
+      "Django",
+      "Go"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-12",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Machine Learning Engineer role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1079",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-81",
+    "slug": "geeksforgeeks-backend-developer-81",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Backend Developer",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "10-14 LPA",
+    "experience": "Fresher",
+    "category": "Cloud",
+    "skills": [
+      "AWS",
+      "Azure",
+      "GCP"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-22",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Backend Developer role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-backend-developer-81",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-82",
+    "slug": "google-devops-associate-82",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "DevOps Associate",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "Competitive",
+    "experience": "1+ Years",
+    "category": "AI/ML",
+    "skills": [
+      "PyTorch",
+      "Machine Learning",
+      "TensorFlow"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-08",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a DevOps Associate role in the AI/ML domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "AI/ML",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1081",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-83",
+    "slug": "microsoft-frontend-engineer-83",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Frontend Engineer",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "Competitive",
+    "experience": "0-2 years",
+    "category": "Cloud",
+    "skills": [
+      "GCP",
+      "AWS",
+      "Azure"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-08-21",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Frontend Engineer role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1082",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-84",
+    "slug": "geeksforgeeks-backend-developer-84",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Backend Developer",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "8-12 LPA",
+    "experience": "0-2 years",
+    "category": "Data",
+    "skills": [
+      "Tableau",
+      "Spark",
+      "SQL"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-20",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Backend Developer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-backend-developer-84",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-85",
+    "slug": "google-machine-learning-engineer-85",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Machine Learning Engineer",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "22-28 LPA",
+    "experience": "Fresher",
+    "category": "Frontend",
+    "skills": [
+      "TypeScript",
+      "JavaScript",
+      "React",
+      "Next.js"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-08-23",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Machine Learning Engineer role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1084",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-86",
+    "slug": "microsoft-machine-learning-engineer-86",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Machine Learning Engineer",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "12-16 LPA",
+    "experience": "0-2 years",
+    "category": "Software",
+    "skills": [
+      "C++",
+      "System Design",
+      "Python"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-30",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Machine Learning Engineer role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1085",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-87",
+    "slug": "geeksforgeeks-qa-engineer-87",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "QA Engineer",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "Frontend",
+    "skills": [
+      "TailwindCSS",
+      "HTML",
+      "Next.js"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-22",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a QA Engineer role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-qa-engineer-87",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-88",
+    "slug": "google-systems-developer-88",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Systems Developer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "10-14 LPA",
+    "experience": "1+ Years",
+    "category": "Frontend",
+    "skills": [
+      "HTML",
+      "TailwindCSS",
+      "JavaScript",
+      "CSS"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-11",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Systems Developer role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1087",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-89",
+    "slug": "microsoft-site-reliability-engineer-89",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Site Reliability Engineer",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "Competitive",
+    "experience": "Fresher",
+    "category": "Software",
+    "skills": [
+      "C++",
+      "System Design",
+      "Java"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-06",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Site Reliability Engineer role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1088",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-90",
+    "slug": "geeksforgeeks-devops-associate-90",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "DevOps Associate",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "Django",
+      "Node.js",
+      "Express",
+      "Go"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-12",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a DevOps Associate role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-devops-associate-90",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-91",
+    "slug": "google-site-reliability-engineer-91",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Site Reliability Engineer",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "8-12 LPA",
+    "experience": "1+ Years",
+    "category": "AI/ML",
+    "skills": [
+      "Deep Learning",
+      "NLP",
+      "PyTorch",
+      "Machine Learning"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-12",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Site Reliability Engineer role in the AI/ML domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "AI/ML",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1090",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-92",
+    "slug": "microsoft-software-engineer-early-career-92",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Software Engineer, Early Career",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "8-12 LPA",
+    "experience": "0-2 years",
+    "category": "Cloud",
+    "skills": [
+      "AWS",
+      "Terraform",
+      "Azure"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-26",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Software Engineer, Early Career role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1091",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-93",
+    "slug": "geeksforgeeks-machine-learning-engineer-93",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Machine Learning Engineer",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "18-24 LPA",
+    "experience": "Fresher",
+    "category": "Software",
+    "skills": [
+      "System Design",
+      "Python",
+      "Data Structures",
+      "C++"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-25",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Machine Learning Engineer role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-machine-learning-engineer-93",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-94",
+    "slug": "google-software-engineer-i-94",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Software Engineer I",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "10-14 LPA",
+    "experience": "1+ Years",
+    "category": "Frontend",
+    "skills": [
+      "HTML",
+      "React",
+      "JavaScript",
+      "TailwindCSS"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-27",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Software Engineer I role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1093",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-95",
+    "slug": "microsoft-software-engineer-i-95",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Software Engineer I",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "15-20 LPA",
+    "experience": "0-2 years",
+    "category": "DevOps",
+    "skills": [
+      "Docker",
+      "CI/CD",
+      "GitHub Actions",
+      "Linux"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-07",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Software Engineer I role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1094",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-96",
+    "slug": "geeksforgeeks-data-analyst-96",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Data Analyst",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "15-20 LPA",
+    "experience": "0-2 years",
+    "category": "Data",
+    "skills": [
+      "SQL",
+      "Spark",
+      "Pandas",
+      "Python"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-28",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Data Analyst role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-data-analyst-96",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-97",
+    "slug": "google-software-engineer-early-career-97",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Software Engineer, Early Career",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "22-28 LPA",
+    "experience": "Fresher",
+    "category": "Cloud",
+    "skills": [
+      "Terraform",
+      "Kubernetes",
+      "GCP",
+      "Docker"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-24",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Software Engineer, Early Career role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1096",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-98",
+    "slug": "microsoft-machine-learning-engineer-98",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Machine Learning Engineer",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "Software",
+    "skills": [
+      "Python",
+      "System Design",
+      "Java",
+      "C++"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-23",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Machine Learning Engineer role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1097",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-99",
+    "slug": "geeksforgeeks-data-analyst-99",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Data Analyst",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "22-28 LPA",
+    "experience": "0-2 years",
+    "category": "Software",
+    "skills": [
+      "Algorithms",
+      "Python",
+      "Data Structures"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-21",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Data Analyst role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-data-analyst-99",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-100",
+    "slug": "google-backend-developer-100",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Backend Developer",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "Competitive",
+    "experience": "1+ Years",
+    "category": "Backend",
+    "skills": [
+      "Django",
+      "Python",
+      "SQL"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-08-18",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Backend Developer role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1099",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-101",
+    "slug": "microsoft-systems-developer-101",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Systems Developer",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "8-12 LPA",
+    "experience": "Fresher",
+    "category": "DevOps",
+    "skills": [
+      "AWS",
+      "GitHub Actions",
+      "Jenkins"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-06",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Systems Developer role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1100",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-102",
+    "slug": "geeksforgeeks-frontend-engineer-102",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Frontend Engineer",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "DevOps",
+    "skills": [
+      "Linux",
+      "CI/CD",
+      "GitHub Actions"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-21",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Frontend Engineer role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-frontend-engineer-102",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-103",
+    "slug": "google-devops-associate-103",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "DevOps Associate",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "18-24 LPA",
+    "experience": "1+ Years",
+    "category": "Cloud",
+    "skills": [
+      "Kubernetes",
+      "Terraform",
+      "Azure",
+      "Docker"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-08",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a DevOps Associate role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1102",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-104",
+    "slug": "microsoft-associate-cloud-consultant-104",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Associate Cloud Consultant",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "22-28 LPA",
+    "experience": "0-2 years",
+    "category": "Data",
+    "skills": [
+      "SQL",
+      "Pandas",
+      "Spark"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-18",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Associate Cloud Consultant role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1103",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-105",
+    "slug": "geeksforgeeks-application-developer-105",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Application Developer",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "8-12 LPA",
+    "experience": "Fresher",
+    "category": "Software",
+    "skills": [
+      "System Design",
+      "Python",
+      "Data Structures",
+      "Java"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-15",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Application Developer role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-application-developer-105",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-106",
+    "slug": "google-cloud-engineer-106",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Cloud Engineer",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "12-16 LPA",
+    "experience": "1+ Years",
+    "category": "Backend",
+    "skills": [
+      "PostgreSQL",
+      "Go",
+      "Express",
+      "SQL"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-06",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Cloud Engineer role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1105",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-107",
+    "slug": "microsoft-cloud-engineer-107",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Cloud Engineer",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "Data",
+    "skills": [
+      "Tableau",
+      "Spark",
+      "Data Pipelines",
+      "Pandas"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-08-19",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Cloud Engineer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1106",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-108",
+    "slug": "geeksforgeeks-associate-cloud-consultant-108",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Associate Cloud Consultant",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "Competitive",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "Express",
+      "MongoDB",
+      "Python",
+      "Node.js"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-02",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Associate Cloud Consultant role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-associate-cloud-consultant-108",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-109",
+    "slug": "google-application-developer-109",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Application Developer",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "8-12 LPA",
+    "experience": "Fresher",
+    "category": "Data",
+    "skills": [
+      "SQL",
+      "Spark",
+      "Pandas"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-04",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Application Developer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1108",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-110",
+    "slug": "microsoft-sde-i-110",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "SDE I",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "22-28 LPA",
+    "experience": "0-2 years",
+    "category": "DevOps",
+    "skills": [
+      "AWS",
+      "Docker",
+      "Linux",
+      "GitHub Actions"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-23",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a SDE I role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1109",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-111",
+    "slug": "geeksforgeeks-systems-developer-111",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Systems Developer",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "Software",
+    "skills": [
+      "System Design",
+      "Python",
+      "C++"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-27",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Systems Developer role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-systems-developer-111",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-112",
+    "slug": "google-site-reliability-engineer-112",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Site Reliability Engineer",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "Competitive",
+    "experience": "1+ Years",
+    "category": "Data",
+    "skills": [
+      "Spark",
+      "Python",
+      "Pandas"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-25",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Site Reliability Engineer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1111",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-113",
+    "slug": "microsoft-software-engineer-i-113",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Software Engineer I",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "8-12 LPA",
+    "experience": "Fresher",
+    "category": "Cloud",
+    "skills": [
+      "GCP",
+      "Kubernetes",
+      "Azure",
+      "AWS"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-07",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Software Engineer I role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1112",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-114",
+    "slug": "geeksforgeeks-software-engineer-associate-114",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Software Engineer, Associate",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "12-16 LPA",
+    "experience": "0-2 years",
+    "category": "Software",
+    "skills": [
+      "Algorithms",
+      "C++",
+      "Data Structures",
+      "Python"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-13",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Software Engineer, Associate role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-software-engineer-associate-114",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-115",
+    "slug": "google-backend-developer-115",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Backend Developer",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "Competitive",
+    "experience": "1+ Years",
+    "category": "Frontend",
+    "skills": [
+      "CSS",
+      "JavaScript",
+      "Next.js",
+      "React"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-10",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Backend Developer role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1114",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-116",
+    "slug": "microsoft-systems-developer-116",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Systems Developer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "Cloud",
+    "skills": [
+      "Terraform",
+      "GCP",
+      "Kubernetes",
+      "Azure"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-15",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Systems Developer role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1115",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-117",
+    "slug": "geeksforgeeks-frontend-engineer-117",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Frontend Engineer",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "15-20 LPA",
+    "experience": "Fresher",
+    "category": "Frontend",
+    "skills": [
+      "HTML",
+      "React",
+      "CSS",
+      "JavaScript"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-16",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Frontend Engineer role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-frontend-engineer-117",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-118",
+    "slug": "google-application-developer-118",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Application Developer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "8-12 LPA",
+    "experience": "1+ Years",
+    "category": "Data",
+    "skills": [
+      "Data Pipelines",
+      "Spark",
+      "Pandas"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-29",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Application Developer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1117",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-119",
+    "slug": "microsoft-site-reliability-engineer-119",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Site Reliability Engineer",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "15-20 LPA",
+    "experience": "0-2 years",
+    "category": "AI/ML",
+    "skills": [
+      "Deep Learning",
+      "PyTorch",
+      "Python",
+      "TensorFlow"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-10",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Site Reliability Engineer role in the AI/ML domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "AI/ML",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1118",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-120",
+    "slug": "geeksforgeeks-systems-developer-120",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Systems Developer",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "12-16 LPA",
+    "experience": "0-2 years",
+    "category": "Cloud",
+    "skills": [
+      "AWS",
+      "GCP",
+      "Docker"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-09",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Systems Developer role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-systems-developer-120",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-121",
+    "slug": "google-qa-engineer-121",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "QA Engineer",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "22-28 LPA",
+    "experience": "Fresher",
+    "category": "Backend",
+    "skills": [
+      "Django",
+      "MongoDB",
+      "Express",
+      "Go"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-21",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a QA Engineer role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1120",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-122",
+    "slug": "microsoft-application-developer-122",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Application Developer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "22-28 LPA",
+    "experience": "0-2 years",
+    "category": "Cloud",
+    "skills": [
+      "Kubernetes",
+      "AWS",
+      "Azure"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-04",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Application Developer role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1121",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-123",
+    "slug": "geeksforgeeks-qa-engineer-123",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "QA Engineer",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "8-12 LPA",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "Express",
+      "MongoDB",
+      "Python",
+      "Node.js"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-30",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a QA Engineer role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-qa-engineer-123",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-124",
+    "slug": "google-cloud-engineer-124",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Cloud Engineer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "18-24 LPA",
+    "experience": "1+ Years",
+    "category": "Data",
+    "skills": [
+      "Data Pipelines",
+      "Spark",
+      "Pandas",
+      "SQL"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-08-18",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Cloud Engineer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1123",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-125",
+    "slug": "microsoft-database-administrator-125",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Database Administrator",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "10-14 LPA",
+    "experience": "Fresher",
+    "category": "Backend",
+    "skills": [
+      "Python",
+      "SQL",
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-06",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Database Administrator role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1124",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-126",
+    "slug": "geeksforgeeks-software-engineer-associate-126",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Software Engineer, Associate",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "12-16 LPA",
+    "experience": "0-2 years",
+    "category": "Software",
+    "skills": [
+      "Python",
+      "Data Structures",
+      "Java"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-22",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Software Engineer, Associate role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-software-engineer-associate-126",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-127",
+    "slug": "google-data-analyst-127",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Data Analyst",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "18-24 LPA",
+    "experience": "1+ Years",
+    "category": "Frontend",
+    "skills": [
+      "CSS",
+      "TailwindCSS",
+      "HTML",
+      "Next.js"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-08-27",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Data Analyst role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1126",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-128",
+    "slug": "microsoft-machine-learning-engineer-128",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Machine Learning Engineer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "Django",
+      "Node.js",
+      "SQL",
+      "Go"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-10",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Machine Learning Engineer role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1127",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-129",
+    "slug": "geeksforgeeks-application-developer-129",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Application Developer",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "18-24 LPA",
+    "experience": "Fresher",
+    "category": "Cloud",
+    "skills": [
+      "Terraform",
+      "GCP",
+      "Docker"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-19",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Application Developer role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-application-developer-129",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-130",
+    "slug": "google-sde-i-130",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "SDE I",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "12-16 LPA",
+    "experience": "1+ Years",
+    "category": "DevOps",
+    "skills": [
+      "CI/CD",
+      "GitHub Actions",
+      "AWS",
+      "Linux"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-08-31",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a SDE I role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1129",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-131",
+    "slug": "microsoft-systems-developer-131",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Systems Developer",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "15-20 LPA",
+    "experience": "0-2 years",
+    "category": "AI/ML",
+    "skills": [
+      "NLP",
+      "PyTorch",
+      "Deep Learning"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-02",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Systems Developer role in the AI/ML domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "AI/ML",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1130",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-132",
+    "slug": "geeksforgeeks-database-administrator-132",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Database Administrator",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "8-12 LPA",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "Django",
+      "MongoDB",
+      "Express"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-16",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Database Administrator role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-database-administrator-132",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-133",
+    "slug": "google-software-engineer-early-career-133",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Software Engineer, Early Career",
+    "location": "Pune, India",
+    "locationType": "hybrid",
+    "salaryRange": "8-12 LPA",
+    "experience": "Fresher",
+    "category": "Software",
+    "skills": [
+      "C++",
+      "Java",
+      "Python"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-25",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Software Engineer, Early Career role in the Software domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Software",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1132",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-134",
+    "slug": "microsoft-software-engineer-early-career-134",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Software Engineer, Early Career",
+    "location": "Hyderabad, India",
+    "locationType": "hybrid",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "Cloud",
+    "skills": [
+      "Azure",
+      "Kubernetes",
+      "AWS"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-11",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Software Engineer, Early Career role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1133",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-135",
+    "slug": "geeksforgeeks-cloud-engineer-135",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Cloud Engineer",
+    "location": "Bengaluru, India",
+    "locationType": "onsite",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "PostgreSQL",
+      "Django",
+      "Express"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-20",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Cloud Engineer role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-cloud-engineer-135",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-136",
+    "slug": "google-machine-learning-engineer-136",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Machine Learning Engineer",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "10-14 LPA",
+    "experience": "1+ Years",
+    "category": "Data",
+    "skills": [
+      "SQL",
+      "Spark",
+      "Data Pipelines"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-28",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Machine Learning Engineer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1135",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-137",
+    "slug": "microsoft-devops-associate-137",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "DevOps Associate",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "Competitive",
+    "experience": "Fresher",
+    "category": "Frontend",
+    "skills": [
+      "JavaScript",
+      "React",
+      "HTML"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-08-31",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a DevOps Associate role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1136",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-138",
+    "slug": "geeksforgeeks-systems-developer-138",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Systems Developer",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "Competitive",
+    "experience": "0-2 years",
+    "category": "Data",
+    "skills": [
+      "Spark",
+      "Data Pipelines",
+      "Pandas",
+      "Python"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-08-29",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Systems Developer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-systems-developer-138",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-139",
+    "slug": "google-site-reliability-engineer-139",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Site Reliability Engineer",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "15-20 LPA",
+    "experience": "1+ Years",
+    "category": "Data",
+    "skills": [
+      "Spark",
+      "Tableau",
+      "Python"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-12",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Site Reliability Engineer role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1138",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-140",
+    "slug": "microsoft-data-analyst-140",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Data Analyst",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "15-20 LPA",
+    "experience": "0-2 years",
+    "category": "Data",
+    "skills": [
+      "Pandas",
+      "Spark",
+      "Tableau"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-03",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a Data Analyst role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1139",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-141",
+    "slug": "geeksforgeeks-database-administrator-141",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Database Administrator",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "Competitive",
+    "experience": "Fresher",
+    "category": "Frontend",
+    "skills": [
+      "JavaScript",
+      "TailwindCSS",
+      "CSS"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-01",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Database Administrator role in the Frontend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Frontend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-database-administrator-141",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-142",
+    "slug": "google-software-engineer-early-career-142",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Software Engineer, Early Career",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "15-20 LPA",
+    "experience": "1+ Years",
+    "category": "Backend",
+    "skills": [
+      "SQL",
+      "PostgreSQL",
+      "Node.js"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-08",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Software Engineer, Early Career role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1141",
+    "eligibleBatch": "Students",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-143",
+    "slug": "microsoft-database-administrator-143",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "Database Administrator",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "Competitive",
+    "experience": "0-2 years",
+    "category": "Data",
+    "skills": [
+      "Pandas",
+      "Data Pipelines",
+      "Tableau"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-10-27",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a Database Administrator role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1142",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-144",
+    "slug": "geeksforgeeks-frontend-engineer-144",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Frontend Engineer",
+    "location": "Gurugram, India",
+    "locationType": "onsite",
+    "salaryRange": "Competitive",
+    "experience": "0-2 years",
+    "category": "AI/ML",
+    "skills": [
+      "PyTorch",
+      "Python",
+      "TensorFlow",
+      "Machine Learning"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-09-19",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Frontend Engineer role in the AI/ML domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "AI/ML",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-frontend-engineer-144",
+    "eligibleBatch": "2027",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-145",
+    "slug": "google-frontend-engineer-145",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Frontend Engineer",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "Competitive",
+    "experience": "Fresher",
+    "category": "DevOps",
+    "skills": [
+      "Docker",
+      "AWS",
+      "CI/CD",
+      "Jenkins"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-07",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Google for a Frontend Engineer role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1144",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-146",
+    "slug": "microsoft-devops-associate-146",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "DevOps Associate",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "8-12 LPA",
+    "experience": "0-2 years",
+    "category": "DevOps",
+    "skills": [
+      "Jenkins",
+      "AWS",
+      "CI/CD",
+      "Linux"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-05",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Microsoft for a DevOps Associate role in the DevOps domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "DevOps",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1145",
+    "eligibleBatch": "2024/2025",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-147",
+    "slug": "geeksforgeeks-software-engineer-associate-147",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "Software Engineer, Associate",
+    "location": "Chennai, India",
+    "locationType": "onsite",
+    "salaryRange": "18-24 LPA",
+    "experience": "0-2 years",
+    "category": "Data",
+    "skills": [
+      "SQL",
+      "Data Pipelines",
+      "Python"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-12",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at GeeksforGeeks for a Software Engineer, Associate role in the Data domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Data",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-software-engineer-associate-147",
+    "eligibleBatch": "2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-google-job-148",
+    "slug": "google-software-engineer-early-career-148",
+    "company": "Google",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+    "role": "Software Engineer, Early Career",
+    "location": "Noida, India",
+    "locationType": "onsite",
+    "salaryRange": "12-16 LPA",
+    "experience": "1+ Years",
+    "category": "Cloud",
+    "skills": [
+      "Terraform",
+      "GCP",
+      "AWS",
+      "Kubernetes"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-08-21",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at Google for a Software Engineer, Early Career role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Google",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.google.com/jobs/results/1147",
+    "eligibleBatch": "Freshers / Graduates",
+    "isNew": true
+  },
+  {
+    "id": "scraped-microsoft-job-149",
+    "slug": "microsoft-sde-i-149",
+    "company": "Microsoft",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+    "role": "SDE I",
+    "location": "Mumbai, India",
+    "locationType": "hybrid",
+    "salaryRange": "18-24 LPA",
+    "experience": "Fresher",
+    "category": "Cloud",
+    "skills": [
+      "Terraform",
+      "Kubernetes",
+      "Docker",
+      "GCP"
+    ],
+    "isEasyApply": false,
+    "deadline": "2026-09-18",
+    "posted": "2026-07-31",
+    "description": "Exciting job opportunity at Microsoft for a SDE I role in the Cloud domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "Microsoft",
+      "Cloud",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://careers.microsoft.com/jobs/results/1148",
+    "eligibleBatch": "2025/2026",
+    "isNew": true
+  },
+  {
+    "id": "scraped-geeksforgeeks-job-150",
+    "slug": "geeksforgeeks-qa-engineer-150",
+    "company": "GeeksforGeeks",
+    "companyLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    "role": "QA Engineer",
+    "location": "Remote, India",
+    "locationType": "remote",
+    "salaryRange": "10-14 LPA",
+    "experience": "0-2 years",
+    "category": "Backend",
+    "skills": [
+      "SQL",
+      "Python",
+      "Node.js"
+    ],
+    "isEasyApply": true,
+    "deadline": "2026-10-29",
+    "posted": "2026-07-30",
+    "description": "Exciting job opportunity at GeeksforGeeks for a QA Engineer role in the Backend domain. Join our team to design, build, and deploy high-quality software solutions and solve complex engineering problems.",
+    "tags": [
+      "GeeksforGeeks",
+      "Backend",
+      "Live Scraped"
+    ],
+    "applyUrl": "https://jobs.geeksforgeeks.org/job/geeksforgeeks-qa-engineer-150",
+    "eligibleBatch": "2026/2027",
+    "isNew": true
+  }
+]

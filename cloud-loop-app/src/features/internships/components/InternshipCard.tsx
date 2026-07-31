@@ -63,7 +63,14 @@ export function InternshipCard({ internship }: { internship: Internship }) {
             size="md"
           />
           <div className="flex-1 min-w-0">
-            <p className="font-semibold text-sm text-text-primary dark:text-dark-text-primary truncate">{internship.role}</p>
+            <div className="flex items-center gap-2 flex-wrap mb-1">
+              <p className="font-semibold text-sm text-text-primary dark:text-dark-text-primary truncate">{internship.role}</p>
+              {internship.id.startsWith("scraped-") && (
+                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-500 uppercase tracking-wide shrink-0 animate-pulse border border-amber-500/20">
+                  ⚡ Live Scraped
+                </span>
+              )}
+            </div>
             <p className="text-xs text-text-secondary dark:text-dark-text-secondary">{internship.company}</p>
           </div>
           <div className="flex flex-col items-end gap-1 shrink-0">
