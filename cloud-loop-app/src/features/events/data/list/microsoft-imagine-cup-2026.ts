@@ -17,4 +17,5 @@ export const microsoftImagineCup2026Event: Event = {
   prize: "$100,000 + mentorship + Azure credits",
   tags: ["AI", "Microsoft", "Competition", "Azure"],
   registered: 9000,
+  applyUrl: "https://imaginecup.microsoft.com/",
 };

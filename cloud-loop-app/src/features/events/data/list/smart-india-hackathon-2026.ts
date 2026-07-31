@@ -17,4 +17,5 @@ export const smartIndiaHackathon2026Event: Event = {
   prize: "₹1,00,000 per team",
   tags: ["Hackathon", "National", "Government", "Innovation"],
   registered: 12000,
+  applyUrl: "https://sih.gov.in",
 };

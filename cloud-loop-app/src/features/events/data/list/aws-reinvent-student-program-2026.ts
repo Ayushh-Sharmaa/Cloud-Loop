@@ -17,4 +17,5 @@ export const awsReinvent2026Event: Event = {
   prize: "Travel grant + conference pass",
   tags: ["Cloud Computing", "AWS", "Conference", "In-person"],
   registered: 2000,
+  applyUrl: "https://reinvent.awsevents.com/",
 };

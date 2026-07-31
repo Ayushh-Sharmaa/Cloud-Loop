@@ -1,5 +1,5 @@
 {
-  "lastScraped": "2026-07-31T22:08:37.132048Z",
+  "lastScraped": "2026-07-31T22:15:17.162224Z",
   "success": true,
   "totalScraped": 2550,
   "uniqueCompaniesCount": 1010,
@@ -18,19 +18,19 @@
       "total": 3
     },
     "amazon": {
-      "jobs": 2,
-      "internships": 1,
-      "total": 3
-    },
-    "zoho": {
-      "jobs": 2,
-      "internships": 1,
-      "total": 3
-    },
-    "tcs": {
       "jobs": 1,
       "internships": 1,
       "total": 2
+    },
+    "zoho": {
+      "jobs": 1,
+      "internships": 1,
+      "total": 2
+    },
+    "tcs": {
+      "jobs": 2,
+      "internships": 1,
+      "total": 3
     },
     "wipro": {
       "jobs": 2,
@@ -38,18 +38,18 @@
       "total": 3
     },
     "accenture": {
-      "jobs": 2,
-      "internships": 1,
-      "total": 3
-    },
-    "jpmorgan": {
       "jobs": 1,
       "internships": 1,
       "total": 2
     },
-    "geeksforgeeks": {
-      "jobs": 1,
+    "jpmorgan": {
+      "jobs": 2,
       "internships": 1,
+      "total": 3
+    },
+    "geeksforgeeks": {
+      "jobs": 2,
+      "internships": 0,
       "total": 2
     }
   }

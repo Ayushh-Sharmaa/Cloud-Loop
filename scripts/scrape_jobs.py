@@ -305,26 +305,25 @@ def generate_fallback_opportunities():
 
 def generate_fallback_events():
     event_types = ["Hackathon", "Competition", "Bootcamp", "Workshop", "Conference"]
-    organizers = ["Google Cloud", "Microsoft Imagine", "AWS Student", "Zoho Devs", "Unstop", "Hack2skill", "MLH", "GeeksforGeeks"]
+    organizers = ["Unstop", "Hack2skill", "Naukri Campus", "Commudle", "Google Developer Groups", "MLH", "GeeksforGeeks"]
+    
     logos = {
-        "Google Cloud": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
-        "Microsoft Imagine": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
-        "AWS Student": "https://www.google.com/s2/favicons?domain=amazon.com&sz=64",
-        "Zoho Devs": "https://www.google.com/s2/favicons?domain=zoho.com&sz=64",
         "Unstop": "https://www.google.com/s2/favicons?domain=unstop.com&sz=64",
         "Hack2skill": "https://www.google.com/s2/favicons?domain=hack2skill.com&sz=64",
+        "Naukri Campus": "https://www.google.com/s2/favicons?domain=naukri.com&sz=64",
+        "Commudle": "https://www.google.com/s2/favicons?domain=commudle.com&sz=64",
+        "Google Developer Groups": "https://www.google.com/s2/favicons?domain=gdg.community.dev&sz=64",
         "MLH": "https://www.google.com/s2/favicons?domain=mlh.io&sz=64",
         "GeeksforGeeks": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64"
     }
 
     event_urls = {
-        "Google Cloud": "https://cloud.google.com/events",
-        "Microsoft Imagine": "https://imaginecup.microsoft.com/",
-        "AWS Student": "https://aws.amazon.com/education/aws-educate/",
-        "Zoho Devs": "https://www.zoho.com/developer/",
         "Unstop": "https://unstop.com/",
         "Hack2skill": "https://hack2skill.com/",
-        "MLH": "https://mlh.io/seasons/2026/events",
+        "Naukri Campus": "https://www.naukri.com/campus/",
+        "Commudle": "https://www.commudle.com/",
+        "Google Developer Groups": "https://gdg.community.dev/",
+        "MLH": "https://mlh.io/",
         "GeeksforGeeks": "https://practice.geeksforgeeks.org/events"
     }
     

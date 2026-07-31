@@ -17,4 +17,5 @@ export const mlhHackathonSeason2026Event: Event = {
   prize: "Varies per hackathon",
   tags: ["Hackathon", "Community", "Global", "Developer"],
   registered: 92000,
+  applyUrl: "https://mlh.io/",
 };

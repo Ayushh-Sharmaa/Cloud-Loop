@@ -17,4 +17,5 @@ export const web3BuildersBootcamp2026Event: Event = {
   prize: "Certificate + Project showcase",
   tags: ["Blockchain", "Web3", "Ethereum", "Solidity"],
   registered: 3000,
+  applyUrl: "https://ethereum.org/developers",
 };

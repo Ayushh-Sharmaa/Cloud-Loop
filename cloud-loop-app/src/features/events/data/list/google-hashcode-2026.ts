@@ -17,4 +17,5 @@ export const googleHashcode2026Event: Event = {
   prize: "Google swag + certificate + internship opportunities",
   tags: ["Competitive Programming", "Google", "Online"],
   registered: 45000,
+  applyUrl: "https://codingcompetitions.withgoogle.com/",
 };
