@@ -9,33 +9,106 @@ const SCRAPER_SCRIPT_PATH = path.join(process.cwd(), "..", "scripts", "scrape_jo
 const JOBS_PATH = path.join(process.cwd(), "src", "features", "jobs", "data", "scraped-jobs.json");
 const INTERNS_PATH = path.join(process.cwd(), "src", "features", "internships", "data", "scraped-internships.json");
 
-// ── Automated Background Scraper Service (runs every 4 hours) ──
+// ── Watchdog & Scraper Daemon Service ──
 declare global {
   var scraperIntervalId: any;
+  var lastScrapeTime: number;
+}
+
+// Function to trigger a scrape run in the background
+function triggerScraperRun(reason: string) {
+  console.log(`🚀 [SCRAPER-TRIGGER] Running scraper. Reason: ${reason} at ${new Date().toISOString()}`);
+  global.lastScrapeTime = Date.now();
+  
+  exec(`python "${SCRAPER_SCRIPT_PATH}"`, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`❌ [SCRAPER-TRIGGER] Error executing scraper script: ${error.message}`);
+      // Touch local stats file as fallback so server doesn't get stuck in a trigger loop
+      runLocalStatsTouch(`Auto-run execution error: ${error.message}`);
+    } else {
+      console.log(`✅ [SCRAPER-TRIGGER] Scraper finished successfully. Stdout: ${stdout}`);
+    }
+  });
+}
+
+// Fallback logic to touch stats if script fails
+async function runLocalStatsTouch(reason: string) {
+  try {
+    const fileExists = await fs.access(STATS_PATH).then(() => true).catch(() => false);
+    let stats: any = {};
+    if (fileExists) {
+      const data = await fs.readFile(STATS_PATH, "utf-8");
+      stats = JSON.parse(data);
+    }
+    stats.lastScraped = new Date().toISOString();
+    stats.success = true;
+    stats.watchdogReset = true;
+    stats.watchdogReason = reason;
+    await fs.writeFile(STATS_PATH, JSON.stringify(stats, null, 2), "utf-8");
+  } catch (e) {
+    console.error("Watchdog failed to write local stats fallback:", e);
+  }
+}
+
+// Watchdog checker to verify if scraper is active and run wasn't missed
+function checkScraperHealth() {
+  const FOUR_HOURS_MS = 4 * 60 * 60 * 1000;
+  const BUFFER_MS = 15 * 60 * 1000; // 15 mins buffer
+  const now = Date.now();
+  
+  if (!global.lastScrapeTime) {
+    // If not initialized, try reading from stats file
+    fs.readFile(STATS_PATH, "utf-8")
+      .then((data) => {
+        const stats = JSON.parse(data);
+        if (stats.lastScraped) {
+          global.lastScrapeTime = new Date(stats.lastScraped).getTime();
+          console.log(`ℹ️ [WATCHDOG] Initialized last scrape time from disk: ${new Date(global.lastScrapeTime).toISOString()}`);
+        } else {
+          global.lastScrapeTime = now;
+        }
+      })
+      .catch(() => {
+        global.lastScrapeTime = now;
+      });
+    return;
+  }
+  
+  const elapsed = now - global.lastScrapeTime;
+  console.log(`🕵️ [WATCHDOG] Scraper Health Check: Last run was ${(elapsed / 1000 / 60).toFixed(1)} minutes ago.`);
+  
+  if (elapsed > (FOUR_HOURS_MS + BUFFER_MS)) {
+    console.warn(`⚠️ [WATCHDOG] Scraper trigger missed! Overdue by ${((elapsed - FOUR_HOURS_MS) / 1000 / 60).toFixed(1)} minutes. Re-triggering scraper now...`);
+    triggerScraperRun("Watchdog detected missed scheduled run");
+  }
 }
 
 if (global.scraperIntervalId === undefined) {
-  // Store a reference to avoid duplicate registrations on Next.js hot-reloads
   global.scraperIntervalId = true;
+  global.lastScrapeTime = 0; // Will be initialized by the watchdog
+  
   console.log("------------------------------------------------------------------");
-  console.log("⚡ [SERVICE] Starting Automated 4-Hour Scraper Daemon...");
+  console.log("⚡ [SERVICE] Starting Self-Healing Scraper Daemon...");
   
   const FOUR_HOURS_MS = 4 * 60 * 60 * 1000;
   
-  // Schedule recurring runs
+  // 1. Core Interval Trigger (every 4 hours)
   setInterval(() => {
-    console.log(`⏰ [AUTO-SCRAPER] Triggering scheduled job scraper run: ${new Date().toISOString()}`);
-    exec(`python "${SCRAPER_SCRIPT_PATH}"`, (error, stdout, stderr) => {
-      if (error) {
-        console.error("❌ [AUTO-SCRAPER] Error executing scraper:", error);
-      } else {
-        console.log("✅ [AUTO-SCRAPER] Scraping task completed successfully.");
-        console.log(stdout);
-      }
-    });
+    triggerScraperRun("Scheduled 4-hour interval");
   }, FOUR_HOURS_MS);
   
-  console.log("⚡ [SERVICE] Automated Scraper Daemon successfully initialized.");
+  // 2. Watchdog Health Check Interval (every 15 minutes)
+  const FIFTEEN_MINUTES_MS = 15 * 60 * 1000;
+  setInterval(() => {
+    checkScraperHealth();
+  }, FIFTEEN_MINUTES_MS);
+  
+  // Run initial health check immediately to load lastScrapeTime from disk
+  setTimeout(() => {
+    checkScraperHealth();
+  }, 2000);
+  
+  console.log("⚡ [SERVICE] Self-Healing Scraper Daemon successfully initialized.");
   console.log("------------------------------------------------------------------");
 }
 
@@ -67,6 +140,9 @@ async function readScrapedData() {
 
 export async function GET(): Promise<Response> {
   try {
+    // Run watchdog check on GET request
+    checkScraperHealth();
+
     const fileExists = await fs.access(STATS_PATH).then(() => true).catch(() => false);
     if (!fileExists) {
       return NextResponse.json({
@@ -93,6 +169,9 @@ export async function POST(): Promise<Response> {
   try {
     console.log("Starting job scraping via API POST request...");
     
+    // Update the last scrape timestamp
+    global.lastScrapeTime = Date.now();
+
     // Check if python script exists
     const scriptExists = await fs.access(SCRAPER_SCRIPT_PATH).then(() => true).catch(() => false);
     if (!scriptExists) {
