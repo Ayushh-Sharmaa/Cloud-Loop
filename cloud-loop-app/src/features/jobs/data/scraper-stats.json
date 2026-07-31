@@ -1,50 +1,51 @@
 {
-  "lastScraped": "2026-07-31T21:11:37.975761Z",
+  "lastScraped": "2026-07-31T21:35:57.623046Z",
   "success": true,
-  "totalScraped": 2420,
+  "totalScraped": 2550,
+  "uniqueCompaniesCount": 1010,
   "targetDailyOpportunities": 2400,
   "dailyCoverageTarget": 240,
-  "coveragePercentage": 100.83,
+  "coveragePercentage": 106.25,
   "sourceStats": {
     "google": {
-      "jobs": 95,
-      "internships": 57,
-      "total": 152
+      "jobs": 2,
+      "internships": 1,
+      "total": 3
     },
     "microsoft": {
-      "jobs": 95,
-      "internships": 57,
-      "total": 152
+      "jobs": 1,
+      "internships": 1,
+      "total": 2
     },
     "amazon": {
-      "jobs": 95,
-      "internships": 57,
-      "total": 152
+      "jobs": 1,
+      "internships": 1,
+      "total": 2
     },
     "zoho": {
-      "jobs": 94,
-      "internships": 57,
-      "total": 151
+      "jobs": 1,
+      "internships": 1,
+      "total": 2
     },
     "tcs": {
-      "jobs": 95,
-      "internships": 57,
-      "total": 152
+      "jobs": 1,
+      "internships": 1,
+      "total": 2
     },
     "wipro": {
-      "jobs": 95,
-      "internships": 57,
-      "total": 152
+      "jobs": 1,
+      "internships": 1,
+      "total": 2
     },
     "accenture": {
-      "jobs": 95,
-      "internships": 57,
-      "total": 152
+      "jobs": 1,
+      "internships": 1,
+      "total": 2
     },
     "jpmorgan": {
-      "jobs": 94,
-      "internships": 57,
-      "total": 151
+      "jobs": 1,
+      "internships": 1,
+      "total": 2
     }
   }
 }

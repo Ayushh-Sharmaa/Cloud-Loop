@@ -6,21 +6,21 @@
     "organizer": "Google Cloud",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
     "type": "Hackathon",
-    "date": "2026-09-24",
+    "date": "2026-08-22",
     "endDate": "2026-09-30",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-02",
+    "registrationDeadline": "2026-08-13",
     "description": "Join us for this exciting Hackathon organized by Google Cloud. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "Cash Prizes Up to ₹10 Lakhs",
+    "prize": "MacBook Pro + Certificates",
     "tags": [
       "Google Cloud",
       "Hackathon",
       "Online"
     ],
-    "registered": 1576,
-    "applyUrl": "https://googlecloud.com/events/1"
+    "registered": 1453,
+    "applyUrl": "https://cloud.google.com/events"
   },
   {
     "id": "scraped-event-2",
@@ -29,12 +29,12 @@
     "organizer": "Microsoft Imagine",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
     "type": "Competition",
-    "date": "2026-08-30",
-    "endDate": "2026-10-01",
+    "date": "2026-08-23",
+    "endDate": "2026-09-30",
     "location": "Hyderabad, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-04",
+    "registrationDeadline": "2026-08-12",
     "description": "Join us for this exciting Competition organized by Microsoft Imagine. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Cash Prizes Up to ₹10 Lakhs",
     "tags": [
@@ -42,8 +42,8 @@
       "Competition",
       "In-person"
     ],
-    "registered": 869,
-    "applyUrl": "https://microsoftimagine.com/events/2"
+    "registered": 4104,
+    "applyUrl": "https://imaginecup.microsoft.com/"
   },
   {
     "id": "scraped-event-3",
@@ -52,12 +52,12 @@
     "organizer": "AWS Student",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=amazon.com&sz=64",
     "type": "Bootcamp",
-    "date": "2026-09-27",
+    "date": "2026-08-20",
     "endDate": "2026-10-04",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-03",
+    "registrationDeadline": "2026-08-08",
     "description": "Join us for this exciting Bootcamp organized by AWS Student. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -65,8 +65,8 @@
       "Bootcamp",
       "Online"
     ],
-    "registered": 2868,
-    "applyUrl": "https://awsstudent.com/events/3"
+    "registered": 580,
+    "applyUrl": "https://aws.amazon.com/education/aws-educate/"
   },
   {
     "id": "scraped-event-4",
@@ -75,12 +75,12 @@
     "organizer": "Zoho Devs",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=zoho.com&sz=64",
     "type": "Workshop",
-    "date": "2026-09-11",
-    "endDate": "2026-09-30",
+    "date": "2026-08-20",
+    "endDate": "2026-10-01",
     "location": "Pune, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-02",
+    "registrationDeadline": "2026-08-05",
     "description": "Join us for this exciting Workshop organized by Zoho Devs. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -88,8 +88,8 @@
       "Workshop",
       "In-person"
     ],
-    "registered": 833,
-    "applyUrl": "https://zohodevs.com/events/4"
+    "registered": 2519,
+    "applyUrl": "https://www.zoho.com/developer/"
   },
   {
     "id": "scraped-event-5",
@@ -98,12 +98,12 @@
     "organizer": "Unstop",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=unstop.com&sz=64",
     "type": "Conference",
-    "date": "2026-08-28",
-    "endDate": "2026-10-01",
+    "date": "2026-08-16",
+    "endDate": "2026-10-04",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-10",
+    "registrationDeadline": "2026-08-05",
     "description": "Join us for this exciting Conference organized by Unstop. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -111,8 +111,8 @@
       "Conference",
       "Online"
     ],
-    "registered": 2915,
-    "applyUrl": "https://unstop.com/events/5"
+    "registered": 3382,
+    "applyUrl": "https://unstop.com/"
   },
   {
     "id": "scraped-event-6",
@@ -121,21 +121,21 @@
     "organizer": "Hack2skill",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=hack2skill.com&sz=64",
     "type": "Hackathon",
-    "date": "2026-08-16",
+    "date": "2026-09-28",
     "endDate": "2026-10-04",
     "location": "Chennai, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-05",
+    "registrationDeadline": "2026-08-08",
     "description": "Join us for this exciting Hackathon organized by Hack2skill. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "Cash Prizes Up to ₹10 Lakhs",
+    "prize": "₹2,50,000 & Gadgets",
     "tags": [
       "Hack2skill",
       "Hackathon",
       "In-person"
     ],
-    "registered": 3111,
-    "applyUrl": "https://hack2skill.com/events/6"
+    "registered": 2289,
+    "applyUrl": "https://hack2skill.com/"
   },
   {
     "id": "scraped-event-7",
@@ -144,12 +144,12 @@
     "organizer": "MLH",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=mlh.io&sz=64",
     "type": "Competition",
-    "date": "2026-09-28",
-    "endDate": "2026-10-04",
+    "date": "2026-09-01",
+    "endDate": "2026-09-30",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-08",
+    "registrationDeadline": "2026-08-14",
     "description": "Join us for this exciting Competition organized by MLH. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "₹2,50,000 & Gadgets",
     "tags": [
@@ -157,8 +157,8 @@
       "Competition",
       "Online"
     ],
-    "registered": 2289,
-    "applyUrl": "https://mlh.com/events/7"
+    "registered": 3309,
+    "applyUrl": "https://mlh.io/seasons/2026/events"
   },
   {
     "id": "scraped-event-8",
@@ -167,12 +167,12 @@
     "organizer": "GeeksforGeeks",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
     "type": "Bootcamp",
-    "date": "2026-09-21",
+    "date": "2026-09-05",
     "endDate": "2026-10-02",
     "location": "Hyderabad, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-14",
+    "registrationDeadline": "2026-08-04",
     "description": "Join us for this exciting Bootcamp organized by GeeksforGeeks. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -180,8 +180,8 @@
       "Bootcamp",
       "In-person"
     ],
-    "registered": 4010,
-    "applyUrl": "https://geeksforgeeks.com/events/8"
+    "registered": 1331,
+    "applyUrl": "https://practice.geeksforgeeks.org/events"
   },
   {
     "id": "scraped-event-9",
@@ -190,12 +190,12 @@
     "organizer": "Google Cloud",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
     "type": "Workshop",
-    "date": "2026-08-15",
-    "endDate": "2026-10-01",
+    "date": "2026-09-05",
+    "endDate": "2026-09-30",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-13",
+    "registrationDeadline": "2026-08-03",
     "description": "Join us for this exciting Workshop organized by Google Cloud. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -203,8 +203,8 @@
       "Workshop",
       "Online"
     ],
-    "registered": 2181,
-    "applyUrl": "https://googlecloud.com/events/9"
+    "registered": 2006,
+    "applyUrl": "https://cloud.google.com/events"
   },
   {
     "id": "scraped-event-10",
@@ -213,12 +213,12 @@
     "organizer": "Microsoft Imagine",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
     "type": "Conference",
-    "date": "2026-09-05",
+    "date": "2026-09-06",
     "endDate": "2026-10-02",
     "location": "Pune, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-04",
+    "registrationDeadline": "2026-08-11",
     "description": "Join us for this exciting Conference organized by Microsoft Imagine. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -226,8 +226,8 @@
       "Conference",
       "In-person"
     ],
-    "registered": 1331,
-    "applyUrl": "https://microsoftimagine.com/events/10"
+    "registered": 1533,
+    "applyUrl": "https://imaginecup.microsoft.com/"
   },
   {
     "id": "scraped-event-11",
@@ -236,21 +236,21 @@
     "organizer": "AWS Student",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=amazon.com&sz=64",
     "type": "Hackathon",
-    "date": "2026-09-05",
-    "endDate": "2026-09-30",
+    "date": "2026-08-17",
+    "endDate": "2026-10-03",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-03",
+    "registrationDeadline": "2026-08-10",
     "description": "Join us for this exciting Hackathon organized by AWS Student. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "Swags & Stickers",
+    "prize": "₹5,00,000 + Vouchers",
     "tags": [
       "AWS Student",
       "Hackathon",
       "Online"
     ],
-    "registered": 846,
-    "applyUrl": "https://awsstudent.com/events/11"
+    "registered": 4435,
+    "applyUrl": "https://aws.amazon.com/education/aws-educate/"
   },
   {
     "id": "scraped-event-12",
@@ -259,21 +259,21 @@
     "organizer": "Zoho Devs",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=zoho.com&sz=64",
     "type": "Competition",
-    "date": "2026-09-06",
-    "endDate": "2026-10-02",
+    "date": "2026-08-20",
+    "endDate": "2026-10-04",
     "location": "Chennai, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-11",
+    "registrationDeadline": "2026-08-06",
     "description": "Join us for this exciting Competition organized by Zoho Devs. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "MacBook Pro + Certificates",
+    "prize": "Cash Prizes Up to ₹10 Lakhs",
     "tags": [
       "Zoho Devs",
       "Competition",
       "In-person"
     ],
-    "registered": 3755,
-    "applyUrl": "https://zohodevs.com/events/12"
+    "registered": 2983,
+    "applyUrl": "https://www.zoho.com/developer/"
   },
   {
     "id": "scraped-event-13",
@@ -282,12 +282,12 @@
     "organizer": "Unstop",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=unstop.com&sz=64",
     "type": "Bootcamp",
-    "date": "2026-08-17",
-    "endDate": "2026-10-03",
+    "date": "2026-09-07",
+    "endDate": "2026-10-04",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-10",
+    "registrationDeadline": "2026-08-05",
     "description": "Join us for this exciting Bootcamp organized by Unstop. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -295,8 +295,8 @@
       "Bootcamp",
       "Online"
     ],
-    "registered": 961,
-    "applyUrl": "https://unstop.com/events/13"
+    "registered": 3335,
+    "applyUrl": "https://unstop.com/"
   },
   {
     "id": "scraped-event-14",
@@ -305,12 +305,12 @@
     "organizer": "Hack2skill",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=hack2skill.com&sz=64",
     "type": "Workshop",
-    "date": "2026-09-08",
-    "endDate": "2026-09-30",
+    "date": "2026-08-17",
+    "endDate": "2026-10-01",
     "location": "Hyderabad, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-10",
+    "registrationDeadline": "2026-08-14",
     "description": "Join us for this exciting Workshop organized by Hack2skill. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -318,8 +318,8 @@
       "Workshop",
       "In-person"
     ],
-    "registered": 1650,
-    "applyUrl": "https://hack2skill.com/events/14"
+    "registered": 1635,
+    "applyUrl": "https://hack2skill.com/"
   },
   {
     "id": "scraped-event-15",
@@ -328,12 +328,12 @@
     "organizer": "MLH",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=mlh.io&sz=64",
     "type": "Conference",
-    "date": "2026-09-24",
-    "endDate": "2026-10-04",
+    "date": "2026-08-29",
+    "endDate": "2026-09-30",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-07",
+    "registrationDeadline": "2026-08-08",
     "description": "Join us for this exciting Conference organized by MLH. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -341,8 +341,8 @@
       "Conference",
       "Online"
     ],
-    "registered": 2814,
-    "applyUrl": "https://mlh.com/events/15"
+    "registered": 1588,
+    "applyUrl": "https://mlh.io/seasons/2026/events"
   },
   {
     "id": "scraped-event-16",
@@ -351,21 +351,21 @@
     "organizer": "GeeksforGeeks",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
     "type": "Hackathon",
-    "date": "2026-08-27",
-    "endDate": "2026-09-30",
+    "date": "2026-09-24",
+    "endDate": "2026-10-02",
     "location": "Pune, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-02",
+    "registrationDeadline": "2026-08-04",
     "description": "Join us for this exciting Hackathon organized by GeeksforGeeks. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "Cash Prizes Up to ₹10 Lakhs",
+    "prize": "MacBook Pro + Certificates",
     "tags": [
       "GeeksforGeeks",
       "Hackathon",
       "In-person"
     ],
-    "registered": 1383,
-    "applyUrl": "https://geeksforgeeks.com/events/16"
+    "registered": 1905,
+    "applyUrl": "https://practice.geeksforgeeks.org/events"
   },
   {
     "id": "scraped-event-17",
@@ -374,21 +374,21 @@
     "organizer": "Google Cloud",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
     "type": "Competition",
-    "date": "2026-09-02",
-    "endDate": "2026-09-30",
+    "date": "2026-09-26",
+    "endDate": "2026-10-02",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-05",
+    "registrationDeadline": "2026-08-13",
     "description": "Join us for this exciting Competition organized by Google Cloud. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "₹5,00,000 + Vouchers",
+    "prize": "Cash Prizes Up to ₹10 Lakhs",
     "tags": [
       "Google Cloud",
       "Competition",
       "Online"
     ],
-    "registered": 2006,
-    "applyUrl": "https://googlecloud.com/events/17"
+    "registered": 3104,
+    "applyUrl": "https://cloud.google.com/events"
   },
   {
     "id": "scraped-event-18",
@@ -397,12 +397,12 @@
     "organizer": "Microsoft Imagine",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
     "type": "Bootcamp",
-    "date": "2026-09-01",
-    "endDate": "2026-10-03",
+    "date": "2026-09-22",
+    "endDate": "2026-10-01",
     "location": "Chennai, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-12",
+    "registrationDeadline": "2026-08-10",
     "description": "Join us for this exciting Bootcamp organized by Microsoft Imagine. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -410,8 +410,8 @@
       "Bootcamp",
       "In-person"
     ],
-    "registered": 3866,
-    "applyUrl": "https://microsoftimagine.com/events/18"
+    "registered": 3436,
+    "applyUrl": "https://imaginecup.microsoft.com/"
   },
   {
     "id": "scraped-event-19",
@@ -420,12 +420,12 @@
     "organizer": "AWS Student",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=amazon.com&sz=64",
     "type": "Workshop",
-    "date": "2026-09-07",
-    "endDate": "2026-10-01",
+    "date": "2026-08-25",
+    "endDate": "2026-10-03",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-07",
+    "registrationDeadline": "2026-08-08",
     "description": "Join us for this exciting Workshop organized by AWS Student. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -433,8 +433,8 @@
       "Workshop",
       "Online"
     ],
-    "registered": 1905,
-    "applyUrl": "https://awsstudent.com/events/19"
+    "registered": 1555,
+    "applyUrl": "https://aws.amazon.com/education/aws-educate/"
   },
   {
     "id": "scraped-event-20",
@@ -443,12 +443,12 @@
     "organizer": "Zoho Devs",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=zoho.com&sz=64",
     "type": "Conference",
-    "date": "2026-08-28",
-    "endDate": "2026-10-02",
+    "date": "2026-09-28",
+    "endDate": "2026-10-04",
     "location": "Hyderabad, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-13",
+    "registrationDeadline": "2026-08-05",
     "description": "Join us for this exciting Conference organized by Zoho Devs. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -456,8 +456,8 @@
       "Conference",
       "In-person"
     ],
-    "registered": 4286,
-    "applyUrl": "https://zohodevs.com/events/20"
+    "registered": 3254,
+    "applyUrl": "https://www.zoho.com/developer/"
   },
   {
     "id": "scraped-event-21",
@@ -466,21 +466,21 @@
     "organizer": "Unstop",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=unstop.com&sz=64",
     "type": "Hackathon",
-    "date": "2026-09-27",
-    "endDate": "2026-09-30",
+    "date": "2026-08-18",
+    "endDate": "2026-10-01",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-11",
+    "registrationDeadline": "2026-08-02",
     "description": "Join us for this exciting Hackathon organized by Unstop. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "Cash Prizes Up to ₹10 Lakhs",
+    "prize": "MacBook Pro + Certificates",
     "tags": [
       "Unstop",
       "Hackathon",
       "Online"
     ],
-    "registered": 1150,
-    "applyUrl": "https://unstop.com/events/21"
+    "registered": 2093,
+    "applyUrl": "https://unstop.com/"
   },
   {
     "id": "scraped-event-22",
@@ -489,21 +489,21 @@
     "organizer": "Hack2skill",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=hack2skill.com&sz=64",
     "type": "Competition",
-    "date": "2026-09-18",
+    "date": "2026-08-19",
     "endDate": "2026-10-01",
     "location": "Pune, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-04",
+    "registrationDeadline": "2026-08-11",
     "description": "Join us for this exciting Competition organized by Hack2skill. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "Swags & Stickers",
+    "prize": "Cash Prizes Up to ₹10 Lakhs",
     "tags": [
       "Hack2skill",
       "Competition",
       "In-person"
     ],
-    "registered": 2004,
-    "applyUrl": "https://hack2skill.com/events/22"
+    "registered": 1738,
+    "applyUrl": "https://hack2skill.com/"
   },
   {
     "id": "scraped-event-23",
@@ -512,12 +512,12 @@
     "organizer": "MLH",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=mlh.io&sz=64",
     "type": "Bootcamp",
-    "date": "2026-09-01",
-    "endDate": "2026-10-04",
+    "date": "2026-09-25",
+    "endDate": "2026-10-03",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-05",
+    "registrationDeadline": "2026-08-08",
     "description": "Join us for this exciting Bootcamp organized by MLH. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -525,8 +525,8 @@
       "Bootcamp",
       "Online"
     ],
-    "registered": 3254,
-    "applyUrl": "https://mlh.com/events/23"
+    "registered": 4073,
+    "applyUrl": "https://mlh.io/seasons/2026/events"
   },
   {
     "id": "scraped-event-24",
@@ -535,12 +535,12 @@
     "organizer": "GeeksforGeeks",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
     "type": "Workshop",
-    "date": "2026-09-04",
-    "endDate": "2026-09-30",
+    "date": "2026-09-13",
+    "endDate": "2026-10-01",
     "location": "Chennai, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-05",
+    "registrationDeadline": "2026-08-06",
     "description": "Join us for this exciting Workshop organized by GeeksforGeeks. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -548,8 +548,8 @@
       "Workshop",
       "In-person"
     ],
-    "registered": 3816,
-    "applyUrl": "https://geeksforgeeks.com/events/24"
+    "registered": 1021,
+    "applyUrl": "https://practice.geeksforgeeks.org/events"
   },
   {
     "id": "scraped-event-25",
@@ -558,12 +558,12 @@
     "organizer": "Google Cloud",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
     "type": "Conference",
-    "date": "2026-08-17",
-    "endDate": "2026-10-02",
+    "date": "2026-09-19",
+    "endDate": "2026-10-04",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-08",
+    "registrationDeadline": "2026-08-06",
     "description": "Join us for this exciting Conference organized by Google Cloud. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -571,8 +571,8 @@
       "Conference",
       "Online"
     ],
-    "registered": 1546,
-    "applyUrl": "https://googlecloud.com/events/25"
+    "registered": 3509,
+    "applyUrl": "https://cloud.google.com/events"
   },
   {
     "id": "scraped-event-26",
@@ -581,21 +581,21 @@
     "organizer": "Microsoft Imagine",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
     "type": "Hackathon",
-    "date": "2026-08-19",
-    "endDate": "2026-10-01",
+    "date": "2026-09-11",
+    "endDate": "2026-10-04",
     "location": "Hyderabad, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-11",
+    "registrationDeadline": "2026-08-08",
     "description": "Join us for this exciting Hackathon organized by Microsoft Imagine. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "Cash Prizes Up to ₹10 Lakhs",
+    "prize": "MacBook Pro + Certificates",
     "tags": [
       "Microsoft Imagine",
       "Hackathon",
       "In-person"
     ],
-    "registered": 1738,
-    "applyUrl": "https://microsoftimagine.com/events/26"
+    "registered": 1348,
+    "applyUrl": "https://imaginecup.microsoft.com/"
   },
   {
     "id": "scraped-event-27",
@@ -604,21 +604,21 @@
     "organizer": "AWS Student",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=amazon.com&sz=64",
     "type": "Competition",
-    "date": "2026-08-28",
+    "date": "2026-09-16",
     "endDate": "2026-10-03",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-08",
+    "registrationDeadline": "2026-08-03",
     "description": "Join us for this exciting Competition organized by AWS Student. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "Cash Prizes Up to ₹10 Lakhs",
+    "prize": "₹5,00,000 + Vouchers",
     "tags": [
       "AWS Student",
       "Competition",
       "Online"
     ],
-    "registered": 2329,
-    "applyUrl": "https://awsstudent.com/events/27"
+    "registered": 3977,
+    "applyUrl": "https://aws.amazon.com/education/aws-educate/"
   },
   {
     "id": "scraped-event-28",
@@ -628,11 +628,11 @@
     "organizerLogo": "https://www.google.com/s2/favicons?domain=zoho.com&sz=64",
     "type": "Bootcamp",
     "date": "2026-08-24",
-    "endDate": "2026-10-02",
+    "endDate": "2026-10-01",
     "location": "Pune, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-04",
+    "registrationDeadline": "2026-08-14",
     "description": "Join us for this exciting Bootcamp organized by Zoho Devs. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -640,8 +640,8 @@
       "Bootcamp",
       "In-person"
     ],
-    "registered": 1460,
-    "applyUrl": "https://zohodevs.com/events/28"
+    "registered": 3237,
+    "applyUrl": "https://www.zoho.com/developer/"
   },
   {
     "id": "scraped-event-29",
@@ -650,12 +650,12 @@
     "organizer": "Unstop",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=unstop.com&sz=64",
     "type": "Workshop",
-    "date": "2026-09-19",
-    "endDate": "2026-10-04",
+    "date": "2026-09-22",
+    "endDate": "2026-09-30",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-06",
+    "registrationDeadline": "2026-08-08",
     "description": "Join us for this exciting Workshop organized by Unstop. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -663,8 +663,8 @@
       "Workshop",
       "Online"
     ],
-    "registered": 3509,
-    "applyUrl": "https://unstop.com/events/29"
+    "registered": 2013,
+    "applyUrl": "https://unstop.com/"
   },
   {
     "id": "scraped-event-30",
@@ -673,12 +673,12 @@
     "organizer": "Hack2skill",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=hack2skill.com&sz=64",
     "type": "Conference",
-    "date": "2026-09-21",
-    "endDate": "2026-10-03",
+    "date": "2026-09-13",
+    "endDate": "2026-10-04",
     "location": "Chennai, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-11",
+    "registrationDeadline": "2026-08-06",
     "description": "Join us for this exciting Conference organized by Hack2skill. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -686,8 +686,8 @@
       "Conference",
       "In-person"
     ],
-    "registered": 2085,
-    "applyUrl": "https://hack2skill.com/events/30"
+    "registered": 4427,
+    "applyUrl": "https://hack2skill.com/"
   },
   {
     "id": "scraped-event-31",
@@ -696,12 +696,12 @@
     "organizer": "MLH",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=mlh.io&sz=64",
     "type": "Hackathon",
-    "date": "2026-09-07",
-    "endDate": "2026-10-01",
+    "date": "2026-08-15",
+    "endDate": "2026-09-30",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-04",
+    "registrationDeadline": "2026-08-12",
     "description": "Join us for this exciting Hackathon organized by MLH. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Paid Internship Vouchers",
     "tags": [
@@ -709,8 +709,8 @@
       "Hackathon",
       "Online"
     ],
-    "registered": 2471,
-    "applyUrl": "https://mlh.com/events/31"
+    "registered": 3525,
+    "applyUrl": "https://mlh.io/seasons/2026/events"
   },
   {
     "id": "scraped-event-32",
@@ -719,21 +719,21 @@
     "organizer": "GeeksforGeeks",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
     "type": "Competition",
-    "date": "2026-08-20",
-    "endDate": "2026-09-30",
+    "date": "2026-09-25",
+    "endDate": "2026-10-02",
     "location": "Hyderabad, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
     "registrationDeadline": "2026-08-03",
     "description": "Join us for this exciting Competition organized by GeeksforGeeks. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "₹2,50,000 & Gadgets",
+    "prize": "MacBook Pro + Certificates",
     "tags": [
       "GeeksforGeeks",
       "Competition",
       "In-person"
     ],
-    "registered": 3020,
-    "applyUrl": "https://geeksforgeeks.com/events/32"
+    "registered": 2230,
+    "applyUrl": "https://practice.geeksforgeeks.org/events"
   },
   {
     "id": "scraped-event-33",
@@ -742,12 +742,12 @@
     "organizer": "Google Cloud",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
     "type": "Bootcamp",
-    "date": "2026-08-25",
-    "endDate": "2026-10-03",
+    "date": "2026-09-13",
+    "endDate": "2026-09-30",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-11",
+    "registrationDeadline": "2026-08-13",
     "description": "Join us for this exciting Bootcamp organized by Google Cloud. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -755,8 +755,8 @@
       "Bootcamp",
       "Online"
     ],
-    "registered": 710,
-    "applyUrl": "https://googlecloud.com/events/33"
+    "registered": 4037,
+    "applyUrl": "https://cloud.google.com/events"
   },
   {
     "id": "scraped-event-34",
@@ -765,12 +765,12 @@
     "organizer": "Microsoft Imagine",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
     "type": "Workshop",
-    "date": "2026-09-08",
-    "endDate": "2026-10-03",
+    "date": "2026-08-31",
+    "endDate": "2026-10-04",
     "location": "Pune, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-11",
+    "registrationDeadline": "2026-08-14",
     "description": "Join us for this exciting Workshop organized by Microsoft Imagine. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -778,8 +778,8 @@
       "Workshop",
       "In-person"
     ],
-    "registered": 2367,
-    "applyUrl": "https://microsoftimagine.com/events/34"
+    "registered": 1181,
+    "applyUrl": "https://imaginecup.microsoft.com/"
   },
   {
     "id": "scraped-event-35",
@@ -788,12 +788,12 @@
     "organizer": "AWS Student",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=amazon.com&sz=64",
     "type": "Conference",
-    "date": "2026-09-17",
+    "date": "2026-08-21",
     "endDate": "2026-10-02",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-10",
+    "registrationDeadline": "2026-08-12",
     "description": "Join us for this exciting Conference organized by AWS Student. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -801,8 +801,8 @@
       "Conference",
       "Online"
     ],
-    "registered": 3975,
-    "applyUrl": "https://awsstudent.com/events/35"
+    "registered": 2529,
+    "applyUrl": "https://aws.amazon.com/education/aws-educate/"
   },
   {
     "id": "scraped-event-36",
@@ -811,21 +811,21 @@
     "organizer": "Zoho Devs",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=zoho.com&sz=64",
     "type": "Hackathon",
-    "date": "2026-08-15",
-    "endDate": "2026-09-30",
+    "date": "2026-08-27",
+    "endDate": "2026-10-01",
     "location": "Chennai, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-12",
+    "registrationDeadline": "2026-08-07",
     "description": "Join us for this exciting Hackathon organized by Zoho Devs. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "Paid Internship Vouchers",
+    "prize": "₹2,50,000 & Gadgets",
     "tags": [
       "Zoho Devs",
       "Hackathon",
       "In-person"
     ],
-    "registered": 3525,
-    "applyUrl": "https://zohodevs.com/events/36"
+    "registered": 2659,
+    "applyUrl": "https://www.zoho.com/developer/"
   },
   {
     "id": "scraped-event-37",
@@ -834,12 +834,12 @@
     "organizer": "Unstop",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=unstop.com&sz=64",
     "type": "Competition",
-    "date": "2026-09-01",
-    "endDate": "2026-10-02",
+    "date": "2026-09-17",
+    "endDate": "2026-09-30",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-03",
+    "registrationDeadline": "2026-08-11",
     "description": "Join us for this exciting Competition organized by Unstop. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "MacBook Pro + Certificates",
     "tags": [
@@ -847,8 +847,8 @@
       "Competition",
       "Online"
     ],
-    "registered": 2230,
-    "applyUrl": "https://unstop.com/events/37"
+    "registered": 2451,
+    "applyUrl": "https://unstop.com/"
   },
   {
     "id": "scraped-event-38",
@@ -857,12 +857,12 @@
     "organizer": "Hack2skill",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=hack2skill.com&sz=64",
     "type": "Bootcamp",
-    "date": "2026-08-25",
-    "endDate": "2026-10-03",
+    "date": "2026-08-22",
+    "endDate": "2026-10-02",
     "location": "Hyderabad, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-02",
+    "registrationDeadline": "2026-08-14",
     "description": "Join us for this exciting Bootcamp organized by Hack2skill. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -870,8 +870,8 @@
       "Bootcamp",
       "In-person"
     ],
-    "registered": 4356,
-    "applyUrl": "https://hack2skill.com/events/38"
+    "registered": 1709,
+    "applyUrl": "https://hack2skill.com/"
   },
   {
     "id": "scraped-event-39",
@@ -880,12 +880,12 @@
     "organizer": "MLH",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=mlh.io&sz=64",
     "type": "Workshop",
-    "date": "2026-08-31",
-    "endDate": "2026-10-04",
+    "date": "2026-08-18",
+    "endDate": "2026-10-01",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-14",
+    "registrationDeadline": "2026-08-11",
     "description": "Join us for this exciting Workshop organized by MLH. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -893,8 +893,8 @@
       "Workshop",
       "Online"
     ],
-    "registered": 1181,
-    "applyUrl": "https://mlh.com/events/39"
+    "registered": 4328,
+    "applyUrl": "https://mlh.io/seasons/2026/events"
   },
   {
     "id": "scraped-event-40",
@@ -903,12 +903,12 @@
     "organizer": "GeeksforGeeks",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
     "type": "Conference",
-    "date": "2026-09-16",
-    "endDate": "2026-09-30",
+    "date": "2026-08-20",
+    "endDate": "2026-10-03",
     "location": "Pune, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-12",
+    "registrationDeadline": "2026-08-03",
     "description": "Join us for this exciting Conference organized by GeeksforGeeks. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -916,8 +916,8 @@
       "Conference",
       "In-person"
     ],
-    "registered": 1672,
-    "applyUrl": "https://geeksforgeeks.com/events/40"
+    "registered": 4455,
+    "applyUrl": "https://practice.geeksforgeeks.org/events"
   },
   {
     "id": "scraped-event-41",
@@ -926,21 +926,21 @@
     "organizer": "Google Cloud",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
     "type": "Hackathon",
-    "date": "2026-09-24",
-    "endDate": "2026-10-04",
+    "date": "2026-09-18",
+    "endDate": "2026-10-01",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-11",
+    "registrationDeadline": "2026-08-04",
     "description": "Join us for this exciting Hackathon organized by Google Cloud. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "₹2,50,000 & Gadgets",
+    "prize": "Cash Prizes Up to ₹10 Lakhs",
     "tags": [
       "Google Cloud",
       "Hackathon",
       "Online"
     ],
-    "registered": 1076,
-    "applyUrl": "https://googlecloud.com/events/41"
+    "registered": 2396,
+    "applyUrl": "https://cloud.google.com/events"
   },
   {
     "id": "scraped-event-42",
@@ -949,8 +949,8 @@
     "organizer": "Microsoft Imagine",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
     "type": "Competition",
-    "date": "2026-09-07",
-    "endDate": "2026-10-01",
+    "date": "2026-08-25",
+    "endDate": "2026-10-02",
     "location": "Chennai, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
@@ -962,8 +962,8 @@
       "Competition",
       "In-person"
     ],
-    "registered": 4212,
-    "applyUrl": "https://microsoftimagine.com/events/42"
+    "registered": 2183,
+    "applyUrl": "https://imaginecup.microsoft.com/"
   },
   {
     "id": "scraped-event-43",
@@ -972,12 +972,12 @@
     "organizer": "AWS Student",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=amazon.com&sz=64",
     "type": "Bootcamp",
-    "date": "2026-08-15",
-    "endDate": "2026-10-04",
+    "date": "2026-09-18",
+    "endDate": "2026-10-01",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-07",
+    "registrationDeadline": "2026-08-13",
     "description": "Join us for this exciting Bootcamp organized by AWS Student. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -985,8 +985,8 @@
       "Bootcamp",
       "Online"
     ],
-    "registered": 2451,
-    "applyUrl": "https://awsstudent.com/events/43"
+    "registered": 1726,
+    "applyUrl": "https://aws.amazon.com/education/aws-educate/"
   },
   {
     "id": "scraped-event-44",
@@ -995,12 +995,12 @@
     "organizer": "Zoho Devs",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=zoho.com&sz=64",
     "type": "Workshop",
-    "date": "2026-08-16",
-    "endDate": "2026-09-30",
+    "date": "2026-09-26",
+    "endDate": "2026-10-02",
     "location": "Hyderabad, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-07",
+    "registrationDeadline": "2026-08-09",
     "description": "Join us for this exciting Workshop organized by Zoho Devs. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -1008,8 +1008,8 @@
       "Workshop",
       "In-person"
     ],
-    "registered": 4049,
-    "applyUrl": "https://zohodevs.com/events/44"
+    "registered": 4134,
+    "applyUrl": "https://www.zoho.com/developer/"
   },
   {
     "id": "scraped-event-45",
@@ -1018,12 +1018,12 @@
     "organizer": "Unstop",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=unstop.com&sz=64",
     "type": "Conference",
-    "date": "2026-09-03",
-    "endDate": "2026-10-01",
+    "date": "2026-09-12",
+    "endDate": "2026-09-30",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-02",
+    "registrationDeadline": "2026-08-05",
     "description": "Join us for this exciting Conference organized by Unstop. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -1031,8 +1031,8 @@
       "Conference",
       "Online"
     ],
-    "registered": 1436,
-    "applyUrl": "https://unstop.com/events/45"
+    "registered": 1370,
+    "applyUrl": "https://unstop.com/"
   },
   {
     "id": "scraped-event-46",
@@ -1041,21 +1041,21 @@
     "organizer": "Hack2skill",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=hack2skill.com&sz=64",
     "type": "Hackathon",
-    "date": "2026-09-20",
+    "date": "2026-09-05",
     "endDate": "2026-09-30",
     "location": "Pune, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-03",
+    "registrationDeadline": "2026-08-11",
     "description": "Join us for this exciting Hackathon organized by Hack2skill. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "Cash Prizes Up to ₹10 Lakhs",
+    "prize": "Paid Internship Vouchers",
     "tags": [
       "Hack2skill",
       "Hackathon",
       "In-person"
     ],
-    "registered": 2440,
-    "applyUrl": "https://hack2skill.com/events/46"
+    "registered": 1392,
+    "applyUrl": "https://hack2skill.com/"
   },
   {
     "id": "scraped-event-47",
@@ -1064,21 +1064,21 @@
     "organizer": "MLH",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=mlh.io&sz=64",
     "type": "Competition",
-    "date": "2026-08-19",
-    "endDate": "2026-10-04",
+    "date": "2026-08-29",
+    "endDate": "2026-09-30",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-14",
+    "registrationDeadline": "2026-08-03",
     "description": "Join us for this exciting Competition organized by MLH. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "₹2,50,000 & Gadgets",
+    "prize": "Cash Prizes Up to ₹10 Lakhs",
     "tags": [
       "MLH",
       "Competition",
       "Online"
     ],
-    "registered": 975,
-    "applyUrl": "https://mlh.com/events/47"
+    "registered": 3034,
+    "applyUrl": "https://mlh.io/seasons/2026/events"
   },
   {
     "id": "scraped-event-48",
@@ -1087,12 +1087,12 @@
     "organizer": "GeeksforGeeks",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
     "type": "Bootcamp",
-    "date": "2026-09-26",
-    "endDate": "2026-10-03",
+    "date": "2026-08-29",
+    "endDate": "2026-09-30",
     "location": "Chennai, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-10",
+    "registrationDeadline": "2026-08-02",
     "description": "Join us for this exciting Bootcamp organized by GeeksforGeeks. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -1100,8 +1100,8 @@
       "Bootcamp",
       "In-person"
     ],
-    "registered": 1126,
-    "applyUrl": "https://geeksforgeeks.com/events/48"
+    "registered": 3971,
+    "applyUrl": "https://practice.geeksforgeeks.org/events"
   },
   {
     "id": "scraped-event-49",
@@ -1110,12 +1110,12 @@
     "organizer": "Google Cloud",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
     "type": "Workshop",
-    "date": "2026-08-31",
+    "date": "2026-08-19",
     "endDate": "2026-10-04",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-11",
+    "registrationDeadline": "2026-08-05",
     "description": "Join us for this exciting Workshop organized by Google Cloud. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -1123,8 +1123,8 @@
       "Workshop",
       "Online"
     ],
-    "registered": 2183,
-    "applyUrl": "https://googlecloud.com/events/49"
+    "registered": 1590,
+    "applyUrl": "https://cloud.google.com/events"
   },
   {
     "id": "scraped-event-50",
@@ -1133,12 +1133,12 @@
     "organizer": "Microsoft Imagine",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
     "type": "Conference",
-    "date": "2026-08-28",
-    "endDate": "2026-10-04",
+    "date": "2026-09-15",
+    "endDate": "2026-10-01",
     "location": "Hyderabad, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-14",
+    "registrationDeadline": "2026-08-10",
     "description": "Join us for this exciting Conference organized by Microsoft Imagine. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -1146,8 +1146,8 @@
       "Conference",
       "In-person"
     ],
-    "registered": 3439,
-    "applyUrl": "https://microsoftimagine.com/events/50"
+    "registered": 991,
+    "applyUrl": "https://imaginecup.microsoft.com/"
   },
   {
     "id": "scraped-event-51",
@@ -1156,21 +1156,21 @@
     "organizer": "AWS Student",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=amazon.com&sz=64",
     "type": "Hackathon",
-    "date": "2026-09-28",
-    "endDate": "2026-10-01",
+    "date": "2026-09-20",
+    "endDate": "2026-10-04",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-13",
+    "registrationDeadline": "2026-08-09",
     "description": "Join us for this exciting Hackathon organized by AWS Student. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "MacBook Pro + Certificates",
+    "prize": "₹2,50,000 & Gadgets",
     "tags": [
       "AWS Student",
       "Hackathon",
       "Online"
     ],
-    "registered": 2084,
-    "applyUrl": "https://awsstudent.com/events/51"
+    "registered": 3663,
+    "applyUrl": "https://aws.amazon.com/education/aws-educate/"
   },
   {
     "id": "scraped-event-52",
@@ -1179,21 +1179,21 @@
     "organizer": "Zoho Devs",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=zoho.com&sz=64",
     "type": "Competition",
-    "date": "2026-09-26",
-    "endDate": "2026-10-02",
+    "date": "2026-09-10",
+    "endDate": "2026-10-01",
     "location": "Pune, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-09",
+    "registrationDeadline": "2026-08-03",
     "description": "Join us for this exciting Competition organized by Zoho Devs. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "Paid Internship Vouchers",
+    "prize": "₹5,00,000 + Vouchers",
     "tags": [
       "Zoho Devs",
       "Competition",
       "In-person"
     ],
-    "registered": 2299,
-    "applyUrl": "https://zohodevs.com/events/52"
+    "registered": 3149,
+    "applyUrl": "https://www.zoho.com/developer/"
   },
   {
     "id": "scraped-event-53",
@@ -1202,12 +1202,12 @@
     "organizer": "Unstop",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=unstop.com&sz=64",
     "type": "Bootcamp",
-    "date": "2026-08-22",
-    "endDate": "2026-10-01",
+    "date": "2026-09-06",
+    "endDate": "2026-10-03",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-05",
+    "registrationDeadline": "2026-08-08",
     "description": "Join us for this exciting Bootcamp organized by Unstop. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -1215,8 +1215,8 @@
       "Bootcamp",
       "Online"
     ],
-    "registered": 712,
-    "applyUrl": "https://unstop.com/events/53"
+    "registered": 2362,
+    "applyUrl": "https://unstop.com/"
   },
   {
     "id": "scraped-event-54",
@@ -1225,12 +1225,12 @@
     "organizer": "Hack2skill",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=hack2skill.com&sz=64",
     "type": "Workshop",
-    "date": "2026-09-05",
+    "date": "2026-08-18",
     "endDate": "2026-09-30",
     "location": "Chennai, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-11",
+    "registrationDeadline": "2026-08-02",
     "description": "Join us for this exciting Workshop organized by Hack2skill. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -1238,8 +1238,8 @@
       "Workshop",
       "In-person"
     ],
-    "registered": 2718,
-    "applyUrl": "https://hack2skill.com/events/54"
+    "registered": 2099,
+    "applyUrl": "https://hack2skill.com/"
   },
   {
     "id": "scraped-event-55",
@@ -1248,8 +1248,8 @@
     "organizer": "MLH",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=mlh.io&sz=64",
     "type": "Conference",
-    "date": "2026-08-29",
-    "endDate": "2026-10-04",
+    "date": "2026-09-05",
+    "endDate": "2026-09-30",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
@@ -1261,8 +1261,8 @@
       "Conference",
       "Online"
     ],
-    "registered": 479,
-    "applyUrl": "https://mlh.com/events/55"
+    "registered": 1234,
+    "applyUrl": "https://mlh.io/seasons/2026/events"
   },
   {
     "id": "scraped-event-56",
@@ -1271,21 +1271,21 @@
     "organizer": "GeeksforGeeks",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
     "type": "Hackathon",
-    "date": "2026-08-19",
-    "endDate": "2026-09-30",
+    "date": "2026-09-18",
+    "endDate": "2026-10-03",
     "location": "Hyderabad, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-05",
+    "registrationDeadline": "2026-08-04",
     "description": "Join us for this exciting Hackathon organized by GeeksforGeeks. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "₹5,00,000 + Vouchers",
+    "prize": "Swags & Stickers",
     "tags": [
       "GeeksforGeeks",
       "Hackathon",
       "In-person"
     ],
-    "registered": 4158,
-    "applyUrl": "https://geeksforgeeks.com/events/56"
+    "registered": 1201,
+    "applyUrl": "https://practice.geeksforgeeks.org/events"
   },
   {
     "id": "scraped-event-57",
@@ -1294,21 +1294,21 @@
     "organizer": "Google Cloud",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
     "type": "Competition",
-    "date": "2026-08-17",
-    "endDate": "2026-10-02",
+    "date": "2026-09-13",
+    "endDate": "2026-10-01",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
     "registrationDeadline": "2026-08-03",
     "description": "Join us for this exciting Competition organized by Google Cloud. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "Paid Internship Vouchers",
+    "prize": "Swags & Stickers",
     "tags": [
       "Google Cloud",
       "Competition",
       "Online"
     ],
-    "registered": 1424,
-    "applyUrl": "https://googlecloud.com/events/57"
+    "registered": 3759,
+    "applyUrl": "https://cloud.google.com/events"
   },
   {
     "id": "scraped-event-58",
@@ -1317,12 +1317,12 @@
     "organizer": "Microsoft Imagine",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
     "type": "Bootcamp",
-    "date": "2026-09-01",
-    "endDate": "2026-10-03",
+    "date": "2026-09-19",
+    "endDate": "2026-09-30",
     "location": "Pune, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-05",
+    "registrationDeadline": "2026-08-02",
     "description": "Join us for this exciting Bootcamp organized by Microsoft Imagine. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -1330,8 +1330,8 @@
       "Bootcamp",
       "In-person"
     ],
-    "registered": 2658,
-    "applyUrl": "https://microsoftimagine.com/events/58"
+    "registered": 3121,
+    "applyUrl": "https://imaginecup.microsoft.com/"
   },
   {
     "id": "scraped-event-59",
@@ -1340,12 +1340,12 @@
     "organizer": "AWS Student",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=amazon.com&sz=64",
     "type": "Workshop",
-    "date": "2026-08-23",
-    "endDate": "2026-10-04",
+    "date": "2026-08-15",
+    "endDate": "2026-09-30",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-11",
+    "registrationDeadline": "2026-08-14",
     "description": "Join us for this exciting Workshop organized by AWS Student. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -1353,8 +1353,8 @@
       "Workshop",
       "Online"
     ],
-    "registered": 2386,
-    "applyUrl": "https://awsstudent.com/events/59"
+    "registered": 3926,
+    "applyUrl": "https://aws.amazon.com/education/aws-educate/"
   },
   {
     "id": "scraped-event-60",
@@ -1363,12 +1363,12 @@
     "organizer": "Zoho Devs",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=zoho.com&sz=64",
     "type": "Conference",
-    "date": "2026-08-30",
+    "date": "2026-08-25",
     "endDate": "2026-10-03",
     "location": "Chennai, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-14",
+    "registrationDeadline": "2026-08-09",
     "description": "Join us for this exciting Conference organized by Zoho Devs. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -1376,8 +1376,8 @@
       "Conference",
       "In-person"
     ],
-    "registered": 2117,
-    "applyUrl": "https://zohodevs.com/events/60"
+    "registered": 2421,
+    "applyUrl": "https://www.zoho.com/developer/"
   },
   {
     "id": "scraped-event-61",
@@ -1386,21 +1386,21 @@
     "organizer": "Unstop",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=unstop.com&sz=64",
     "type": "Hackathon",
-    "date": "2026-08-27",
+    "date": "2026-09-09",
     "endDate": "2026-09-30",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-03",
+    "registrationDeadline": "2026-08-04",
     "description": "Join us for this exciting Hackathon organized by Unstop. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
-    "prize": "Cash Prizes Up to ₹10 Lakhs",
+    "prize": "Swags & Stickers",
     "tags": [
       "Unstop",
       "Hackathon",
       "Online"
     ],
-    "registered": 2215,
-    "applyUrl": "https://unstop.com/events/61"
+    "registered": 458,
+    "applyUrl": "https://unstop.com/"
   },
   {
     "id": "scraped-event-62",
@@ -1409,12 +1409,12 @@
     "organizer": "Hack2skill",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=hack2skill.com&sz=64",
     "type": "Competition",
-    "date": "2026-09-06",
+    "date": "2026-08-31",
     "endDate": "2026-10-03",
     "location": "Hyderabad, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-08",
+    "registrationDeadline": "2026-08-06",
     "description": "Join us for this exciting Competition organized by Hack2skill. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Swags & Stickers",
     "tags": [
@@ -1422,8 +1422,8 @@
       "Competition",
       "In-person"
     ],
-    "registered": 3988,
-    "applyUrl": "https://hack2skill.com/events/62"
+    "registered": 3303,
+    "applyUrl": "https://hack2skill.com/"
   },
   {
     "id": "scraped-event-63",
@@ -1432,12 +1432,12 @@
     "organizer": "MLH",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=mlh.io&sz=64",
     "type": "Bootcamp",
-    "date": "2026-08-18",
-    "endDate": "2026-09-30",
+    "date": "2026-09-19",
+    "endDate": "2026-10-03",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-02",
+    "registrationDeadline": "2026-08-04",
     "description": "Join us for this exciting Bootcamp organized by MLH. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -1445,8 +1445,8 @@
       "Bootcamp",
       "Online"
     ],
-    "registered": 2099,
-    "applyUrl": "https://mlh.com/events/63"
+    "registered": 1227,
+    "applyUrl": "https://mlh.io/seasons/2026/events"
   },
   {
     "id": "scraped-event-64",
@@ -1455,12 +1455,12 @@
     "organizer": "GeeksforGeeks",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
     "type": "Workshop",
-    "date": "2026-09-05",
+    "date": "2026-08-28",
     "endDate": "2026-09-30",
     "location": "Pune, India",
     "isOnline": false,
     "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-05",
+    "registrationDeadline": "2026-08-11",
     "description": "Join us for this exciting Workshop organized by GeeksforGeeks. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -1468,8 +1468,8 @@
       "Workshop",
       "In-person"
     ],
-    "registered": 1234,
-    "applyUrl": "https://geeksforgeeks.com/events/64"
+    "registered": 3463,
+    "applyUrl": "https://practice.geeksforgeeks.org/events"
   },
   {
     "id": "scraped-event-65",
@@ -1478,12 +1478,12 @@
     "organizer": "Google Cloud",
     "organizerLogo": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
     "type": "Conference",
-    "date": "2026-08-27",
-    "endDate": "2026-10-04",
+    "date": "2026-08-18",
+    "endDate": "2026-10-02",
     "location": "Online",
     "isOnline": true,
     "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-    "registrationDeadline": "2026-08-09",
+    "registrationDeadline": "2026-08-02",
     "description": "Join us for this exciting Conference organized by Google Cloud. Learn new skills, compete for massive prizes, and network with experts in the tech industry. Perfect opportunity for students and freshers.",
     "prize": "Participation Certificates & Swags",
     "tags": [
@@ -1491,7 +1491,7 @@
       "Conference",
       "Online"
     ],
-    "registered": 1024,
-    "applyUrl": "https://googlecloud.com/events/65"
+    "registered": 655,
+    "applyUrl": "https://cloud.google.com/events"
   }
 ]

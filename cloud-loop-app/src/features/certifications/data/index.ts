@@ -8,6 +8,61 @@ import { ragMongodbCertification } from "./list/rag-mongodb";
 
 import { Certification } from "../types/Certification";
 
+// ── GeeksforGeeks Free Verified Certifications (on top) ──
+const gfgCerts: Certification[] = [
+  {
+    id: "gfg-fork-java",
+    slug: "geeksforgeeks-fork-java",
+    name: "Fork Java (Programming Foundation)",
+    provider: "GeeksforGeeks",
+    providerLogo: "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    providerLink: "https://www.geeksforgeeks.org/courses/fork-java",
+    interestedCount: "19.5k",
+    cost: "Free",
+    badge: "Verified Certificate",
+    enrollUrl: "https://www.geeksforgeeks.org/fork-java-programming-foundation-course/",
+    thumbnail: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=400&auto=format&fit=crop&q=60",
+    description: "Learn Java programming from scratch with GeeksforGeeks' structured free course designed for beginners to build foundational programming concepts.",
+    skills: ["Java", "OOPs Concepts", "Exception Handling", "Basic Data Types"],
+    difficulty: "Beginner",
+    duration: "15 hours"
+  },
+  {
+    id: "gfg-fork-cpp",
+    slug: "geeksforgeeks-fork-cpp",
+    name: "Fork C++ (Programming Foundation)",
+    provider: "GeeksforGeeks",
+    providerLogo: "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    providerLink: "https://www.geeksforgeeks.org/courses/fork-cpp",
+    interestedCount: "16.8k",
+    cost: "Free",
+    badge: "Verified Certificate",
+    enrollUrl: "https://www.geeksforgeeks.org/fork-cpp-programming-foundation-course/",
+    thumbnail: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=400&auto=format&fit=crop&q=60",
+    description: "Master C++ fundamentals, object-oriented concepts, Standard Template Library (STL), and memory layouts with GeeksforGeeks' free course.",
+    skills: ["C++", "STL Libraries", "Pointers & Memory", "OOPs"],
+    difficulty: "Beginner",
+    duration: "18 hours"
+  },
+  {
+    id: "gfg-fork-python",
+    slug: "geeksforgeeks-fork-python",
+    name: "Fork Python (Programming Foundation)",
+    provider: "GeeksforGeeks",
+    providerLogo: "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64",
+    providerLink: "https://www.geeksforgeeks.org/courses/fork-python",
+    interestedCount: "22.3k",
+    cost: "Free",
+    badge: "Verified Certificate",
+    enrollUrl: "https://www.geeksforgeeks.org/fork-python-programming-foundation-course/",
+    thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&auto=format&fit=crop&q=60",
+    description: "Build a strong coding foundation in Python, covering basic syntax, scripts, tuples, lists, and standard libraries with GeeksforGeeks.",
+    skills: ["Python", "Scripting Fundamentals", "Data Structures", "Built-in Modules"],
+    difficulty: "Beginner",
+    duration: "12 hours"
+  }
+];
+
 // ── Google Free Verified Certifications ──
 const googleCerts: Certification[] = [
   {
@@ -165,53 +220,81 @@ const metaCerts: Certification[] = [
 ];
 
 // ── MongoDB Free Verified Certifications ──
-// Ensure static MongoDB certificates are marked as free and verified
 const mongodbCerts: Certification[] = [
   {
     ...mongodbOverviewCertification,
+    provider: "MongoDB",
+    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
+    providerLink: "https://learn.mongodb.com/",
+    enrollUrl: "https://learn.mongodb.com/learning-paths/introduction-to-mongodb",
     cost: "Free",
     badge: "Verified Badge",
-    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64"
+    thumbnail: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&auto=format&fit=crop&q=60"
   },
   {
     ...relationalDocumentModelCertification,
+    provider: "MongoDB",
+    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
+    providerLink: "https://learn.mongodb.com/",
+    enrollUrl: "https://learn.mongodb.com/courses/m100-relational-to-document-model",
     cost: "Free",
     badge: "Verified Badge",
-    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64"
+    thumbnail: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=400&auto=format&fit=crop&q=60"
   },
   {
     ...schemaDesignPatternsCertification,
+    provider: "MongoDB",
+    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
+    providerLink: "https://learn.mongodb.com/",
+    enrollUrl: "https://learn.mongodb.com/learning-paths/mongodb-data-modeling",
     cost: "Free",
     badge: "Verified Badge",
-    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64"
+    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&auto=format&fit=crop&q=60"
   },
   {
     ...crudOperationsMongodbCertification,
+    provider: "MongoDB",
+    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
+    providerLink: "https://learn.mongodb.com/",
+    enrollUrl: "https://learn.mongodb.com/courses/mongodb-crud-operations",
     cost: "Free",
     badge: "Verified Badge",
-    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64"
+    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&auto=format&fit=crop&q=60"
   },
   {
     ...indexingDesignFundamentalsCertification,
+    provider: "MongoDB",
+    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
+    providerLink: "https://learn.mongodb.com/",
+    enrollUrl: "https://learn.mongodb.com/courses/mongodb-indexing-and-performance",
     cost: "Free",
     badge: "Verified Badge",
-    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64"
+    thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&auto=format&fit=crop&q=60"
   },
   {
     ...vectorSearchFundamentalsCertification,
+    provider: "MongoDB",
+    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
+    providerLink: "https://learn.mongodb.com/",
+    enrollUrl: "https://learn.mongodb.com/courses/mongodb-vector-search",
     cost: "Free",
     badge: "Verified Badge",
-    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64"
+    thumbnail: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=400&auto=format&fit=crop&q=60"
   },
   {
     ...ragMongodbCertification,
+    provider: "MongoDB",
+    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64",
+    providerLink: "https://learn.mongodb.com/",
+    enrollUrl: "https://learn.mongodb.com/courses/rag-with-mongodb",
     cost: "Free",
     badge: "Verified Badge",
-    providerLogo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=64"
+    thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&auto=format&fit=crop&q=60"
   }
 ];
 
 export const certifications: Certification[] = [
+  ...gfgCerts,
   ...googleCerts,
   ...microsoftCerts,
   ...awsCerts,

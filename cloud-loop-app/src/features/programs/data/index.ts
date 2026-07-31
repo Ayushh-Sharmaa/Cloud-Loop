@@ -17,8 +17,7 @@ import { canvaCampusAmbassadorProgram } from "./list/canva-campus-ambassador";
 import { awsStudentBuilderCampusLeadersProgram } from "./list/aws-student-builder-campus-leaders";
 import { awsStudentBuilderGroupLeadersProgram } from "./list/aws-student-builder-group-leaders";
 
-export const programs = [
-  googleCloudArcadeProgram,
+const otherPrograms = [
   microsoftLearnStudentAmbassadorsProgram,
   girlScriptSummerOfCodeProgram,
   githubCampusExpertProgram,
@@ -36,4 +35,13 @@ export const programs = [
   canvaCampusAmbassadorProgram,
   awsStudentBuilderCampusLeadersProgram,
   awsStudentBuilderGroupLeadersProgram,
+].sort((a, b) => {
+  const dateA = new Date(a.deadline).getTime();
+  const dateB = new Date(b.deadline).getTime();
+  return dateA - dateB; // Nearest deadline comes first
+});
+
+export const programs = [
+  googleCloudArcadeProgram,
+  ...otherPrograms
 ];
