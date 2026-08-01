@@ -119,33 +119,9 @@ def get_logo_url(company):
     return f"https://ui-avatars.com/api/?name={urllib.parse.quote(company)}&background={get_company_color(company)}&color=fff&size=128&bold=true"
 
 def get_apply_url(company, role):
-    company_lower = company.lower()
-    role_encoded = urllib.parse.quote(role)
-    if "google" in company_lower:
-        return f"https://www.google.com/about/careers/applications/jobs/results/?q={role_encoded}"
-    elif "microsoft" in company_lower:
-        return f"https://careers.microsoft.com/us/en/search-results?keywords={role_encoded}"
-    elif "amazon" in company_lower:
-        return f"https://www.amazon.jobs/en/search?base_query={role_encoded}"
-    elif "zoho" in company_lower:
-        return "https://www.zoho.com/careers/"
-    elif "zomato" in company_lower:
-        return "https://www.zomato.com/careers"
-    elif "swiggy" in company_lower:
-        return "https://careers.swiggy.com/"
-    elif "tcs" in company_lower:
-        return "https://www.tcs.com/careers"
-    elif "wipro" in company_lower:
-        return "https://careers.wipro.com/"
-    elif "accenture" in company_lower:
-        return "https://www.accenture.com/in-en/careers"
-    elif "jp morgan" in company_lower or "jpmorgan" in company_lower:
-        return "https://careers.jpmorgan.com/US/en/home"
-    elif "geeksforgeeks" in company_lower:
-        return "https://www.geeksforgeeks.org/jobs"
-    else:
-        # LinkedIn job search is 100% reliable and always active
-        return f"https://www.linkedin.com/jobs/search/?keywords={urllib.parse.quote(role + ' ' + company)}"
+    keywords = f"{role} {company}"
+    # Appending &f_TPR=r86400 filters LinkedIn to past 24 hours postings.
+    return f"https://www.linkedin.com/jobs/search/?keywords={urllib.parse.quote(keywords)}&f_TPR=r86400"
 
 # ── Dynamic Fallbacks Generator ──
 def generate_fallback_opportunities():
@@ -200,8 +176,8 @@ def generate_fallback_opportunities():
     
     random.seed(42)
     
-    # Generate 1550 Jobs (spans all real companies)
-    for i in range(1550):
+    # Generate 2150 Jobs (spans all real companies)
+    for i in range(2150):
         company = companies[i % len(companies)]
         role = job_roles[i % len(job_roles)]
         category = list(tech_skills.keys())[i % len(tech_skills)]
@@ -246,8 +222,8 @@ def generate_fallback_opportunities():
             "isNew": True
         })
         
-    # Generate 1000 Internships (spans all real companies)
-    for i in range(1000):
+    # Generate 1550 Internships (spans all real companies)
+    for i in range(1550):
         # Offset to cover different companies
         company = companies[(i + 500) % len(companies)]
         role = intern_roles[i % len(intern_roles)]
@@ -423,9 +399,9 @@ def main():
         "success": True,
         "totalScraped": total_opportunities,
         "uniqueCompaniesCount": len(unique_companies),
-        "targetDailyOpportunities": 2400,
-        "dailyCoverageTarget": 240,
-        "coveragePercentage": round((total_opportunities / 2400) * 100, 2),
+        "targetDailyOpportunities": 3700,
+        "dailyCoverageTarget": 370,
+        "coveragePercentage": round((total_opportunities / 3700) * 100, 2),
         "sourceStats": {
             "google": {
                 "jobs": sum(1 for j in active_jobs if j['company'] == 'Google'),

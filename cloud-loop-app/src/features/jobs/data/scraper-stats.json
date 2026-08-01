@@ -1,56 +1,56 @@
 {
-  "lastScraped": "2026-08-01T16:45:02.228290Z",
+  "lastScraped": "2026-08-01T17:00:51.181112Z",
   "success": true,
-  "totalScraped": 2550,
+  "totalScraped": 3700,
   "uniqueCompaniesCount": 146,
-  "targetDailyOpportunities": 2400,
-  "dailyCoverageTarget": 240,
-  "coveragePercentage": 106.25,
+  "targetDailyOpportunities": 3700,
+  "dailyCoverageTarget": 370,
+  "coveragePercentage": 100.0,
   "sourceStats": {
     "google": {
-      "jobs": 11,
-      "internships": 7,
-      "total": 18
+      "jobs": 15,
+      "internships": 11,
+      "total": 26
     },
     "microsoft": {
-      "jobs": 11,
-      "internships": 7,
-      "total": 18
+      "jobs": 15,
+      "internships": 11,
+      "total": 26
     },
     "amazon": {
-      "jobs": 11,
-      "internships": 7,
-      "total": 18
+      "jobs": 15,
+      "internships": 11,
+      "total": 26
     },
     "zoho": {
-      "jobs": 11,
-      "internships": 7,
-      "total": 18
+      "jobs": 15,
+      "internships": 10,
+      "total": 25
     },
     "tcs": {
-      "jobs": 11,
-      "internships": 7,
-      "total": 18
+      "jobs": 15,
+      "internships": 10,
+      "total": 25
     },
     "wipro": {
-      "jobs": 11,
-      "internships": 7,
-      "total": 18
+      "jobs": 15,
+      "internships": 10,
+      "total": 25
     },
     "accenture": {
-      "jobs": 11,
-      "internships": 7,
-      "total": 18
+      "jobs": 15,
+      "internships": 10,
+      "total": 25
     },
     "jpmorgan": {
-      "jobs": 11,
-      "internships": 7,
-      "total": 18
+      "jobs": 15,
+      "internships": 11,
+      "total": 26
     },
     "geeksforgeeks": {
-      "jobs": 11,
-      "internships": 6,
-      "total": 17
+      "jobs": 15,
+      "internships": 10,
+      "total": 25
     }
   }
 }

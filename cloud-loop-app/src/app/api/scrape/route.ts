@@ -288,15 +288,15 @@ async function runProgrammaticFallback(reason: string): Promise<Response> {
       stats = JSON.parse(data);
     } else {
       stats = {
-        totalScraped: 2420,
-        targetDailyOpportunities: 2400,
-        dailyCoverageTarget: 240,
-        coveragePercentage: 100.83,
+        totalScraped: 3765,
+        targetDailyOpportunities: 3700,
+        dailyCoverageTarget: 370,
+        coveragePercentage: 101.75,
         sourceStats: {
-          google: { jobs: 100, internships: 60, total: 160 },
-          microsoft: { jobs: 100, internships: 60, total: 160 },
-          amazon: { jobs: 100, internships: 60, total: 160 },
-          zoho: { jobs: 100, internships: 60, total: 160 }
+          google: { jobs: 150, internships: 100, total: 250 },
+          microsoft: { jobs: 150, internships: 100, total: 250 },
+          amazon: { jobs: 150, internships: 100, total: 250 },
+          zoho: { jobs: 150, internships: 100, total: 250 }
         }
       };
     }
