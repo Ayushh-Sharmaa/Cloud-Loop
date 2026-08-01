@@ -16,7 +16,7 @@ try {
 }
 
 # Create Task Action
-$Action = New-ScheduledTaskAction -Execute "python.exe" -Argument "`"$ScriptPath`"" -WorkingDirectory $WorkingDirectory
+$Action = New-ScheduledTaskAction -Execute "$pythonPath" -Argument "`"$ScriptPath`"" -WorkingDirectory $WorkingDirectory
 
 # Create Task Trigger (every 4 hours, indefinitely)
 $Time = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Hours 4)

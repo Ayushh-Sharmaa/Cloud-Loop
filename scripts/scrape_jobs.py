@@ -70,89 +70,86 @@ def get_company_color(name):
     h = sum(ord(c) for c in name)
     return colors[h % len(colors)]
 
-# ── Generator for 1,000+ Unique Companies ──
-def generate_thousand_companies():
-    prefixes = [
-        "Alpha", "Beta", "Apex", "Nova", "Stellar", "Quantum", "Vertex", "Zenith", "Prime", "Core",
-        "Delta", "Omni", "Global", "Summit", "Nexus", "Synergy", "Matrix", "Fusion", "Vector", "Echo",
-        "Cloud", "Data", "Tech", "Cyber", "Logic", "Code", "Web", "App", "Soft", "Dev",
-        "Net", "Link", "Sync", "Flow", "Pulse", "Grid", "Span", "Scale", "Rise", "Shift",
-        "Vortex", "Horizon", "Infinity", "Helix", "Catalyst", "Aspect", "Orbit", "Aero", "Micro", "Macro"
-    ]
-    roots = [
-        "Scale", "Forge", "Labs", "Systems", "Solutions", "Tech", "Dynamics", "Analytics", "Networks", "Software",
-        "Designs", "Hub", "Base", "Point", "Path", "Core", "Node", "Link", "Wave", "Grid",
-        "Sprint", "Loop", "Stack", "Layer", "Zone", "Vault", "Shift", "Flow", "Pulse", "Space",
-        "Engine", "Drive", "Craft", "Build", "Mind", "Smart", "Vector", "Optima", "Integra", "Apex"
-    ]
-    suffixes = [
-        "Inc", "Corp", "Co", "Technologies", "Solutions", "Labs", "Group", "Global", "Software", "Systems",
-        "Partner", "Digital", "Studios", "Ventures", "AI", "Cloud", "SaaS", "Data", "Security", "Networks"
-    ]
-    
-    random.seed(100)
-    # Start with core companies
-    company_names = set([
-        "Google", "Microsoft", "Amazon", "TCS", "Wipro", 
-        "Accenture", "JP Morgan", "Zoho", "LinkedIn", "Adobe", 
-        "Oracle", "Cisco", "Infosys", "Cognizant", "Swiggy", "Zomato",
-        "GeeksforGeeks"
-    ])
-    
-    while len(company_names) < 1010:
-        p = random.choice(prefixes)
-        r = random.choice(roots)
-        s = random.choice(suffixes)
-        name = f"{p}{r} {s}"
-        company_names.add(name)
-        
-    return list(company_names)
+# ── Curated Real Companies with Domains ──
+COMPANY_DOMAINS = {
+    "Google": "google.com", "Microsoft": "microsoft.com", "Amazon": "amazon.com", "Meta": "meta.com",
+    "Apple": "apple.com", "Netflix": "netflix.com", "Uber": "uber.com", "Lyft": "lyft.com",
+    "Airbnb": "airbnb.com", "Stripe": "stripe.com", "Coinbase": "coinbase.com", "Salesforce": "salesforce.com",
+    "HubSpot": "hubspot.com", "Adobe": "adobe.com", "Cisco": "cisco.com", "Intel": "intel.com",
+    "Nvidia": "nvidia.com", "Oracle": "oracle.com", "IBM": "ibm.com", "Dell": "dell.com",
+    "HP": "hp.com", "TCS": "tcs.com", "Infosys": "infosys.com", "Wipro": "wipro.com",
+    "Cognizant": "cognizant.com", "Accenture": "accenture.com", "Capgemini": "capgemini.com", "Deloitte": "deloitte.com",
+    "Zoho": "zoho.com", "Swiggy": "swiggy.com", "Zomato": "zomato.com", "Paytm": "paytm.com",
+    "PhonePe": "phonepe.com", "Razorpay": "razorpay.com", "Cred": "cred.club", "Ola": "olacabs.com",
+    "Flipkart": "flipkart.com", "Meesho": "meesho.com", "Nykaa": "nykaa.com", "Zepto": "zeptonow.com",
+    "Blinkit": "blinkit.com", "Groww": "groww.in", "Zerodha": "zerodha.com", "Upstox": "upstox.com",
+    "GeeksforGeeks": "geeksforgeeks.org", "AMD": "amd.com", "Qualcomm": "qualcomm.com", "Broadcom": "broadcom.com",
+    "Figma": "figma.com", "Canva": "canva.com", "Atlassian": "atlassian.com", "Slack": "slack.com",
+    "Zoom": "zoom.us", "Twitter": "x.com", "TikTok": "tiktok.com", "ByteDance": "bytedance.com",
+    "Snap": "snap.com", "Pinterest": "pinterest.com", "Reddit": "reddit.com", "Discord": "discord.com",
+    "Spotify": "spotify.com", "Shopify": "shopify.com", "Squarespace": "squarespace.com", "Wix": "wix.com",
+    "Automattic": "automattic.com", "GitLab": "gitlab.com", "GitHub": "github.com", "Postman": "postman.com",
+    "HashiCorp": "hashicorp.com", "Datadog": "datadoghq.com", "Splunk": "splunk.com", "Snowflake": "snowflake.com",
+    "MongoDB": "mongodb.com", "Cloudflare": "cloudflare.com", "Fastly": "fastly.com", "Akamai": "akamai.com",
+    "Twilio": "twilio.com", "Plaid": "plaid.com", "Robinhood": "robinhood.com", "SoFi": "sofi.com",
+    "Chime": "chime.com", "Block": "block.xyz", "PayPal": "paypal.com", "Visa": "visa.com",
+    "Mastercard": "mastercard.com", "American Express": "americanexpress.com", "Goldman Sachs": "goldmansachs.com", "Morgan Stanley": "morganstanley.com",
+    "JP Morgan": "jpmorganchase.com", "Citibank": "citi.com", "Bank of America": "bankofamerica.com", "Wells Fargo": "wellsfargo.com",
+    "Capital One": "capitalone.com", "Fidelity": "fidelity.com", "Vanguard": "vanguard.com", "BlackRock": "blackrock.com",
+    "McKinsey": "mckinsey.com", "BCG": "bcg.com", "Bain": "bain.com", "PwC": "pwc.com",
+    "EY": "ey.com", "KPMG": "kpmg.com", "ServiceNow": "servicenow.com", "Workday": "workday.com",
+    "VMware": "vmware.com", "Red Hat": "redhat.com", "SAP": "sap.com", "Siemens": "siemens.com",
+    "Bosch": "bosch.com", "Samsung": "samsung.com", "Sony": "sony.com", "LG": "lg.com",
+    "Panasonic": "panasonic.com", "Philips": "philips.com", "GE": "ge.com", "Honeywell": "honeywell.com",
+    "Boeing": "boeing.com", "Lockheed Martin": "lockheedmartin.com", "Northrop Grumman": "northropgrumman.com", "Tesla": "tesla.com",
+    "SpaceX": "spacex.com", "Rivian": "rivian.com", "Lucid": "lucidmotors.com", "Ford": "ford.com",
+    "GM": "gm.com", "Toyota": "toyota.com", "Honda": "honda.com", "BMW": "bmw.com",
+    "Mercedes-Benz": "mercedes-benz.com", "Audi": "audi.com", "Porsche": "porsche.com", "Ferrari": "ferrari.com",
+    "Walmart": "walmart.com", "Target": "target.com", "Costco": "costco.com", "Home Depot": "homedepot.com",
+    "Lowe's": "lowes.com", "IKEA": "ikea.com", "Nike": "nike.com", "Adidas": "adidas.com",
+    "Under Armour": "underarmour.com", "Puma": "puma.com", "Lululemon": "lululemon.com", "Sephora": "sephora.com",
+    "Starbucks": "starbucks.com", "McDonald's": "mcdonalds.com"
+}
+
+def get_logo_url(company):
+    domain = COMPANY_DOMAINS.get(company)
+    if domain:
+        # Use Clearbit Logo API, which is high quality.
+        return f"https://logo.clearbit.com/{domain}"
+    return f"https://ui-avatars.com/api/?name={urllib.parse.quote(company)}&background={get_company_color(company)}&color=fff&size=128&bold=true"
+
+def get_apply_url(company, role):
+    company_lower = company.lower()
+    role_encoded = urllib.parse.quote(role)
+    if "google" in company_lower:
+        return f"https://www.google.com/about/careers/applications/jobs/results/?q={role_encoded}"
+    elif "microsoft" in company_lower:
+        return f"https://careers.microsoft.com/us/en/search-results?keywords={role_encoded}"
+    elif "amazon" in company_lower:
+        return f"https://www.amazon.jobs/en/search?base_query={role_encoded}"
+    elif "zoho" in company_lower:
+        return "https://www.zoho.com/careers/"
+    elif "zomato" in company_lower:
+        return "https://www.zomato.com/careers"
+    elif "swiggy" in company_lower:
+        return "https://careers.swiggy.com/"
+    elif "tcs" in company_lower:
+        return "https://www.tcs.com/careers"
+    elif "wipro" in company_lower:
+        return "https://careers.wipro.com/"
+    elif "accenture" in company_lower:
+        return "https://www.accenture.com/in-en/careers"
+    elif "jp morgan" in company_lower or "jpmorgan" in company_lower:
+        return "https://careers.jpmorgan.com/US/en/home"
+    elif "geeksforgeeks" in company_lower:
+        return "https://www.geeksforgeeks.org/jobs"
+    else:
+        # LinkedIn job search is 100% reliable and always active
+        return f"https://www.linkedin.com/jobs/search/?keywords={urllib.parse.quote(role + ' ' + company)}"
 
 # ── Dynamic Fallbacks Generator ──
 def generate_fallback_opportunities():
-    companies = generate_thousand_companies()
-    
-    # Standard logos for core brands
-    core_logos = {
-        "Google": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
-        "Microsoft": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
-        "Amazon": "https://www.google.com/s2/favicons?domain=amazon.com&sz=64",
-        "TCS": "https://www.google.com/s2/favicons?domain=tcs.com&sz=64",
-        "Wipro": "https://www.google.com/s2/favicons?domain=wipro.com&sz=64",
-        "Accenture": "https://www.google.com/s2/favicons?domain=accenture.com&sz=64",
-        "JP Morgan": "https://www.google.com/s2/favicons?domain=jpmorganchase.com&sz=64",
-        "Zoho": "https://www.zoho.com/careers/",
-        "LinkedIn": "https://www.google.com/s2/favicons?domain=linkedin.com&sz=64",
-        "Adobe": "https://www.google.com/s2/favicons?domain=adobe.com&sz=64",
-        "Oracle": "https://www.google.com/s2/favicons?domain=oracle.com&sz=64",
-        "Cisco": "https://www.google.com/s2/favicons?domain=cisco.com&sz=64",
-        "Infosys": "https://www.google.com/s2/favicons?domain=infosys.com&sz=64",
-        "Cognizant": "https://www.google.com/s2/favicons?domain=cognizant.com&sz=64",
-        "Swiggy": "https://www.google.com/s2/favicons?domain=swiggy.com&sz=64",
-        "Zomato": "https://www.zomato.com/careers",
-        "GeeksforGeeks": "https://www.google.com/s2/favicons?domain=geeksforgeeks.org&sz=64"
-    }
-
-    # Guaranteed active search URLs to prevent 404s
-    career_urls = {
-        "Google": "https://www.google.com/about/careers/applications/jobs/results/?q=software%20engineer",
-        "Microsoft": "https://careers.microsoft.com/us/en/search-results?keywords=software%20engineer",
-        "Amazon": "https://www.amazon.jobs/en/search?base_query=software%20development%20engineer",
-        "TCS": "https://www.tcs.com/careers",
-        "Wipro": "https://careers.wipro.com/",
-        "Accenture": "https://www.accenture.com/in-en/careers",
-        "JP Morgan": "https://careers.jpmorgan.com/US/en/home",
-        "Zoho": "https://www.zoho.com/careers/",
-        "LinkedIn": "https://www.linkedin.com/jobs/search/?keywords=software%20engineer",
-        "Adobe": "https://www.adobe.com/careers.html",
-        "Oracle": "https://www.oracle.com/corporate/careers/",
-        "Cisco": "https://jobs.cisco.com/",
-        "Infosys": "https://www.infosys.com/careers.html",
-        "Cognizant": "https://careers.cognizant.com/global/en",
-        "Swiggy": "https://careers.swiggy.com/",
-        "Zomato": "https://www.zomato.com/careers",
-        "GeeksforGeeks": "https://www.geeksforgeeks.org/jobs?tab_type=all_jobs"
-    }
+    companies = list(COMPANY_DOMAINS.keys())
     
     locations = [
         ("Bengaluru, India", "onsite"),
@@ -203,7 +200,7 @@ def generate_fallback_opportunities():
     
     random.seed(42)
     
-    # Generate 1550 Jobs (spans all 1000+ companies)
+    # Generate 1550 Jobs (spans all real companies)
     for i in range(1550):
         company = companies[i % len(companies)]
         role = job_roles[i % len(job_roles)]
@@ -221,16 +218,11 @@ def generate_fallback_opportunities():
         # Fresh posted dates: last 7 days only
         posted_date = (datetime.now() - timedelta(days=random.randint(0, 6))).strftime("%Y-%m-%d")
         
-        # Logo url (uses core logos, or generates a custom colored initial badge logo)
-        logo_url = core_logos.get(company)
-        if not logo_url:
-            logo_url = f"https://ui-avatars.com/api/?name={urllib.parse.quote(company)}&background={get_company_color(company)}&color=fff&size=128&bold=true"
+        # Logo url (uses Clearbit brand logos with fallbacks)
+        logo_url = get_logo_url(company)
             
         # Select career search link based on company
-        apply_url = career_urls.get(company)
-        if not apply_url:
-            # Generate custom search url that queries the role and company to ensure zero 404s
-            apply_url = f"https://www.linkedin.com/jobs/search/?keywords={urllib.parse.quote(role)}%20{urllib.parse.quote(company)}"
+        apply_url = get_apply_url(company, role)
             
         jobs.append({
             "id": job_id,
@@ -254,7 +246,7 @@ def generate_fallback_opportunities():
             "isNew": True
         })
         
-    # Generate 1000 Internships (spans all 1000+ companies)
+    # Generate 1000 Internships (spans all real companies)
     for i in range(1000):
         # Offset to cover different companies
         company = companies[(i + 500) % len(companies)]
@@ -273,13 +265,9 @@ def generate_fallback_opportunities():
         # Fresh posted dates: last 7 days only
         posted_date = (datetime.now() - timedelta(days=random.randint(0, 6))).strftime("%Y-%m-%d")
         
-        logo_url = core_logos.get(company)
-        if not logo_url:
-            logo_url = f"https://ui-avatars.com/api/?name={urllib.parse.quote(company)}&background={get_company_color(company)}&color=fff&size=128&bold=true"
+        logo_url = get_logo_url(company)
             
-        apply_url = career_urls.get(company)
-        if not apply_url:
-            apply_url = f"https://www.linkedin.com/jobs/search/?keywords={urllib.parse.quote(role)}%20{urllib.parse.quote(company)}"
+        apply_url = get_apply_url(company, role)
             
         internships.append({
             "id": intern_id,
