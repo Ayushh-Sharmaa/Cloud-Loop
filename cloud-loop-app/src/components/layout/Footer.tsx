@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const footerLinks = {
   Product: [
@@ -31,7 +34,56 @@ const socials = [
   { icon: WhatsAppIcon, href: "https://www.whatsapp.com/channel/0029VbAiEFzAe5VikdanX42e", label: "WhatsApp" },
 ];
 
+function getRelativeTimeString(isoString: string): string {
+  try {
+    const date = new Date(isoString);
+    const now = new Date();
+    const diffMs = now.getTime() - date.getTime();
+    const diffMins = Math.floor(diffMs / (1000 * 60));
+    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+    if (diffMins < 1) {
+      return "just now";
+    } else if (diffMins < 60) {
+      return `${diffMins}m ago`;
+    } else if (diffHours < 24) {
+      return `${diffHours}h ago`;
+    } else {
+      return `${diffDays}d ago`;
+    }
+  } catch (e) {
+    return "";
+  }
+}
+
 export function Footer() {
+  const [lastUpdated, setLastUpdated] = useState<string>("");
+
+  useEffect(() => {
+    // 1. Fetch live scraper stats to get dynamically touched/updated time
+    fetch("/api/scrape")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load");
+        return res.json();
+      })
+      .then((data) => {
+        if (data.stats && data.stats.lastScraped) {
+          setLastUpdated(getRelativeTimeString(data.stats.lastScraped));
+        }
+      })
+      .catch(() => {
+        // 2. Fallback to imported build-time stats
+        try {
+          import("../../features/jobs/data/scraper-stats.json").then((stats) => {
+            if (stats.lastScraped) {
+              setLastUpdated(getRelativeTimeString(stats.lastScraped));
+            }
+          });
+        } catch (e) {}
+      });
+  }, []);
+
   return (
     <footer className="border-t border-border dark:border-dark-border bg-white dark:bg-dark-card">
       <div className="container-narrow py-16">
@@ -86,9 +138,17 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="mt-12 pt-6 border-t border-border dark:border-dark-border flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-text-secondary dark:text-dark-text-secondary">
-            © {new Date().getFullYear()} Cloud Loop. Built for students, by students.
-          </p>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+            <p className="text-sm text-text-secondary dark:text-dark-text-secondary">
+              © {new Date().getFullYear()} Cloud Loop. Built for students, by students.
+            </p>
+            {lastUpdated && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                Opportunities updated {lastUpdated}
+              </span>
+            )}
+          </div>
           <div className="flex items-center gap-3">
             {socials.map(({ icon: Icon, href, label }) => (
               <a
