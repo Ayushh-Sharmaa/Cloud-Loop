@@ -10,6 +10,7 @@ import { certifications } from "@/features/certifications";
 import { formatDate, cn } from "@/lib/utils";
 import Link from "next/link";
 import { useUser } from "@clerk/nextjs";
+import { useOpportunities } from "@/components/providers/OpportunitiesProvider";
 
 interface DashboardItem {
   id: string;
@@ -24,6 +25,7 @@ interface DashboardItem {
 
 export default function DashboardPage() {
   const { isSignedIn, isLoaded } = useUser();
+  const { programs: livePrograms, events: liveEvents, internships: liveInternships, jobs: liveJobs, certifications: liveCertifications } = useOpportunities();
   const [savedOpps, setSavedOpps] = useState<DashboardItem[]>([]);
   const [trackedOpps, setTrackedOpps] = useState<DashboardItem[]>([]);
   const [deadlines, setDeadlines] = useState<DashboardItem[]>([]);
@@ -38,9 +40,9 @@ export default function DashboardPage() {
   const loadData = () => {
     if (typeof window === "undefined") return;
 
-    // Compile all opportunities
+    // Compile all opportunities from live lists
     const allItems: DashboardItem[] = [
-      ...programs.map((p) => ({
+      ...livePrograms.map((p) => ({
         id: p.id,
         title: p.name,
         type: "Program",
@@ -49,7 +51,7 @@ export default function DashboardPage() {
         link: `/programs/${p.slug}`,
         status: (localStorage.getItem(`status_${p.id}`) || "None") as any,
       })),
-      ...events.map((e) => ({
+      ...liveEvents.map((e) => ({
         id: e.id,
         title: e.title,
         type: "Event",
@@ -58,7 +60,7 @@ export default function DashboardPage() {
         link: `/events/${e.slug}`,
         status: (localStorage.getItem(`status_${e.id}`) || "None") as any,
       })),
-      ...internships.map((i) => ({
+      ...liveInternships.map((i) => ({
         id: i.id,
         title: `${i.role} at ${i.company}`,
         type: "Internship",
@@ -67,7 +69,7 @@ export default function DashboardPage() {
         link: `/internships/${i.slug}`,
         status: (localStorage.getItem(`status_${i.id}`) || "None") as any,
       })),
-      ...jobs.map((j) => ({
+      ...liveJobs.map((j) => ({
         id: j.id,
         title: `${j.role} at ${j.company}`,
         type: "Job",
@@ -76,7 +78,7 @@ export default function DashboardPage() {
         link: `/jobs/${j.slug}`,
         status: (localStorage.getItem(`status_${j.id}`) || "None") as any,
       })),
-      ...certifications.map((c) => ({
+      ...liveCertifications.map((c) => ({
         id: c.id,
         title: c.name,
         type: "Certification",
@@ -86,6 +88,7 @@ export default function DashboardPage() {
         status: (localStorage.getItem(`status_${c.id}`) || "None") as any,
       })),
     ];
+
 
     // Filter Saved (Bookmarked)
     const saved = allItems.filter(

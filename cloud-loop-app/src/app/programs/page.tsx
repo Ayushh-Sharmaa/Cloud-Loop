@@ -3,7 +3,8 @@
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Search, SlidersHorizontal, X } from "lucide-react";
-import { programs, ProgramCard } from "@/features/programs";
+import { ProgramCard } from "@/features/programs";
+import { useOpportunities } from "@/components/providers/OpportunitiesProvider";
 import { cn } from "@/lib/utils";
 
 const categories = ["All", "Cloud", "Ambassador", "Open Source", "AI/ML", "Technology", "Networking", "Community"];
@@ -11,13 +12,14 @@ const difficulties = ["All", "Beginner", "Intermediate", "Advanced"];
 const statuses = ["All", "Open", "Closed"];
 
 export default function ProgramsPage() {
+  const { programs: programList } = useOpportunities();
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [difficulty, setDifficulty] = useState("All");
   const [status, setStatus] = useState("All");
 
   const filtered = useMemo(() => {
-    return programs.filter((p) => {
+    return programList.filter((p) => {
       const matchSearch = search === "" ||
         p.name.toLowerCase().includes(search.toLowerCase()) ||
         p.provider.toLowerCase().includes(search.toLowerCase());
@@ -26,7 +28,8 @@ export default function ProgramsPage() {
       const matchStatus = status === "All" || p.status === status.toLowerCase();
       return matchSearch && matchCategory && matchDifficulty && matchStatus;
     });
-  }, [search, category, difficulty, status]);
+  }, [programList, search, category, difficulty, status]);
+
 
   const activeFilters = [
     category !== "All" && category,

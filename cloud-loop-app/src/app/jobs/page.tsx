@@ -2,8 +2,9 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Search } from "lucide-react";
-import { jobs, JobCard, Job } from "@/features/jobs";
+import { Search, RefreshCw } from "lucide-react";
+import { JobCard, Job } from "@/features/jobs";
+import { useOpportunities } from "@/components/providers/OpportunitiesProvider";
 import { cn } from "@/lib/utils";
 
 const categories = ["All", "Software", "AI/ML", "Cloud", "Frontend", "Backend", "Data", "DevOps"];
@@ -11,6 +12,7 @@ const locationTypes = ["All", "Remote", "Hybrid", "Onsite"];
 const ITEMS_PER_PAGE = 30;
 
 export default function JobsPage() {
+  const { jobs: jobList, isSyncing, triggerSync } = useOpportunities();
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [locType, setLocType] = useState("All");
@@ -19,31 +21,11 @@ export default function JobsPage() {
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Dynamic state for jobs loaded from client side
-  const [jobList, setJobList] = useState<Job[]>(jobs);
-
-  // Fetch latest scraped jobs on mount
-  useEffect(() => {
-    fetch("/api/scrape")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load");
-        return res.json();
-      })
-      .then((data) => {
-        if (data.scrapedJobs && data.scrapedJobs.length > 0) {
-          setJobList((prev) => [
-            ...prev.filter((j) => !j.id.startsWith("scraped-")),
-            ...data.scrapedJobs,
-          ]);
-        }
-      })
-      .catch((err) => console.log("Scraped data fetch skipped or not initialized:", err));
-  }, []);
-
   // Reset pagination to page 1 whenever filters or search query changes
   useEffect(() => {
     setCurrentPage(1);
   }, [search, category, locType, easyApply]);
+
 
   const filtered = useMemo(() => {
     return jobList.filter((j) => {

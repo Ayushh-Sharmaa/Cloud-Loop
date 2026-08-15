@@ -2,22 +2,20 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Search, Sparkles, Zap, Globe } from "lucide-react";
-import { programs, ProgramCard } from "@/features/programs";
-import { events, EventCard } from "@/features/events";
-import { internships, InternshipCard } from "@/features/internships";
-import { jobs, JobCard } from "@/features/jobs";
-import { certifications, CertificationCard } from "@/features/certifications";
+import { ArrowRight, Search, Sparkles, Zap, Globe, Briefcase, Award, Building2, BadgeCheck, GraduationCap, FlaskConical, Users, ChevronDown, Quote, RefreshCw } from "lucide-react";
+import { ProgramCard } from "@/features/programs";
+import { EventCard } from "@/features/events";
+import { InternshipCard } from "@/features/internships";
+import { JobCard } from "@/features/jobs";
+import { CertificationCard } from "@/features/certifications";
 import { successStories, categories, faqs } from "@/features/community";
-import {
-  Award, Calendar, Briefcase, Building2, BadgeCheck,
-  GraduationCap, FlaskConical, Users, ChevronDown, Quote
-} from "lucide-react";
+import { useOpportunities } from "@/components/providers/OpportunitiesProvider";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
+
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>> = {
-  Award, Calendar, Briefcase, Building2, BadgeCheck,
+  Award, Calendar: Users, Briefcase, Building2, BadgeCheck,
   GraduationCap, FlaskConical, Users,
 };
 
@@ -31,9 +29,19 @@ const fadeUp = {
 };
 
 export default function HomePage() {
+  const { programs, events, internships, jobs, certifications, totalOpportunitiesCount, isSyncing, triggerSync } = useOpportunities();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const featured = programs.filter((p) => p.featured);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const featured = programs.filter((p) => p.featured).slice(0, 3);
   const trending = programs.slice(0, 6);
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      window.location.href = `/jobs?search=${encodeURIComponent(searchQuery.trim())}`;
+    }
+  };
 
   return (
     <div className="min-h-screen">
@@ -61,8 +69,11 @@ export default function HomePage() {
             transition={{ duration: 0.4 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-8 glow-ring"
           >
-            <Sparkles size={14} />
-            <span>2,400+ opportunities updated daily</span>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span>{totalOpportunitiesCount.toLocaleString()}+ live opportunities auto-updated</span>
           </motion.div>
 
           {/* Headline */}
@@ -118,34 +129,36 @@ export default function HomePage() {
             transition={{ duration: 0.55, delay: 0.4 }}
             className="relative max-w-2xl mx-auto"
           >
-            <div className="flex items-center gap-3 px-5 py-4 rounded-2xl bg-white dark:bg-dark-card border border-border dark:border-dark-border shadow-card search-container">
+            <form onSubmit={handleSearchSubmit} className="flex items-center gap-3 px-5 py-4 rounded-2xl bg-white dark:bg-dark-card border border-border dark:border-dark-border shadow-card search-container">
               <Search size={20} className="text-text-secondary dark:text-dark-text-secondary shrink-0" />
               <input
                 type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search programs, internships, jobs, certifications..."
-                style={{}}
                 className="flex-1 bg-transparent text-text-primary dark:text-dark-text-primary placeholder:text-text-secondary dark:placeholder:text-dark-text-secondary text-sm focus:outline-none"
                 aria-label="Search opportunities"
               />
-              <button className="btn-gradient px-5 py-2 rounded-xl text-sm font-semibold text-white shrink-0">
+              <button type="submit" className="btn-gradient px-5 py-2 rounded-xl text-sm font-semibold text-white shrink-0">
                 Search
               </button>
-            </div>
-            <p className="text-xs text-text-secondary dark:text-dark-text-secondary mt-3 flex items-center gap-4 justify-center">
-              <span className="flex items-center gap-1"><Zap size={12} className="text-primary" /> 120+ Programs</span>
-              <span className="flex items-center gap-1"><Globe size={12} className="text-secondary" /> 340+ Events</span>
-              <span className="flex items-center gap-1"><Briefcase size={12} className="text-accent" /> 890+ Internships</span>
+            </form>
+            <p className="text-xs text-text-secondary dark:text-dark-text-secondary mt-3 flex flex-wrap items-center gap-4 justify-center">
+              <span className="flex items-center gap-1"><Zap size={12} className="text-primary" /> {programs.length}+ Programs</span>
+              <span className="flex items-center gap-1"><Globe size={12} className="text-secondary" /> {events.length}+ Events</span>
+              <span className="flex items-center gap-1"><Briefcase size={12} className="text-accent" /> {internships.length}+ Internships</span>
+              <span className="flex items-center gap-1"><Building2 size={12} className="text-emerald-500" /> {jobs.length}+ Jobs</span>
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* ── Featured Opportunities ── */}
-      <section className="section-padding bg-background-alt dark:bg-dark-background-alt">
+      {/* ── Featured Programs (Google Arcade style) ── */}
+      <section className="section-padding bg-background dark:bg-dark-background">
         <div className="container-narrow">
           <SectionHeader
-            label="Featured"
-            title="Top Student Programs"
+            label="Spotlight"
+            title="Featured Student Programs"
             subtitle="Hand-picked programs from the world's best tech companies. Highly competitive — apply early."
             href="/programs"
           />

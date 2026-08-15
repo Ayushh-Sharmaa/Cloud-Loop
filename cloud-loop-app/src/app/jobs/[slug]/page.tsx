@@ -13,6 +13,7 @@ import { JobCard } from "@/features/jobs/components/JobCard";
 import { ProviderLogo } from "@/components/ui/ProviderLogo";
 import { StatusSelector } from "@/components/ui/StatusSelector";
 import { useAuth } from "@clerk/nextjs";
+import { useOpportunities } from "@/components/providers/OpportunitiesProvider";
 import { cn, formatDate, getDeadlineLabel } from "@/lib/utils";
 
 const locationColors = {
@@ -23,7 +24,8 @@ const locationColors = {
 
 export default function JobDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
-  const job = jobs.find((j) => j.slug === slug);
+  const { getJobBySlug, jobs: liveJobs } = useOpportunities();
+  const job = getJobBySlug(slug) || jobs.find((j) => j.slug === slug || j.id === slug);
   const { isSignedIn } = useAuth();
   const [isBookmarked, setIsBookmarked] = useState(false);
 
@@ -35,9 +37,10 @@ export default function JobDetailPage({ params }: { params: Promise<{ slug: stri
 
   if (!job) notFound();
 
-  const related = jobs
+  const related = (liveJobs.length > 0 ? liveJobs : jobs)
     .filter((j) => j.id !== job.id && (j.company === job.company || j.locationType === job.locationType))
     .slice(0, 2);
+
 
   const handleBookmark = async () => {
     const next = !isBookmarked;

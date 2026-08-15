@@ -3,7 +3,8 @@
 import { useState, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
-import { internships, InternshipCard, Internship } from "@/features/internships";
+import { InternshipCard, Internship } from "@/features/internships";
+import { useOpportunities } from "@/components/providers/OpportunitiesProvider";
 import { cn } from "@/lib/utils";
 
 const locationTypes = ["All", "Remote", "Hybrid", "Onsite"];
@@ -11,6 +12,7 @@ const payTypes = ["All", "Paid", "Unpaid"];
 const ITEMS_PER_PAGE = 30;
 
 export default function InternshipsPage() {
+  const { internships: internList } = useOpportunities();
   const [search, setSearch] = useState("");
   const [locType, setLocType] = useState("All");
   const [payType, setPayType] = useState("All");
@@ -18,31 +20,11 @@ export default function InternshipsPage() {
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Dynamic state for internships loaded from client side
-  const [internList, setInternList] = useState<Internship[]>(internships);
-
-  // Fetch latest scraped internships on mount
-  useEffect(() => {
-    fetch("/api/scrape")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load");
-        return res.json();
-      })
-      .then((data) => {
-        if (data.scrapedInternships && data.scrapedInternships.length > 0) {
-          setInternList((prev) => [
-            ...prev.filter((i) => !i.id.startsWith("scraped-")),
-            ...data.scrapedInternships,
-          ]);
-        }
-      })
-      .catch((err) => console.log("Scraped internships fetch skipped or not initialized:", err));
-  }, []);
-
   // Reset pagination to page 1 whenever filters change
   useEffect(() => {
     setCurrentPage(1);
   }, [search, locType, payType]);
+
 
   const filtered = useMemo(() => {
     return internList.filter((i) => {

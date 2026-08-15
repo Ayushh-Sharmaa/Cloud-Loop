@@ -12,11 +12,13 @@ import { events } from "@/features/events";
 import { EventCard } from "@/features/events/components/EventCard";
 import { StatusSelector } from "@/components/ui/StatusSelector";
 import { useAuth } from "@clerk/nextjs";
+import { useOpportunities } from "@/components/providers/OpportunitiesProvider";
 import { cn, formatDate } from "@/lib/utils";
 
 export default function EventDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
-  const event = events.find((e) => e.slug === slug);
+  const { getEventBySlug, events: liveEvents } = useOpportunities();
+  const event = getEventBySlug(slug) || events.find((e) => e.slug === slug || e.id === slug);
   const { isSignedIn } = useAuth();
   const [isBookmarked, setIsBookmarked] = useState(false);
 
@@ -28,9 +30,10 @@ export default function EventDetailPage({ params }: { params: Promise<{ slug: st
 
   if (!event) notFound();
 
-  const related = events
+  const related = (liveEvents.length > 0 ? liveEvents : events)
     .filter((e) => e.id !== event.id && (e.organizer === event.organizer || e.type === event.type))
     .slice(0, 2);
+
 
   const handleBookmark = async () => {
     const next = !isBookmarked;

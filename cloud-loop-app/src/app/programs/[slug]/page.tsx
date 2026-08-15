@@ -11,7 +11,9 @@ import {
   Smartphone, Tablet, Headphones, FileText, Shield, Sparkles, ArrowLeft, Star, ShoppingBag
 } from "lucide-react";
 import { ProviderLogo } from "@/components/ui/ProviderLogo";
+import { useOpportunities } from "@/components/providers/OpportunitiesProvider";
 import { useState, use } from "react";
+
 
 // ─────────────────────────────────────────
 // Google Cloud Arcade Custom Page
@@ -1327,10 +1329,11 @@ function AWSSBGLPage({ program }: { program: typeof programs[0] }) {
 
 export default function ProgramDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
-  const program = programs.find((p) => p.slug === slug);
+  const { getProgramBySlug, programs: livePrograms } = useOpportunities();
+  const program = getProgramBySlug(slug) || programs.find((p) => p.slug === slug || p.id === slug);
   if (!program) notFound();
 
-  const related = programs
+  const related = (livePrograms.length > 0 ? livePrograms : programs)
     .filter((p) => p.id !== program.id && (p.provider === program.provider || p.category === program.category))
     .slice(0, 3);
 
@@ -1352,4 +1355,5 @@ export default function ProgramDetailPage({ params }: { params: Promise<{ slug: 
 
   return <GenericProgramPage program={program} related={related} />;
 }
+
 

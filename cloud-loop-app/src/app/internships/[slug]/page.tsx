@@ -3,7 +3,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, use } from "react";
+import { useState, useEffect, use } from "react";
 import {
   ExternalLink, Clock, MapPin, Calendar, CheckCircle2,
   Gift, Globe, Bookmark, Zap, ArrowLeft, Star, Banknote
@@ -13,6 +13,7 @@ import { InternshipCard } from "@/features/internships/components/InternshipCard
 import { ProviderLogo } from "@/components/ui/ProviderLogo";
 import { StatusSelector } from "@/components/ui/StatusSelector";
 import { useAuth } from "@clerk/nextjs";
+import { useOpportunities } from "@/components/providers/OpportunitiesProvider";
 import { cn, formatDate, getDeadlineLabel } from "@/lib/utils";
 
 const locationColors = {
@@ -23,7 +24,8 @@ const locationColors = {
 
 export default function InternshipDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
-  const internship = internships.find((i) => i.slug === slug);
+  const { getInternshipBySlug, internships: liveInternships } = useOpportunities();
+  const internship = getInternshipBySlug(slug) || internships.find((i) => i.slug === slug || i.id === slug);
   const { isSignedIn } = useAuth();
   const [isBookmarked, setIsBookmarked] = useState(false);
 
@@ -35,9 +37,10 @@ export default function InternshipDetailPage({ params }: { params: Promise<{ slu
 
   if (!internship) notFound();
 
-  const related = internships
+  const related = (liveInternships.length > 0 ? liveInternships : internships)
     .filter((i) => i.id !== internship.id && (i.company === internship.company || i.locationType === internship.locationType))
     .slice(0, 2);
+
 
   const handleBookmark = async () => {
     const next = !isBookmarked;

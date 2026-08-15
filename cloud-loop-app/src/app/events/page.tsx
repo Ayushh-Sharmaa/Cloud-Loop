@@ -3,7 +3,8 @@
 import { useState, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
-import { events, EventCard, Event } from "@/features/events";
+import { EventCard, Event } from "@/features/events";
+import { useOpportunities } from "@/components/providers/OpportunitiesProvider";
 import { cn } from "@/lib/utils";
 
 const types = ["All", "Hackathon", "Competition", "Bootcamp", "Workshop", "Conference"];
@@ -11,6 +12,7 @@ const formats = ["All", "Online", "In-person"];
 const ITEMS_PER_PAGE = 15;
 
 export default function EventsPage() {
+  const { events: eventList } = useOpportunities();
   const [search, setSearch] = useState("");
   const [type, setType] = useState("All");
   const [format, setFormat] = useState("All");
@@ -18,31 +20,11 @@ export default function EventsPage() {
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Dynamic state for events loaded from client side
-  const [eventList, setEventList] = useState<Event[]>(events);
-
-  // Fetch latest scraped events on mount
-  useEffect(() => {
-    fetch("/api/scrape")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load");
-        return res.json();
-      })
-      .then((data) => {
-        if (data.scrapedEvents && data.scrapedEvents.length > 0) {
-          setEventList((prev) => [
-            ...prev.filter((e) => !e.id.startsWith("scraped-")),
-            ...data.scrapedEvents,
-          ]);
-        }
-      })
-      .catch((err) => console.log("Scraped events fetch skipped or not initialized:", err));
-  }, []);
-
   // Reset pagination to page 1 whenever filters change
   useEffect(() => {
     setCurrentPage(1);
   }, [search, type, format]);
+
 
   const filtered = useMemo(() => {
     return eventList.filter((e) => {

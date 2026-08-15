@@ -10,6 +10,8 @@ import { useTheme } from "next-themes";
 import { useUser, useClerk } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
 
+import { LiveScraperStatus } from "@/components/ui/LiveScraperStatus";
+
 const navLinks = [
   { label: "Programs", href: "/programs" },
   { label: "Events", href: "/events" },
@@ -87,17 +89,8 @@ export function Navbar() {
 
           {/* Right Controls */}
           <div className="flex items-center gap-2">
-            {/* Search */}
-            <button
-              aria-label="Search"
-              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border dark:border-dark-border bg-white/80 dark:bg-dark-card text-text-secondary dark:text-dark-text-secondary text-sm hover:border-primary/50 transition-colors"
-            >
-              <Search size={14} />
-              <span className="hidden md:inline">Search...</span>
-              <kbd className="hidden md:inline text-xs bg-black/5 dark:bg-white/10 px-1.5 py-0.5 rounded font-mono">
-                /
-              </kbd>
-            </button>
+            {/* Live Scraper Sync Badge */}
+            <LiveScraperStatus className="hidden md:inline-flex" />
 
             {/* Theme Toggle */}
             {mounted && (
@@ -109,6 +102,7 @@ export function Navbar() {
                 {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
               </button>
             )}
+
 
             {/* Auth */}
             {isSignedIn ? (

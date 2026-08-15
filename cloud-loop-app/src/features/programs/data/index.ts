@@ -17,7 +17,10 @@ import { canvaCampusAmbassadorProgram } from "./list/canva-campus-ambassador";
 import { awsStudentBuilderCampusLeadersProgram } from "./list/aws-student-builder-campus-leaders";
 import { awsStudentBuilderGroupLeadersProgram } from "./list/aws-student-builder-group-leaders";
 
-const otherPrograms = [
+import scrapedPrograms from "./scraped-programs.json";
+import { Program } from "../types/Program";
+
+const otherPrograms: Program[] = [
   microsoftLearnStudentAmbassadorsProgram,
   girlScriptSummerOfCodeProgram,
   githubCampusExpertProgram,
@@ -41,7 +44,22 @@ const otherPrograms = [
   return dateA - dateB; // Nearest deadline comes first
 });
 
-export const programs = [
+const staticPrograms: Program[] = [
   googleCloudArcadeProgram,
   ...otherPrograms
 ];
+
+// Merge static and scraped programs, deduplicating by ID or slug
+const programMap = new Map<string, Program>();
+for (const p of staticPrograms) {
+  programMap.set(p.id, p);
+  programMap.set(p.slug, p);
+}
+for (const p of (scrapedPrograms as Program[])) {
+  if (!programMap.has(p.id) && !programMap.has(p.slug)) {
+    programMap.set(p.id, p);
+  }
+}
+
+export const programs: Program[] = Array.from(new Set(programMap.values()));
+
