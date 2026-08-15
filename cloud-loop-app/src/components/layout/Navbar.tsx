@@ -11,6 +11,7 @@ import { useUser, useClerk } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
 
 import { LiveScraperStatus } from "@/components/ui/LiveScraperStatus";
+import { StyleSwitcher } from "@/components/ui/StyleSwitcher";
 
 const navLinks = [
   { label: "Programs", href: "/programs" },
@@ -92,6 +93,9 @@ export function Navbar() {
             {/* Live Scraper Sync Badge */}
             <LiveScraperStatus className="hidden md:inline-flex" />
 
+            {/* Design Kit Style Switcher */}
+            <StyleSwitcher />
+
             {/* Theme Toggle */}
             {mounted && (
               <button
@@ -102,6 +106,7 @@ export function Navbar() {
                 {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
               </button>
             )}
+
 
 
             {/* Auth */}
