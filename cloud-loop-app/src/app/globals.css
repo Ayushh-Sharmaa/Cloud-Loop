@@ -1,6 +1,8 @@
 @import "tailwindcss";
+@import "../styles/index.css";
 
 @variant dark (&:where(.dark, .dark *));
+
 
 @theme {
   /* Brand palette */
@@ -150,59 +152,63 @@
      BUTTONS
   ═══════════════════════════ */
   .btn-gradient {
-    background: var(--background-image-gradient-btn);
+    background: var(--btn-bg, var(--background-image-gradient-btn));
     color: #fff;
-    transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+    border-radius: var(--r2, 9999px);
+    transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   }
   .btn-gradient:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(122, 92, 255, 0.45);
+    opacity: 0.92;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover, 0 8px 25px rgba(122, 92, 255, 0.45));
   }
 
   /* ═══════════════════════════
-     GLASS — Navbar
+     GLASS — Navbar & Surfaces
   ═══════════════════════════ */
   .glass {
-    background: rgba(248, 250, 252, 0.92);
+    background: var(--nav-bg, rgba(248, 250, 252, 0.92));
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
   }
   .dark .glass {
-    /* Deep navy glass matching logo palette */
-    background: rgba(10, 11, 22, 0.92);
+    background: var(--nav-bg, rgba(10, 11, 22, 0.92));
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
   }
 
   /* ═══════════════════════════
-     CARDS — light & dark
+     CARDS — 25 Visual Style Integration
   ═══════════════════════════ */
   .card-base {
-    background-color: var(--color-background-alt);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    color: var(--color-text-primary);
-    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+    background-color: var(--card, var(--color-background-alt));
+    border: var(--bdr, 1px solid var(--color-border));
+    border-radius: var(--r2, 16px);
+    box-shadow: var(--shcard, 0 1px 3px 0 rgba(0,0,0,0.04));
+    color: var(--t1, var(--color-text-primary));
+    backdrop-filter: var(--card-blur, none);
+    -webkit-backdrop-filter: var(--card-blur, none);
+    transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
   }
-  /* Dark: deep purple card matching logo cloud */
   .dark .card-base {
-    background-color: var(--color-dark-card);   /* deep navy-purple */
-    border-color: var(--color-dark-border);       /* slightly lighter purple border */
-    color: var(--color-dark-text-primary);              /* near-white, very visible */
+    background-color: var(--card, var(--color-dark-card));
+    border: var(--bdr, 1px solid var(--color-dark-border));
+    border-radius: var(--r2, 16px);
+    box-shadow: var(--shcard, 0 1px 3px 0 rgba(0,0,0,0.4));
+    color: var(--t1, var(--color-dark-text-primary));
+    backdrop-filter: var(--card-blur, none);
+    -webkit-backdrop-filter: var(--card-blur, none);
   }
   .card-base:hover {
-    transform: translateY(-2px);
-    border-color: rgba(79, 217, 255, 0.4);
-    box-shadow: 0 8px 30px -4px rgba(0,0,0,0.10);
+    transform: translateY(-4px);
+    border-color: var(--border-hover, rgba(79, 217, 255, 0.5));
+    box-shadow: var(--shadow-hover, 0 12px 30px -4px rgba(0,0,0,0.15));
   }
   .dark .card-base:hover {
-    border-color: rgba(79, 217, 255, 0.5);
-    box-shadow:
-      0 8px 30px -4px rgba(0,0,0,0.6),
-      0 0 0 1px rgba(79, 217, 255, 0.2),
-      0 0 20px rgba(79, 217, 255, 0.08);
+    border-color: var(--border-hover, rgba(79, 217, 255, 0.6));
+    box-shadow: var(--shadow-hover, 0 16px 40px -4px rgba(0,0,0,0.6));
   }
+
 
   /* ═══════════════════════════
      SECTION BACKGROUNDS
