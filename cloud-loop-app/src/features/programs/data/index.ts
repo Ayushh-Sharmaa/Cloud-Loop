@@ -16,12 +16,15 @@ import { hackerRankCampusCrewProgram } from "./list/hackerrank-campus-crew";
 import { canvaCampusAmbassadorProgram } from "./list/canva-campus-ambassador";
 import { awsStudentBuilderCampusLeadersProgram } from "./list/aws-student-builder-campus-leaders";
 import { awsStudentBuilderGroupLeadersProgram } from "./list/aws-student-builder-group-leaders";
+import { sbiAshaScholarshipProgram } from "./list/sbi-asha-scholarship";
 
 import scrapedPrograms from "./scraped-programs.json";
 import { Program } from "../types/Program";
 
 const otherPrograms: Program[] = [
+  sbiAshaScholarshipProgram,
   microsoftLearnStudentAmbassadorsProgram,
+
   girlScriptSummerOfCodeProgram,
   githubCampusExpertProgram,
   naukriCampusAmbassadorProgram,

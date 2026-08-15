@@ -23,6 +23,25 @@ import { browserstackSDEJob } from "./list/browserstack-sde";
 import { eclerxAnalystJob } from "./list/eclerx-analyst";
 
 // Newly Added TechUprise Jobs
+import { mastercardAIJob } from "./list/mastercard-ai";
+import { zfundsMERNJob } from "./list/zfunds-mern";
+import { amazonSDEHydJob } from "./list/amazon-sde-hyd";
+import { globalLogicAnalystJob } from "./list/globallogic-analyst";
+import { capgeminiBAJob } from "./list/capgemini-ba";
+import { visaAnalystJob } from "./list/visa-analyst";
+import { logixalGenAIJob } from "./list/logixal-genai";
+import { gleanSEJob } from "./list/glean-se";
+import { inforBAJob } from "./list/infor-ba";
+import { thermoFisherQAJob } from "./list/thermofisher-qa";
+import { ibmQEJob } from "./list/ibm-qe";
+import { ciscoBAJob } from "./list/cisco-ba";
+import { clovityDataAnalystJob } from "./list/clovity-data-analyst";
+import { klaSEJob } from "./list/kla-se";
+import { zapareTraineeSEJob } from "./list/zapare-trainee-se";
+import { amazonCSANoidaJob } from "./list/amazon-csa-noida";
+import { leadingBPOChatJob } from "./list/leading-bpo-chat";
+import { teleperformanceVoiceJob } from "./list/teleperformance-wfh-voice";
+import { policyBazaarCSAJob } from "./list/policybazaar-csa";
 import { hsbcBAJob } from "./list/hsbc-ba";
 import { notionSDEJob } from "./list/notion-sde";
 import { nttDataTraineeJob } from "./list/ntt-data-trainee";
@@ -43,6 +62,25 @@ import scrapedJobs from "./scraped-jobs.json";
 import { Job } from "../types/Job";
 
 const staticJobs: Job[] = [
+  mastercardAIJob,
+  zfundsMERNJob,
+  amazonSDEHydJob,
+  globalLogicAnalystJob,
+  capgeminiBAJob,
+  visaAnalystJob,
+  logixalGenAIJob,
+  gleanSEJob,
+  inforBAJob,
+  thermoFisherQAJob,
+  ibmQEJob,
+  ciscoBAJob,
+  clovityDataAnalystJob,
+  klaSEJob,
+  zapareTraineeSEJob,
+  amazonCSANoidaJob,
+  leadingBPOChatJob,
+  teleperformanceVoiceJob,
+  policyBazaarCSAJob,
   hsbcBAJob,
   notionSDEJob,
   nttDataTraineeJob,
@@ -58,6 +96,7 @@ const staticJobs: Job[] = [
   wexSDEJob,
   cmeGroupSEJob,
   dataEminenceReactJob,
+
   ciscoTDEJob,
   ericssonPacketCoreJob,
   siemensTraineeJob,
