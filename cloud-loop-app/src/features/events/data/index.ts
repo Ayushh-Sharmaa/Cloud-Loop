@@ -1,3 +1,4 @@
+import { youngTurksContest2026Event } from "./list/young-turks-contest-2026";
 import { smartIndiaHackathon2026Event } from "./list/smart-india-hackathon-2026";
 import { googleHashcode2026Event } from "./list/google-hashcode-2026";
 import { microsoftImagineCup2026Event } from "./list/microsoft-imagine-cup-2026";
@@ -7,28 +8,10 @@ import { web3BuildersBootcamp2026Event } from "./list/web3-builders-bootcamp-202
 import { hackerHouseGoa2026Event } from "./list/hacker-house-goa-2026";
 
 import scrapedEvents from "./scraped-events.json";
-
-interface Event {
-  id: string;
-  slug: string;
-  title: string;
-  organizer: string;
-  organizerLogo?: string;
-  type: string;
-  date: string;
-  endDate?: string;
-  location: string;
-  isOnline: boolean;
-  banner?: string;
-  registrationDeadline: string;
-  description: string;
-  prize?: string;
-  tags: string[];
-  registered?: number;
-  applyUrl?: string;
-}
+import { Event } from "../types/Event";
 
 const staticEvents: Event[] = [
+  youngTurksContest2026Event,
   hackerHouseGoa2026Event,
   smartIndiaHackathon2026Event,
   googleHashcode2026Event,
@@ -38,7 +21,17 @@ const staticEvents: Event[] = [
   web3BuildersBootcamp2026Event,
 ];
 
-export const events: Event[] = [
-  ...staticEvents,
-  ...(scrapedEvents as Event[]),
-];
+// Deduplicate events by id / slug
+const eventMap = new Map<string, Event>();
+for (const e of staticEvents) {
+  eventMap.set(e.id, e);
+  if (e.slug) eventMap.set(e.slug, e);
+}
+for (const e of (scrapedEvents as Event[])) {
+  if (!eventMap.has(e.id) && (!e.slug || !eventMap.has(e.slug))) {
+    eventMap.set(e.id, e);
+  }
+}
+
+export const events: Event[] = Array.from(new Set(eventMap.values()));
+

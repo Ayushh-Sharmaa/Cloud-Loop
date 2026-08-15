@@ -22,10 +22,42 @@ import { guidehouseSEJob } from "./list/guidehouse-se";
 import { browserstackSDEJob } from "./list/browserstack-sde";
 import { eclerxAnalystJob } from "./list/eclerx-analyst";
 
+// Newly Added TechUprise Jobs
+import { hsbcBAJob } from "./list/hsbc-ba";
+import { notionSDEJob } from "./list/notion-sde";
+import { nttDataTraineeJob } from "./list/ntt-data-trainee";
+import { networkTraineeJob } from "./list/network-trainee";
+import { ciscoEvergreenJob } from "./list/cisco-evergreen";
+import { amazonQualityServicesJob } from "./list/amazon-quality-services";
+import { siemensDeveloperJob } from "./list/siemens-developer";
+import { questGlobalGETJob } from "./list/quest-global-get";
+import { netappSEJob } from "./list/netapp-se";
+import { pureStorageMTSJob } from "./list/purestorage-mts";
+import { microsoftSEJob } from "./list/microsoft-se";
+import { naviFrontendJob } from "./list/navi-frontend";
+import { wexSDEJob } from "./list/wex-sde";
+import { cmeGroupSEJob } from "./list/cme-group-se";
+import { dataEminenceReactJob } from "./list/dataeminence-react";
+
 import scrapedJobs from "./scraped-jobs.json";
 import { Job } from "../types/Job";
 
 const staticJobs: Job[] = [
+  hsbcBAJob,
+  notionSDEJob,
+  nttDataTraineeJob,
+  networkTraineeJob,
+  ciscoEvergreenJob,
+  amazonQualityServicesJob,
+  siemensDeveloperJob,
+  questGlobalGETJob,
+  netappSEJob,
+  pureStorageMTSJob,
+  microsoftSEJob,
+  naviFrontendJob,
+  wexSDEJob,
+  cmeGroupSEJob,
+  dataEminenceReactJob,
   ciscoTDEJob,
   ericssonPacketCoreJob,
   siemensTraineeJob,
@@ -51,8 +83,18 @@ const staticJobs: Job[] = [
   gokwikSDEJob,
 ];
 
-export const jobs: Job[] = [
-  ...staticJobs,
-  ...(scrapedJobs as Job[]),
-];
+// Deduplicate jobs by id / slug
+const jobMap = new Map<string, Job>();
+for (const j of staticJobs) {
+  jobMap.set(j.id, j);
+  if (j.slug) jobMap.set(j.slug, j);
+}
+for (const j of (scrapedJobs as Job[])) {
+  if (!jobMap.has(j.id) && (!j.slug || !jobMap.has(j.slug))) {
+    jobMap.set(j.id, j);
+  }
+}
+
+export const jobs: Job[] = Array.from(new Set(jobMap.values()));
+
 

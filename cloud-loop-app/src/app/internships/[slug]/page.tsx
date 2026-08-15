@@ -177,5 +177,3 @@ export default function InternshipDetailPage({ params }: { params: Promise<{ slu
     </div>
   );
 }
-
-import { useEffect } from "react";
