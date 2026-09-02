@@ -7,6 +7,9 @@ import { certifications } from "@/features/certifications";
 import path from "path";
 import { promises as fs } from "fs";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const STATS_PATH = path.join(process.cwd(), "src", "features", "jobs", "data", "scraper-stats.json");
 
 export async function GET(request: Request) {

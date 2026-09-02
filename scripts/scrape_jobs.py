@@ -174,7 +174,9 @@ def generate_fallback_opportunities():
     jobs = []
     internships = []
     
-    random.seed(42)
+    # Seed based on 4-hour epoch so every 4-hour cycle refreshes opportunities
+    cycle_seed = int(datetime.now().timestamp() // (4 * 3600))
+    random.seed(cycle_seed)
     
     # Generate 2150 Jobs (spans all real companies)
     for i in range(2150):
@@ -296,8 +298,9 @@ def generate_fallback_events():
     
     events = []
     
-    # Generate 65 events
-    random.seed(42)
+    # Generate 65 events with dynamic 4-hour seed
+    cycle_seed = int(datetime.now().timestamp() // (4 * 3600))
+    random.seed(cycle_seed)
     for i in range(65):
         org = organizers[i % len(organizers)]
         ev_type = event_types[i % len(event_types)]

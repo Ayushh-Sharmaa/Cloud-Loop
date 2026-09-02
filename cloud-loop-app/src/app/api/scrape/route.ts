@@ -3,6 +3,9 @@ import { exec } from "child_process";
 import path from "path";
 import { promises as fs } from "fs";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 // Resolve paths relative to process.cwd() (the Next.js project root)
 const STATS_PATH = path.join(process.cwd(), "src", "features", "jobs", "data", "scraper-stats.json");
 const SCRAPER_SCRIPT_PATH = path.join(process.cwd(), "..", "scripts", "scrape_jobs.py");
