@@ -1,0 +1,50 @@
+{
+  "project_name": "Cloud Loop — AI-Powered Opportunity Discovery Engine",
+  "tagline": "Unifying student programs, hackathons, and fresher jobs with IBM Db2, Supabase, and RAG AI.",
+  "hackathon": "IBM Db2 TechX Summit @ GL Bajaj, Mathura",
+  "team_name": "Cloud Loop Pioneers",
+  "team_members": [
+    {
+      "name": "Ayush Sharma",
+      "role": "Lead Architect & Full-Stack Engineer",
+      "github": "https://github.com/Ayushh-Sharmaa"
+    }
+  ],
+  "repository_url": "https://github.com/Ayushh-Sharmaa/Cloud-Loop",
+  "demo_url": "https://cloudloop.dev",
+  "video_url": "",
+  "tech_stack": [
+    "Next.js 16.2 (App Router)",
+    "React 19",
+    "TypeScript",
+    "IBM Db2 Enterprise Database",
+    "Supabase PostgreSQL & Vector Storage",
+    "LangChain AI & Google Gemini",
+    "Tailwind CSS v4 (Midnight & Lime System)",
+    "Clerk Authentication",
+    "Framer Motion"
+  ],
+  "ibm_db2_integration": {
+    "usage_summary": "Enterprise data tier with schema definitions for OPPORTUNITIES, USER_SEARCHES, AI_RECOMMENDATIONS, and ANALYTICS_EVENTS. Implements parameterized CRUD queries, search logging telemetry, and automatic data synchronization.",
+    "service_files": [
+      "cloud-loop-app/src/services/db2/connection.ts",
+      "cloud-loop-app/src/services/db2/schema.sql",
+      "cloud-loop-app/src/services/db2/queries.ts",
+      "cloud-loop-app/src/app/api/db2/search/route.ts",
+      "cloud-loop-app/src/app/api/db2/ask/route.ts",
+      "cloud-loop-app/src/app/api/db2/recommend/route.ts",
+      "cloud-loop-app/src/app/api/db2/sync/route.ts"
+    ],
+    "fallback_mechanism": "Graceful degradation to Supabase and in-memory cache when credentials are not present or network is sandboxed."
+  },
+  "key_features": [
+    "AI Semantic Opportunity Matcher (Natural Language)",
+    "Conversational RAG Assistant (Retrieval-Augmented Generation)",
+    "Personalized Recommendations Engine",
+    "Real-Time Student Application Tracker & Deadlines",
+    "Midnight (#0B0B0C) and Lime (#C6F432) High-Contrast Palette",
+    "20 Integrated Design Aesthetics (Cyberpunk, Swiss, Glassmorphism, etc.)",
+    "Zero Horizontal Scroll & Responsive Mobile Navigation"
+  ]
+}
+

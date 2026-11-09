@@ -12,14 +12,7 @@ import { cn } from "@/lib/utils";
 
 import { LiveScraperStatus } from "@/components/ui/LiveScraperStatus";
 
-const navLinks = [
-  { label: "Programs", href: "/programs" },
-  { label: "Events", href: "/events" },
-  { label: "Internships", href: "/internships" },
-  { label: "Jobs", href: "/jobs" },
-  { label: "Certifications", href: "/certifications" },
-  { label: "Community", href: "/community" },
-];
+import { mainNavLinks } from "@/config/navigation";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -71,14 +64,14 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
+            {mainNavLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
                   "px-3.5 py-2 rounded-lg text-sm font-medium transition-colors duration-150",
                   pathname.startsWith(link.href)
-                    ? "text-secondary dark:text-primary bg-secondary/10 dark:bg-primary/10"
+                    ? "text-brand-black dark:text-brand-lime bg-brand-lime/20 dark:bg-brand-lime/10 font-semibold"
                     : "text-text-secondary dark:text-dark-text-secondary hover:text-text-primary dark:hover:text-dark-text-primary hover:bg-black/5 dark:hover:bg-white/8"
                 )}
               >
@@ -156,14 +149,14 @@ export function Navbar() {
               className="lg:hidden border-t border-border dark:border-dark-border bg-white dark:bg-dark-background"
             >
               <nav className="container-narrow py-4 flex flex-col gap-1">
-                {navLinks.map((link) => (
+                {mainNavLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     className={cn(
                       "px-4 py-3 rounded-xl text-sm font-medium transition-colors",
                       pathname.startsWith(link.href)
-                        ? "text-secondary bg-secondary/10 dark:text-primary dark:bg-primary/10"
+                        ? "text-brand-black bg-brand-lime/20 dark:text-brand-lime dark:bg-brand-lime/10 font-semibold"
                         : "text-text-secondary dark:text-dark-text-secondary hover:bg-black/5 dark:hover:bg-white/8"
                     )}
                   >

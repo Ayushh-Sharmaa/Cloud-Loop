@@ -3,10 +3,12 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { OpportunitiesProvider } from "@/components/providers/OpportunitiesProvider";
+import { ToastProvider } from "@/components/common/Toast";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CursorDot } from "@/components/ui/CursorDot";
+import { siteConfig } from "@/config/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,37 +18,26 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Cloud Loop — Discover Every Student Opportunity",
-    template: "%s | Cloud Loop",
+    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "Cloud Loop is the single place students go to discover every opportunity — programs, events, internships, jobs, and certifications — instead of checking a dozen different websites.",
-  keywords: [
-    "student opportunities",
-    "internships",
-    "hackathons",
-    "Google Cloud Arcade",
-    "GSoC",
-    "MLSA",
-    "certifications",
-    "campus programs",
-  ],
-  authors: [{ name: "Cloud Loop" }],
-  creator: "Cloud Loop",
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: siteConfig.authors,
+  creator: siteConfig.name,
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://cloudloop.dev",
-    title: "Cloud Loop — Discover Every Student Opportunity",
-    description:
-      "Programs, events, internships, jobs, and certifications — all in one place for students.",
-    siteName: "Cloud Loop",
+    url: siteConfig.url,
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cloud Loop — Discover Every Student Opportunity",
-    description:
-      "Programs, events, internships, jobs, and certifications — all in one place for students.",
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
   },
   robots: {
     index: true,
@@ -54,31 +45,32 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   icons: {
-    icon: "/logo-v2.png",
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+      { url: "/logo-v2.png", type: "image/png", sizes: "192x192" },
+    ],
     apple: "/logo-v2.png",
+    shortcut: "/favicon.png",
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`} style={{ overflowX: "hidden" }}>
         <ClerkProvider>
           <ThemeProvider>
-            <OpportunitiesProvider>
-              <CursorDot />
-              <Navbar />
-              <main>{children}</main>
-              <Footer />
-            </OpportunitiesProvider>
+            <ToastProvider>
+              <OpportunitiesProvider>
+                <CursorDot />
+                <Navbar />
+                <main>{children}</main>
+                <Footer />
+              </OpportunitiesProvider>
+            </ToastProvider>
           </ThemeProvider>
         </ClerkProvider>
       </body>
     </html>
   );
 }
-
