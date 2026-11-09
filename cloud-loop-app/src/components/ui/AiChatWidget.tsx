@@ -35,7 +35,7 @@ export function AiChatWidget() {
     {
       id: "welcome",
       sender: "bot",
-      text: "👋 Hi! I'm your AI Opportunity Assistant. Powered by IBM Db2 & Supabase, I can find student programs, internships, fresher jobs, and hackathons matching your goals. Ask me anything!",
+      text: "👋 Hi! I'm your AI Opportunity Assistant. Powered by IBM Db2, I can find student programs, internships, fresher jobs, and hackathons matching your goals. Ask me anything!",
       timestamp: new Date(),
     },
   ]);
@@ -86,7 +86,7 @@ export function AiChatWidget() {
         sender: "bot",
         text: data.answer || "I found relevant opportunities for you.",
         sources: data.sources || [],
-        engine: data.engine || "Hybrid RAG (Db2/Supabase)",
+        engine: data.engine || "IBM Db2 Hybrid RAG",
         timestamp: new Date(),
       };
 
@@ -150,7 +150,7 @@ export function AiChatWidget() {
                   <div className="flex items-center gap-1.5">
                     <h3 className="text-sm font-bold text-brand-white">Opportunity AI</h3>
                     <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-brand-lime/20 text-brand-lime border border-brand-lime/40">
-                      Db2 + Supabase
+                      IBM Db2
                     </span>
                   </div>
                   <p className="text-[11px] text-zinc-400">RAG Semantic Search & Q&A</p>
@@ -229,7 +229,7 @@ export function AiChatWidget() {
                   <div className="w-7 h-7 rounded-full bg-brand-lime/10 border border-brand-lime/30 flex items-center justify-center">
                     <Loader2 className="w-3.5 h-3.5 text-brand-lime animate-spin" />
                   </div>
-                  <span>Searching IBM Db2 & Supabase knowledge base...</span>
+                  <span>Searching IBM Db2 knowledge base...</span>
                 </div>
               )}
 

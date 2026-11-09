@@ -42,7 +42,7 @@ export default function AboutPage() {
           <section>
             <h2 className="text-2xl font-bold text-text-primary dark:text-dark-text-primary mb-3">The Stack</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4", "Supabase", "Clerk Auth", "Framer Motion", "Vercel"].map((tech) => (
+              {["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4", "IBM Db2", "Clerk Auth", "Framer Motion", "LangChain"].map((tech) => (
                 <div key={tech} className="px-4 py-2 rounded-lg border border-[#C6F432]/20 bg-[#C6F432]/05 text-sm font-medium text-text-primary dark:text-dark-text-primary text-center">
                   {tech}
                 </div>

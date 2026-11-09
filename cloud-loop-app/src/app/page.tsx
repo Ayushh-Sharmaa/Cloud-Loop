@@ -109,7 +109,7 @@ export default function HomePage() {
       if (!res.ok) throw new Error("Search failed");
       const data = await res.json();
       setAiSearchResults(data.results || []);
-      setSearchEngine(data.engine || "Hybrid Db2/Supabase Vector");
+      setSearchEngine(data.engine || "IBM Db2 Semantic Engine");
       showToast(`Found ${data.results?.length || 0} matches via ${data.engine || "AI search"}`, "success");
     } catch (err) {
       showToast("Semantic search is temporarily unavailable. Displaying static matches.", "error");
@@ -164,7 +164,7 @@ export default function HomePage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-lime opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-lime"></span>
             </span>
-            <span>{totalOpportunitiesCount.toLocaleString()}+ live opportunities • IBM Db2 & Supabase Powered</span>
+            <span>{totalOpportunitiesCount.toLocaleString()}+ live opportunities • IBM Db2 Powered</span>
           </motion.div>
 
           {/* Headline */}
@@ -244,7 +244,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── AI Semantic Search Engine (Db2 + Supabase Vector Showcase) ── */}
+      {/* ── AI Semantic Search Engine (IBM Db2 Showcase) ── */}
       <section className="section-padding bg-background-alt dark:bg-dark-background-alt border-y border-border dark:border-dark-border">
         <div className="container-narrow">
           <div className="card-cyber p-6 md:p-8 rounded-2xl">
@@ -252,7 +252,7 @@ export default function HomePage() {
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-brand-lime/10 text-brand-lime border border-brand-lime/30 mb-2">
                   <Database size={13} />
-                  <span>AI Semantic Index • IBM Db2 + Supabase</span>
+                  <span>AI Semantic Index • IBM Db2 Enterprise</span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-extrabold text-white">
                   Natural Language Opportunity Matcher
