@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# Testing & Coverage
+coverage/
+.pytest_cache/
+
+# Build & Next.js
+.next/
+out/
+build/
+dist/
+
+# Python virtual environments & bytecode
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# Environment files and credentials (never commit secrets)
+.env*
+!.env.example
+SUBMITTER.txt
+
+# Clerk & probe & junk directories
+.clerk/
+.probe/
+
+# OS and logs
+.DS_Store
+*.pem
+*.log
+*.tsbuildinfo
+next-env.d.ts
+
+# Local test databases
+*.db
+*.sqlite
+*.sqlite3
+
