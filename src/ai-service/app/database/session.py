@@ -1,5 +1,6 @@
 import sqlite3
 import os
+import re
 import logging
 from typing import List, Dict, Any, Optional
 from app.core.config import settings
@@ -23,79 +24,78 @@ class DatabaseSession:
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
 
-        # Idempotent schema initialization
+        # Opportunities Table matching CLOUDLOOP.OPPORTUNITIES
         cursor.execute("""
         CREATE TABLE IF NOT EXISTS OPPORTUNITIES (
             ID TEXT PRIMARY KEY,
+            KIND TEXT NOT NULL CHECK (KIND IN ('job','internship','event','program','certification')),
             SLUG TEXT UNIQUE NOT NULL,
             TITLE TEXT NOT NULL,
-            ORGANIZATION TEXT NOT NULL,
-            OPPORTUNITY_TYPE TEXT NOT NULL,
-            CATEGORY TEXT NOT NULL,
-            DESCRIPTION TEXT,
+            ORG TEXT NOT NULL,
             LOCATION TEXT,
-            LOCATION_TYPE TEXT,
-            SKILLS TEXT,
-            ELIGIBILITY TEXT,
+            MODE TEXT,
             DEADLINE TEXT,
-            APPLICATION_URL TEXT NOT NULL,
-            SOURCE_NAME TEXT DEFAULT 'CloudLoop Scraper',
-            SOURCE_URL TEXT,
-            VERIFICATION_STATUS TEXT DEFAULT 'verified',
-            FETCHED_AT TEXT,
-            CREATED_AT TEXT,
-            UPDATED_AT TEXT
-        )
-        """)
-
-        cursor.execute("""
-        CREATE TABLE IF NOT EXISTS STUDENT_PROFILES (
-            USER_ID TEXT PRIMARY KEY,
-            EDUCATION TEXT,
-            DEGREE TEXT,
-            STUDY_YEAR INTEGER DEFAULT 1,
-            GRADUATION_BATCH TEXT,
+            POSTED TEXT,
+            APPLY_URL TEXT NOT NULL,
+            SOURCE TEXT NOT NULL DEFAULT 'curated',
             SKILLS TEXT,
-            INTERESTS TEXT,
-            PREFERRED_DOMAINS TEXT,
-            PREFERRED_LOCATIONS TEXT,
-            UPDATED_AT TEXT
+            DESCRIPTION TEXT,
+            UPDATED_AT TEXT DEFAULT CURRENT_TIMESTAMP
         )
         """)
 
+        cursor.execute("CREATE INDEX IF NOT EXISTS IX_OPP_KIND_DEADLINE ON OPPORTUNITIES (KIND, DEADLINE)")
+
+        # Tracking Table matching CLOUDLOOP.TRACKED_OPPORTUNITIES
         cursor.execute("""
-        CREATE TABLE IF NOT EXISTS USER_OPPORTUNITY_TRACKING (
+        CREATE TABLE IF NOT EXISTS TRACKED_OPPORTUNITIES (
             USER_ID TEXT NOT NULL,
             OPPORTUNITY_ID TEXT NOT NULL,
-            APPLICATION_STATUS TEXT DEFAULT 'saved',
-            BOOKMARKED INTEGER DEFAULT 1,
-            UPDATED_AT TEXT,
+            STATUS TEXT DEFAULT 'None',
+            BOOKMARKED INTEGER DEFAULT 0,
+            UPDATED_AT TEXT DEFAULT CURRENT_TIMESTAMP,
             PRIMARY KEY (USER_ID, OPPORTUNITY_ID),
             FOREIGN KEY (OPPORTUNITY_ID) REFERENCES OPPORTUNITIES(ID) ON DELETE CASCADE
         )
         """)
 
+        # Newsletter Subscribers Table matching CLOUDLOOP.NEWSLETTER_SUBSCRIBERS
         cursor.execute("""
-        CREATE TABLE IF NOT EXISTS INGESTION_RUNS (
-            ID TEXT PRIMARY KEY,
-            SOURCE TEXT NOT NULL,
-            RECORDS_PROCESSED INTEGER DEFAULT 0,
-            RECORDS_INSERTED INTEGER DEFAULT 0,
-            RECORDS_UPDATED INTEGER DEFAULT 0,
-            RECORDS_REJECTED INTEGER DEFAULT 0,
-            STATUS TEXT DEFAULT 'running',
-            ERROR_SUMMARY TEXT,
-            STARTED_AT TEXT,
-            COMPLETED_AT TEXT
+        CREATE TABLE IF NOT EXISTS NEWSLETTER_SUBSCRIBERS (
+            EMAIL TEXT PRIMARY KEY,
+            CREATED_AT TEXT DEFAULT CURRENT_TIMESTAMP
         )
+        """)
+
+        # Active Opportunities View matching CLOUDLOOP.V_ACTIVE_OPPORTUNITIES
+        cursor.execute("""
+        CREATE VIEW IF NOT EXISTS V_ACTIVE_OPPORTUNITIES AS
+            SELECT * FROM OPPORTUNITIES WHERE DEADLINE IS NULL OR DEADLINE >= date('now');
         """)
 
         conn.commit()
         conn.close()
 
+    def _adapt_sql_for_sqlite(self, sql: str) -> str:
+        """Adapts Db2 LUW syntax to SQLite when running in local sandbox fallback mode."""
+        s = sql.replace("CLOUDLOOP.", "")
+        s = s.replace("CURRENT DATE", "date('now')")
+        s = s.replace("CURRENT TIMESTAMP", "datetime('now')")
+        
+        # Replace Db2 FETCH FIRST n ROWS ONLY [OFFSET m] with SQLite LIMIT n OFFSET m
+        fetch_pattern = re.compile(r"OFFSET\s+(\d+|\?)\s+ROWS\s+FETCH\s+FIRST\s+(\d+|\?)\s+ROWS\s+ONLY", re.IGNORECASE)
+        match = fetch_pattern.search(s)
+        if match:
+            offset_val, limit_val = match.groups()
+            s = fetch_pattern.sub(f"LIMIT {limit_val} OFFSET {offset_val}", s)
+        else:
+            fetch_first_pattern = re.compile(r"FETCH\s+FIRST\s+(\d+|\?)\s+ROWS\s+ONLY", re.IGNORECASE)
+            s = fetch_first_pattern.sub(r"LIMIT \1", s)
+
+        return s
+
     def query(self, sql: str, params: List[Any] = None) -> List[Dict[str, Any]]:
         params = params or []
-        # Try Db2 first if driver and config are available
         status = db2_manager.status
         if status["driver_available"] and status["configured"]:
             try:
@@ -103,12 +103,12 @@ class DatabaseSession:
             except Exception as e:
                 logger.warning(f"Db2 query failed, falling back to local storage: {e}")
 
-        # Local storage execution
         conn = sqlite3.connect(self.sqlite_path)
         conn.row_factory = sqlite3.Row
         try:
             cursor = conn.cursor()
-            cursor.execute(sql, params)
+            adapted_sql = self._adapt_sql_for_sqlite(sql)
+            cursor.execute(adapted_sql, params)
             rows = cursor.fetchall()
             return [dict(row) for row in rows]
         finally:
@@ -126,11 +126,11 @@ class DatabaseSession:
         conn = sqlite3.connect(self.sqlite_path)
         try:
             cursor = conn.cursor()
-            cursor.execute(sql, params)
+            adapted_sql = self._adapt_sql_for_sqlite(sql)
+            cursor.execute(adapted_sql, params)
             conn.commit()
             return cursor.rowcount
         finally:
             conn.close()
 
 db_session = DatabaseSession()
-
