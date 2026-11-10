@@ -67,10 +67,73 @@ class DatabaseSession:
         )
         """)
 
+        # Student Profiles Table matching CLOUDLOOP.STUDENT_PROFILES
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS STUDENT_PROFILES (
+            USER_ID TEXT PRIMARY KEY,
+            EDUCATION TEXT,
+            DEGREE TEXT,
+            STUDY_YEAR INTEGER DEFAULT 1,
+            GRADUATION_BATCH TEXT,
+            SKILLS TEXT,
+            INTERESTS TEXT,
+            PREFERRED_DOMAINS TEXT,
+            PREFERRED_LOCATIONS TEXT,
+            UPDATED_AT TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+        """)
+
+        # Ingestion Runs Table matching CLOUDLOOP.INGESTION_RUNS
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS INGESTION_RUNS (
+            ID TEXT PRIMARY KEY,
+            SOURCE TEXT NOT NULL,
+            RECORDS_PROCESSED INTEGER DEFAULT 0,
+            RECORDS_INSERTED INTEGER DEFAULT 0,
+            RECORDS_UPDATED INTEGER DEFAULT 0,
+            RECORDS_REJECTED INTEGER DEFAULT 0,
+            STATUS TEXT DEFAULT 'SUCCESS',
+            ERROR_SUMMARY TEXT,
+            STARTED_AT TEXT DEFAULT CURRENT_TIMESTAMP,
+            COMPLETED_AT TEXT
+        )
+        """)
+
         # Active Opportunities View matching CLOUDLOOP.V_ACTIVE_OPPORTUNITIES
         cursor.execute("""
         CREATE VIEW IF NOT EXISTS V_ACTIVE_OPPORTUNITIES AS
             SELECT * FROM OPPORTUNITIES WHERE DEADLINE IS NULL OR DEADLINE >= date('now');
+        """)
+
+        # Supporting student profiles and ingestion telemetry tables
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS STUDENT_PROFILES (
+            USER_ID TEXT PRIMARY KEY,
+            EDUCATION TEXT,
+            DEGREE TEXT,
+            STUDY_YEAR INTEGER DEFAULT 1,
+            GRADUATION_BATCH TEXT,
+            SKILLS TEXT,
+            INTERESTS TEXT,
+            PREFERRED_DOMAINS TEXT,
+            PREFERRED_LOCATIONS TEXT,
+            UPDATED_AT TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+        """)
+
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS INGESTION_RUNS (
+            ID TEXT PRIMARY KEY,
+            SOURCE TEXT NOT NULL,
+            RECORDS_PROCESSED INTEGER DEFAULT 0,
+            RECORDS_INSERTED INTEGER DEFAULT 0,
+            RECORDS_UPDATED INTEGER DEFAULT 0,
+            RECORDS_REJECTED INTEGER DEFAULT 0,
+            STATUS TEXT DEFAULT 'running',
+            ERROR_SUMMARY TEXT,
+            STARTED_AT TEXT DEFAULT CURRENT_TIMESTAMP,
+            COMPLETED_AT TEXT
+        )
         """)
 
         conn.commit()
@@ -79,6 +142,9 @@ class DatabaseSession:
     def _adapt_sql_for_sqlite(self, sql: str) -> str:
         """Adapts Db2 LUW syntax to SQLite when running in local sandbox fallback mode."""
         s = sql.replace("CLOUDLOOP.", "")
+        
+        # Replace Db2 date arithmetic e.g. (CURRENT DATE + 7 DAYS) -> date('now', '+7 days')
+        s = re.sub(r"\(?\s*CURRENT\s+DATE\s*\+\s*(\d+)\s+DAYS\s*\)?", r"date('now', '+\1 days')", s, flags=re.IGNORECASE)
         s = s.replace("CURRENT DATE", "date('now')")
         s = s.replace("CURRENT TIMESTAMP", "datetime('now')")
         

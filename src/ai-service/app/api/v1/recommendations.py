@@ -5,6 +5,7 @@ from app.services.recommendation_service import recommendation_service
 router = APIRouter(prefix="/recommendations", tags=["Recommendations"])
 
 @router.post("", response_model=RecommendationResponse)
+@router.post("/", response_model=RecommendationResponse)
 def get_recommendations(req: RecommendationRequest):
     recs = recommendation_service.get_recommendations(
         user_id=req.user_id,

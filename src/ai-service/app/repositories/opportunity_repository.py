@@ -1,6 +1,6 @@
 import json
 import logging
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, Tuple
 from datetime import datetime, timezone
 from app.database.session import db_session
 
@@ -9,96 +9,91 @@ logger = logging.getLogger("cloud_loop.repository.opportunity")
 class OpportunityRepository:
     def _row_to_dict(self, row: Dict[str, Any]) -> Dict[str, Any]:
         d = dict(row)
-        # Parse skills if stringified JSON
         skills_raw = d.get("SKILLS") or d.get("skills")
+        skills_list = []
         if isinstance(skills_raw, str):
             try:
-                d["skills"] = json.loads(skills_raw)
+                parsed = json.loads(skills_raw)
+                if isinstance(parsed, list):
+                    skills_list = [s.strip() for s in parsed if s]
+                else:
+                    skills_list = [s.strip() for s in skills_raw.split(",") if s.strip()]
             except Exception:
-                d["skills"] = [s.strip() for s in skills_raw.split(",") if s.strip()]
-        elif not skills_raw:
-            d["skills"] = []
-        else:
-            d["skills"] = list(skills_raw)
+                skills_list = [s.strip() for s in skills_raw.split(",") if s.strip()]
+        elif isinstance(skills_raw, list):
+            skills_list = [str(s).strip() for s in skills_raw if s]
 
-        # Normalize key casing
         return {
             "id": d.get("ID") or d.get("id"),
+            "kind": d.get("KIND") or d.get("kind") or "job",
             "slug": d.get("SLUG") or d.get("slug"),
             "title": d.get("TITLE") or d.get("title"),
-            "organization": d.get("ORGANIZATION") or d.get("organization"),
-            "opportunity_type": d.get("OPPORTUNITY_TYPE") or d.get("opportunity_type"),
-            "category": d.get("CATEGORY") or d.get("category"),
+            "org": d.get("ORG") or d.get("org") or d.get("ORGANIZATION") or d.get("organization"),
+            "location": d.get("LOCATION") or d.get("location") or "India / Remote",
+            "mode": d.get("MODE") or d.get("mode") or d.get("LOCATION_TYPE") or d.get("location_type") or "onsite",
+            "deadline": str(d.get("DEADLINE") or d.get("deadline") or "") or None,
+            "posted": str(d.get("POSTED") or d.get("posted") or "") or None,
+            "apply_url": d.get("APPLY_URL") or d.get("apply_url") or d.get("APPLICATION_URL") or d.get("application_url") or "#",
+            "source": d.get("SOURCE") or d.get("source") or "curated",
+            "skills": skills_list,
             "description": d.get("DESCRIPTION") or d.get("description"),
-            "location": d.get("LOCATION") or d.get("location"),
-            "location_type": d.get("LOCATION_TYPE") or d.get("location_type"),
-            "skills": d["skills"],
-            "eligibility": d.get("ELIGIBILITY") or d.get("eligibility"),
-            "deadline": d.get("DEADLINE") or d.get("deadline"),
-            "application_url": d.get("APPLICATION_URL") or d.get("application_url"),
-            "source_name": d.get("SOURCE_NAME") or d.get("source_name"),
-            "source_url": d.get("SOURCE_URL") or d.get("source_url"),
-            "verification_status": d.get("VERIFICATION_STATUS") or d.get("verification_status") or "verified",
-            "fetched_at": d.get("FETCHED_AT") or d.get("fetched_at"),
-            "created_at": d.get("CREATED_AT") or d.get("created_at"),
-            "updated_at": d.get("UPDATED_AT") or d.get("updated_at"),
+            "updated_at": str(d.get("UPDATED_AT") or d.get("updated_at") or ""),
         }
 
-    def get_by_id(self, opportunity_id: str) -> Optional[Dict[str, Any]]:
-        sql = "SELECT * FROM OPPORTUNITIES WHERE ID = ?"
-        rows = db_session.query(sql, [opportunity_id])
+    def get_by_id(self, opp_id: str) -> Optional[Dict[str, Any]]:
+        sql = "SELECT * FROM CLOUDLOOP.OPPORTUNITIES WHERE ID = ?"
+        rows = db_session.query(sql, [opp_id])
         return self._row_to_dict(rows[0]) if rows else None
 
     def get_by_slug(self, slug: str) -> Optional[Dict[str, Any]]:
-        sql = "SELECT * FROM OPPORTUNITIES WHERE SLUG = ?"
+        sql = "SELECT * FROM CLOUDLOOP.OPPORTUNITIES WHERE SLUG = ?"
         rows = db_session.query(sql, [slug])
         return self._row_to_dict(rows[0]) if rows else None
 
     def list_opportunities(
         self,
-        opp_type: Optional[str] = None,
-        category: Optional[str] = None,
+        kind: Optional[str] = None,
         search: Optional[str] = None,
         page: int = 1,
         limit: int = 20,
-    ) -> (List[Dict[str, Any]], int):
+        include_synthetic: bool = False,
+    ) -> Tuple[List[Dict[str, Any]], int]:
         where_clauses = []
         params = []
 
-        if opp_type and opp_type.lower() != "all":
-            where_clauses.append("LOWER(OPPORTUNITY_TYPE) = LOWER(?)")
-            params.append(opp_type)
+        if not include_synthetic:
+            where_clauses.append("SOURCE != 'synthetic-demo'")
 
-        if category and category.lower() != "all":
-            where_clauses.append("LOWER(CATEGORY) = LOWER(?)")
-            params.append(category)
+        if kind and kind.lower() != "all":
+            where_clauses.append("LOWER(KIND) = LOWER(?)")
+            params.append(kind)
 
         if search and search.strip():
             term = f"%{search.strip().lower()}%"
-            where_clauses.append("(LOWER(TITLE) LIKE ? OR LOWER(ORGANIZATION) LIKE ? OR LOWER(DESCRIPTION) LIKE ?)")
-            params.extend([term, term, term])
+            where_clauses.append("(LOWER(TITLE) LIKE ? OR LOWER(ORG) LIKE ? OR LOWER(SKILLS) LIKE ? OR LOWER(DESCRIPTION) LIKE ?)")
+            params.extend([term, term, term, term])
 
         where_sql = ("WHERE " + " AND ".join(where_clauses)) if where_clauses else ""
 
         # Total count query
-        count_sql = f"SELECT COUNT(*) as cnt FROM OPPORTUNITIES {where_sql}"
+        count_sql = f"SELECT COUNT(*) as CNT FROM CLOUDLOOP.OPPORTUNITIES {where_sql}"
         count_rows = db_session.query(count_sql, params)
-        total = count_rows[0].get("CNT") or count_rows[0].get("cnt") or 0
+        total = int(count_rows[0].get("CNT") or count_rows[0].get("cnt") or 0) if count_rows else 0
 
-        # Paginated fetch
-        offset = (page - 1) * limit
+        # Parameterized pagination: OFFSET ? ROWS FETCH FIRST ? ROWS ONLY
+        offset = max(0, (page - 1) * limit)
         fetch_sql = f"""
-            SELECT * FROM OPPORTUNITIES
+            SELECT * FROM CLOUDLOOP.OPPORTUNITIES
             {where_sql}
-            ORDER BY ROWID DESC
-            LIMIT ? OFFSET ?
+            ORDER BY UPDATED_AT DESC
+            OFFSET ? ROWS FETCH FIRST ? ROWS ONLY
         """
-        rows = db_session.query(fetch_sql, params + [limit, offset])
+        rows = db_session.query(fetch_sql, params + [offset, limit])
         items = [self._row_to_dict(r) for r in rows]
         return items, total
 
     def count(self) -> int:
-        rows = db_session.query("SELECT COUNT(*) as cnt FROM OPPORTUNITIES")
+        rows = db_session.query("SELECT COUNT(*) as CNT FROM CLOUDLOOP.OPPORTUNITIES WHERE SOURCE != 'synthetic-demo'")
         return int(rows[0].get("CNT") or rows[0].get("cnt") or 0) if rows else 0
 
     def create(self, data: Dict[str, Any]) -> str:
@@ -108,93 +103,57 @@ class OpportunityRepository:
         return self.upsert({**data, "id": opp_id})
 
     def upsert(self, data: Dict[str, Any]) -> str:
-        now = datetime.now(timezone.utc).isoformat()
-        skills_str = json.dumps(data.get("skills") or [])
+        now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
         opp_id = data.get("id") or data.get("slug")
+        slug = data.get("slug") or opp_id
+        kind = data.get("kind") or data.get("opportunity_type") or "job"
         title = data.get("title") or "Opportunity"
-        org = data.get("organization") or data.get("company") or data.get("provider") or "Technology Partner"
-        opp_type = data.get("opportunity_type") or "program"
-        category = data.get("category") or "Technology"
-        app_url = data.get("application_url") or "#"
+        org = data.get("org") or data.get("organization") or "Partner"
+        location = data.get("location") or "India / Remote"
+        mode = data.get("mode") or data.get("location_type") or "onsite"
+        deadline = data.get("deadline") or None
+        posted = data.get("posted") or None
+        apply_url = data.get("apply_url") or data.get("application_url") or "#"
+        source = data.get("source") or "curated"
 
-        # Check existing by id or slug
+        skills = data.get("skills") or []
+        if isinstance(skills, list):
+            skills_str = ", ".join(skills)
+        else:
+            skills_str = str(skills)
+
+        description = data.get("description") or f"{title} at {org}."
+
         existing = self.get_by_id(opp_id)
-        if not existing and data.get("slug"):
-            existing = self.get_by_slug(data["slug"])
-            if existing:
-                opp_id = existing.get("id") or opp_id
         if existing:
             sql = """
-                UPDATE OPPORTUNITIES SET
-                    TITLE = ?,
-                    ORGANIZATION = ?,
-                    OPPORTUNITY_TYPE = ?,
-                    CATEGORY = ?,
-                    DESCRIPTION = ?,
-                    LOCATION = ?,
-                    LOCATION_TYPE = ?,
-                    SKILLS = ?,
-                    ELIGIBILITY = ?,
-                    DEADLINE = ?,
-                    APPLICATION_URL = ?,
-                    SOURCE_NAME = ?,
-                    SOURCE_URL = ?,
-                    VERIFICATION_STATUS = ?,
-                    UPDATED_AT = ?
+                UPDATE CLOUDLOOP.OPPORTUNITIES SET
+                    KIND = ?, SLUG = ?, TITLE = ?, ORG = ?, LOCATION = ?, MODE = ?,
+                    DEADLINE = ?, POSTED = ?, APPLY_URL = ?, SOURCE = ?, SKILLS = ?,
+                    DESCRIPTION = ?, UPDATED_AT = ?
                 WHERE ID = ?
             """
             params = [
-                title,
-                org,
-                opp_type,
-                category,
-                data.get("description"),
-                data.get("location"),
-                data.get("location_type"),
-                skills_str,
-                data.get("eligibility"),
-                data.get("deadline"),
-                app_url,
-                data.get("source_name") or "CloudLoop Indexer",
-                data.get("source_url"),
-                data.get("verification_status") or "verified",
-                now,
-                opp_id,
+                kind, slug, title, org, location, mode,
+                deadline, posted, apply_url, source, skills_str,
+                description, now, opp_id
             ]
             db_session.execute(sql, params)
-            return opp_id
         else:
             sql = """
-                INSERT INTO OPPORTUNITIES (
-                    ID, SLUG, TITLE, ORGANIZATION, OPPORTUNITY_TYPE, CATEGORY,
-                    DESCRIPTION, LOCATION, LOCATION_TYPE, SKILLS, ELIGIBILITY,
-                    DEADLINE, APPLICATION_URL, SOURCE_NAME, SOURCE_URL,
-                    VERIFICATION_STATUS, FETCHED_AT, CREATED_AT, UPDATED_AT
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                INSERT INTO CLOUDLOOP.OPPORTUNITIES (
+                    ID, KIND, SLUG, TITLE, ORG, LOCATION, MODE,
+                    DEADLINE, POSTED, APPLY_URL, SOURCE, SKILLS,
+                    DESCRIPTION, UPDATED_AT
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """
             params = [
-                opp_id,
-                data.get("slug") or opp_id,
-                title,
-                org,
-                opp_type,
-                category,
-                data.get("description"),
-                data.get("location"),
-                data.get("location_type"),
-                skills_str,
-                data.get("eligibility"),
-                data.get("deadline"),
-                app_url,
-                data.get("source_name") or "CloudLoop Indexer",
-                data.get("source_url"),
-                data.get("verification_status") or "verified",
-                now,
-                now,
-                now,
+                opp_id, kind, slug, title, org, location, mode,
+                deadline, posted, apply_url, source, skills_str,
+                description, now
             ]
             db_session.execute(sql, params)
-            return opp_id
+
+        return opp_id
 
 opportunity_repo = OpportunityRepository()
-

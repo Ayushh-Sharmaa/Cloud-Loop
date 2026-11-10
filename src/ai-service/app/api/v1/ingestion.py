@@ -8,6 +8,7 @@ from app.core.security import verify_admin_key
 router = APIRouter(prefix="/ingestion", tags=["Data Ingestion & Provenance"])
 
 @router.post("", dependencies=[Depends(verify_admin_key)])
+@router.post("/", dependencies=[Depends(verify_admin_key)])
 def ingest_batch(payload: IngestionBatchRequest):
     result = ingestion_service.ingest_records(
         source=payload.source,

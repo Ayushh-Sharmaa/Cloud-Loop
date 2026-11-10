@@ -5,15 +5,14 @@ opportunity matching with COSINE distance and 384-dimensional dense vectors.
 Gracefully provides a local vector store fallback for environments where
 native C-extension drivers are restricted by operating system policy.
 """
-import os
-import json
 import logging
 from typing import List, Dict, Any, Optional
-
+from datetime import date
 from app.core.config import settings
+from app.ai.embeddings import generate_embedding
+from app.ai.vector_search import cosine_similarity
 
 logger = logging.getLogger("cloud_loop.haystack")
-
 
 class HaystackDb2Service:
     def __init__(self):
@@ -36,7 +35,7 @@ class HaystackDb2Service:
 
                 logger.info(
                     f"Initializing IBMDb2DocumentStore on {settings.host}:{settings.DB2_PORT}/{settings.database_name} "
-                    f"table={settings.DB2_TABLE_KB} dim={settings.EMBEDDING_DIM}"
+                    f"schema={settings.DB2_SCHEMA} table={settings.DB2_TABLE_KB} dim={settings.EMBEDDING_DIM}"
                 )
                 self._store = IBMDb2DocumentStore(
                     database=settings.database_name,
@@ -51,12 +50,12 @@ class HaystackDb2Service:
                     recreate_table=recreate_table,
                 )
                 self._is_native = True
-                logger.info("IBMDb2DocumentStore successfully connected.")
+                logger.info("IBMDb2DocumentStore successfully connected to live Db2.")
                 return self._store
             except Exception as e:
                 logger.warning(
-                    f"IBMDb2DocumentStore native connection unavailable ({e}). "
-                    "Switching to resilient fallback vector store."
+                    f"IBMDb2DocumentStore live connection unavailable ({e}). "
+                    "Operating via unified fallback vector store."
                 )
 
         self._is_native = False
@@ -72,13 +71,14 @@ class HaystackDb2Service:
         # Fallback in-memory index
         written = 0
         for doc in documents:
-            # Handle both Haystack Document objects and dicts
-            doc_id = getattr(doc, "id", None) or doc.get("id")
-            content = getattr(doc, "content", None) or doc.get("content", "")
-            meta = getattr(doc, "meta", None) or doc.get("meta", {})
-            embedding = getattr(doc, "embedding", None) or doc.get("embedding", None)
+            doc_id = getattr(doc, "id", None) or (doc.get("id") if isinstance(doc, dict) else None)
+            content = getattr(doc, "content", None) or (doc.get("content", "") if isinstance(doc, dict) else "")
+            meta = getattr(doc, "meta", None) or (doc.get("meta", {}) if isinstance(doc, dict) else {})
+            embedding = getattr(doc, "embedding", None) or (doc.get("embedding") if isinstance(doc, dict) else None)
 
-            # Store in fallback
+            if not embedding and content:
+                embedding = generate_embedding(content)
+
             self._fallback_docs = [d for d in self._fallback_docs if d["id"] != doc_id]
             self._fallback_docs.append({
                 "id": doc_id,
@@ -103,46 +103,63 @@ class HaystackDb2Service:
     ) -> List[Dict[str, Any]]:
         """
         Performs semantic vector search with optional metadata filtering.
+        Filters run inside Db2 when native store is active.
         """
+        if not query_embedding:
+            query_embedding = generate_embedding(query)
+
         if self._is_native and self._store is not None:
             try:
-                from haystack import Pipeline
                 from haystack_integrations.components.retrievers.ibm_db import IBMDb2EmbeddingRetriever
 
                 retriever = IBMDb2EmbeddingRetriever(document_store=self._store, top_k=top_k)
-                if query_embedding:
-                    res = retriever.run(query_embedding=query_embedding, filters=filters)
-                    docs = res.get("documents", [])
-                    return [
-                        {
-                            "id": d.id,
-                            "content": d.content,
-                            "score": getattr(d, "score", 0.0),
-                            "meta": d.meta
-                        }
-                        for d in docs
-                    ]
+                res = retriever.run(query_embedding=query_embedding, filters=filters)
+                docs = res.get("documents", [])
+                return [
+                    {
+                        "id": d.id,
+                        "content": d.content,
+                        "score": getattr(d, "score", 0.0),
+                        "meta": d.meta
+                    }
+                    for d in docs
+                ]
             except Exception as e:
                 logger.error(f"Native IBM Db2 vector search failed: {e}. Using fallback.")
 
         # Resilient fallback search
         results = []
-        q_tokens = set(query.lower().split())
+        today_str = date.today().isoformat()
 
         for d in self._fallback_docs:
             meta = d.get("meta", {})
-            # Check filters
+
+            # Filter out expired
+            dl = meta.get("deadline")
+            if dl and dl < today_str:
+                continue
+
+            # Apply metadata filters (e.g. meta.kind or meta.opportunity_type)
             if filters:
                 field = filters.get("field", "")
                 val = filters.get("value")
+                op = filters.get("operator", "==")
                 if field.startswith("meta."):
                     k = field[5:]
-                    if meta.get(k) != val:
-                        continue
+                    actual = meta.get(k)
+                    if op in ("==", "="):
+                        if actual != val:
+                            continue
+                    elif op in ("in", "$in"):
+                        if actual not in val:
+                            continue
 
-            content = d.get("content", "").lower()
-            overlap = sum(1 for t in q_tokens if t in content)
-            score = 0.5 + (overlap / max(1, len(q_tokens))) * 0.5
+            emb = d.get("embedding")
+            if emb:
+                score = cosine_similarity(query_embedding, emb)
+            else:
+                score = 0.5
+
             results.append({
                 "id": d["id"],
                 "content": d["content"],
@@ -152,6 +169,5 @@ class HaystackDb2Service:
 
         results.sort(key=lambda x: x["score"], reverse=True)
         return results[:top_k]
-
 
 haystack_db2_service = HaystackDb2Service()

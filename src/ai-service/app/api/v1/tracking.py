@@ -1,43 +1,69 @@
-from fastapi import APIRouter, Depends, HTTPException, status
-from app.schemas.tracking import TrackingCreate, TrackingResponse, TrackingItem
+from fastapi import APIRouter, Query, Depends, HTTPException, status
+from app.core.security import verify_internal_api_key, get_current_user_id
+from app.schemas.tracking import TrackRequest, TrackingListResponse, TrackedOpportunityItem
+from app.schemas.opportunity import OpportunityResponse
 from app.repositories.tracking_repository import tracking_repo
-from app.core.security import get_current_user_id
 
-router = APIRouter(prefix="/tracking", tags=["User Opportunity Tracking"])
+router = APIRouter(prefix="/tracking", tags=["Application Tracking"])
 
-@router.get("", response_model=TrackingResponse)
-def get_tracking(user_id: str = Depends(get_current_user_id)):
-    items = tracking_repo.get_user_tracking(user_id)
-    counts = tracking_repo.get_counts(user_id)
-    return {
-        "items": [TrackingItem(**i) for i in items],
-        "total_saved": counts.get("saved", 0),
-        "total_applied": counts.get("applied", 0),
-        "total_review": counts.get("under_review", 0),
-    }
-
-@router.post("")
-def update_tracking(
-    req: TrackingCreate,
-    user_id: str = Depends(get_current_user_id),
+@router.get("", response_model=TrackingListResponse)
+def get_user_tracking(
+    user_id: str = Query(..., description="Target user ID"),
+    _auth: bool = Depends(verify_internal_api_key),
 ):
-    valid_statuses = ["saved", "applied", "under_review", "not_interested"]
-    if req.application_status not in valid_statuses:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Invalid application status. Must be one of: {', '.join(valid_statuses)}",
+    """
+    GET /api/v1/tracking
+    Retrieves all tracked opportunities and application pipeline status for a user.
+    """
+    items_data = tracking_repo.get_user_tracking(user_id)
+    items = []
+    for it in items_data:
+        opp_model = None
+        if it.get("opportunity"):
+            try:
+                opp_model = OpportunityResponse(**it["opportunity"])
+            except Exception:
+                pass
+        items.append(
+            TrackedOpportunityItem(
+                user_id=it["user_id"],
+                opportunity_id=it["opportunity_id"],
+                status=it["status"],
+                bookmarked=it["bookmarked"],
+                updated_at=it["updated_at"],
+                opportunity=opp_model,
+            )
         )
-
-    success = tracking_repo.set_tracking(
+    return TrackingListResponse(
         user_id=user_id,
-        opportunity_id=req.opportunity_id,
-        status=req.application_status,
-        bookmarked=req.bookmarked,
+        total=len(items),
+        items=items,
+    )
+
+@router.put("")
+def upsert_tracking(
+    payload: TrackRequest,
+    _auth: bool = Depends(verify_internal_api_key),
+):
+    """
+    PUT /api/v1/tracking
+    Executes a high-performance MERGE upsert into CLOUDLOOP.TRACKED_OPPORTUNITIES.
+    """
+    success = tracking_repo.set_tracking(
+        user_id=payload.user_id,
+        opportunity_id=payload.opportunity_id,
+        status=payload.status,
+        bookmarked=payload.bookmarked,
     )
     if not success:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Opportunity '{req.opportunity_id}' not found.",
+            detail=f"Opportunity {payload.opportunity_id} not found",
         )
-    return {"success": True, "message": "Tracking status updated."}
-
+    return {
+        "ok": True,
+        "user_id": payload.user_id,
+        "opportunity_id": payload.opportunity_id,
+        "status": payload.status,
+        "bookmarked": payload.bookmarked,
+    }

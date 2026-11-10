@@ -15,12 +15,10 @@ def verify_internal_api_key(
     if not key and authorization and authorization.startswith("Bearer "):
         key = authorization[7:].strip()
 
-    # In development mode, allow requests with key or default key
     expected_key = settings.INTERNAL_API_KEY
     if key == expected_key:
         return True
 
-    # Allow local unauthenticated access only in test/development when specifically permitted
     if settings.DEBUG and (not key or key == "dev_internal_key"):
         return True
 
@@ -28,6 +26,16 @@ def verify_internal_api_key(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Invalid or missing internal service API key (x-internal-key).",
     )
+
+def verify_admin_key(
+    x_admin_key: Optional[str] = Header(None, alias="X-Admin-Key", description="Admin API Key for protected ingestion routes")
+):
+    if not x_admin_key or x_admin_key != settings.ADMIN_API_KEY:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Invalid administrative credentials. Ingestion endpoint is protected.",
+        )
+    return True
 
 def get_current_user_id(
     x_user_id: Optional[str] = Header(None, alias="x-user-id", description="Authenticated Clerk or Demo User ID")
@@ -37,7 +45,6 @@ def get_current_user_id(
     Falls back to settings.DEMO_USER_ID if in demo mode.
     """
     if x_user_id and x_user_id.strip():
-        # Sanitize to alphanumeric + dashes/underscores
         cleaned = re.sub(r"[^a-zA-Z0-9_\-]", "", x_user_id.strip())
         if cleaned:
             return cleaned
