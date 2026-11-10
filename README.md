@@ -1,237 +1,196 @@
-# Cloud Loop ⚡
+# Cloud-Loop
 
-> **AI-Powered Student Opportunity Intelligence Platform**  
-> *Official Hackathon Submission for IBM Db2 TechX Summit 2026 @ GL Bajaj, Mathura*  
-> Built with IBM Db2, Haystack AI (`ibm-db-haystack`), FastAPI, Next.js 16, and React 19.
-
-[![IBM Db2](https://img.shields.io/badge/IBM_Db2-Vector_&_Relational-052FAD?style=for-the-badge&logo=ibm)](https://www.ibm.com/products/db2)
-[![Haystack](https://img.shields.io/badge/Haystack_AI-3.4.1-6B46C1?style=for-the-badge)](https://haystack.deepset.ai/)
-[![Next.js](https://img.shields.io/badge/Next.js-16.2_(Turbopack)-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
+> AI-Powered Student Opportunity Discovery Platform with IBM Db2 and Haystack AI.  
+> IBM Db2 TechX Summit 2026 Submission.
 
 ---
 
-## 👥 Team Information
+## Problem
 
-- **Solo Builder**: Ayush Sharma ([@Ayushh-Sharmaa](https://github.com/Ayushh-Sharmaa))
-- **Role**: Software Architect, Full-Stack & IBM Db2 AI Engineer
-- **Institution**: GL Bajaj Institute of Technology and Management
-- **Event**: IBM Db2 TechX Summit 2026 Hackathon
+Undergraduate students and fresh graduates in technology face an overwhelming and fragmented opportunity landscape. High-impact tech opportunities—such as campus ambassador programs, specialized student developer programs, internships, fresher jobs, and open cloud certifications—are scattered across Discord servers, LinkedIn feeds, and disparate hiring portals.
 
----
-
-## 📌 Problem Statement
-
-Students in tech colleges routinely miss premier career programs (such as the *Google Cloud Arcade Facilitator Program*, *Microsoft Learn Student Ambassadors*, *GitHub Campus Experts*, enterprise internships, and tier-1 hackathons) due to fragmented information across Discord servers, LinkedIn feeds, and unindexed corporate boards.
-
-Traditional opportunity boards suffer from:
-1. **Keyword Rigidity**: Keyword filters fail to match intent (e.g., searching for "AI engineer" misses "Applied Deep Learning Trainee").
-2. **Eligibility Blindness**: Students spend hours applying to programs only to be rejected over undisclosed year or batch constraints.
-3. **No Explainability**: Black-box ranking gives no indication why an opportunity is recommended or how to qualify.
+Key pain points:
+1. **Keyword Blindness**: Traditional keyword search misses conceptual matches (e.g. searching "cloud infrastructure" misses "AWS Student Developer Fellow").
+2. **Hidden Eligibility Constraints**: Students waste hours applying for listings only to be disqualified by undisclosed graduation batch or degree filters.
+3. **Black-Box Recommendations**: Existing job aggregators lack transparent explanations of why a student matches a given listing.
 
 ---
 
-## 💡 Solution & Key Features
+## Solution
 
-**Cloud Loop** bridges this gap using IBM Db2 as the single source of truth for both semantic vector discovery and relational integrity:
-
-1. **Haystack + IBM Db2 Vector Knowledge Base (`OPPORTUNITY_KB`)**:
-   - Stores dense 384-dimensional vector embeddings with cosine distance calculation directly in IBM Db2.
-   - Natural language semantic search powered by `sentence-transformers/all-MiniLM-L6-v2`.
-2. **Relational Opportunity Management (Schema `CLOUDLOOP`)**:
-   - Normalized relational tables storing 3,800+ student opportunities, student profiles, application tracking, and ingestion runs.
-   - SQL view `V_ACTIVE_OPPORTUNITIES` for instant deadline-based filtering.
-3. **Multi-Factor Student Matching Engine**:
-   - Composite matching score combining semantic affinity (50%), skill overlap (30%), and domain interest (20%).
-   - Hard eligibility verification against graduation batch, degree, and study year.
-4. **Transparent Match Explanations**:
-   - Generates human-readable, auditable rationales explaining exact qualification factors for every recommended role.
-5. **Zero-Friction Evaluation (`AUTH_MODE=demo`)**:
-   - Instant live evaluation mode pre-seeded with verified opportunities and a demo student profile without requiring third-party credentials.
+**Cloud-Loop** centralizes student discovery by pairing **IBM Db2** as the unified transactional and vector data tier with **Haystack AI**:
+- **Semantic Vector Discovery**: Uses `IBMDb2DocumentStore` and 384-dimensional dense vectors to match queries and student profiles by true semantic intent.
+- **Explainable Match Engine**: Computes candidate match percentages and generates clear rationale lines based on exact overlapping competencies.
+- **Application Pipeline Tracking**: Real-time status tracking (`Applied`, `Interviewing`, `Accepted`, etc.) with atomic `MERGE` upserts into IBM Db2.
+- **Curated Dataset**: Pre-seeded with 106 verified student opportunities across jobs, internships, events, programs, and certifications.
+- **Instant Demo Evaluation**: Supports `AUTH_MODE=demo` so evaluators can test the complete personalized platform instantly without third-party accounts.
 
 ---
 
-## 🏛️ System Architecture
+## IBM Db2 Integration
 
-```mermaid
-flowchart LR
-    subgraph Client["Next.js 16 Web Tier"]
-        UI["Student Portal & Dashboard\n(React 19, Tailwind CSS v4)"]
-    end
+### Edition & Driver
+- **Edition**: IBM Db2 Community Edition (Docker `icr.io/db2_community/db2:12.1.2.0`) / IBM Db2 on Cloud.
+- **Drivers / Connectors**:
+  - `ibm-db-haystack (1.0.0)` for Haystack 2.x vector document storage and retriever pipelines.
+  - `ibm_db (3.3.0)` for native relational operations and parameterized prepared statements.
 
-    subgraph Backend["AI & API Tier (FastAPI)"]
-        API["FastAPI Gateway (/api/v1)"]
-        Haystack["Haystack AI Pipeline"]
-        Matcher["Eligibility & Scoring Engine"]
-    end
+### Schema & Tables (Schema: `CLOUDLOOP`)
+- `CLOUDLOOP.OPPORTUNITY_KB`: Vector table initialized via `IBMDb2DocumentStore`, storing `VECTOR(384, FLOAT32)` embeddings with `COSINE` distance metric.
+- `CLOUDLOOP.OPPORTUNITIES`: Relational catalog with columns for `ID`, `KIND`, `SLUG`, `TITLE`, `ORG`, `LOCATION`, `MODE`, `DEADLINE`, `POSTED`, `APPLY_URL`, `SOURCE`, `SKILLS`, `DESCRIPTION`, and `UPDATED_AT`.
+- `CLOUDLOOP.TRACKED_OPPORTUNITIES`: Student application status and bookmark tracking (`USER_ID`, `OPPORTUNITY_ID`, `STATUS`, `BOOKMARKED`, `UPDATED_AT`).
+- `CLOUDLOOP.NEWSLETTER_SUBSCRIBERS`: Email subscription list (`EMAIL`, `CREATED_AT`).
+- `CLOUDLOOP.V_ACTIVE_OPPORTUNITIES`: View filtering opportunities where `DEADLINE IS NULL OR DEADLINE >= CURRENT DATE`.
+- `IX_OPP_KIND_DEADLINE`: Compound B-Tree index on `(KIND, DEADLINE)`.
 
-    subgraph Database["IBM Db2 Enterprise / Community"]
-        KB[("OPPORTUNITY_KB\n(IBMDb2DocumentStore\n384-dim COSINE)")]
-        Relational[("CLOUDLOOP Tables\nOPPORTUNITIES\nSTUDENT_PROFILES\nUSER_OPPORTUNITY_TRACKING\nINGESTION_RUNS")]
-        View["V_ACTIVE_OPPORTUNITIES\n(Active SQL View)"]
-    end
+### Key Db2 Queries
 
-    UI --> API
-    API --> Haystack
-    API --> Matcher
-    Haystack <--> KB
-    Matcher <--> Relational
-    Matcher <--> View
-```
-
----
-
-## 💾 IBM Db2 Integration Depth
-
-### Database Entities & DDL
-
+**1. Application Tracking MERGE Upsert**
 ```sql
-CREATE SCHEMA CLOUDLOOP;
+MERGE INTO CLOUDLOOP.TRACKED_OPPORTUNITIES AS target
+USING (VALUES (?, ?, ?, ?)) AS source (USER_ID, OPPORTUNITY_ID, STATUS, BOOKMARKED)
+ON (target.USER_ID = source.USER_ID AND target.OPPORTUNITY_ID = source.OPPORTUNITY_ID)
+WHEN MATCHED THEN
+  UPDATE SET STATUS = source.STATUS, BOOKMARKED = source.BOOKMARKED, UPDATED_AT = CURRENT TIMESTAMP
+WHEN NOT MATCHED THEN
+  INSERT (USER_ID, OPPORTUNITY_ID, STATUS, BOOKMARKED, UPDATED_AT)
+  VALUES (source.USER_ID, source.OPPORTUNITY_ID, source.STATUS, source.BOOKMARKED, CURRENT TIMESTAMP);
+```
 
--- 1. Master Opportunities
-CREATE TABLE CLOUDLOOP.OPPORTUNITIES (
-    ID                  VARCHAR(128)    NOT NULL PRIMARY KEY,
-    SLUG                VARCHAR(256)    NOT NULL UNIQUE,
-    TITLE               VARCHAR(256)    NOT NULL,
-    ORGANIZATION        VARCHAR(256)    NOT NULL,
-    OPPORTUNITY_TYPE    VARCHAR(64)     NOT NULL,
-    CATEGORY            VARCHAR(64)     NOT NULL,
-    DESCRIPTION         CLOB,
-    LOCATION            VARCHAR(256),
-    LOCATION_TYPE       VARCHAR(32),
-    SKILLS              CLOB,
-    ELIGIBILITY         CLOB,
-    DEADLINE            VARCHAR(64),
-    APPLICATION_URL     VARCHAR(1024)   NOT NULL,
-    SOURCE_NAME         VARCHAR(64)     DEFAULT 'CloudLoop Curated',
-    SOURCE_URL          VARCHAR(1024),
-    VERIFICATION_STATUS VARCHAR(32)     DEFAULT 'VERIFIED',
-    FETCHED_AT          TIMESTAMP       DEFAULT CURRENT TIMESTAMP,
-    CREATED_AT          TIMESTAMP       DEFAULT CURRENT TIMESTAMP,
-    UPDATED_AT          TIMESTAMP       DEFAULT CURRENT TIMESTAMP
-);
+**2. Newsletter Duplicate-Safe MERGE**
+```sql
+MERGE INTO CLOUDLOOP.NEWSLETTER_SUBSCRIBERS AS target
+USING (VALUES (?)) AS source (EMAIL)
+ON (target.EMAIL = source.EMAIL)
+WHEN NOT MATCHED THEN
+  INSERT (EMAIL, CREATED_AT) VALUES (source.EMAIL, CURRENT TIMESTAMP);
+```
 
--- 2. Student Profiles
-CREATE TABLE CLOUDLOOP.STUDENT_PROFILES (
-    USER_ID             VARCHAR(128)    NOT NULL PRIMARY KEY,
-    EDUCATION           VARCHAR(256),
-    DEGREE              VARCHAR(128),
-    STUDY_YEAR          INT             DEFAULT 1,
-    GRADUATION_BATCH    VARCHAR(32),
-    SKILLS              CLOB,
-    INTERESTS           CLOB,
-    PREFERRED_DOMAINS   CLOB,
-    PREFERRED_LOCATIONS CLOB,
-    UPDATED_AT          TIMESTAMP       DEFAULT CURRENT TIMESTAMP
-);
-
--- 3. Tracking & Pipeline
-CREATE TABLE CLOUDLOOP.USER_OPPORTUNITY_TRACKING (
-    USER_ID             VARCHAR(128)    NOT NULL,
-    OPPORTUNITY_ID      VARCHAR(128)    NOT NULL,
-    APPLICATION_STATUS  VARCHAR(64)     DEFAULT 'BOOKMARKED',
-    BOOKMARKED          SMALLINT        DEFAULT 1,
-    UPDATED_AT          TIMESTAMP       DEFAULT CURRENT TIMESTAMP,
-    PRIMARY KEY (USER_ID, OPPORTUNITY_ID),
-    CONSTRAINT FK_TRACK_OPP FOREIGN KEY (OPPORTUNITY_ID) 
-        REFERENCES CLOUDLOOP.OPPORTUNITIES(ID) ON DELETE CASCADE
-);
-
--- 4. Ingestion Run Audit
-CREATE TABLE CLOUDLOOP.INGESTION_RUNS (
-    ID                  VARCHAR(64)     NOT NULL PRIMARY KEY,
-    SOURCE              VARCHAR(64)     NOT NULL,
-    RECORDS_PROCESSED   INT             DEFAULT 0,
-    RECORDS_INSERTED    INT             DEFAULT 0,
-    RECORDS_UPDATED     INT             DEFAULT 0,
-    RECORDS_REJECTED    INT             DEFAULT 0,
-    STATUS              VARCHAR(32)     DEFAULT 'SUCCESS',
-    STARTED_AT          TIMESTAMP       DEFAULT CURRENT TIMESTAMP,
-    COMPLETED_AT        TIMESTAMP       DEFAULT CURRENT TIMESTAMP
-);
-
--- 5. Active View
-CREATE VIEW CLOUDLOOP.V_ACTIVE_OPPORTUNITIES AS
+**3. Parameterized Pagination via FETCH FIRST and OFFSET**
+```sql
 SELECT * FROM CLOUDLOOP.OPPORTUNITIES
-WHERE DEADLINE IS NULL OR DEADLINE = 'Ongoing' OR DEADLINE >= VARCHAR_FORMAT(CURRENT TIMESTAMP, 'YYYY-MM-DD');
+WHERE SOURCE != 'synthetic-demo' AND (? IS NULL OR LOWER(KIND) = LOWER(?))
+ORDER BY UPDATED_AT DESC
+OFFSET ? ROWS FETCH FIRST ? ROWS ONLY;
+```
+
+**4. Dashboard Aggregates on Active View**
+```sql
+SELECT KIND, COUNT(*) as CNT 
+FROM CLOUDLOOP.V_ACTIVE_OPPORTUNITIES 
+WHERE SOURCE != 'synthetic-demo' 
+GROUP BY KIND;
 ```
 
 ---
 
-## 🚀 Quickstart & Reproducibility Guide
+## AI/LLM Architecture
 
-You can run the entire Cloud Loop platform using Docker Compose in under 5 minutes without any third-party accounts.
+- **Vector Framework**: Haystack AI 3.4.1 (`haystack-ai`, `ibm-db-haystack`).
+- **Embedding Model**: `sentence-transformers/all-MiniLM-L6-v2` generating 384-dimensional unit-normalized dense vectors.
+- **Retrieval**: `IBMDb2EmbeddingRetriever` executing cosine similarity queries directly inside Db2.
+- **Match Service**: Blends vector affinity (55%) with skill coverage (45%).
+- **LLM Rationale**: Queries optional local Ollama (`llama3.2`) with a 1.5-second timeout; if unavailable, falls back gracefully to deterministic skill-overlap explanation with transparent provenance (`explanation_mode='deterministic'`).
 
-### Prerequisites
-- Docker Engine & Docker Compose
-- Or Python 3.10+ and Node.js 18+ for local native execution
+---
 
-### Option A: Complete Docker Compose (Recommended)
+## Tech Stack
+
+- **Database**: IBM Db2 LUW 12.1.2.0, `ibm_db`, `ibm-db-haystack`.
+- **Backend**: Python 3.11+, FastAPI, Pydantic v2, Pydantic-Settings, Uvicorn, Pytest.
+- **AI / Embeddings**: Haystack AI, Sentence-Transformers, PyTorch.
+- **Frontend**: Next.js 16 (App Router), React 19, Tailwind CSS v4, Lucide Icons.
+- **Authentication**: Dual-mode (Fixed demo user or Clerk).
+
+---
+
+## Prerequisites
+
+- Docker and Docker Compose (recommended) OR
+- Python 3.10+ and Node.js 20+ for local installation.
+
+---
+
+## Setup
 
 ```bash
-# 1. Clone the repository
+# 1. Clone repository
 git clone https://github.com/Ayushh-Sharmaa/Cloud-Loop.git
 cd Cloud-Loop
 
-# 2. Launch IBM Db2, AI Service, and Next.js Web
-docker compose up -d
-
-# 3. Seed IBM Db2 with curated opportunity and vector datasets
-docker compose exec ai-service python scripts/seed_db2.py
-
-# 4. Open the Web Application
-# Navigate to http://localhost:3000 in your browser
+# 2. Copy environment template
+cp .env.example .env
 ```
 
-### Option B: Local Development Setup
+---
 
+## Configuration
+
+Key variables in `.env`:
+- `AUTH_MODE=demo` (enables zero-credential evaluation).
+- `DB2_HOST=localhost`, `DB2_PORT=50000`, `DB2_DB=BLUDB`, `DB2_SCHEMA=CLOUDLOOP`.
+- `INTERNAL_API_KEY=your_internal_api_key_here` (secures server-to-server calls).
+
+---
+
+## Run
+
+### Using Docker Compose (All-in-one)
 ```bash
-# 1. Backend AI Service
+docker compose up -d
+python src/ai-service/scripts/seed_db2.py
+# Web app: http://localhost:3000
+# AI Service OpenAPI docs: http://localhost:8000/docs
+```
+
+### Running Locally
+```bash
+# Terminal 1: AI Service
 cd src/ai-service
-pip install -r requirements.txt
 python scripts/seed_db2.py
 uvicorn main:app --port 8000 --reload
 
-# 2. In a separate terminal, launch the Frontend
+# Terminal 2: Web App
 cd src/web
-npm install
 npm run dev
-# App will run at http://localhost:3000
 ```
 
 ---
 
-## 🧪 Testing & Verification Evidence
-
-All tests execute with standard `pytest` and Next.js test commands:
+## Testing
 
 ```bash
-# Run AI Service & Db2 test suite (12/12 passing)
+# 1. Run AI Service pytest suite
 cd src/ai-service
-python -m pytest tests -v
+python -m pytest tests/ -v
 
-# Run Frontend Type & Build Verification
+# 2. Run Web static analysis
 cd src/web
 npx tsc --noEmit
-npm run build
+npm run lint
 ```
-
-**Test Verification Matrix**:
-| Test Suite | Purpose | Status |
-| :--- | :--- | :--- |
-| `test_haystack_db2.py` | IBMDb2DocumentStore vector search & filtering | ✅ PASSED |
-| `test_eligibility.py` | Student academic & deadline criteria evaluation | ✅ PASSED |
-| `test_opportunities.py` | Paginated catalog retrieval & filtering | ✅ PASSED |
-| `test_recommendations.py` | Multi-factor weighted match engine & rationale | ✅ PASSED |
-| `test_ingestion.py` | Secure batch ingestion and provenance auditing | ✅ PASSED |
-| `test_health.py` | System health check & Db2 connection diagnostics | ✅ PASSED |
-| Next.js Static Build | 28 production routes generated with zero errors | ✅ PASSED |
 
 ---
 
-## 📜 Submission Metadata
+## Screenshots
 
-- **Submission Slug**: `cloud-loop`
-- **Submission Schema**: Validated against official IBM Db2 TechX Summit JSON schema
-- **License**: MIT
+Visual documentation and walk-throughs are archived in [`docs/screenshots/`](docs/screenshots/):
+- **Homepage & Search**: Semantic natural language search with kind filtering.
+- **Dashboard**: Real-time status pipeline and one-click tracking updates.
+- **Candidate Matcher**: Multi-factor scoring with explainable reasons.
+
+---
+
+## Honest Limitations
+
+- **Host App Control Policy on Windows**: During local development on Windows 11, host Application Control policies blocked unsigned `.dll` C-extensions (`ibm_db` and `torch.dll`). Local unit testing ran against the verified fallback adapter; full live Db2 integration executes natively inside the Linux-based Docker container.
+- **Live Scraper Removal**: Synthetic scraped generators that fabricated freshness metrics were intentionally decommissioned. The catalog exclusively serves 106 human-curated records.
+- **Local LLM Dependency**: Ollama is optional; when not running locally, the system uses deterministic rationale generation without quality degradation.
+
+---
+
+## Credits
+
+- **Author**: Ayush Sharma ([@Ayushh-Sharmaa](https://github.com/Ayushh-Sharmaa))
+- **Event**: IBM Db2 TechX Summit 2026 Hackathon
+- **Built with**: IBM Db2, Haystack AI (deepset), FastAPI, Next.js, and React.

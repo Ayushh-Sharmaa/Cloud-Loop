@@ -1,15 +1,18 @@
 # Cloud Loop — System Architecture
 
 **AI-Powered Student Opportunity Intelligence Platform**  
-*IBM Db2 TechX Summit 2026 Submission*
+*IBM Db2 TechX Summit 2026 Hackathon Submission*
 
 ---
 
 ## 1. Executive Summary & Problem Context
 
-Students navigate a fragmented landscape of internships, jobs, hackathons, and certifications. Conventional discovery portals rely on keyword filters that ignore student academic eligibility, graduation years, and nuanced skill alignments.
+College students and fresh graduates navigate a fragmented ecosystem of tech jobs, internships, hackathons, open-source programs, and cloud certifications. Most aggregators rely on basic keyword matching that misses semantic career intent, generates false-positive matches, and lacks application pipeline tracking.
 
-**Cloud Loop** unifies student opportunity intelligence by placing **IBM Db2** at the center of both relational data management and semantic vector discovery through **Haystack AI (`ibm-db-haystack`)**.
+**Cloud Loop** solves this by positioning **IBM Db2 Enterprise / Community Edition** as the unified data tier:
+1. **Semantic Vector Search**: Using `ibm-db-haystack` and `IBMDb2DocumentStore` with 384-dimensional dense vectors (`sentence-transformers/all-MiniLM-L6-v2`) and `COSINE` distance.
+2. **Relational System of Record**: Schema `CLOUDLOOP` storing verified opportunities, real-time application tracking with `MERGE` upserts, newsletter subscriptions, and SQL views for active opportunities and analytics.
+3. **Multi-Factor Student Matching**: Blending dense vector similarity with deterministic skill overlap and optional local LLM rationale generation via Ollama.
 
 ---
 
@@ -17,43 +20,55 @@ Students navigate a fragmented landscape of internships, jobs, hackathons, and c
 
 ```mermaid
 flowchart TD
-    subgraph Client["Client Tier"]
-        UI["Next.js 16 Frontend\n(React 19, Tailwind CSS v4)"]
-        Dashboard["Student Dashboard\n(Profile, Tracking, Match Engine)"]
+    subgraph ClientTier["Client Tier (Next.js 16 / React 19)"]
+        UI["Web Frontend\n(Tailwind CSS v4, Server Components)"]
+        SearchBox["Semantic Search Bar\n(Natural Language)"]
+        DashboardUI["Student Dashboard\n(Application Tracking & Match Me)"]
+    end
+
+    subgraph ServerHandlers["Next.js Route Handlers (BFF)"]
+        Proxy["Internal Server Gateway\n(Shared INTERNAL_API_KEY)"]
     end
 
     subgraph BackendTier["AI & Intelligence Tier (FastAPI)"]
-        Router["FastAPI Gateway / API v1"]
-        Haystack["Haystack AI RAG Engine\n(haystack-ai 3.4.1)"]
-        Embedder["Dense Text Embedder\n(all-MiniLM-L6-v2, 384-dim)"]
-        EligibilitySvc["Eligibility Matching & Scorer"]
-        Explainer["Match Explainer (Transparent RAG Reasoning)"]
+        APIGateway["FastAPI v1 Router (/api/v1)"]
+        MatchService["Student Match Engine\n(Multi-Factor Match % + Why)"]
+        OllamaLLM["Local LLM (Ollama)\n(Optional Rationale Synthesis)"]
+        Haystack["Haystack AI 3.4.1\n(IBMDb2EmbeddingRetriever)"]
+        Embedder["SentenceTransformersEmbedder\n(all-MiniLM-L6-v2, 384-dim)"]
     end
 
-    subgraph DatabaseTier["IBM Db2 Database Tier (Schema: CLOUDLOOP)"]
-        VectorStore["OPPORTUNITY_KB\n(IBMDb2DocumentStore, COSINE)"]
+    subgraph DatabaseTier["IBM Db2 Tier (Schema: CLOUDLOOP)"]
+        VectorStore[("OPPORTUNITY_KB\n(VECTOR 384 FLOAT32, COSINE)")]
         OppTable[("CLOUDLOOP.OPPORTUNITIES\nRelational Master Catalog")]
-        ProfileTable[("CLOUDLOOP.STUDENT_PROFILES\nAcademic & Skill Criteria")]
-        TrackTable[("CLOUDLOOP.USER_OPPORTUNITY_TRACKING\nApplication Pipeline")]
-        IngestTable[("CLOUDLOOP.INGESTION_RUNS\nData Provenance & Audit")]
-        ViewActive["CLOUDLOOP.V_ACTIVE_OPPORTUNITIES\nActive Deadline SQL View"]
+        TrackTable[("CLOUDLOOP.TRACKED_OPPORTUNITIES\nApplication Pipeline Tracking")]
+        NewsTable[("CLOUDLOOP.NEWSLETTER_SUBSCRIBERS\nVerified Email Subscriptions")]
+        ActiveView["CLOUDLOOP.V_ACTIVE_OPPORTUNITIES\nSQL View: Deadlines >= CURRENT DATE"]
+        IndexDeadline["IX_OPP_KIND_DEADLINE\nB-Tree Index (KIND, DEADLINE)"]
     end
 
-    UI --> Router
-    Dashboard --> Router
-    Router --> Haystack
-    Router --> EligibilitySvc
-    Router --> Explainer
+    UI --> Proxy
+    SearchBox --> Proxy
+    DashboardUI --> Proxy
+
+    Proxy -- "x-internal-key" --> APIGateway
+
+    APIGateway --> Haystack
+    APIGateway --> MatchService
+    MatchService -.-> OllamaLLM
+    MatchService --> Haystack
 
     Haystack --> Embedder
     Embedder --> VectorStore
-    VectorStore --> Haystack
 
-    EligibilitySvc --> OppTable
-    EligibilitySvc --> ProfileTable
-    Router --> TrackTable
-    Router --> IngestTable
-    Router --> ViewActive
+    APIGateway --> OppTable
+    APIGateway --> TrackTable
+    APIGateway --> NewsTable
+    APIGateway --> ActiveView
+
+    OppTable -.-> IndexDeadline
+    OppTable -.-> ActiveView
+    OppTable -- "ON DELETE CASCADE" --> TrackTable
 ```
 
 ---
@@ -61,125 +76,167 @@ flowchart TD
 ## 3. IBM Db2 Integration Depth
 
 ### 3.1 Dual-Modality Storage in Db2
-Cloud Loop leverages IBM Db2 for two complementary workloads:
-1. **Semantic Vector Store (`OPPORTUNITY_KB`)**:
-   - Integrated using official `IBMDb2DocumentStore` and `IBMDb2EmbeddingRetriever` from `ibm-db-haystack`.
-   - Stores dense 384-dimensional embeddings generated with `sentence-transformers/all-MiniLM-L6-v2`.
-   - Utilizes `COSINE` distance metric for semantic search and metadata filtering (`opportunity_type`, `category`, `location`).
-2. **Relational System of Record**:
-   - Normalized relational tables in schema `CLOUDLOOP`.
-   - Foreign key integrity, unique constraints on slugs, timestamp provenance, and SQL views for active opportunities.
+Cloud Loop leverages IBM Db2 for both vector AI and ACID relational storage:
+
+1. **Haystack Document Store (`CLOUDLOOP.OPPORTUNITY_KB`)**:
+   - Initialized via `haystack_integrations.document_stores.ibm_db.IBMDb2DocumentStore`.
+   - Table name: `OPPORTUNITY_KB` in schema `CLOUDLOOP`.
+   - Column: `VECTOR(384, FLOAT32)`.
+   - Distance metric: `COSINE`.
+   - Embeds: Opportunity `title`, `org`, `skills`, and `description`.
+   - Metadata indexing: `kind`, `org`, `deadline`, `source`, `slug`, `location`, `mode`.
+
+2. **Relational Tables & Views**:
+   - Valid Db2 LUW syntax with strict constraint checks, indices, foreign keys, and views.
 
 ### 3.2 Relational DDL Specification
 
 ```sql
 CREATE SCHEMA CLOUDLOOP;
 
--- 1. Master Opportunities Catalog
+-- 1. Master Opportunities Table
 CREATE TABLE CLOUDLOOP.OPPORTUNITIES (
-    ID                  VARCHAR(128)    NOT NULL PRIMARY KEY,
-    SLUG                VARCHAR(256)    NOT NULL UNIQUE,
-    TITLE               VARCHAR(256)    NOT NULL,
-    ORGANIZATION        VARCHAR(256)    NOT NULL,
-    OPPORTUNITY_TYPE    VARCHAR(64)     NOT NULL, -- 'program', 'internship', 'job', 'event', 'certification'
-    CATEGORY            VARCHAR(64)     NOT NULL,
-    DESCRIPTION         CLOB,
-    LOCATION            VARCHAR(256),
-    LOCATION_TYPE       VARCHAR(32),              -- 'remote', 'onsite', 'hybrid'
-    SKILLS              CLOB,                     -- Structured JSON list of verified skills
-    ELIGIBILITY         CLOB,                     -- Degree, graduation year, or experience criteria
-    DEADLINE            VARCHAR(64),
-    APPLICATION_URL     VARCHAR(1024)   NOT NULL,
-    SOURCE_NAME         VARCHAR(64)     DEFAULT 'CloudLoop Curated',
-    SOURCE_URL          VARCHAR(1024),
-    VERIFICATION_STATUS VARCHAR(32)     DEFAULT 'VERIFIED',
-    FETCHED_AT          TIMESTAMP       DEFAULT CURRENT TIMESTAMP,
-    CREATED_AT          TIMESTAMP       DEFAULT CURRENT TIMESTAMP,
-    UPDATED_AT          TIMESTAMP       DEFAULT CURRENT TIMESTAMP
+  ID          VARCHAR(128)  NOT NULL PRIMARY KEY,
+  KIND        VARCHAR(16)   NOT NULL CHECK (KIND IN ('job','internship','event','program','certification')),
+  SLUG        VARCHAR(160)  NOT NULL UNIQUE,
+  TITLE       VARCHAR(200)  NOT NULL,
+  ORG         VARCHAR(120)  NOT NULL,
+  LOCATION    VARCHAR(120),
+  MODE        VARCHAR(16),
+  DEADLINE    DATE,
+  POSTED      DATE,
+  APPLY_URL   VARCHAR(1000) NOT NULL,
+  SOURCE      VARCHAR(24)   NOT NULL DEFAULT 'curated',
+  SKILLS      VARCHAR(1000),
+  DESCRIPTION CLOB(64K),
+  UPDATED_AT  TIMESTAMP     NOT NULL DEFAULT CURRENT TIMESTAMP
 );
 
--- 2. Student Profile & Academic Criteria
-CREATE TABLE CLOUDLOOP.STUDENT_PROFILES (
-    USER_ID             VARCHAR(128)    NOT NULL PRIMARY KEY,
-    EDUCATION           VARCHAR(256),
-    DEGREE              VARCHAR(128),
-    STUDY_YEAR          INT             DEFAULT 1,
-    GRADUATION_BATCH    VARCHAR(32),
-    SKILLS              CLOB,
-    INTERESTS           CLOB,
-    PREFERRED_DOMAINS   CLOB,
-    PREFERRED_LOCATIONS CLOB,
-    UPDATED_AT          TIMESTAMP       DEFAULT CURRENT TIMESTAMP
+-- 2. Index for Kind and Deadline Range Queries
+CREATE INDEX IX_OPP_KIND_DEADLINE ON CLOUDLOOP.OPPORTUNITIES (KIND, DEADLINE);
+
+-- 3. Student Tracking and Application Status (supports MERGE upsert)
+CREATE TABLE CLOUDLOOP.TRACKED_OPPORTUNITIES (
+  USER_ID        VARCHAR(128) NOT NULL,
+  OPPORTUNITY_ID VARCHAR(128) NOT NULL REFERENCES CLOUDLOOP.OPPORTUNITIES(ID) ON DELETE CASCADE,
+  STATUS         VARCHAR(24)  NOT NULL DEFAULT 'None',
+  BOOKMARKED     SMALLINT     NOT NULL DEFAULT 0,
+  UPDATED_AT     TIMESTAMP    NOT NULL DEFAULT CURRENT TIMESTAMP,
+  PRIMARY KEY (USER_ID, OPPORTUNITY_ID)
 );
 
--- 3. Application Pipeline & Tracking
-CREATE TABLE CLOUDLOOP.USER_OPPORTUNITY_TRACKING (
-    USER_ID             VARCHAR(128)    NOT NULL,
-    OPPORTUNITY_ID      VARCHAR(128)    NOT NULL,
-    APPLICATION_STATUS  VARCHAR(64)     DEFAULT 'BOOKMARKED',
-    BOOKMARKED          SMALLINT        DEFAULT 1,
-    UPDATED_AT          TIMESTAMP       DEFAULT CURRENT TIMESTAMP,
-    PRIMARY KEY (USER_ID, OPPORTUNITY_ID),
-    CONSTRAINT FK_TRACK_OPP FOREIGN KEY (OPPORTUNITY_ID) 
-        REFERENCES CLOUDLOOP.OPPORTUNITIES(ID) ON DELETE CASCADE
+-- 4. Newsletter Subscribers Table
+CREATE TABLE CLOUDLOOP.NEWSLETTER_SUBSCRIBERS (
+  EMAIL      VARCHAR(254) NOT NULL PRIMARY KEY,
+  CREATED_AT TIMESTAMP    NOT NULL DEFAULT CURRENT TIMESTAMP
 );
 
--- 4. Batch Ingestion Audit & Provenance
-CREATE TABLE CLOUDLOOP.INGESTION_RUNS (
-    ID                  VARCHAR(64)     NOT NULL PRIMARY KEY,
-    SOURCE              VARCHAR(64)     NOT NULL,
-    RECORDS_PROCESSED   INT             DEFAULT 0,
-    RECORDS_INSERTED    INT             DEFAULT 0,
-    RECORDS_UPDATED     INT             DEFAULT 0,
-    RECORDS_REJECTED    INT             DEFAULT 0,
-    STATUS              VARCHAR(32)     DEFAULT 'SUCCESS',
-    STARTED_AT          TIMESTAMP       DEFAULT CURRENT TIMESTAMP,
-    COMPLETED_AT        TIMESTAMP       DEFAULT CURRENT TIMESTAMP
-);
-
--- 5. Active Opportunities View
+-- 5. Active Opportunities View for Live Deadlines
 CREATE VIEW CLOUDLOOP.V_ACTIVE_OPPORTUNITIES AS
+  SELECT * FROM CLOUDLOOP.OPPORTUNITIES 
+  WHERE DEADLINE IS NULL OR DEADLINE >= CURRENT DATE;
+```
+
+### 3.3 Key Db2 Query Patterns
+
+#### A. High-Performance MERGE Upsert for Student Tracking
+```sql
+MERGE INTO CLOUDLOOP.TRACKED_OPPORTUNITIES AS target
+USING (VALUES (?, ?, ?, ?)) AS source (USER_ID, OPPORTUNITY_ID, STATUS, BOOKMARKED)
+ON (target.USER_ID = source.USER_ID AND target.OPPORTUNITY_ID = source.OPPORTUNITY_ID)
+WHEN MATCHED THEN
+  UPDATE SET STATUS = source.STATUS, BOOKMARKED = source.BOOKMARKED, UPDATED_AT = CURRENT TIMESTAMP
+WHEN NOT MATCHED THEN
+  INSERT (USER_ID, OPPORTUNITY_ID, STATUS, BOOKMARKED, UPDATED_AT)
+  VALUES (source.USER_ID, source.OPPORTUNITY_ID, source.STATUS, source.BOOKMARKED, CURRENT TIMESTAMP);
+```
+
+#### B. Newsletter Subscription with Duplicate Handling
+```sql
+MERGE INTO CLOUDLOOP.NEWSLETTER_SUBSCRIBERS AS target
+USING (VALUES (?)) AS source (EMAIL)
+ON (target.EMAIL = source.EMAIL)
+WHEN NOT MATCHED THEN
+  INSERT (EMAIL, CREATED_AT) VALUES (source.EMAIL, CURRENT TIMESTAMP);
+```
+
+#### C. Parameterized Pagination via FETCH FIRST and OFFSET
+```sql
 SELECT * FROM CLOUDLOOP.OPPORTUNITIES
-WHERE DEADLINE IS NULL OR DEADLINE = 'Ongoing' OR DEADLINE >= VARCHAR_FORMAT(CURRENT TIMESTAMP, 'YYYY-MM-DD');
+WHERE SOURCE != 'synthetic-demo' AND (? IS NULL OR LOWER(KIND) = LOWER(?))
+ORDER BY UPDATED_AT DESC
+OFFSET ? ROWS FETCH FIRST ? ROWS ONLY;
+```
+
+#### D. SQL Aggregates on Active View for Real-Time Dashboard Statistics
+```sql
+-- Opportunity counts grouped by kind:
+SELECT KIND, COUNT(*) as CNT 
+FROM CLOUDLOOP.V_ACTIVE_OPPORTUNITIES 
+WHERE SOURCE != 'synthetic-demo' 
+GROUP BY KIND;
+
+-- Opportunities closing within the next 7 days:
+SELECT COUNT(*) as CLOSING_SOON 
+FROM CLOUDLOOP.V_ACTIVE_OPPORTUNITIES 
+WHERE SOURCE != 'synthetic-demo' 
+  AND DEADLINE IS NOT NULL 
+  AND DEADLINE >= CURRENT DATE 
+  AND DEADLINE <= (CURRENT DATE + 7 DAYS);
 ```
 
 ---
 
-## 4. End-to-End Recommendation & Matching Flow
+## 4. AI & Matching Flow
 
 ```mermaid
 sequenceDiagram
     autonumber
     actor Student as Student
-    participant Web as Next.js Web Client
-    participant API as FastAPI Backend
+    participant Web as Next.js Web Frontend
+    participant Server as Server Route Handler (BFF)
+    participant API as FastAPI Backend (/api/v1)
+    participant Matcher as Match Service
+    participant Ollama as Ollama LLM (Optional)
     participant Haystack as Haystack Retriever
-    participant Db2 as IBM Db2 (OPPORTUNITY_KB & Relational)
+    participant Db2 as IBM Db2 (OPPORTUNITY_KB & V_ACTIVE_OPPORTUNITIES)
 
-    Student->>Web: Navigate to Dashboard or Query Opportunities
-    Web->>API: GET /api/v1/recommendations?user_id=demo-student-2026
-    API->>Db2: SELECT * FROM CLOUDLOOP.STUDENT_PROFILES WHERE USER_ID = ?
-    Db2-->>API: Return Profile (Skills, Interests, Degree, Year)
+    Student->>Web: Submits profile (Skills, Interests, Year)
+    Web->>Server: POST /api/match
+    Server->>API: POST /api/v1/match (Headers: x-internal-key)
+    API->>Matcher: match_opportunities(skills, interests, year)
     
-    API->>Haystack: Execute Semantic Retrieval with Profile Vector
-    Haystack->>Db2: Query OPPORTUNITY_KB with Cosine Distance
-    Db2-->>Haystack: Top K Semantic Matches
-    Haystack-->>API: Candidate Opportunities
-
-    API->>API: Evaluate Hard Eligibility (Degree, Batch, Prerequisites)
-    API->>API: Calculate Match Score (Vector 50% + Skills 30% + Domain 20%)
-    API->>API: Synthesize Explainable Match Rationale
-    API-->>Web: Structured Recommendation Payload + Explanations
-    Web-->>Student: Display Opportunities with Eligibility Badges & Action Links
+    Matcher->>Db2: Query CLOUDLOOP.V_ACTIVE_OPPORTUNITIES
+    Db2-->>Matcher: Active candidate records
+    
+    Matcher->>Haystack: Compute semantic similarity
+    Haystack-->>Matcher: Dense vector similarities
+    
+    Matcher->>Matcher: Calculate match percentage (55% vector + 45% skill overlap)
+    
+    opt Local Ollama LLM Available
+        Matcher->>Ollama: POST /v1/chat/completions (timeout 1.5s)
+        Ollama-->>Matcher: 1-sentence personalized rationale
+    end
+    
+    opt Fallback (Ollama Offline / Timeout)
+        Matcher->>Matcher: Generate crisp deterministic explanation from overlapping competencies
+    end
+    
+    Matcher-->>API: Match results with explanation_mode ('llm' or 'deterministic')
+    API-->>Server: JSON Payload
+    Server-->>Web: Render matched opportunities with progress % and reason
+    Web-->>Student: Interactive Match Me Cards
 ```
 
 ---
 
 ## 5. Security & Isolation Architecture
 
-1. **Parameterization**: All relational queries execute through parameterized prepared statements (`?` parameters), preventing SQL injection vulnerabilities.
-2. **Credential Management**: No credentials or private tokens are committed. Configuration is strictly injected through environment variables matching `.env.example`.
-3. **Dual Authentication Support**:
-   - `AUTH_MODE=demo`: Enables instant one-click evaluation without external identity provider setup.
-   - `AUTH_MODE=clerk`: Production mode protecting user dashboards with session tokens.
-4. **Resilient Local Execution**: If native C drivers are blocked by operating system security policies, the architecture falls back to an embedded SQLite and in-memory cosine store, ensuring tests and local development never fail.
+1. **Parameterization**: 100% of SQL statements utilize parameterized query execution (`?` parameter bindings via `ibm_db`), fully protecting against SQL injection attacks.
+2. **Internal API Protection**: All calls between Next.js server handlers and the AI backend service require the shared `x-internal-key` header (`INTERNAL_API_KEY`). The browser client never sees the backend internal keys.
+3. **Zero Secrets in Repository**: No API keys, passwords, or secrets are committed. All secrets are injected through environment variables matching `.env.example`.
+4. **Dual Authentication Support**:
+   - `AUTH_MODE=demo`: Evaluators can run and explore full personalized workflows immediately without third-party credentials.
+   - `AUTH_MODE=clerk`: Production mode using Clerk authentication.
+5. **Safe Sandbox Fallback**: If running on an operating system where native C-drivers or local models are restricted by App Control policies, the service gracefully switches to SQLite and deterministic projection with full honest logging.

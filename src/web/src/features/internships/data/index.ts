@@ -1,53 +1,37 @@
-import { warrnDevInternship } from "./list/warrn-dev-intern";
-import { magnaSmartFactoryInternship } from "./list/magna-smart-factory-intern";
-import { harmanInternship } from "./list/harman-intern";
-import { zycusAIInternship } from "./list/zycus-ai-intern";
-import { overtMindsInternship } from "./list/overtminds-intern";
-import { minfyInternship } from "./list/minfy-intern";
-import { flamInternship } from "./list/flam-intern";
-import { teleperformanceInternship } from "./list/teleperformance-data-analytics";
-import { qualcommEngineeringInternship } from "./list/qualcomm-engineering-intern";
-import { fortiveInternship } from "./list/fortive-intern";
-import { statestreetApprenticeInternship } from "./list/statestreet-apprentice";
-import { googleApprenticeInternship } from "./list/google-apprentice";
-import { gehealthcareInternship } from "./list/gehealthcare-intern";
-import { salesforceInternship } from "./list/salesforce-intern";
-import { paathzInternship } from "./list/paathz-intern";
-
-import scrapedInternships from "./scraped-internships.json";
+import internshipsSeed from "@/data/seed/internships.json";
 import { Internship } from "../types/Internship";
 
-const staticInternships: Internship[] = [
-  warrnDevInternship,
-  magnaSmartFactoryInternship,
-  harmanInternship,
-  zycusAIInternship,
-  overtMindsInternship,
-  minfyInternship,
-  flamInternship,
-  teleperformanceInternship,
-  qualcommEngineeringInternship,
-  fortiveInternship,
-  statestreetApprenticeInternship,
-  googleApprenticeInternship,
-  gehealthcareInternship,
-  salesforceInternship,
-  paathzInternship,
-];
+export const internships: Internship[] = (internshipsSeed as any[]).map((i) => {
+  const skills = Array.isArray(i.skills)
+    ? i.skills
+    : (typeof i.skills === "string" ? i.skills.split(",").map((s: string) => s.trim()) : []);
 
-
-// Deduplicate internships by id / slug
-const internMap = new Map<string, Internship>();
-for (const i of staticInternships) {
-  internMap.set(i.id, i);
-  if (i.slug) internMap.set(i.slug, i);
-}
-for (const i of (scrapedInternships as Internship[])) {
-  if (!internMap.has(i.id) && (!i.slug || !internMap.has(i.slug))) {
-    internMap.set(i.id, i);
+  const location = i.location || "India";
+  let locationType: "remote" | "hybrid" | "onsite" = "onsite";
+  const locLower = (i.mode || i.location_type || location || "").toLowerCase();
+  if (locLower.includes("remote") || locLower.includes("wfh")) {
+    locationType = "remote";
+  } else if (locLower.includes("hybrid")) {
+    locationType = "hybrid";
   }
-}
 
-export const internships: Internship[] = Array.from(new Set(internMap.values()));
-
-
+  return {
+    id: String(i.id || i.slug),
+    slug: String(i.slug || i.id),
+    company: String(i.org || i.organization || "Company"),
+    companyLogo: `https://www.google.com/s2/favicons?domain=${String(i.org || "google").toLowerCase().replace(/[^a-z0-9]/g, "")}.com&sz=64`,
+    role: String(i.title || i.role || "Intern"),
+    location,
+    locationType,
+    stipend: i.stipend || "Competitive",
+    duration: i.duration || "3-6 Months",
+    isPaid: true,
+    deadline: i.deadline || "Ongoing",
+    skills,
+    description: i.description || `${i.title} at ${i.org}`,
+    tags: i.tags || ["Internship", "Active"],
+    applyUrl: i.apply_url || i.applyUrl || "#",
+    eligibleBatch: i.eligibleBatch || "2025-2028",
+    isNew: true,
+  };
+});

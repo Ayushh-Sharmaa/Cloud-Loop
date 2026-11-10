@@ -33,9 +33,7 @@ export function Footer() {
         if (data?.stats?.lastScraped) setLastUpdated(getRelativeTimeString(data.stats.lastScraped));
       })
       .catch(() => {
-        import("../../features/jobs/data/scraper-stats.json").then((s) => {
-          if (s.lastScraped) setLastUpdated(getRelativeTimeString(s.lastScraped));
-        }).catch(() => {});
+        setLastUpdated("recently updated");
       });
   }, []);
 

@@ -3,34 +3,35 @@
   "project": {
     "title": "Cloud Loop",
     "slug": "cloud-loop",
-    "short_description": "AI-Powered Student Opportunity Intelligence Platform backed by IBM Db2, Haystack vector search, and automated eligibility matching.",
-    "category": "AI / RAG / Data Engineering / Analytics",
+    "short_description": "AI-Powered Student Opportunity Discovery Platform with IBM Db2, Haystack vector search, and intelligent candidate matching.",
+    "category": "AI / RAG / Enterprise Databases",
     "demo_url": "https://cloudloop.dev",
     "video_url": "https://youtu.be/cloudloop-demo-2026",
     "repo_url": "https://github.com/Ayushh-Sharmaa/Cloud-Loop"
   },
   "team": {
-    "name": "Cloud Loop Team",
+    "name": "Cloud Loop",
     "members": [
       {
         "name": "Ayush Sharma",
         "github": "Ayushh-Sharmaa",
         "email": "ayushsharma@users.noreply.github.com",
-        "role": "Lead Architect / Full-Stack & Db2 AI Engineer"
+        "role": "Solo Builder & Full-Stack / Db2 AI Engineer"
       }
     ]
   },
   "ibm_db2": {
-    "edition": "Db2 Community Edition (Docker) / Db2 on Cloud",
-    "connector": "ibm-db-haystack / ibm_db",
+    "edition": "IBM Db2 Community Edition 12.1.2.0 / Db2 on Cloud",
+    "connector": "ibm-db-haystack 1.0.0 / ibm_db 3.3.0",
+    "schema": "CLOUDLOOP",
     "features_used": [
-      "IBMDb2DocumentStore (Haystack Vector Storage)",
-      "384-Dimensional Dense Vector Retrieval (COSINE distance)",
-      "Relational Schema (OPPORTUNITIES, STUDENT_PROFILES, TRACKED_OPPORTUNITIES, INGESTION_RUNS)",
-      "SQL View (V_ACTIVE_OPPORTUNITIES)",
-      "Parameterized Prepared Statements & SQL Injection Prevention",
-      "Transactional Foreign Keys & Unique Constraints",
-      "High-Performance B-Tree Secondary Indexes"
+      "VECTOR",
+      "VECTOR_DISTANCE cosine",
+      "relational tables",
+      "indexes",
+      "MERGE",
+      "view",
+      "FETCH FIRST"
     ]
   },
   "tech_stack": {
@@ -40,15 +41,16 @@
       "SQL"
     ],
     "frameworks": [
-      "Next.js 16 (Turbopack, App Router)",
+      "Next.js 16 (App Router)",
       "React 19",
       "Tailwind CSS v4",
       "FastAPI",
-      "Haystack AI (haystack-ai 3.4.1)",
-      "ibm-db-haystack (1.0.0)"
+      "Haystack AI 3.4.1",
+      "ibm-db-haystack 1.0.0"
     ],
     "ai_models": [
-      "sentence-transformers/all-MiniLM-L6-v2"
+      "sentence-transformers/all-MiniLM-L6-v2",
+      "Ollama llama3.2 (optional local LLM)"
     ]
   }
 }

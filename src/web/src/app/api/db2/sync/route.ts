@@ -18,9 +18,9 @@ export async function POST() {
       { default: internships },
       { default: events },
     ] = await Promise.all([
-      import("@/features/jobs/data/scraped-jobs.json"),
-      import("@/features/internships/data/scraped-internships.json"),
-      import("@/features/events/data/scraped-events.json"),
+      import("@/data/seed/jobs.json"),
+      import("@/data/seed/internships.json"),
+      import("@/data/seed/events.json"),
     ]);
 
     let synced = 0;
