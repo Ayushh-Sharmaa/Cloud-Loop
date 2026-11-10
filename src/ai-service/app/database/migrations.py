@@ -1,7 +1,7 @@
 import os
 import logging
-from backend.app.database.session import db_session
-from backend.app.database.db2_connection import db2_manager
+from app.database.session import db_session
+from app.database.db2_connection import db2_manager
 
 logger = logging.getLogger("cloud_loop.migrations")
 

@@ -7,8 +7,8 @@ from pathlib import Path
 backend_dir = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(backend_dir.parent))
 
-from backend.app.services.ingestion_service import ingestion_service
-from backend.app.database.migrations import run_migrations
+from app.services.ingestion_service import ingestion_service
+from app.database.migrations import run_migrations
 
 def run_full_ingestion():
     print("=" * 60)

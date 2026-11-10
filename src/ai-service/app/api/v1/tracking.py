@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
-from backend.app.schemas.tracking import TrackingCreate, TrackingResponse, TrackingItem
-from backend.app.repositories.tracking_repository import tracking_repo
-from backend.app.core.security import get_current_user_id
+from app.schemas.tracking import TrackingCreate, TrackingResponse, TrackingItem
+from app.repositories.tracking_repository import tracking_repo
+from app.core.security import get_current_user_id
 
 router = APIRouter(prefix="/tracking", tags=["User Opportunity Tracking"])
 

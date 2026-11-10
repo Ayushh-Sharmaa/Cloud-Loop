@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
-from backend.app.schemas.profile import StudentProfileCreate, StudentProfileResponse
-from backend.app.repositories.profile_repository import profile_repo
-from backend.app.core.security import get_current_user_id
+from app.schemas.profile import StudentProfileCreate, StudentProfileResponse
+from app.repositories.profile_repository import profile_repo
+from app.core.security import get_current_user_id
 
 router = APIRouter(prefix="/profile", tags=["Student Profile"])
 

@@ -1,5 +1,5 @@
 from typing import Optional, Dict, Any, List
-from backend.app.repositories.opportunity_repository import opportunity_repo
+from app.repositories.opportunity_repository import opportunity_repo
 
 class OpportunityService:
     def get_opportunity(self, opportunity_id: str) -> Optional[Dict[str, Any]]:

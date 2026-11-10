@@ -1,11 +1,11 @@
 from fastapi import APIRouter
-from backend.app.api.v1.health import router as health_router
-from backend.app.api.v1.opportunities import router as opportunities_router
-from backend.app.api.v1.search import router as search_router
-from backend.app.api.v1.recommendations import router as recommendations_router
-from backend.app.api.v1.tracking import router as tracking_router
-from backend.app.api.v1.profile import router as profile_router
-from backend.app.api.v1.ingestion import router as ingestion_router
+from app.api.v1.health import router as health_router
+from app.api.v1.opportunities import router as opportunities_router
+from app.api.v1.search import router as search_router
+from app.api.v1.recommendations import router as recommendations_router
+from app.api.v1.tracking import router as tracking_router
+from app.api.v1.profile import router as profile_router
+from app.api.v1.ingestion import router as ingestion_router
 
 api_v1_router = APIRouter(prefix="/api/v1")
 

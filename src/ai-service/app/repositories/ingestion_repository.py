@@ -1,7 +1,7 @@
 import logging
 from typing import Optional, Dict, Any, List
 from datetime import datetime, timezone
-from backend.app.database.session import db_session
+from app.database.session import db_session
 
 logger = logging.getLogger("cloud_loop.repository.ingestion")
 

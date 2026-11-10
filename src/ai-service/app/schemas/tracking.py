@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Optional, List
-from backend.app.schemas.opportunity import OpportunityResponse
+from app.schemas.opportunity import OpportunityResponse
 
 class TrackingCreate(BaseModel):
     opportunity_id: str

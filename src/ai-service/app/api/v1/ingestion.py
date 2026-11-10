@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, Query
 from typing import List
-from backend.app.schemas.ingestion import IngestionBatchRequest, IngestionRunResponse
-from backend.app.services.ingestion_service import ingestion_service
-from backend.app.repositories.ingestion_repository import ingestion_repo
-from backend.app.core.security import verify_admin_key
+from app.schemas.ingestion import IngestionBatchRequest, IngestionRunResponse
+from app.services.ingestion_service import ingestion_service
+from app.repositories.ingestion_repository import ingestion_repo
+from app.core.security import verify_admin_key
 
 router = APIRouter(prefix="/ingestion", tags=["Data Ingestion & Provenance"])
 

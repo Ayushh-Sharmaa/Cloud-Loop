@@ -3,8 +3,8 @@ import uuid
 import logging
 from typing import List, Dict, Any, Tuple
 from urllib.parse import urlparse
-from backend.app.repositories.opportunity_repository import opportunity_repo
-from backend.app.repositories.ingestion_repository import ingestion_repo
+from app.repositories.opportunity_repository import opportunity_repo
+from app.repositories.ingestion_repository import ingestion_repo
 
 logger = logging.getLogger("cloud_loop.service.ingestion")
 
@@ -92,6 +92,12 @@ class IngestionService:
                 }
 
                 existing = opportunity_repo.get_by_id(opp_id)
+                if not existing and slug:
+                    existing = opportunity_repo.get_by_slug(slug)
+                    if existing:
+                        opp_id = existing.get("id") or opp_id
+                        record["id"] = opp_id
+
                 opportunity_repo.upsert(record)
                 if existing:
                     updated += 1

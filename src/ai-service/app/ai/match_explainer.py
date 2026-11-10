@@ -1,5 +1,5 @@
 from typing import Dict, Any, List
-from backend.app.schemas.recommendation import MatchExplanation
+from app.schemas.recommendation import MatchExplanation
 
 def generate_match_explanation(
     opportunity: Dict[str, Any],

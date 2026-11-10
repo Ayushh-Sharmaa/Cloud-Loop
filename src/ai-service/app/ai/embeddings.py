@@ -2,7 +2,7 @@ import math
 import hashlib
 import logging
 from typing import List
-from backend.app.core.config import settings
+from app.core.config import settings
 
 logger = logging.getLogger("cloud_loop.ai.embeddings")
 

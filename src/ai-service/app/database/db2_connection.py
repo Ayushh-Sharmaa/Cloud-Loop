@@ -1,6 +1,6 @@
 import logging
 from typing import Optional, Any, List, Dict
-from backend.app.core.config import settings
+from app.core.config import settings
 
 logger = logging.getLogger("cloud_loop.db2")
 

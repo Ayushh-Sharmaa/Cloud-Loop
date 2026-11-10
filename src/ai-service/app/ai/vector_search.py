@@ -1,7 +1,7 @@
 import math
 from typing import List, Dict, Any, Tuple
-from backend.app.ai.embeddings import generate_embedding
-from backend.app.repositories.opportunity_repository import opportunity_repo
+from app.ai.embeddings import generate_embedding
+from app.repositories.opportunity_repository import opportunity_repo
 
 def cosine_similarity(vec_a: List[float], vec_b: List[float]) -> float:
     if not vec_a or not vec_b or len(vec_a) != len(vec_b):

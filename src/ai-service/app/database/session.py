@@ -2,8 +2,8 @@ import sqlite3
 import os
 import logging
 from typing import List, Dict, Any, Optional
-from backend.app.core.config import settings
-from backend.app.database.db2_connection import db2_manager
+from app.core.config import settings
+from app.database.db2_connection import db2_manager
 
 logger = logging.getLogger("cloud_loop.database")
 

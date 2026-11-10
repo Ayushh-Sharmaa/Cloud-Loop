@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
-from backend.app.core.config import settings
-from backend.app.core.logging import setup_logging, logger
-from backend.app.database.migrations import run_migrations
-from backend.app.api.v1.router import api_v1_router
+from app.core.config import settings
+from app.core.logging import setup_logging, logger
+from app.database.migrations import run_migrations
+from app.api.v1.router import api_v1_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

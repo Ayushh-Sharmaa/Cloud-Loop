@@ -2,7 +2,7 @@ import json
 import logging
 from typing import List, Optional, Dict, Any
 from datetime import datetime, timezone
-from backend.app.database.session import db_session
+from app.database.session import db_session
 
 logger = logging.getLogger("cloud_loop.repository.opportunity")
 
@@ -97,13 +97,32 @@ class OpportunityRepository:
         items = [self._row_to_dict(r) for r in rows]
         return items, total
 
+    def count(self) -> int:
+        rows = db_session.query("SELECT COUNT(*) as cnt FROM OPPORTUNITIES")
+        return int(rows[0].get("CNT") or rows[0].get("cnt") or 0) if rows else 0
+
+    def create(self, data: Dict[str, Any]) -> str:
+        return self.upsert(data)
+
+    def update(self, opp_id: str, data: Dict[str, Any]) -> str:
+        return self.upsert({**data, "id": opp_id})
+
     def upsert(self, data: Dict[str, Any]) -> str:
         now = datetime.now(timezone.utc).isoformat()
         skills_str = json.dumps(data.get("skills") or [])
         opp_id = data.get("id") or data.get("slug")
+        title = data.get("title") or "Opportunity"
+        org = data.get("organization") or data.get("company") or data.get("provider") or "Technology Partner"
+        opp_type = data.get("opportunity_type") or "program"
+        category = data.get("category") or "Technology"
+        app_url = data.get("application_url") or "#"
 
-        # Check existing
+        # Check existing by id or slug
         existing = self.get_by_id(opp_id)
+        if not existing and data.get("slug"):
+            existing = self.get_by_slug(data["slug"])
+            if existing:
+                opp_id = existing.get("id") or opp_id
         if existing:
             sql = """
                 UPDATE OPPORTUNITIES SET
@@ -125,17 +144,17 @@ class OpportunityRepository:
                 WHERE ID = ?
             """
             params = [
-                data.get("title"),
-                data.get("organization"),
-                data.get("opportunity_type"),
-                data.get("category"),
+                title,
+                org,
+                opp_type,
+                category,
                 data.get("description"),
                 data.get("location"),
                 data.get("location_type"),
                 skills_str,
                 data.get("eligibility"),
                 data.get("deadline"),
-                data.get("application_url"),
+                app_url,
                 data.get("source_name") or "CloudLoop Indexer",
                 data.get("source_url"),
                 data.get("verification_status") or "verified",
@@ -156,17 +175,17 @@ class OpportunityRepository:
             params = [
                 opp_id,
                 data.get("slug") or opp_id,
-                data.get("title"),
-                data.get("organization"),
-                data.get("opportunity_type"),
-                data.get("category"),
+                title,
+                org,
+                opp_type,
+                category,
                 data.get("description"),
                 data.get("location"),
                 data.get("location_type"),
                 skills_str,
                 data.get("eligibility"),
                 data.get("deadline"),
-                data.get("application_url"),
+                app_url,
                 data.get("source_name") or "CloudLoop Indexer",
                 data.get("source_url"),
                 data.get("verification_status") or "verified",

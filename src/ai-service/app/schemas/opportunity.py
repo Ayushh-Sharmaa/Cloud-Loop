@@ -1,5 +1,6 @@
-from pydantic import BaseModel, Field, HttpUrl
-from typing import Optional, List
+from pydantic import BaseModel, Field, HttpUrl, field_validator
+from typing import Optional, List, Union
+import json
 from datetime import datetime
 
 class OpportunityBase(BaseModel):
@@ -10,13 +11,34 @@ class OpportunityBase(BaseModel):
     description: Optional[str] = None
     location: Optional[str] = None
     location_type: Optional[str] = Field("remote", description="remote, onsite, hybrid")
-    skills: Optional[List[str]] = Field(default_factory=list)
+    skills: List[str] = Field(default_factory=list)
     eligibility: Optional[str] = None
     deadline: Optional[str] = None
     application_url: str = Field(..., description="Direct link to apply")
     source_name: Optional[str] = "CloudLoop Indexer"
     source_url: Optional[str] = None
     verification_status: Optional[str] = "verified"
+
+    @field_validator("skills", mode="before")
+    @classmethod
+    def parse_skills(cls, v: Union[str, list, None]) -> List[str]:
+        if v is None:
+            return []
+        if isinstance(v, list):
+            return [str(item).strip() for item in v if item]
+        if isinstance(v, str):
+            v = v.strip()
+            if not v:
+                return []
+            if v.startswith("[") and v.endswith("]"):
+                try:
+                    parsed = json.loads(v)
+                    if isinstance(parsed, list):
+                        return [str(item).strip() for item in parsed if item]
+                except Exception:
+                    pass
+            return [s.strip() for s in v.split(",") if s.strip()]
+        return []
 
 class OpportunityCreate(OpportunityBase):
     slug: Optional[str] = None

@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from backend.app.schemas.recommendation import RecommendationRequest, RecommendationResponse
-from backend.app.services.recommendation_service import recommendation_service
+from app.schemas.recommendation import RecommendationRequest, RecommendationResponse
+from app.services.recommendation_service import recommendation_service
 
 router = APIRouter(prefix="/recommendations", tags=["Recommendations"])
 

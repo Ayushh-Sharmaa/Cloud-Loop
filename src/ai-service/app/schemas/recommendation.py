@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List, Optional
-from backend.app.schemas.opportunity import OpportunityResponse
+from app.schemas.opportunity import OpportunityResponse
 
 class MatchExplanation(BaseModel):
     eligibility_met: bool = Field(..., description="Whether academic criteria matches")

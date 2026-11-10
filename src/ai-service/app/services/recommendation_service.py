@@ -1,12 +1,12 @@
 from typing import List, Dict, Any, Optional
-from backend.app.repositories.opportunity_repository import opportunity_repo
-from backend.app.repositories.profile_repository import profile_repo
-from backend.app.services.eligibility_service import eligibility_service
-from backend.app.ai.embeddings import generate_embedding
-from backend.app.ai.vector_search import cosine_similarity
-from backend.app.ai.match_explainer import generate_match_explanation
-from backend.app.schemas.recommendation import RecommendationItem, MatchExplanation
-from backend.app.schemas.opportunity import OpportunityResponse
+from app.repositories.opportunity_repository import opportunity_repo
+from app.repositories.profile_repository import profile_repo
+from app.services.eligibility_service import eligibility_service
+from app.ai.embeddings import generate_embedding
+from app.ai.vector_search import cosine_similarity
+from app.ai.match_explainer import generate_match_explanation
+from app.schemas.recommendation import RecommendationItem, MatchExplanation
+from app.schemas.opportunity import OpportunityResponse
 
 class RecommendationService:
     def get_recommendations(

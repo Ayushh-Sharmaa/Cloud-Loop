@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Query, HTTPException, status
 from typing import Optional
-from backend.app.schemas.opportunity import OpportunityResponse, OpportunityListResponse
-from backend.app.services.opportunity_service import opportunity_service
+from app.schemas.opportunity import OpportunityResponse, OpportunityListResponse
+from app.services.opportunity_service import opportunity_service
 
 router = APIRouter(prefix="/opportunities", tags=["Opportunities"])
 

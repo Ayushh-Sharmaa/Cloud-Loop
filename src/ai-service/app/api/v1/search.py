@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Query
 from typing import Optional, List
-from backend.app.ai.vector_search import semantic_search_opportunities
-from backend.app.schemas.opportunity import OpportunityResponse
+from app.ai.vector_search import semantic_search_opportunities
+from app.schemas.opportunity import OpportunityResponse
 
 router = APIRouter(prefix="/search", tags=["Semantic Search"])
 

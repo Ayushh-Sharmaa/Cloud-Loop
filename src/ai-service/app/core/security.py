@@ -1,5 +1,5 @@
 from fastapi import Header, HTTPException, status
-from backend.app.core.config import settings
+from app.core.config import settings
 import re
 
 def verify_admin_key(x_admin_key: str = Header(..., description="Admin API Key for protected ingestion routes")):

@@ -1,8 +1,8 @@
 import logging
 from typing import List, Dict, Any, Optional
 from datetime import datetime, timezone
-from backend.app.database.session import db_session
-from backend.app.repositories.opportunity_repository import opportunity_repo
+from app.database.session import db_session
+from app.repositories.opportunity_repository import opportunity_repo
 
 logger = logging.getLogger("cloud_loop.repository.tracking")
 

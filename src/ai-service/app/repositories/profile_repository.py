@@ -2,7 +2,7 @@ import json
 import logging
 from typing import Optional, Dict, Any
 from datetime import datetime, timezone
-from backend.app.database.session import db_session
+from app.database.session import db_session
 
 logger = logging.getLogger("cloud_loop.repository.profile")
 
@@ -35,6 +35,10 @@ class ProfileRepository:
         sql = "SELECT * FROM STUDENT_PROFILES WHERE USER_ID = ?"
         rows = db_session.query(sql, [user_id])
         return self._row_to_dict(rows[0]) if rows else None
+
+    def create(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        user_id = data.get("user_id") or "demo-user"
+        return self.upsert(user_id, data)
 
     def upsert(self, user_id: str, data: Dict[str, Any]) -> Dict[str, Any]:
         now = datetime.now(timezone.utc).isoformat()

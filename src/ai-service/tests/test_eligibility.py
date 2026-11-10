@@ -1,4 +1,4 @@
-from backend.app.services.eligibility_service import eligibility_service
+from app.services.eligibility_service import eligibility_service
 
 def test_eligibility_undergrad():
     opportunity = {
