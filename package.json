@@ -1,0 +1,10 @@
+{
+  "name": "cloud-loop-monorepo",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix src/web run build",
+    "dev": "npm --prefix src/web run dev",
+    "start": "npm --prefix src/web run start",
+    "lint": "npm --prefix src/web run lint"
+  }
+}
