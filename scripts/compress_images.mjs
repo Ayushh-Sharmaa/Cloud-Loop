@@ -30,3 +30,4 @@ for (const file of files) {
 }
 
 console.log(`✅ Image inspection completed. ${files.length} assets audited in public/.`);
+

@@ -67,3 +67,4 @@ if (errorsFound === 0) {
 } else {
   console.log(`⚠️ check_links finished with ${errorsFound} warnings.`);
 }
+
